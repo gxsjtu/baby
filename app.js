@@ -1,10 +1,8 @@
 //app.js
+const LoginSvc = require('services/loginSvc');
 App({
     onLaunch: function() {
-        //调用API从本地缓存中获取数据
-        var logs = wx.getStorageSync('logs') || []
-        logs.unshift(Date.now())
-        wx.setStorageSync('logs', logs)
+
     },
     getUserInfo: function(cb) {
         if (this.globalData.userInfo) {
@@ -12,11 +10,13 @@ App({
         } else {
             //调用登录接口
             wx.login({
-                success: (res) => {
+                success: (info) => {
                     wx.getUserInfo({
                         success: (res) => {
+                            //申请sessionkey和openid
+                            let loginSvc = new LoginSvc();
+                            loginSvc.login(info.code, res.userInfo);
                             this.globalData.userInfo = res.userInfo
-                            console.log(res);
                             typeof cb == "function" && cb(this.globalData.userInfo)
                         }
                     })
