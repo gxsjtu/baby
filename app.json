@@ -1,8 +1,7 @@
 {
   "pages":[
     "pages/hospitalList/hospitalList",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/index/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
