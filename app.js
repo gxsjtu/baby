@@ -15,7 +15,7 @@ App({
                         success: (res) => {
                             //申请sessionkey和openid
                             let loginSvc = new LoginSvc();
-                            loginSvc.login(info.code, res.userInfo);
+                            loginSvc.login(info.code, res);
                             this.globalData.userInfo = res.userInfo
                             typeof cb == "function" && cb(this.globalData.userInfo)
                         }
