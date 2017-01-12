@@ -2,7 +2,6 @@
 .view-container{
     height:100%;
     background-color:rgba(237,237,237,0.8);
-    padding-bottom:6rpx;
 }
 /*选择项外边的容器*/
 .menu-container{
@@ -106,4 +105,8 @@
   border-bottom:1px solid #E2D8D8;
   transform: rotate(-45deg);
   margin-left:15rpx;
+}
+
+page{
+  background:#f0f0f0;
 }
