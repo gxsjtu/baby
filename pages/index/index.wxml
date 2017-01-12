@@ -8,14 +8,14 @@
       </view>
       <view class="list-container">
         <view hidden="{{!firstItemSelected}}" class="list-wrap">
-          <view wx:for="{{beforeListData}}" wx:for-item="item" class="list-item">
+          <view wx:for="{{beforeListData}}" wx:for-item="item" wx:key="id" class="list-item">
             <view class="list-title">{{item.title}}</view>
             <view class="list-date">{{item.date}}</view>
             <view class="list-arrow"></view>
           </view>
         </view>
         <view hidden="{{firstItemSelected}}" class="list-wrap">
-          <view wx:for="{{afterListData}}" wx:for-item="item" class="list-item">
+          <view wx:for="{{afterListData}}" wx:for-item="item" wx:key="id" class="list-item">
             <view class="list-title">{{item.title}}</view>
             <view class="list-date">{{item.date}}</view>
             <view class="list-arrow"></view>
