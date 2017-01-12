@@ -1,11 +1,29 @@
 <!--index.wxml-->
-<view>
-<view>
-    <input type="text" placeholder="搜索"/>
-</view>
-<view>
-    <image src=""></image>
-</view>
-<view wx:for="hosArray" wx:for-item="item">
-</view>
+<view class="container">
+    <view class="view-container">
+        <view>
+            <input type="text" placeholder="搜索"/>
+        </view>
+      <image style="width: 750rpx; height: 300rpx;"  src="../../assets/images/Group2.png" />
+        <view class="section">
+            <picker range="{{array}}" value="{{index}}" bindchange="bindp" placeholder="aaa">
+                <input placeholder="地区" value="{{array[index]}}"/>
+            </picker>
+        </view>
+        <view wx:for="hosArray" wx:for-item="item" style="flex:left">
+            <table>
+                <tr>
+                    <td> 
+                        <image src="../../assets/images/tabs/do_unselected.png" style="width:60px;height:60px"></image>
+                    </td>
+                    <td>
+                        <table>
+                            <tr><td>aaaaaaaaa</td></tr>
+                            <tr><td>建卡时间</td></tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </view>
+    </view>
 </view>

@@ -2,7 +2,10 @@
 const LoginSvc = require('services/loginSvc');
 App({
     onLaunch: function() {
-
+           this.getUserInfo((userInfo) => {
+            //更新数据
+            this.globalData.userInfo = userInfo
+        })
     },
     getUserInfo: function(cb) {
         if (this.globalData.userInfo) {
@@ -15,7 +18,9 @@ App({
                         success: (res) => {
                             //申请sessionkey和openid
                             let loginSvc = new LoginSvc();
-                            loginSvc.login(info.code, res);
+                            loginSvc.login(info.code, res).then(data => {
+                                this.globalData.token = data.data
+                            });
                             this.globalData.userInfo = res.userInfo
                             typeof cb == "function" && cb(this.globalData.userInfo)
                         }
@@ -25,6 +30,7 @@ App({
         }
     },
     globalData: {
-        userInfo: null
+        userInfo: null,
+        token: null
     }
 })
