@@ -1,10 +1,26 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="view-container">
+      <image style="width: 750rpx; height: 300rpx;"  src="../../assets/images/Group2.png" />
+      <view class="menu-container">
+        <view class="menu-item before {{firstItemSelected ? 'menu-active' : ''}}" catchtap="beforeChildbirth">产前阶段</view>
+        <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="afterChildbirth">产后阶段</view>
+      </view>
+      <view class="list-container">
+        <view hidden="{{!firstItemSelected}}" class="list-wrap">
+          <view wx:for="{{beforeListData}}" wx:for-item="item" class="list-item">
+            <view class="list-title">{{item.title}}</view>
+            <view class="list-date">{{item.date}}</view>
+            <view class="list-arrow"></view>
+          </view>
+        </view>
+        <view hidden="{{firstItemSelected}}" class="list-wrap">
+          <view wx:for="{{afterListData}}" wx:for-item="item" class="list-item">
+            <view class="list-title">{{item.title}}</view>
+            <view class="list-date">{{item.date}}</view>
+            <view class="list-arrow"></view>
+          </view>
+        </view>
+      </view>
   </view>
 </view>

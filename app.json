@@ -5,7 +5,25 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "妈咪驾到",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "孕事任务",
+      "iconPath": "assets/images/tabs/do_selected.png",
+      "selectedIconPath": "assets/images/tabs/do_unselected.png"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "电子陪诊",
+      "iconPath": "assets/images/tabs/accompany_selected.png",
+      "selectedIconPath": "assets/images/tabs/accompany_unselected.png"
+    }],
+    "selectedColor": "#F26A77",
+    "color": "#6D6D6D",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black"
   }
 }
