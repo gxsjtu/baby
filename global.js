@@ -1,1 +1,1 @@
-module.exports.SERVER = 'https://172.20.67.95';
+module.exports.SERVER = 'https://nicebaby.shtx.com.cn';

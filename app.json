@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/hospitalList/hospitalList",
     "pages/index/index"
   ],
   "window":{
