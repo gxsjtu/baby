@@ -23,10 +23,11 @@ Page({
             this.setData({
                 searchArray: data.data.data.data, //查询结果
                 hosArray: data.data.data.data //全部列表
-            })
-        }). finally(() => {
+            });
             wx.hideToast();
-        })
+        }).catch(() => {
+            wx.hideToast();
+        });
     },
     searchFunc: function(e) {
         if (e.detail.value == "") {
@@ -41,5 +42,4 @@ Page({
             this.setData({searchArray: list})
         }
     }
-
 })
