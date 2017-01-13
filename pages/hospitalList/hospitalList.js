@@ -42,4 +42,5 @@ Page({
             this.setData({searchArray: list})
         }
     }
+
 })
