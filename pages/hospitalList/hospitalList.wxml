@@ -1,16 +1,21 @@
 <!--index.wxml-->
 <view class="container">
     <view class="view-container">
-        <view>
-            <input type="text" placeholder="搜索"/>
+        <view class="search-bar">
+          <image src="../../assets/images/hospitalList/location.png" />
+          <view class="location-text">上海</view>
+          <view class="search-container">
+            <image src="../../assets/images/hospitalList/Shape.png" />
+            <input type="text" placeholder="搜索医院名称" />
+          </view>
         </view>
-      <image style="width: 750rpx; height: 300rpx;"  src="../../assets/images/Group2.png" />
+      <image style="width: 750rpx; height: 240rpx;"  src="../../assets/images/hospitalList/header.jpg" />
         <view class="section">
             <picker range="{{array}}" value="{{index}}" bindchange="bindp" placeholder="aaa">
                 <input placeholder="地区" value="{{array[index]}}"/>
             </picker>
         </view>
-    <view wx:for="{{hosArray}}" wx:for-item="item" wx:key="{{item._id}}" style="flex:left">
+    <view wx:for="{{searchArray}}" wx:for-item="item" wx:key="{{item._id}}" style="flex:left">
          <image src="{{imgAddress}}{{item.name}}/{{item.logo}}.png" style="width:60px;height:60px"></image>
           <text style="display:block;font-size:16px">{{item.name}}</text>
           <text style="color:red;font-size:16px;display:block">建卡时间：9周之前</text>
