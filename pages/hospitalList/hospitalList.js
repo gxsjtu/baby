@@ -20,8 +20,8 @@ Page({
         var hospitalSvc = new HospitalListSvc()
         hospitalSvc.getLocation().then(data => {
             this.setData({
-                searchArray: data.data.data,//查询结果
-                hosArray: data.data.data //全部列表
+                searchArray: data.data.data.data,//查询结果
+                hosArray: data.data.data.data //全部列表
             })
         })
     },

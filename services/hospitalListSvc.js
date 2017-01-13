@@ -28,6 +28,8 @@ HospitalListSvc.prototype.getLocation = function (){
                 // reject(err)
                 request(GLOBAL.SERVER + "/hospital/getAll", '' ,"GET").then(data => {
                     resolve(data)
+                    console.log('data')
+                    console.log(data)
                 })
             }
         })
