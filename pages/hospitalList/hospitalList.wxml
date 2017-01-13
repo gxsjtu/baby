@@ -6,7 +6,7 @@
           <view class="location-text">上海</view>
           <view class="search-container">
             <image src="../../assets/images/hospitalList/Shape.png" />
-            <input type="text" placeholder="搜索医院名称" bindinput="searchFunc"/>
+            <input type="text" placeholder="搜索医院名称" />
           </view>
         </view>
       <image style="width: 750rpx; height: 240rpx;"  src="../../assets/images/hospitalList/header.jpg" />
