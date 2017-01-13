@@ -1,5 +1,6 @@
 const GLOBAL = require('../global.js');
 const request = require('../utils/request.js').request
+const Promise = require('../utils/promise')
 
 var HospitalListSvc = function (){
 

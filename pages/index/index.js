@@ -65,23 +65,23 @@ Page({
             }
         ]
     },
-    onLoad: function() {
+    onLoad: function () {
         this.beforeChildbirth(); //初始默认进入产前阶段
     },
     //点击产前阶段
-    beforeChildbirth: function() {
-        this.setData({firstItemSelected: true})
+    beforeChildbirth: function () {
+        this.setData({ firstItemSelected: true })
     },
     //点击产后阶段
-    afterChildbirth: function() {
-        this.setData({firstItemSelected: false})
+    afterChildbirth: function () {
+        this.setData({ firstItemSelected: false })
     },
-    goto: function(event) {
+    goto: function (event) {
         switch (event.target.dataset.item.id) {
-          case 2:
-            wx.navigateTo({url: '../hospitalList/hospitalList'});
-            break;
-          default:
+            case 2:
+                wx.navigateTo({ url: '../hospitalList/hospitalList' });
+                break;
+            default:
 
         }
     }

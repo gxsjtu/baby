@@ -23,6 +23,8 @@ Page({
                 searchArray: data.data.data.data,//查询结果
                 hosArray: data.data.data.data //全部列表
             })
+        }).finally(() => {
+            console.log('finallylllll')
         })
     },
     searchFunc: function (e) {
