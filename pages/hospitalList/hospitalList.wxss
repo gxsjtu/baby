@@ -1,5 +1,47 @@
 .view-container{
     height:100%;
-    width:100%;
+    width:750rpx;
     /*background-color:rgba(237,237,237,0.8);*/
+}
+
+.search-bar{
+  width:750rpx;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  margin:10rpx auto;
+}
+
+.search-bar > image{
+  width:20rpx;
+  height:28rpx;
+  margin-left:40rpx;
+}
+
+.location-text{
+  color:#FF4949;
+  font-size:26rpx;
+  margin-left:6rpx;
+}
+
+.search-container{
+  width:539rpx;
+  display:flex;
+  flex-direction:row;
+  margin-left:40rpx;
+  border-radius:100rpx;
+  background:#f3f3f3;
+  align-items:center;
+  padding:3rpx;
+  padding-left:30rpx;
+}
+
+.search-container image{
+  width:28rpx;
+  height:28rpx;
+}
+
+.search-container input{
+  font-size:26rpx;
+  padding-left:10rpx;
 }
