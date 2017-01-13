@@ -68,7 +68,7 @@
           </ul>
         </view>
       </view>
-    <view wx:for="{{hosArray}}" wx:for-item="item" wx:key="{{item._id}}">
+    <view wx:for="{{searchArray}}" wx:for-item="item" wx:key="{{item._id}}">
       <view class="list-row">
         <view class="list-image-wrapper">
            <image src="{{imgAddress}}{{item.name}}/{{item.logo}}.png" />
