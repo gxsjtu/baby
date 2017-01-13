@@ -26,6 +26,8 @@ HospitalListSvc.prototype.getLocation = function() {
             fail: function(err) {
                 // reject(err)
                 request(GLOBAL.SERVER + "/hospital/getAll", '', "GET").then(data => {
+                  console.log('datadata1')
+                  console.log(data)
                     resolve(data)
                 })
             }

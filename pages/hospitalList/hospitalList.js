@@ -20,10 +20,13 @@ Page({
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalListSvc();
         hospitalSvc.getLocation().then(data => {
+          console.log('startsetdata')
+          console.log(data)
             this.setData({
                 searchArray: data.data.data.data, //查询结果
                 hosArray: data.data.data.data //全部列表
             })
+            console.log('end')
         }). finally(() => {
             wx.hideToast();
         })
