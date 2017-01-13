@@ -10,16 +10,82 @@
           </view>
         </view>
       <image style="width: 750rpx; height: 240rpx;"  src="../../assets/images/hospitalList/header.jpg" />
+      <view class="filter-container">
+
+        <view>
+          <view class="filter-item">
+            <view>全部</view>
+            <view class="filter-arrow"></view>
+          </view>
+        </view>
+        <view style="display:none;">
+          <ul>
+            <li>111</li>
+            <li>123</li>
+            <li>222</li>
+          </ul>
+        </view>
+
+        <view>
+          <view class="filter-item">
+            <view>区域</view>
+            <view class="filter-arrow"></view>
+          </view>
+        </view>
+        <view style="display:none;">
+          <ul>
+            <li>111</li>
+            <li>123</li>
+            <li>222</li>
+          </ul>
+        </view>
+
+        <view>
+          <view class="filter-item">
+            <view>智能排序</view>
+            <view class="filter-arrow"></view>
+          </view>
+        </view>
+        <view style="display:none;">
+          <ul>
+            <li>111</li>
+            <li>123</li>
+            <li>222</li>
+          </ul>
+        </view>
+
+        <view>
+          <view class="filter-item">
+            <view>筛选</view>
+            <view class="filter-arrow"></view>
+          </view>
+        </view>
+        <view style="display:none;">
+          <ul>
+            <li>111</li>
+            <li>123</li>
+            <li>222</li>
+          </ul>
+        </view>
+
+      </view>
         <view class="section">
             <picker range="{{array}}" value="{{index}}" bindchange="bindp" placeholder="aaa">
                 <input placeholder="地区" value="{{array[index]}}"/>
             </picker>
         </view>
-    <view wx:for="{{searchArray}}" wx:for-item="item" wx:key="{{item._id}}" style="flex:left">
-         <image src="{{imgAddress}}{{item.name}}/{{item.logo}}.png" style="width:60px;height:60px"></image>
-          <text style="display:block;font-size:16px">{{item.name}}</text>
-          <text style="color:red;font-size:16px;display:block">建卡时间：9周之前</text>
-          <text style="color:gray;font-size:16px">顺产：￥5000 / 剖腹产：￥8000</text>
-     </view>
+    <view wx:for="{{hosArray}}" wx:for-item="item" wx:key="{{item._id}}">
+      <view class="list-row">
+        <view class="list-image-wrapper">
+           <image src="{{imgAddress}}{{item.name}}/{{item.logo}}.png" />
+        </view>
+        <view class="hos-container">
+            <view class="hos-name">{{item.name}}</view>
+            <view class="hos-date">建卡时间:9周之前</view>
+            <view class="hos-price">顺产:￥5000 / 剖腹产:￥8000</view>
+        </view>
+        <view class="hos-distance">10.4km</view>
+      </view>
     </view>
+  </view>
 </view>
