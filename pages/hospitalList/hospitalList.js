@@ -1,6 +1,6 @@
 const HospitalListSvc = require('../../services/hospitalListSvc.js')
 const GLOBAL = require('../../global.js');
-const done = require('../../utils/promise/done.js').done;
+const filter = require('../../utils/lodash.filter');
 
 Page({
     data: {
@@ -10,8 +10,7 @@ Page({
         ],
         hosArray: [],
         txt: "地区",
-        imgAddress: GLOBAL.SERVER + "/images/",
-        searchKey: ""
+        imgAddress: GLOBAL.SERVER + "/images/"
     },
     bindp: function(e) {
         this.setData({index: e.detail.value})
@@ -21,24 +20,22 @@ Page({
         var hospitalSvc = new HospitalListSvc()
         hospitalSvc.getLocation().then(data => {
             this.setData({
-                searchArray: data.data.data, //查询结果
-                hosArray: data.data.data //全部列表
+                searchArray: data.data.data.data, //查询结果
+                hosArray: data.data.data.data //全部列表
             })
-        }).done(() => {
-            console.log('done');
-            wx.hideToast();
         });
     },
     searchFunc: function(e) {
-        var list = [];
-        for (var i = 0; i < this.data.hosArray.length; i++) {
-            if (this.data.hosArray[i] != null) {
-                if (this.data.hosArray[i].name.indexOf(e.detail.value) > 0) {
-                    list.push(this.data.hosArray[i])
-                }
-            }
+        if (e.detail.value == "") {
+            this.setData({
+                searchArray: this.data.hosArray, //查询结果
+            })
+        } else {
+            var list = [];
+            list = filter(this.data.hosArray, function(item) {
+                return item.name.indexOf(e.detail.value) >= 0
+            })
+            this.setData({searchArray: list})
         }
-        this.setData({searchArray: list})
     }
-
 })
