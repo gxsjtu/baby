@@ -67,13 +67,7 @@
             <li>222</li>
           </ul>
         </view>
-
       </view>
-        <view class="section">
-            <picker range="{{array}}" value="{{index}}" bindchange="bindp" placeholder="aaa">
-                <input placeholder="地区" value="{{array[index]}}"/>
-            </picker>
-        </view>
     <view wx:for="{{hosArray}}" wx:for-item="item" wx:key="{{item._id}}">
       <view class="list-row">
         <view class="list-image-wrapper">
