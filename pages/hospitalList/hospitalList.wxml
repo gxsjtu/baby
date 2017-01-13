@@ -10,20 +10,11 @@
                 <input placeholder="地区" value="{{array[index]}}"/>
             </picker>
         </view>
-        <view wx:for="hosArray" wx:for-item="item" style="flex:left">
-            <table>
-                <tr>
-                    <td> 
-                        <image src="../../assets/images/tabs/do_unselected.png" style="width:60px;height:60px"></image>
-                    </td>
-                    <td>
-                        <table>
-                            <tr><td>aaaaaaaaa</td></tr>
-                            <tr><td>建卡时间</td></tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </view>
+    <view wx:for="{{hosArray}}" wx:for-item="item" style="flex:left">
+         <image src="{{imgAddress}}{{item.name}}/{{item.logo}}.png" style="width:60px;height:60px"></image>
+          <text style="display:block;font-size:16px">{{item.name}}</text>
+          <text style="color:red;font-size:16px;display:block">建卡时间：9周之前</text>
+          <text style="color:gray;font-size:16px">顺产：￥5000 / 剖腹产：￥8000</text>
+     </view>
     </view>
 </view>

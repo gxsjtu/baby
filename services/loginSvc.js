@@ -1,14 +1,13 @@
-const gloabl = require('../global');
+const GLOBAL = require('../global.js');
 
 function LoginSvc(){
 
 }
 
 LoginSvc.prototype.login = function (code, res) {
-  console.log(gloabl.SERVER);
   return new Promise((resolve, reject) => {
      wx.request({
-        url: gloabl.SERVER + "/login",
+        url: GLOBAL.SERVER + "/login",
         data: {code: code, data: res},
         header: {
           'content-type': 'application/json'

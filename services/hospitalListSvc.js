@@ -8,7 +8,7 @@ var HospitalListSvc = function (){
 HospitalListSvc.prototype.getHospitalList = function(){
     return new Promise((resolve, reject) => {
         request(GLOBAL.SERVER + "/hospital/getAll/全部/全部", 'aaa' ,"GET").then(data => {
-
+            resolve(data)
         })
     })
 }
