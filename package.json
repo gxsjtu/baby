@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/gxsjtu/baby#readme",
   "dependencies": {
-    "lodash.merge": "^4.6.0"
+    "asap": "^2.0.5",
+    "lodash.merge": "^4.6.0",
+    "promise": "^7.1.1"
   }
 }
