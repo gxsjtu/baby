@@ -26,7 +26,6 @@ Page({
             });
             wx.hideToast();
         }).catch((err) => {
-            console.log(err);
             wx.hideToast();
         });
     },
