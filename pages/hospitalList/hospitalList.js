@@ -19,22 +19,18 @@ Page({
     onLoad: function () {
         var hospitalSvc = new HospitalListSvc()
         hospitalSvc.getLocation().then(data => {
-        console.log('setData1')
             this.setData({
                 searchArray: data.data.data,//查询结果
                 hosArray: data.data.data //全部列表
             })
-        console.log('endsetData1')
         })
     },
     searchFunc: function (e) {
         if (e.detail.value == "")
         {
-            console.log('setData')
             this.setData({
                 searchArray: this.data.hosArray,//查询结果
             })
-            console.log('endsetData')
          } else {
             var list = [];
             list = filter(this.data.hosArray, function(item){
