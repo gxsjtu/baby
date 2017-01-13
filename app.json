@@ -1,31 +1,32 @@
 {
-  "pages":[
-    "pages/hospitalList/hospitalList",
-    "pages/index/index"
-  ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "妈咪驾到",
-    "navigationBarTextStyle":"black",
-    "backgroundColor":"#f0f0f0"
-  },
-  "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "孕事任务",
-      "iconPath": "assets/images/tabs/do_selected.png",
-      "selectedIconPath": "assets/images/tabs/do_unselected.png"
+    "pages": [
+        "pages/index/index",
+        "pages/hospitalList/hospitalList"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "妈咪驾到",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#f0f0f0"
     },
-    {
-      "pagePath": "pages/index/index",
-      "text": "电子陪诊",
-      "iconPath": "assets/images/tabs/accompany_selected.png",
-      "selectedIconPath": "assets/images/tabs/accompany_unselected.png"
-    }],
-    "selectedColor": "#F26A77",
-    "color": "#6D6D6D",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "black"
-  }
+    "tabBar": {
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "孕事任务",
+                "iconPath": "assets/images/tabs/do_selected.png",
+                "selectedIconPath": "assets/images/tabs/do_unselected.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "电子陪诊",
+                "iconPath": "assets/images/tabs/accompany_selected.png",
+                "selectedIconPath": "assets/images/tabs/accompany_unselected.png"
+            }
+        ],
+        "selectedColor": "#F26A77",
+        "color": "#6D6D6D",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "white"
+    }
 }

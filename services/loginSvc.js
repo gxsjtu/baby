@@ -18,12 +18,11 @@ LoginSvc.prototype.login = function (code, res) {
           // success
           resolve(data.data)
         },
-        fail: function(err) { 
+        fail: function(err) {
           // fail
         },
         complete: function() {
           // complete
-          console.log('com')
         }
     })
   })

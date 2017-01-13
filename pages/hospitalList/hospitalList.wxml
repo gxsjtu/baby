@@ -10,7 +10,7 @@
                 <input placeholder="地区" value="{{array[index]}}"/>
             </picker>
         </view>
-    <view wx:for="{{hosArray}}" wx:for-item="item" style="flex:left">
+    <view wx:for="{{hosArray}}" wx:for-item="item" wx:key="{{item._id}}" style="flex:left">
          <image src="{{imgAddress}}{{item.name}}/{{item.logo}}.png" style="width:60px;height:60px"></image>
           <text style="display:block;font-size:16px">{{item.name}}</text>
           <text style="color:red;font-size:16px;display:block">建卡时间：9周之前</text>

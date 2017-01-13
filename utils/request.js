@@ -1,7 +1,5 @@
-module.exports.request = function(url, data, method){
-    console.log('token')
-    console.log(getApp().globalData.token)
-  return new Promise((resolve, reject) => {
+module.exports.request = function(url, data, method) {
+    return new Promise((resolve, reject) => {
         wx.request({
             url: url,
             data: data,
@@ -11,7 +9,7 @@ module.exports.request = function(url, data, method){
             },
             method: method, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
             // header: {}, // 设置请求的 header
-            success: function(res){
+            success: function(res) {
                 // success
                 resolve(res)
             },
@@ -22,6 +20,6 @@ module.exports.request = function(url, data, method){
             complete: function() {
                 // complete
             }
+        })
     })
-  })
 }

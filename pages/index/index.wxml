@@ -8,17 +8,17 @@
       </view>
       <view class="list-container">
         <view hidden="{{!firstItemSelected}}" class="list-wrap">
-          <view wx:for="{{beforeListData}}" wx:for-item="item" wx:key="id" class="list-item">
-            <view class="list-title">{{item.title}}</view>
-            <view class="list-date">{{item.date}}</view>
-            <view class="list-arrow"></view>
+          <view wx:for="{{beforeListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
+            <view class="list-title" data-item="{{item}}">{{item.title}}</view>
+            <view class="list-date" data-item="{{item}}">{{item.date}}</view>
+            <view class="list-arrow" data-item="{{item}}"></view>
           </view>
         </view>
         <view hidden="{{firstItemSelected}}" class="list-wrap">
-          <view wx:for="{{afterListData}}" wx:for-item="item" wx:key="id" class="list-item">
-            <view class="list-title">{{item.title}}</view>
-            <view class="list-date">{{item.date}}</view>
-            <view class="list-arrow"></view>
+          <view wx:for="{{afterListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
+            <view class="list-title" data-item="{{item}}" >{{item.title}}</view>
+            <view class="list-date" data-item="{{item}}" >{{item.date}}</view>
+            <view class="list-arrow" data-item="{{item}}"></view>
           </view>
         </view>
       </view>

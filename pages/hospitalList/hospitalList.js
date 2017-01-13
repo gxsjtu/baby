@@ -20,6 +20,6 @@ Page({
                 hosArray: data.data.data
             })
         })
-    } 
-    
+    }
+
 })
