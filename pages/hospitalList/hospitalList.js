@@ -15,7 +15,7 @@ Page({
     },
     onLoad: function(){
         var hospitalSvc = new HospitalListSvc()
-        hospitalSvc.getHospitalList().then(data => {
+        hospitalSvc.getLocation().then(data => {
             this.setData({
                 hosArray: data.data.data
             })
