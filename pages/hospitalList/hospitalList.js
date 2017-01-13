@@ -25,7 +25,8 @@ Page({
                 hosArray: data.data.data.data //全部列表
             });
             wx.hideToast();
-        }).catch(() => {
+        }).catch((err) => {
+            console.log(err);
             wx.hideToast();
         });
     },
