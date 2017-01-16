@@ -1,7 +1,6 @@
 const HospitalListSvc = require('../../services/hospitalListSvc.js')
 const GLOBAL = require('../../global.js');
 const filter = require('../../utils/lodash.filter');
-const take = require('../../utils/lodash.take');
 
 Page({
     data: {
@@ -18,6 +17,7 @@ Page({
         this.setData({index: e.detail.value})
     },
     onLoad: function() {
+        wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalListSvc();
         hospitalSvc.getLocation().then(data => {
           var dataList = data.data.data.data;

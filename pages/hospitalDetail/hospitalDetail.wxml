@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="view-container">
+    <image style="width: 750rpx; height: 240rpx;" src="../../assets/images/hospitalList/header.jpg" />
+    <view style="display:block">
+      <image src="../../assets/images/hospitaldetail/Combined.png" style="width: 26rpx; height: 34rpx;" />
+      <text>aaaaaaaa</text>
+      <image src="../../assets/images/hospitaldetail/tel.png" style="width: 56rpx; height: 56rpx;float:right;"></image>
+    </view>
+    <view>
+      <view style="color:gray;font-size:30rpx;">医院介绍</view>
+      <view>jjjj</view>
+    </view>
+    <view style="display:flex;flex-direction:row;">
+      <view style="width: 375rpx">
+        <view>
+          <image src="../../assets/images/hospitaldetail/card.png" style="width: 56rpx; height: 56rpx;"></image>建卡流程
+        </view>
+        <view>
+          <image src="../../assets/images/hospitaldetail/yw.png" style="width: 56rpx; height: 56rpx;"></image>医务设施
+        </view>
+        <view>
+          <image src="../../assets/images/hospitaldetail/zj.png" style="width: 56rpx; height: 56rpx;"></image>专家介绍
+        </view>
+      </view>
+      <view style="width: 375rpx">
+        <view>
+          <image src="../../assets/images/hospitaldetail/bf.png" style="width: 56rpx; height: 56rpx;"></image>病房介绍
+        </view>
+        <view>
+          <image src="../../assets/images/hospitaldetail/cj.png" style="width: 56rpx; height: 56rpx;"></image>
+          产检VIP服务
+        </view>
+      </view>
+    </view>
+          <button>选择作为我的生产医院</button>
+  </view>
+</view>
