@@ -101,20 +101,53 @@ Page({
             }
             else if(this.data.selectOrder == "生产费用")
             {
+                //先按费用排序，再按距离排序
+                //未知价格
                 let noPrice = filter(list,(item)=>{
                     return item.price == '未知';
                 });
+                //有价格
                 let hasPrice = filter(list,(item)=>{
                     return item.price != '未知';
                 });
-                console.log(noPrice);
-                console.log(hasPrice);
-                hasPrice = sortBy(hasDistance,(item)=>{
-                    return parseFloat(item.distance.replace('顺产：',''));
+                //有价格的排序
+                hasPrice = sortBy(hasPrice,(item)=>{
+                    return parseFloat(item.price.replace('顺产：',''));
                 });
-                console.log(hasPrice);
+
+                //有价格没有距离的
+                let priceNoDistance = filter(hasPrice,(item)=>{
+                    return item.name == '未知';
+                });
+                //有价格有距离的
+                let priceHasDistance = filter(hasPrice,(item)=>{
+                    return item.name != '未知';
+                });
+                //有价格有距离的排序
+                priceHasDistance = sortBy(priceHasDistance,(item)=>{
+                    return item.distance;
+                });
+                //合并有价格的
+                hasPrice = concat(priceHasDistance,priceNoDistance);
+
+                //没有价格的排序
+
+                let noPriceAndDistance = filter(noPrice,(item)=>{
+                    return item.name == '未知';
+                });
+                let noPriceAndHasDistance = filter(noPrice,(item)=>{
+                    return item.name != '未知';
+                });
+                //没有价格有距离的排序
+                noPriceAndHasDistance = sortBy(noPriceAndHasDistance,(item)=>{
+                    return item.distance;
+                });
+                //合并没有价格的的
+                noPrice = concat(noPriceAndHasDistance,noPriceAndDistance);
+
+                //合并有价格和没有价格的
                 list = concat(hasPrice,noPrice);
-                console.log(list);
+
             }
             else if(this.data.selectOrder == "建卡时间")
             {
