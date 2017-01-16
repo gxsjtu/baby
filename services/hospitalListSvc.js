@@ -24,4 +24,12 @@ HospitalListSvc.prototype.getLocation = function() {
     })
 }
 
+HospitalListSvc.prototype.getHospitalByID = function(id) {
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/hospital/getHospitalById?id=" + id, "", "GET").then(data => {
+            resolve(data)
+        })
+    })
+}
+
 module.exports = HospitalListSvc;
