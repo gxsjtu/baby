@@ -10,7 +10,7 @@ HospitalListSvc.prototype.getLocation = function() {
             success: function(res) {
                 var latitude = res.latitude //纬度
                 var longitude = res.longitude //经度
-                request(GLOBAL.SERVER + "/hospital/getAll?lng=" + longitude + "&lat=" + latitude, '', "GET").then(data => {
+                request(GLOBAL.SERVER + "/hospital/getAll/" + longitude + "/" + latitude, '', "GET").then(data => {
                     resolve(data)
                 })
             },
@@ -26,7 +26,7 @@ HospitalListSvc.prototype.getLocation = function() {
 
 HospitalListSvc.prototype.getHospitalByID = function(id) {
     return new Promise((resolve, reject) => {
-        request(GLOBAL.SERVER + "/hospital/getHospitalById?id=" + id, "", "GET").then(data => {
+        request(GLOBAL.SERVER + "/hospital/getHospitalById/" + id, "", "GET").then(data => {
             resolve(data)
         })
     })

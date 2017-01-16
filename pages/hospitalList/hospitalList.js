@@ -25,6 +25,9 @@ Page({
     bindp: function(e) {
         this.setData({index: e.detail.value})
     },
+    gotoHosDetail: function(e){
+         wx.navigateTo({ url: '../hospitalDetail/hospitalDetail?id=' + e.currentTarget.dataset.itemId });
+    },
     onLoad: function() {
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalListSvc();

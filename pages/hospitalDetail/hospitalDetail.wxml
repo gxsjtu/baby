@@ -1,14 +1,17 @@
 <view class="container">
   <view class="view-container">
-    <image style="width: 750rpx; height: 240rpx;" src="../../assets/images/hospitalList/header.jpg" />
+    <view class="class_outer">
+      <image style="width: 750rpx; height: 240rpx;" src="../../assets/images/hospitalList/header.jpg" />
+      <a class="class_cover">aaaaaa</a>
+    </view>
     <view style="display:block">
       <image src="../../assets/images/hospitaldetail/Combined.png" style="width: 26rpx; height: 34rpx;" />
-      <text>aaaaaaaa</text>
+      <text>{{hospital.address}}</text>
       <image src="../../assets/images/hospitaldetail/tel.png" style="width: 56rpx; height: 56rpx;float:right;"></image>
     </view>
     <view>
       <view style="color:gray;font-size:30rpx;">医院介绍</view>
-      <view>jjjj</view>
+      <text>{{hospital.description}}</text>
     </view>
     <view style="display:flex;flex-direction:row;">
       <view style="width: 375rpx">
@@ -32,6 +35,6 @@
         </view>
       </view>
     </view>
-          <button>选择作为我的生产医院</button>
+    <button>选择作为我的生产医院</button>
   </view>
 </view>
