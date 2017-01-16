@@ -88,14 +88,10 @@ Page({
                 let hasDistance = filter(list,(item)=>{
                     return item.name != '未知';
                 });
-                console.log(noDistance);
-                console.log(hasDistance);
                 hasDistance = sortBy(hasDistance,(item)=>{
                     return parseFloat(item.distance);
                 });
-                console.log(hasDistance);
                 list = concat(hasDistance,noDistance);
-                console.log(list)
             }
             else if(this.data.selectOrder == "口碑")
             {
@@ -103,7 +99,27 @@ Page({
                     return -item.score;
                 });
             }
-            
+            else if(this.data.selectOrder == "生产费用")
+            {
+                let noPrice = filter(list,(item)=>{
+                    return item.price == '未知';
+                });
+                let hasPrice = filter(list,(item)=>{
+                    return item.price != '未知';
+                });
+                console.log(noPrice);
+                console.log(hasPrice);
+                hasPrice = sortBy(hasDistance,(item)=>{
+                    return parseFloat(item.distance.replace('顺产：',''));
+                });
+                console.log(hasPrice);
+                list = concat(hasPrice,noPrice);
+                console.log(list);
+            }
+            else if(this.data.selectOrder == "建卡时间")
+            {
+
+            }
         }
         if(this.data.selectFilter != "筛选")
         {
