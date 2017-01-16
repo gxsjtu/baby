@@ -2,7 +2,10 @@
   <view class="view-container">
     <view class="class_outer">
       <image style="width: 750rpx; height: 240rpx;" src="../../assets/images/hospitalList/header.jpg" />
-      <a class="class_cover">aaaaaa</a>
+      <view class="class_cover">
+        <text style="display:block;height:30rpx;">{{hospital.name}}</text>
+        <text>{{hospital.level}}</text>
+      </view>
     </view>
     <view style="display:block">
       <image src="../../assets/images/hospitaldetail/Combined.png" style="width: 26rpx; height: 34rpx;" />

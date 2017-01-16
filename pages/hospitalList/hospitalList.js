@@ -32,7 +32,7 @@ Page({
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalListSvc();
         hospitalSvc.getLocation().then(data => {
-          var dataList = data.data.data.data;
+          var dataList = data.data.data;
             this.setData({
                 searchArray: dataList, //查询结果
                 hosArray: dataList//全部列表
