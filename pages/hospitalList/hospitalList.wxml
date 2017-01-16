@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container" bindtap="containerClick">
     <view class="view-container">
         <view class="search-bar">
           <image src="../../assets/images/hospitalList/location.png" />
@@ -12,19 +12,22 @@
       <image style="width: 750rpx; height: 240rpx;"  src="../../assets/images/hospitalList/header.jpg" />
       <view class="filter-container">
 
-        <view>
+        <view catchtap="starFilter">
           <view class="filter-item">
-            <view>全部</view>
+            <view>{{selectStar}}</view>
             <view class="filter-arrow"></view>
           </view>
         </view>
-        <view style="display:none;">
-          <ul>
-            <li>111</li>
-            <li>123</li>
-            <li>222</li>
-          </ul>
-        </view>
+
+         <view class="select-container" hidden="{{!starOpen}}">
+              <view class="select" catchtap="select">
+                <view data-value="全部">全部</view>
+                <view data-value="三级">三级</view>
+                <view data-value="二级">二级</view>
+                <view data-value="私立">私立</view>
+                <view data-value="妇幼保健">妇幼保健</view>
+              </view>
+           </view>
 
         <view>
           <view class="filter-item">
