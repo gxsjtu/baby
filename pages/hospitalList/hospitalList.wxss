@@ -60,7 +60,7 @@ page{
   flex-direction:row;
   align-items:center;
   border-bottom:1px solid #EFEAEA;
-  padding:20rpx;
+  padding:20rpx 10rpx;
   background: #fdfdfd;
 }
 
@@ -77,8 +77,8 @@ page{
 .hos-container{
   display:flex;
   flex-direction:column;
-  margin-left:20rpx;
-  width: 480rpx;
+  margin-left:15rpx;
+  width: 510rpx;
 }
 
 .hos-name{
@@ -104,7 +104,7 @@ page{
 .hos-distance{
   color:#CFCFCF;
   font-size:26rpx;
-  width:120rpx;
+  width:115rpx;
   text-align: right;
 }
 
