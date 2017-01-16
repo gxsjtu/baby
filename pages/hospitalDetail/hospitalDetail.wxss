@@ -1,24 +1,41 @@
-.view-container{
-    height:100%;
-    width:750rpx;
+.view-container {
+  height: 100%;
+  width: 750rpx;
 }
 
-.class_outer{
-    display: block;
-    margin: 20rpx auto;
-    position: relative;
-    overflow: hidden;
-    height: 240rpx;
+.class_outer {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 240rpx;
 }
 
-.class_cover{
-    width: 100%;
-    height: 100rpx;
-    line-height: 100rpx;
-    background-color: rgba(0, 0, 0, .50);
-    color: #FFFFFF;
-    font-size: 20rpx;
-    position: absolute;
+.class_cover {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: rgba(0, 0, 0, 0.50);
+  color: #fff;
+  font-size: 20rpx;
+  position: absolute;
+  bottom: 0rpx;
+}
 
-    bottom:0rpx;
+.items-style {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  padding-top: 68rpx;
+}
+
+.btn-style {
+  /*padding-top: 54rpx;*/
+  background: #ff4949;
+  border-radius: 200rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #fff;
+  letter-spacing: -0.74px;
+  width: 390rpx;
+  height: 70rpx;
 }
