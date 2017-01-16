@@ -18,7 +18,6 @@ Page({
         this.setData({index: e.detail.value})
     },
     onLoad: function() {
-        // wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalListSvc();
         hospitalSvc.getLocation().then(data => {
           var dataList = data.data.data.data;
@@ -26,7 +25,10 @@ Page({
                 searchArray: dataList, //查询结果
                 hosArray: dataList//全部列表
             })
-        })
+           wx.hideToast();
+        }).catch((err) => {
+            wx.hideToast();
+        });
     },
     searchFunc: function(e) {
         if (e.detail.value == "") {
