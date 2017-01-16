@@ -17,10 +17,10 @@ Page({
         areaOpen: false,
         selectArea:'区域',
         orderOpen: false,
-        selectOrder:'智能排序',
+        selectOrder:'排序',
         filterOpen: false,
-        selectFilter:'筛选'
-        // searchKey:""
+        selectFilter:'筛选',
+        searchKey:""
     },
     bindp: function(e) {
         this.setData({index: e.detail.value})
@@ -45,45 +45,90 @@ Page({
     searchFunc: function(e) {
         if (e.detail.value == "") {
             this.setData({
-                searchArray: this.data.hosArray, //查询结果
+                searchKey:'',
             })
         } else {
-            var list = [];
-            list = filter(this.data.hosArray, function(item) {
-                return item.name.indexOf(e.detail.value) >= 0
-            })
-            this.setData({searchArray: list})
+            this.setData({
+                searchKey:e.detail.value,
+             })
         }
+        this.search();
+    },
+    //筛选方法
+    search:function(){
+        let list = this.data.hosArray;
+        if(this.data.searchKey != "")
+        {
+            list = filter(list,(item)=>{
+                return item.name.indexOf(this.data.searchKey) >= 0
+            })
+            console.log(list);
+        }
+        if(this.data.selectStar != "全部" && this.data.selectStar !="等级")
+        {
+            list = filter(list, (item)=> {
+                return item.level.indexOf(this.data.selectStar) >= 0
+            });   
+        }
+        if(this.data.selectArea != "全部" && this.data.selectArea != "区域")
+        {
+            list = filter(list, (item)=> {
+                return item.district.indexOf(this.data.selectArea) >= 0
+            });
+        }
+        if(this.data.selectOrder != "全部" && this.data.selectOrder != "排序")
+        {
+            
+        }
+        if(this.data.selectFilter != "全部" && this.data.selectFilter != "筛选")
+        {
+            
+        }
+        this.setData({
+            searchArray: list
+        })
     },
     containerClick:function(e){
       this.setData({starOpen:false,areaOpen:false,orderOpen:false,filterOpen:false,hideMask:true})
     },
+    maskMove:function(e)
+    {
+        console.log('move');
+    },
+    //等级
     starFilter:function(e)
     {
       this.setData({starOpen:!this.data.starOpen,hideMask:this.data.starOpen?true:false});
     },
     selectStar:function(e){
         this.setData({selectStar:e.target.dataset.value,starOpen:false,hideMask:true});
+        this.search();
     },
+    //区域
     areaFilter:function(e)
     {
       this.setData({areaOpen:!this.data.areaOpen,hideMask:this.data.areaOpen?true:false});
     },
     selectArea:function(e){
         this.setData({selectArea:e.target.dataset.value,areaOpen:false,hideMask:true});
+        this.search();
     },
+    //排序
     orderFilter:function(e)
     {
       this.setData({orderOpen:!this.data.orderOpen,hideMask:this.data.orderOpen?true:false});
     },
     selectOrder:function(e){
         this.setData({selectOrder:e.target.dataset.value,orderOpen:false,hideMask:true});
+        this.search();
     },
+    //筛选
     filterFilter:function(e)
     {
       this.setData({filterOpen:!this.data.filterOpen,hideMask:this.data.filterOpen?true:false});
     },
     selectFilter:function(e){
         this.setData({selectFilter:e.target.dataset.value,filterOpen:false,hideMask:true});
+        this.search();
     }
 })

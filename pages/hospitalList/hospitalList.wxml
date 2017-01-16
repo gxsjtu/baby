@@ -1,6 +1,6 @@
 <!--index.wxml-->
-<view class="container" bindtap="containerClick">
-<view class="mask" hidden="{{hideMask}}"></view>
+<view class="container {{hideMask?'':'crop'}}" bindtap="containerClick">
+<view class="mask" hidden="{{hideMask}}" bindtouchmove="maskMove"></view>
     <view class="view-container">
         <view class="search-bar">
           <image src="../../assets/images/hospitalList/location.png" />
@@ -44,13 +44,27 @@
         <view class="select-container" hidden="{{!areaOpen}}">
          <view class="arrow area-arrow"></view>
          <view>
-              <view class="select-item" catchtap="selectArea">
+              <scroll-view scroll-y="true" class="select-item" catchtap="selectArea">
                 <view data-value="全部">全部</view>
-                <view data-value="区域1">区域1</view>
-                <view data-value="区域2">区域2</view>
-                <view data-value="区域3">区域3</view>
-                <view data-value="区域4">区域4</view>
-              </view>
+                <view data-value="浦东新区">浦东新区</view>
+                <view data-value="徐汇区">徐汇区</view>
+                <view data-value="黄埔区">黄埔区</view>
+                <view data-value="卢湾区">卢湾区</view>
+                <view data-value="静安区">静安区</view>
+                <view data-value="长宁区">长宁区</view>
+                <view data-value="闵行区">闵行区</view>
+                <view data-value="杨浦区">杨浦区</view>
+                <view data-value="普陀区">普陀区</view>
+                <view data-value="虹口区">虹口区</view>
+                <view data-value="宝山区">宝山区</view>
+                <view data-value="闸北区">闸北区</view>
+                <view data-value="松江区">松江区</view>
+                <view data-value="嘉定区">嘉定区</view>
+                <view data-value="青浦区">青浦区</view>
+                <view data-value="奉贤区">奉贤区</view>
+                <view data-value="金山区">金山区</view>
+                <view data-value="崇明县">崇明县</view>
+              </scroll-view>
            </view>
         </view>
 
@@ -70,10 +84,10 @@
          <view>
               <view class="select-item" catchtap="selectOrder">
                 <view data-value="全部">全部</view>
-                <view data-value="智能排序1">智能排序1</view>
-                <view data-value="智能排序2">智能排序2</view>
-                <view data-value="智能排序3">智能排序3</view>
-                <view data-value="智能排序4">智能排序4</view>
+                <view data-value="距离">距离(由近到远)</view>
+                <view data-value="口碑">口碑(由高到低)</view>
+                <view data-value="生产费用">生产费用(由便宜到贵)</view>
+                <view data-value="建卡时间">建卡时间(由早到晚)</view>
               </view>
            </view>
         </view>
@@ -93,10 +107,9 @@
          <view>
               <view class="select-item" catchtap="selectFilter">
                 <view data-value="全部">全部</view>
-                <view data-value="筛选1">筛选1</view>
-                <view data-value="筛选2">筛选2</view>
-                <view data-value="筛选3">筛选3</view>
-                <view data-value="筛选4">筛选4</view>
+                <view data-value="陪产导乐">陪产导乐/VIP</view>
+                <view data-value="产检套餐">产检套餐/无创</view>
+                <view data-value="四维彩超">DNA/四维彩超</view>
               </view>
            </view>
         </view>
@@ -110,7 +123,7 @@
         </view>
         <view class="hos-container">
             <view class="hos-name">{{item.name}}</view>
-            <view class="hos-date">建卡时间:{{item.date}}</view>
+            <view class="hos-date">建卡时间: {{item.date}}</view>
             <view class="hos-price">{{item.price}}</view>
         </view>
         <view class="hos-distance">{{item.distance}}</view>
