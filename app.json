@@ -1,9 +1,12 @@
 {
     "pages": [
-
+        "pages/hospitalDetail/hospitalDetail",
         "pages/index/index",
         "pages/hospitalList/hospitalList",
+<<<<<<< Updated upstream
         "pages/hospitalDetail/hospitalDetail",
+=======
+>>>>>>> Stashed changes
         "pages/hospitalImage/hospitalImage"
     ],
     "window": {
