@@ -1,12 +1,15 @@
 page{
-  background:white;
+  background:#fff;
   height:100%;
 }
 
 .view-container{
     height:100%;
     width:750rpx;
-    /*background-color:rgba(237,237,237,0.8);*/
+}
+
+.crop{
+  overflow: hidden;
 }
 
 .search-bar{
@@ -15,6 +18,7 @@ page{
   flex-direction:row;
   align-items:center;
   margin:10rpx auto;
+  background: #fff;
 }
 
 .search-bar > image{
@@ -57,6 +61,7 @@ page{
   align-items:center;
   border-bottom:1px solid #EFEAEA;
   padding:20rpx;
+  background: #fdfdfd;
 }
 
 .list-image-wrapper{
@@ -70,10 +75,10 @@ page{
 }
 
 .hos-container{
-  flex-grow:1;
   display:flex;
   flex-direction:column;
   margin-left:20rpx;
+  width: 480rpx;
 }
 
 .hos-name{
@@ -83,14 +88,14 @@ page{
 }
 
 .hos-date{
-  color:#ff4949;
+  color:#6d6d6d;
   font-size:26rpx;
   line-height:36rpx;
   margin-top:6rpx;
 }
 
 .hos-price{
-  color:#9d9d9d;
+  color:#f26a77;
   font-size:24rpx;
   line-height:28rpx;
   margin-top:6rpx;
@@ -99,7 +104,8 @@ page{
 .hos-distance{
   color:#CFCFCF;
   font-size:26rpx;
-  width:80rpx;
+  width:120rpx;
+  text-align: right;
 }
 
 .filter-container{
@@ -183,10 +189,16 @@ page{
   margin-left: 30rpx;
 }
 
-.select-item > view{
+.select-item > view,scroll-view view{
+  color:#3d3d3d;
+  font-family: PingFangSC-Regular;
   padding:30rpx 10rpx;
   border-bottom:1rpx solid rgba(211,211,211,0.3);
   font-size:30rpx;
+}
+
+scroll-view{
+  height: 500rpx;
 }
 
 .select-item > view::last-child{
