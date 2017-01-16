@@ -99,6 +99,7 @@ page{
 .hos-distance{
   color:#CFCFCF;
   font-size:26rpx;
+  width:80rpx;
 }
 
 .filter-container{
@@ -139,51 +140,52 @@ page{
   border:1px solid #d3d3d3;
   position:absolute;
   top:78rpx;
-  left: 25rpx;
+  left: 35rpx;
   display:flex;
   flex-direction: column;
   align-items: flex-start;
-  width:700rpx;
+  width:680rpx;
   z-index:1000;
+  border-radius: 4rpx;
 }
 
 .arrow{
-  width:12rpx;
-  height:12rpx;
+  width:18rpx;
+  height:18rpx;
   border-left:2rpx solid #d3d3d3;
   border-top:2rpx solid #d3d3d3;
   transform:rotate(45deg);
   margin-top:-10rpx;
-  margin-left:55rpx;
   background:white;
   z-index:1001;
 }
 
 .star-arrow{
-  margin-left:55rpx;
+  margin-left:45rpx;
 }
 
 .area-arrow{
-  margin-left:240rpx;
+  margin-left:230rpx;
 }
 
 .order-arrow{
-  margin-left:430rpx;
+  margin-left:420rpx;
 }
 
 .filters-arrow{
-  margin-left:605rpx;
+  margin-left:595rpx;
 }
 
 .select-item{
   display:flex;
   flex-direction:column;
-  width:700rpx;
+  width:650rpx;
+  margin-left: 30rpx;
 }
 
 .select-item > view{
-  padding:20rpx 10rpx;
-  border-bottom:1rpx solid rgba(211,211,211,0.5);
+  padding:30rpx 10rpx;
+  border-bottom:1rpx solid rgba(211,211,211,0.3);
   font-size:30rpx;
 }
 
@@ -194,9 +196,9 @@ page{
 .mask{
   position:absolute;
   background:rgba(0,0,0,0.5);
-  top:0rpx;
-  left:0rpx;
-  bottom:0rpx;
-  right:0rpx;
+  top:-2rpx;
+  left:-2rpx;
+  bottom:-2rpx;
+  right:-2rpx;
   z-index: 999;
 }
