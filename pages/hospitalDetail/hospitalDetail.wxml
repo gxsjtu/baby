@@ -3,38 +3,44 @@
     <view class="class_outer">
       <image style="width: 750rpx; height: 240rpx;" src="../../assets/images/hospitalList/header.jpg" />
       <view class="class_cover">
-        <text style="display:block;height:30rpx;">{{hospital.name}}</text>
+        <text style="display:block;height:26rpx;font-size:26rpx;padding-top:0rpx;">{{hospital.name}}</text>
         <text>{{hospital.level}}</text>
       </view>
     </view>
     <view style="display:block">
       <image src="../../assets/images/hospitaldetail/Combined.png" style="width: 26rpx; height: 34rpx;" />
-      <text>{{hospital.address}}</text>
-      <image src="../../assets/images/hospitaldetail/tel.png" style="width: 56rpx; height: 56rpx;float:right;"></image>
+      <text style="font-size:30rpx">{{hospital.address}}</text>
+      <view bindtap="callTel" data-tel="{{hospital.others[0].number}}">
+        <image src="../../assets/images/hospitaldetail/tel.png" style="width: 56rpx; height: 56rpx;float:right;"></image>
+      </view> 
     </view>
     <view>
-      <view style="color:gray;font-size:30rpx;">医院介绍</view>
-      <text>{{hospital.description}}</text>
+      <view style="color:#9D9D9D;font-size:26rpx;">医院介绍</view>
+      <block style="font-size:26rpx;">{{hospital.description}}</block>
     </view>
     <view style="display:flex;flex-direction:row;">
       <view style="width: 375rpx">
         <view>
-          <image src="../../assets/images/hospitaldetail/card.png" style="width: 56rpx; height: 56rpx;"></image>建卡流程
+          <image src="../../assets/images/hospitaldetail/card.png" style="width: 36rpx; height: 36rpx;"></image>
+          <text style="font-size:30rpx;">建卡流程</text>
         </view>
         <view>
-          <image src="../../assets/images/hospitaldetail/yw.png" style="width: 56rpx; height: 56rpx;"></image>医务设施
+          <image src="../../assets/images/hospitaldetail/yw.png" style="width: 36rpx; height: 36rpx;"></image>
+          <text style="font-size:30rpx;">医务设施</text>
         </view>
         <view>
-          <image src="../../assets/images/hospitaldetail/zj.png" style="width: 56rpx; height: 56rpx;"></image>专家介绍
+          <image src="../../assets/images/hospitaldetail/zj.png" style="width: 36rpx; height: 36rpx;"></image>
+          <text style="font-size:30rpx;">专家介绍</text>
         </view>
       </view>
       <view style="width: 375rpx">
         <view>
-          <image src="../../assets/images/hospitaldetail/bf.png" style="width: 56rpx; height: 56rpx;"></image>病房介绍
+          <image src="../../assets/images/hospitaldetail/bf.png" style="width: 36rpx; height: 36rpx;"></image>
+          <text style="font-size:30rpx;">病房介绍</text>
         </view>
         <view>
-          <image src="../../assets/images/hospitaldetail/cj.png" style="width: 56rpx; height: 56rpx;"></image>
-          产检VIP服务
+          <image src="../../assets/images/hospitaldetail/cj.png" style="width: 36rpx; height: 36rpx;"></image>
+          <text style="font-size:30rpx;">产检VIP服务</text>
         </view>
       </view>
     </view>
