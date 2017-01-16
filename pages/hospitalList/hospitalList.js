@@ -52,7 +52,7 @@ Page({
     {
       this.setData({starOpen:!this.data.starOpen})
     },
-    select:function(e){
+    selectStar:function(e){
         this.setData({selectStar:e.target.dataset.value,starOpen:false});
     }
 

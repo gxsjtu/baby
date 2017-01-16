@@ -19,8 +19,8 @@
           </view>
         </view>
 
-         <view class="select-container" hidden="{{!starOpen}}">
-              <view class="select" catchtap="select">
+         <view class="star-container" hidden="{{!starOpen}}">
+              <view class="select-star" catchtap="selectStar">
                 <view data-value="全部">全部</view>
                 <view data-value="三级">三级</view>
                 <view data-value="二级">二级</view>
