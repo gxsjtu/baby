@@ -110,7 +110,7 @@
         </view>
         <view class="hos-container">
             <view class="hos-name">{{item.name}}</view>
-            <view class="hos-date">建卡时间:{{item.date}}</view>
+            <view class="hos-date">建卡时间：{{item.date}}</view>
             <view class="hos-price">{{item.price}}</view>
         </view>
         <view class="hos-distance">{{item.distance}}</view>
