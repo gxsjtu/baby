@@ -1,6 +1,7 @@
 const HospitalListSvc = require('../../services/hospitalListSvc.js')
 const GLOBAL = require('../../global.js');
 const filter = require('../../utils/lodash.filter');
+const take = require('../../utils/lodash.take');
 
 Page({
     data: {
@@ -17,18 +18,14 @@ Page({
         this.setData({index: e.detail.value})
     },
     onLoad: function() {
-        wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
+        // wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalListSvc();
         hospitalSvc.getLocation().then(data => {
-          console.log('startsetdata')
-          console.log(data)
+          var dataList = data.data.data.data;
             this.setData({
-                searchArray: data.data.data.data, //查询结果
-                hosArray: data.data.data.data //全部列表
+                searchArray: dataList, //查询结果
+                hosArray: dataList//全部列表
             })
-            console.log('end')
-        }). finally(() => {
-            wx.hideToast();
         })
     },
     searchFunc: function(e) {
