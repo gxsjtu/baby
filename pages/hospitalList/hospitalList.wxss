@@ -1,5 +1,6 @@
 page{
   background:white;
+  height:100%;
 }
 
 .view-container{
@@ -133,26 +134,69 @@ page{
   margin-top:-8rpx;
 }
 
-.star-container{
+.select-container{
   background:white;
   border:1px solid #d3d3d3;
   position:absolute;
   top:78rpx;
-  left: 0rpx;
+  left: 25rpx;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width:700rpx;
+  z-index:1000;
 }
 
-.select-star{
+.arrow{
+  width:12rpx;
+  height:12rpx;
+  border-left:2rpx solid #d3d3d3;
+  border-top:2rpx solid #d3d3d3;
+  transform:rotate(45deg);
+  margin-top:-10rpx;
+  margin-left:55rpx;
+  background:white;
+  z-index:1001;
+}
+
+.star-arrow{
+  margin-left:55rpx;
+}
+
+.area-arrow{
+  margin-left:240rpx;
+}
+
+.order-arrow{
+  margin-left:430rpx;
+}
+
+.filters-arrow{
+  margin-left:605rpx;
+}
+
+.select-item{
   display:flex;
   flex-direction:column;
-  width:5em;
+  width:700rpx;
 }
 
-.select-star > view{
-  padding:10rpx 10rpx;
+.select-item > view{
+  padding:20rpx 10rpx;
   border-bottom:1rpx solid rgba(211,211,211,0.5);
   font-size:30rpx;
 }
 
-.select-star > view::last-child{
-  padding:10rpx 10rpx;
+.select-item > view::last-child{
+  padding:20rpx 10rpx;
+}
+
+.mask{
+  position:absolute;
+  background:rgba(0,0,0,0.5);
+  top:0rpx;
+  left:0rpx;
+  bottom:0rpx;
+  right:0rpx;
+  z-index: 999;
 }
