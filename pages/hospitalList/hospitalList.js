@@ -10,7 +10,9 @@ Page({
         ],
         hosArray: [],
         txt: "地区",
-        imgAddress: GLOBAL.SERVER + "/images/"
+        imgAddress: GLOBAL.SERVER + "/images/",
+        starOpen: false,
+        selectStar:'全部'
         // searchKey:""
     },
     bindp: function(e) {
@@ -42,6 +44,16 @@ Page({
             })
             this.setData({searchArray: list})
         }
+    },
+    containerClick:function(e){
+      this.setData({starOpen:false})
+    },
+    starFilter:function(e)
+    {
+      this.setData({starOpen:!this.data.starOpen})
+    },
+    selectStar:function(e){
+        this.setData({selectStar:e.target.dataset.value,starOpen:false});
     }
 
 })

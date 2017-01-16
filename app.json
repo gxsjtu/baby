@@ -1,6 +1,5 @@
 {
     "pages": [
-
         "pages/index/index",
         "pages/hospitalList/hospitalList",
         "pages/hospitalDetail/hospitalDetail",
