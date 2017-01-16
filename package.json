@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/gxsjtu/baby#readme",
   "dependencies": {
+    "lodash.concat": "^4.5.0",
     "lodash.filter": "^4.6.0",
-    "lodash.merge": "^4.6.0"
+    "lodash.merge": "^4.6.0",
+    "lodash.sortby": "^4.7.0"
   }
 }

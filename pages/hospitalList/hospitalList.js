@@ -1,6 +1,8 @@
 const HospitalListSvc = require('../../services/hospitalListSvc.js')
 const GLOBAL = require('../../global.js');
 const filter = require('../../utils/lodash.filter');
+const sortBy = require('../../utils/lodash.sortby');
+const concat = require('../../utils/lodash.concat');
 
 Page({
     data: {
@@ -64,23 +66,46 @@ Page({
             })
             console.log(list);
         }
-        if(this.data.selectStar != "全部" && this.data.selectStar !="等级")
+        if(this.data.selectStar !="等级")
         {
             list = filter(list, (item)=> {
                 return item.level.indexOf(this.data.selectStar) >= 0
             });   
         }
-        if(this.data.selectArea != "全部" && this.data.selectArea != "区域")
+        if(this.data.selectArea != "区域")
         {
             list = filter(list, (item)=> {
                 return item.district.indexOf(this.data.selectArea) >= 0
             });
         }
-        if(this.data.selectOrder != "全部" && this.data.selectOrder != "排序")
+        if(this.data.selectOrder != "排序")
         {
+            if(this.data.selectOrder == "距离")
+            {
+                let noDistance = filter(list,(item)=>{
+                    return item.name == '未知';
+                });
+                let hasDistance = filter(list,(item)=>{
+                    return item.name != '未知';
+                });
+                console.log(noDistance);
+                console.log(hasDistance);
+                hasDistance = sortBy(hasDistance,(item)=>{
+                    return parseFloat(item.distance);
+                });
+                console.log(hasDistance);
+                list = concat(hasDistance,noDistance);
+                console.log(list)
+            }
+            else if(this.data.selectOrder == "口碑")
+            {
+                list = sortBy(list,(item)=>{
+                    return -item.score;
+                });
+            }
             
         }
-        if(this.data.selectFilter != "全部" && this.data.selectFilter != "筛选")
+        if(this.data.selectFilter != "筛选")
         {
             
         }
