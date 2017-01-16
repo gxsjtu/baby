@@ -44,15 +44,6 @@
         <view class="select-container" hidden="{{!areaOpen}}">
          <view class="arrow area-arrow"></view>
          <view>
-<<<<<<< Updated upstream
-              <view class="select-item" catchtap="selectArea">
-                <view data-value="全部">全部</view>
-                <view data-value="区域1">区域1</view>
-                <view data-value="区域2">区域2</view>
-                <view data-value="区域3">区域3</view>
-                <view data-value="区域4">区域4</view>
-              </view>
-=======
               <scroll-view scroll-y="true" class="select-item" catchtap="selectArea">
                 <view data-value="区域">全部</view>
                 <view data-value="浦东新区">浦东新区</view>
@@ -74,7 +65,6 @@
                 <view data-value="金山区">金山区</view>
                 <view data-value="崇明县">崇明县</view>
               </scroll-view>
->>>>>>> Stashed changes
            </view>
         </view>
 
@@ -93,19 +83,11 @@
          <view class="arrow order-arrow"></view>
          <view>
               <view class="select-item" catchtap="selectOrder">
-<<<<<<< Updated upstream
-                <view data-value="全部">全部</view>
-                <view data-value="智能排序1">智能排序1</view>
-                <view data-value="智能排序2">智能排序2</view>
-                <view data-value="智能排序3">智能排序3</view>
-                <view data-value="智能排序4">智能排序4</view>
-=======
                 <view data-value="排序">全部</view>
                 <view data-value="距离">距离(由近到远)</view>
                 <view data-value="口碑">口碑(由高到低)</view>
                 <view data-value="生产费用">生产费用(由便宜到贵)</view>
                 <view data-value="建卡时间">建卡时间(由早到晚)</view>
->>>>>>> Stashed changes
               </view>
            </view>
         </view>
@@ -124,18 +106,10 @@
          <view class="arrow filters-arrow"></view>
          <view>
               <view class="select-item" catchtap="selectFilter">
-<<<<<<< Updated upstream
-                <view data-value="全部">全部</view>
-                <view data-value="筛选1">筛选1</view>
-                <view data-value="筛选2">筛选2</view>
-                <view data-value="筛选3">筛选3</view>
-                <view data-value="筛选4">筛选4</view>
-=======
                 <view data-value="筛选">全部</view>
                 <view data-value="陪产导乐">陪产导乐/VIP</view>
                 <view data-value="产检套餐">产检套餐/无创</view>
                 <view data-value="四维彩超">DNA/四维彩超</view>
->>>>>>> Stashed changes
               </view>
            </view>
         </view>
