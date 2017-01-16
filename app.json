@@ -1,7 +1,9 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/hospitalList/hospitalList"
+        "pages/hospitalList/hospitalList",
+        "pages/hospitalList/hospitalDetail",
+        "pages/hospitalList/hospitalImage"
     ],
     "window": {
         "backgroundTextStyle": "light",
