@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container" bindtap="containerClick">
+<view class="mask" hidden="{{hideMask}}"></view>
     <view class="view-container">
         <view class="search-bar">
           <image src="../../assets/images/hospitalList/location.png" />
@@ -19,8 +20,10 @@
           </view>
         </view>
 
-         <view class="star-container" hidden="{{!starOpen}}">
-              <view class="select-star" catchtap="selectStar">
+         <view class="select-container" hidden="{{!starOpen}}">
+         <view class="arrow star-arrow"></view>
+         <view>
+              <view class="select-item" catchtap="selectStar">
                 <view data-value="全部">全部</view>
                 <view data-value="三级">三级</view>
                 <view data-value="二级">二级</view>
@@ -28,48 +31,77 @@
                 <view data-value="妇幼保健">妇幼保健</view>
               </view>
            </view>
-
-        <view>
+        </view>
+        <view catchtap="areaFilter">
           <view class="filter-item">
-            <view>区域</view>
+            <view>{{selectArea}}</view>
             <view class="filter-arrow"></view>
           </view>
         </view>
-        <view style="display:none;">
-          <ul>
-            <li>111</li>
-            <li>123</li>
-            <li>222</li>
-          </ul>
+
+
+
+        <view class="select-container" hidden="{{!areaOpen}}">
+         <view class="arrow area-arrow"></view>
+         <view>
+              <view class="select-item" catchtap="selectArea">
+                <view data-value="全部">全部</view>
+                <view data-value="区域1">区域1</view>
+                <view data-value="区域2">区域2</view>
+                <view data-value="区域3">区域3</view>
+                <view data-value="区域4">区域4</view>
+              </view>
+           </view>
         </view>
 
-        <view>
+
+
+        <view catchtap="orderFilter">
           <view class="filter-item">
-            <view>智能排序</view>
+            <view>{{selectOrder}}</view>
             <view class="filter-arrow"></view>
           </view>
         </view>
-        <view style="display:none;">
-          <ul>
-            <li>111</li>
-            <li>123</li>
-            <li>222</li>
-          </ul>
+
+
+
+       <view class="select-container" hidden="{{!orderOpen}}">
+         <view class="arrow order-arrow"></view>
+         <view>
+              <view class="select-item" catchtap="selectOrder">
+                <view data-value="全部">全部</view>
+                <view data-value="智能排序1">智能排序1</view>
+                <view data-value="智能排序2">智能排序2</view>
+                <view data-value="智能排序3">智能排序3</view>
+                <view data-value="智能排序4">智能排序4</view>
+              </view>
+           </view>
         </view>
 
-        <view>
+
+
+        <view catchtap="filterFilter">
           <view class="filter-item">
-            <view>筛选</view>
+            <view>{{selectFilter}}</view>
             <view class="filter-arrow"></view>
           </view>
         </view>
-        <view style="display:none;">
-          <ul>
-            <li>111</li>
-            <li>123</li>
-            <li>222</li>
-          </ul>
+
+
+        <view class="select-container" hidden="{{!filterOpen}}">
+         <view class="arrow filters-arrow"></view>
+         <view>
+              <view class="select-item" catchtap="selectFilter">
+                <view data-value="全部">全部</view>
+                <view data-value="筛选1">筛选1</view>
+                <view data-value="筛选2">筛选2</view>
+                <view data-value="筛选3">筛选3</view>
+                <view data-value="筛选4">筛选4</view>
+              </view>
+           </view>
         </view>
+
+
       </view>
     <view wx:for="{{searchArray}}" wx:for-item="item" wx:key="{{item._id}}">
       <view class="list-row">
