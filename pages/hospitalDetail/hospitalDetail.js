@@ -8,6 +8,9 @@ Page({
         imgAddress: GLOBAL.SERVER + "/images/",
         imgSrc: "#"
     },
+    setDefault: function(){
+
+    },
     callTel: function(e){
         var hos = this.data.hospital.tel;
         var telArray = ["拨号"];

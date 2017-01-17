@@ -46,7 +46,7 @@ page{
 
 .btn-style {
   /*padding-top: 54rpx;*/
-  background: #ff4949;
+  background: #f26a77;
   border-radius: 200rpx;
   font-family: PingFangSC-Regular;
   font-size: 30rpx;
