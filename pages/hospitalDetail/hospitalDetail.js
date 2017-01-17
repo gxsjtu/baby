@@ -22,8 +22,10 @@ Page({
             wx.showToast({title: '设置失败，请重试！', icon: 'success', duration: 2000})
         });
     },
-    gotoImg: function(){
-        wx.navigateTo({ url: '../hospitalImage/hospitalImage?id=' + this.data.hospital._id+'&name='+this.data.hospital.name });
+    gotoImg: function() {
+        wx.navigateTo({
+            url: '../hospitalImage/hospitalImage?id=' + this.data.hospital._id + '&name=' + this.data.hospital.name
+        });
     },
     callTel: function(e) {
         var hos = this.data.hospital.tel;
@@ -46,7 +48,9 @@ Page({
         })
     },
     gotoYW: function() {
-        wx.navigateTo({url: '../hospitalTerms/hospitalTerms?id=' + this.data.hospital._id});
+        wx.navigateTo({
+            url: '../hospitalTerms/hospitalTerms?id=' + this.data.hospital._id
+        });
     },
     onLoad: function(e) {
         //获取窗口高度
@@ -64,9 +68,10 @@ Page({
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalSvc();
         hospitalSvc.getHospitalByID(id).then(data => {
-            console.log(data.data.data);
-            this.setData({hospital: data.data.data, hasHos: true})
-            if (this.globalData.defaultHos === this.data.hospital._id) {
+            var globalData = getApp().globalData;
+            globalData.hospital = data.data.data;
+            this.setData({hospital: globalData.hospital, hasHos: true})
+            if (globalData.defaultHos === this.data.hospital._id) {
                 this.setData({btnDefaultDisabled: true});
             }
 
