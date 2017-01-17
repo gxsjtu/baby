@@ -126,8 +126,7 @@
             <view class="hos-date">建卡时间：{{item.date}}</view>
             <view class="hos-price">{{item.price}}</view>
         </view>
-        <!--<view class="hos-distance">{{item.distance}}</view>-->
-        <view class="hos-distance">55.5公里</view>
+        <view class="hos-distance">{{item.distance}}</view>
       </view>
     </view>
   </view>

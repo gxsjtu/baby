@@ -35,6 +35,40 @@ Page({
         var hospitalSvc = new HospitalListSvc();
         hospitalSvc.getLocation().then(data => {
           var dataList = data.data.data;
+
+          for(let i = 0; i<dataList.length;i++)
+          {
+            if(dataList[i].date=='未知'){
+              dataList[i].s = dataList[i].e = 999;
+            }
+            else{
+              if(dataList[i].date.indexOf('-')!=-1){
+                let arr = dataList[i].date.split('-');
+                dataList[i].s = parseInt(arr[0]);
+                dataList[i].e = parseInt(arr[1]);
+              }
+              else{
+                let date = parseInt(dataList[i].date);
+                dataList[i].s = date;
+                dataList[i].e = 0;
+              }
+            }
+
+            if(dataList[i].distance != '未知'){
+              dataList[i].d = parseFloat(dataList[i].distance);
+            }
+            else{
+              dataList[i].d=999;
+            }
+
+            if(dataList[i].price != '未知'){
+              dataList[i].p = parseFloat(dataList[i].price.replace('顺产：',''));
+            }
+            else{
+              dataList[i].p = 99999;
+            }
+          }
+
             this.setData({
                 searchArray: dataList, //查询结果
                 hosArray: dataList//全部列表
@@ -70,7 +104,7 @@ Page({
         {
             list = filter(list, (item)=> {
                 return item.level.indexOf(this.data.selectStar) >= 0
-            });   
+            });
         }
         if(this.data.selectArea != "区域")
         {
@@ -82,81 +116,24 @@ Page({
         {
             if(this.data.selectOrder == "距离")
             {
-                let noDistance = filter(list,(item)=>{
-                    return item.name == '未知';
-                });
-                let hasDistance = filter(list,(item)=>{
-                    return item.name != '未知';
-                });
-                hasDistance = sortBy(hasDistance,(item)=>{
-                    return parseFloat(item.distance);
-                });
-                list = concat(hasDistance,noDistance);
+                list = sortBy(list,['d','p','score']);
             }
             else if(this.data.selectOrder == "口碑")
             {
-                list = sortBy(list,(item)=>{
-                    return -item.score;
-                });
+              list = sortBy(list,['score','d','p']);
             }
             else if(this.data.selectOrder == "生产费用")
             {
-                //先按费用排序，再按距离排序
-                //未知价格
-                let noPrice = filter(list,(item)=>{
-                    return item.price == '未知';
-                });
-                //有价格
-                let hasPrice = filter(list,(item)=>{
-                    return item.price != '未知';
-                });
-                //有价格的排序
-                hasPrice = sortBy(hasPrice,(item)=>{
-                    return parseFloat(item.price.replace('顺产：',''));
-                });
-
-                //有价格没有距离的
-                let priceNoDistance = filter(hasPrice,(item)=>{
-                    return item.name == '未知';
-                });
-                //有价格有距离的
-                let priceHasDistance = filter(hasPrice,(item)=>{
-                    return item.name != '未知';
-                });
-                //有价格有距离的排序
-                priceHasDistance = sortBy(priceHasDistance,(item)=>{
-                    return item.distance;
-                });
-                //合并有价格的
-                hasPrice = concat(priceHasDistance,priceNoDistance);
-
-                //没有价格的排序
-
-                let noPriceAndDistance = filter(noPrice,(item)=>{
-                    return item.name == '未知';
-                });
-                let noPriceAndHasDistance = filter(noPrice,(item)=>{
-                    return item.name != '未知';
-                });
-                //没有价格有距离的排序
-                noPriceAndHasDistance = sortBy(noPriceAndHasDistance,(item)=>{
-                    return item.distance;
-                });
-                //合并没有价格的的
-                noPrice = concat(noPriceAndHasDistance,noPriceAndDistance);
-
-                //合并有价格和没有价格的
-                list = concat(hasPrice,noPrice);
-
+              list = sortBy(list,['p','d','score']);
             }
             else if(this.data.selectOrder == "建卡时间")
             {
-
+              list = sortBy(list,['s','e','d','p']);
             }
         }
         if(this.data.selectFilter != "筛选")
         {
-            
+
         }
         this.setData({
             searchArray: list
