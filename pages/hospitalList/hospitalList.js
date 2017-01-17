@@ -58,7 +58,7 @@ Page({
               dataList[i].d = parseFloat(dataList[i].distance);
             }
             else{
-              dataList[i].d=999;
+              dataList[i].d=9999;
             }
 
             if(dataList[i].price != '未知'){
@@ -68,6 +68,8 @@ Page({
               dataList[i].p = 99999;
             }
           }
+
+          dataList = sortBy(dataList,['d','s','e','p']);
 
             this.setData({
                 searchArray: dataList, //查询结果
@@ -98,7 +100,6 @@ Page({
             list = filter(list,(item)=>{
                 return item.name.indexOf(this.data.searchKey) >= 0
             })
-            console.log(list);
         }
         if(this.data.selectStar !="等级")
         {
@@ -116,19 +117,19 @@ Page({
         {
             if(this.data.selectOrder == "距离")
             {
-                list = sortBy(list,['d','p','score']);
+                list = sortBy(list,['d','s','e','p']);
             }
             else if(this.data.selectOrder == "口碑")
             {
-              list = sortBy(list,['score','d','p']);
+              list = sortBy(list,['score','s','e','p','d']);
             }
             else if(this.data.selectOrder == "生产费用")
             {
-              list = sortBy(list,['p','d','score']);
+              list = sortBy(list,['p','s','e','d']);
             }
             else if(this.data.selectOrder == "建卡时间")
             {
-              list = sortBy(list,['s','e','d','p']);
+              list = sortBy(list,['s','e','p','d']);
             }
         }
         if(this.data.selectFilter != "筛选")
