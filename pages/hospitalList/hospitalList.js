@@ -2,7 +2,6 @@ const HospitalSvc = require('../../services/hospitalSvc.js')
 const GLOBAL = require('../../global.js');
 const filter = require('../../utils/lodash.filter');
 const sortBy = require('../../utils/lodash.sortby');
-const concat = require('../../utils/lodash.concat');
 
 Page({
     data: {
