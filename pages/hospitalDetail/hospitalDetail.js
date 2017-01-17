@@ -48,9 +48,7 @@ Page({
         })
     },
     gotoYW: function() {
-        wx.navigateTo({
-            url: '../hospitalTerms/hospitalTerms?id=' + this.data.hospital._id
-        });
+        wx.navigateTo({url: '../hospitalTerms/hospitalTerms'});
     },
     onLoad: function(e) {
         //获取窗口高度
