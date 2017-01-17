@@ -34,7 +34,7 @@ HospitalSvc.prototype.getHospitalByID = function(id) {
 
 HospitalSvc.prototype.setDefaultHospital = function(hosId) {
     return new Promise((resolve, reject) => {
-        request(GLOBAL.SERVER + "/hospital/setDefaultHospitalById/" + id, null, "GET").then(data => {
+        request(GLOBAL.SERVER + "/hospital/setDefaultHospitalById/" + hosId, null, "GET").then(data => {
             resolve(data);
         }).catch(err => {
             console.log(err);
