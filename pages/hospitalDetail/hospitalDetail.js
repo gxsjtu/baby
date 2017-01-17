@@ -45,13 +45,15 @@ Page({
             fail: function(res) {}
         })
     },
+    gotoYW: function() {
+        wx.navigateTo({url: '../hospitalTerms/hospitalTerms?id=' + this.data.hospital._id});
+    },
     onLoad: function(e) {
         //获取窗口高度
         wx.getSystemInfo({
             success: (res) => {
                 // success
                 var h = (res.windowHeight - 55 - 1 - 2 - 2);
-                console.log(h);
                 this.setData({
                     scrollHeight: (h) + "px"
                 })
@@ -62,10 +64,12 @@ Page({
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalSvc();
         hospitalSvc.getHospitalByID(id).then(data => {
+            console.log(data.data.data);
             this.setData({hospital: data.data.data, hasHos: true})
             if (this.globalData.defaultHos === this.data.hospital._id) {
                 this.setData({btnDefaultDisabled: true});
             }
+
             wx.hideToast();
         }).catch(() => {
             wx.hideToast();

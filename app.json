@@ -1,10 +1,11 @@
 {
     "pages": [
-        "pages/hospitalDetail/hospitalDetail",
+
         "pages/index/index",
         "pages/hospitalList/hospitalList",
-
-        "pages/hospitalImage/hospitalImage"
+        "pages/hospitalDetail/hospitalDetail",
+        "pages/hospitalImage/hospitalImage",
+        "pages/hospitalTerms/hospitalTerms"
     ],
     "window": {
         "backgroundTextStyle": "light",

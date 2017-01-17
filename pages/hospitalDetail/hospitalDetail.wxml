@@ -32,7 +32,7 @@
             <image src="../../assets/images/hospitaldetail/card.png" style="width: 18px; height: 18px;"></image>
             <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">建卡流程</text>
           </view>
-          <view class="items-style border-b  border-r">
+          <view class="items-style border-b  border-r" bindtap="gotoYW">
             <image src="../../assets/images/hospitaldetail/yw.png" style="width: 18px; height: 18px;"></image>
             <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">医务设施</text>
           </view>
