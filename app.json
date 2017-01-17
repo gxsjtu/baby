@@ -1,9 +1,9 @@
 {
     "pages": [
-
+        "pages/hospitalDetail/hospitalDetail",
         "pages/index/index",
         "pages/hospitalList/hospitalList",
-        "pages/hospitalDetail/hospitalDetail",
+
         "pages/hospitalImage/hospitalImage"
     ],
     "window": {

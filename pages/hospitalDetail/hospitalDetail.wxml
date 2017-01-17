@@ -3,7 +3,7 @@
     <scroll-view scroll-y="true" style="height:{{scrollHeight}};background:#ebebeb">
       <view class="class_outer">
         <image wx:if="{{hasHos}}" style="width: 750rpx; height: 240rpx;" src="{{imgAddress}}{{hospital.name}}/title.png" />
-        <view class="class_cover" style="display:flex;flex-direction:row;align-items:center">
+        <view class="class_cover" style="display:flex;flex-direction:row;align-items:center" bindtap="gotoImg">
           <view style="width:700rpx;height:100%;display:flex;flex-direction:column;justify-content:center;">
             <text style="padding-left:20rpx;display:block;height:26rpx;font-family: PingFangSC-Regular;font-size: 13px;">{{hospital.name}}</text>
             <text style="padding-left:20rpx;padding-top:10rpx;font-family: PingFangSC-Regular;font-size:10px;">{{hospital.level}}</text>
@@ -57,5 +57,5 @@
     <view style="display:flex;flex-direction:row;align-items:center;height:55px;line-height:55px;">
       <button bindtap="setDefault" class="btn-style">选择作为我的生产医院</button>
     </view>
+    </view>
   </view>
-</view>
