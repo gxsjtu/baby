@@ -100,6 +100,9 @@ Page({
 
         this.setData(data);
     },
+    showImage:function(e){
+        console.log('show images:'+e.target.dataset.name);
+    },
     loadImages: function(images) {
 
         var images = [];
@@ -108,7 +111,8 @@ Page({
                 var obj = this.data.hj[i];
                 images.push({
                     pic: this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID + '.png',
-                    height: 0
+                    height: 0,
+                    name:obj.imageID
                 })
             }
         }
@@ -117,7 +121,8 @@ Page({
                 var obj = this.data.ss[i];
                 images.push({
                     pic: this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID + '.png',
-                    height: 0
+                    height: 0,
+                    name:obj.imageID
                 })
             }
         }
@@ -126,7 +131,8 @@ Page({
                 var obj = this.data.bf[i];
                 images.push({
                     pic: this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID + '.png',
-                    height: 0
+                    height: 0,
+                    name:obj.imageID
                 })
             }
         }
