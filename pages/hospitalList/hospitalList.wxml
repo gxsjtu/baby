@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container {{hideMask?'':'crop'}}" bindtap="containerClick">
-<view class="mask" hidden="{{hideMask}}" bindtouchmove="maskMove" ></view>
+<view class="mask" hidden="{{hideMask}}" ></view>
     <view class="view-container">
         <view class="search-bar">
           <image src="../../assets/images/hospitalList/location.png" />

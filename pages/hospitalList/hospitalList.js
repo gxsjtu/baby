@@ -143,10 +143,6 @@ Page({
     containerClick:function(e){
       this.setData({starOpen:false,areaOpen:false,orderOpen:false,filterOpen:false,hideMask:true})
     },
-    maskMove:function(e)
-    {
-        console.log('move');
-    },
     //等级
     starFilter:function(e)
     {
