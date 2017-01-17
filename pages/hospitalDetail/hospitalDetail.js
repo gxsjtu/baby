@@ -22,8 +22,10 @@ Page({
             wx.showToast({title: '设置失败，请重试！', icon: 'success', duration: 2000})
         });
     },
-    gotoImg: function(){
-        wx.navigateTo({ url: '../hospitalImage/hospitalImage?id=' + this.data.hospital._id+'&name='+this.data.hospital.name });
+    gotoImg: function() {
+        wx.navigateTo({
+            url: '../hospitalImage/hospitalImage?id=' + this.data.hospital._id + '&name=' + this.data.hospital.name
+        });
     },
     callTel: function(e) {
         var hos = this.data.hospital.tel;
@@ -51,7 +53,6 @@ Page({
             success: (res) => {
                 // success
                 var h = (res.windowHeight - 55 - 1 - 2 - 2);
-                console.log(h);
                 this.setData({
                     scrollHeight: (h) + "px"
                 })
@@ -62,7 +63,9 @@ Page({
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         var hospitalSvc = new HospitalSvc();
         hospitalSvc.getHospitalByID(id).then(data => {
-            this.setData({hospital: data.data.data, hasHos: true})
+            var globalData = getApp().globalData;
+            globalData.hospital = data.data.data;
+            this.setData({hospital: globalData.hospital, hasHos: true})
             if (this.globalData.defaultHos === this.data.hospital._id) {
                 this.setData({btnDefaultDisabled: true});
             }
