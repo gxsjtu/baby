@@ -1,9 +1,12 @@
 Page({
     data: {
-
+        terms: {}
     },
-    onLoad: function(e){
+    onLoad: function () {
         console.log("eee");
-        console.log(e.terms);
+        var app = getApp();
+        this.setData({
+            terms: app.globalData.hospital.terms
+        })
     }
 })
