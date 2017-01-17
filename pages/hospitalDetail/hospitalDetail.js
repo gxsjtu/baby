@@ -7,7 +7,6 @@ Page({
         hospital: {},
         imgAddress: GLOBAL.SERVER + "/images/",
         imgSrc: "#"
-        // scrollHeight: 'auto'
     },
     callTel: function(e){
         var hos = this.data.hospital.tel;
@@ -19,8 +18,6 @@ Page({
         wx.showActionSheet({
             itemList:telArray,
             success: function(res) {
-                console.log('res');
-                console.log(res);
                 var telStr = telArray[res.tapIndex];
                 var idx = telStr.indexOf("：");
                 var tel = telStr.substring(idx + 1);
@@ -30,42 +27,29 @@ Page({
                     // success
                   }
                 })
-                console.log(tel);
             },
             fail: function(res) {
 
             }
         })
-        // wx.makePhoneCall({
-        //   phoneNumber: e.currentTarget.dataset.,
-        //   success: function(res) {
-        //     // success
-        //   }
-        // })
     },
     onLoad: function (e) {
         //获取窗口高度
         wx.getSystemInfo({
           success: (res) => {
             // success
-            console.log('h');
-            console.log(res.pixelRatio);
-            console.log(res.windowHeight);
             var h = (res.windowHeight - 55 - 1 - 2 - 2);
             console.log(h);
             this.setData({
-                scrollHeight: (h * res.pixelRatio) + "rpx"
+                scrollHeight: (h) + "px"
             }) 
-            // console.log(this.data.scrollHeight);
           }
         })
 
         var id = e.id;
-        id="58046c7a89f15b21e09e2a28";
         wx.showToast({ title: '加载中', icon: 'loading', duration: 10000, mask: true });
         var hospitalSvc = new HospitalListSvc();
         hospitalSvc.getHospitalByID(id).then(data => {
-            console.log(data)
             this.setData({
                 hospital: data.data.data,
                 hasHos: true
