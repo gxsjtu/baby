@@ -2,7 +2,7 @@
 const LoginSvc = require('services/loginSvc');
 App({
     onLaunch: function() {
-           this.getUserInfo((userInfo) => {
+        this.getUserInfo((userInfo) => {
             //更新数据
             this.globalData.userInfo = userInfo
         })
@@ -33,6 +33,7 @@ App({
     globalData: {
         userInfo: null,
         token: null,
-        defaultHos: null
+        defaultHos: null,
+        hospital: null
     }
 })
