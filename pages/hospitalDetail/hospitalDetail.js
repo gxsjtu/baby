@@ -7,6 +7,7 @@ Page({
         hospital: {},
         imgAddress: GLOBAL.SERVER + "/images/",
         imgSrc: "#"
+        // scrollHeight: 'auto'
     },
     callTel: function(e){
         var hos = this.data.hospital.tel;
@@ -43,6 +44,22 @@ Page({
         // })
     },
     onLoad: function (e) {
+        //获取窗口高度
+        wx.getSystemInfo({
+          success: (res) => {
+            // success
+            console.log('h');
+            console.log(res.pixelRatio);
+            console.log(res.windowHeight);
+            var h = (res.windowHeight - 55 - 1 - 2 - 2);
+            console.log(h);
+            this.setData({
+                scrollHeight: (h * res.pixelRatio) + "rpx"
+            }) 
+            // console.log(this.data.scrollHeight);
+          }
+        })
+
         var id = e.id;
         id="58046c7a89f15b21e09e2a28";
         wx.showToast({ title: '加载中', icon: 'loading', duration: 10000, mask: true });

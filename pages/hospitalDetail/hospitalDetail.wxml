@@ -1,54 +1,60 @@
 <view class="container">
   <view class="view-container">
-    <view class="class_outer">
-      <image wx:if="{{hasHos}}" style="width: 750rpx; height: 240rpx;" src="{{imgAddress}}{{hospital.name}}/title.png"/>
-      <view class="class_cover" style="display:flex;flex-direction:row;align-items:center">
-      <view style="width:600rpx;">
-        <text style="position:relative;display:block;height:26rpx;font-size:26rpx;margin-top:-15rpx;padding-left:20rpx;padding-bottom:10rpx">{{hospital.name}}</text>
-        <text style="padding-left:20rpx;">{{hospital.level}}</text>
-        </view>
-        <!--<image style="padding-right:20rpx;" src="../../assets/images/hopitaldetail/rightPic.png"></image>-->
-      </view>
-    </view>
-    <view style="display:flex;flex-direction:row;width:750rpx;align-items:center;margin-top:30rpx;box-shadow:0 10rpx 4px #ebebeb;border-bottom:1px solid #e4e4e4">
-      <image src="../../assets/images/hospitaldetail/Combined.png" style="width: 26rpx; height: 34rpx;padding-left:30rpx;" />
-      <text style="font-size:30rpx;padding-left:8rpx;width:600rpx;">{{hospital.address}}</text>
-      <view bindtap="callTel">
-        <image src="../../assets/images/hospitaldetail/tel.png" style="width: 56rpx; height: 56rpx;"></image>
-      </view> 
-    </view>
-    <view style="box-shadow:0 10rpx 0 #ebebeb;border:1px solid #e4e4e4;padding-top:20rpx;padding-bottom:20rpx;">
-      <view style="color:#9D9D9D;font-size:26rpx; padding-left:30rpx;">医院介绍</view>
-      <view style="font-size:26rpx;color:#3D3D3D;padding-left:30rpx;padding-top:20rpx;padding-right:30rpx">{{hospital.description}}</view>
-    </view>
-    <view style="display:flex;flex-direction:row;box-shadow:0 5px 0px #ebebeb;border:2rpx solid #e4e4e4;padding-bottom:26rpx;">
-      <view style="width: 375rpx;padding-left:100rpx;">
-        <view class="items-style">
-          <image src="../../assets/images/hospitaldetail/card.png" style="width: 36rpx; height: 36rpx;"></image>
-          <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">建卡流程</text>
-        </view>
-        <view class="items-style">
-          <image src="../../assets/images/hospitaldetail/yw.png" style="width: 36rpx; height: 36rpx;"></image>
-          <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">医务设施</text>
-        </view>
-        <view class="items-style">
-          <image src="../../assets/images/hospitaldetail/zj.png" style="width: 36rpx; height: 36rpx;"></image>
-          <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">专家介绍</text>
+    <scroll-view scroll-y="true" style="height:{{scrollHeight}}">
+      <view class="class_outer">
+        <image wx:if="{{hasHos}}" style="width: 750rpx; height: 240rpx;" src="{{imgAddress}}{{hospital.name}}/title.png" />
+        <view class="class_cover" style="display:flex;flex-direction:row;align-items:center">
+          <view style="width:700rpx;">
+            <text style="position:relative;display:block;height:26rpx;font-size:26rpx;margin-top:-10rpx;padding-left:20rpx;padding-bottom:10rpx">{{hospital.name}}</text>
+            <text style="padding-left:20rpx;">{{hospital.level}}</text>
+          </view>
+
+          <!--<view style="width:100rpx;">-->
+          <image src="../../assets/images/hospitaldetail/rightPic.png" style="height:28rpx;width:28rpx;"></image>
+
+          <!--</view>-->
         </view>
       </view>
-      <view style="width: 375rpx">
-        <view class="items-style">
-          <image src="../../assets/images/hospitaldetail/bf.png" style="width: 36rpx; height: 36rpx;"></image>
-          <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">病房介绍</text>
-        </view>
-        <view class="items-style">
-          <image src="../../assets/images/hospitaldetail/cj.png" style="width: 36rpx; height: 36rpx;"></image>
-          <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">产检VIP服务</text>
+      <view style="display:flex;flex-direction:row;width:750rpx;align-items:center;margin-top:30rpx;box-shadow:0 10rpx 4px #ebebeb;border-bottom:2px solid #e4e4e4">
+        <image src="../../assets/images/hospitaldetail/Combined.png" style="width: 26rpx; height: 34rpx;padding-left:30rpx;" />
+        <text style="font-size:30rpx;padding-left:8rpx;width:600rpx;">{{hospital.address}}</text>
+        <view bindtap="callTel">
+          <image src="../../assets/images/hospitaldetail/tel.png" style="width: 56rpx; height: 56rpx;"></image>
         </view>
       </view>
-    </view>
-    <view style="padding-top:54rpx;border-top:2rpx solid #e4e4e4;">
-    <button class="btn-style">选择作为我的生产医院</button>
+      <view style="box-shadow:0 10rpx 0 #ebebeb;border:1px solid #e4e4e4;padding-top:20rpx;padding-bottom:20rpx;">
+        <view style="color:#9D9D9D;font-size:26rpx; padding-left:30rpx;">医院介绍</view>
+        <view style="font-size:26rpx;color:#3D3D3D;padding-left:30rpx;padding-top:20rpx;padding-right:30rpx">{{hospital.description}}</view>
+      </view>
+      <view style="display:flex;flex-direction:row;border-top:2rpx solid #e4e4e4;padding-bottom:26rpx;">
+        <view style="width: 375rpx;padding-left:100rpx;">
+          <view class="items-style">
+            <image src="../../assets/images/hospitaldetail/card.png" style="width: 36rpx; height: 36rpx;"></image>
+            <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">建卡流程</text>
+          </view>
+          <view class="items-style">
+            <image src="../../assets/images/hospitaldetail/yw.png" style="width: 36rpx; height: 36rpx;"></image>
+            <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">医务设施</text>
+          </view>
+          <view class="items-style">
+            <image src="../../assets/images/hospitaldetail/zj.png" style="width: 36rpx; height: 36rpx;"></image>
+            <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">专家介绍</text>
+          </view>
+        </view>
+        <view style="width: 375rpx">
+          <view class="items-style">
+            <image src="../../assets/images/hospitaldetail/bf.png" style="width: 36rpx; height: 36rpx;"></image>
+            <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">病房介绍</text>
+          </view>
+          <view class="items-style">
+            <image src="../../assets/images/hospitaldetail/cj.png" style="width: 36rpx; height: 36rpx;"></image>
+            <text style="font-size:30rpx;color:#3D3D3D;padding-left:12rpx;">产检VIP服务</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view style="display:flex;flex-direction:row;align-items:center;border-top:1rpx solid #e4e4e4;height:110rpx;line-height:110rpx;">
+      <button class="btn-style">选择作为我的生产医院</button>
     </view>
   </view>
 </view>
