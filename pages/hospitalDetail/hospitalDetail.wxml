@@ -1,6 +1,6 @@
 <view class="container">
   <view class="view-container">
-    <scroll-view scroll-y="true" style="height:{{scrollHeight}};background:#ebebeb">
+    <scroll-view scroll-y="true" style="height:{{scrollHeight}};">
       <view class="class_outer">
         <image wx:if="{{hasHos}}" style="width: 750rpx; height: 240rpx;" src="{{imgAddress}}{{hospital.name}}/title.png" />
         <view class="class_cover" style="display:flex;flex-direction:row;align-items:center" bindtap="gotoImg">
@@ -54,7 +54,7 @@
       </view>
       <view style="background-color:#ebebeb;height:"></view>
     </scroll-view>
-    <view style="display:flex;flex-direction:row;align-items:center;height:55px;line-height:55px;">
+    <view style="display:flex;flex-direction:row;align-items:center;height:55px;position:absolute;bottom:0;width:100%;background:#fff">
       <button bindtap="setDefault" disabled="{{btnDefaultDisabled}}" class="{{btnDefaultDisabled ? 'btn-f' : 'btn-style'}}">选择作为我的生产医院</button>
     </view>
     </view>

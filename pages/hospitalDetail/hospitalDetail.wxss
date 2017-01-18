@@ -5,6 +5,8 @@ page {
 .view-container {
   width: 750rpx;
   height: 100%;
+  position: relative;
+  background:#ebebeb;
 }
 
 .scroll-style {
@@ -53,17 +55,26 @@ page {
   color: #fff;
   letter-spacing: -0.37px;
   border-radius: 100px;
+  width:195px;
+  height:35px;
+  line-height: 35px;
 }
 
 .btn-f {
-  background: #d7d7d7;
   border-radius: 100px;
   font-family: PingFangSC-Regular;
   font-size: 15px;
-  color: #fff;
   letter-spacing: -0.37px;
+  width:195px;
+  height:35px;
+  line-height: 35px;
 }
 
-button::after{
+button::after {
   border: 0px;
+}
+
+button[disabled][type="default"], wx-button[disabled]:not([type]) {
+  color: #fff;
+  background: #d7d7d7;
 }
