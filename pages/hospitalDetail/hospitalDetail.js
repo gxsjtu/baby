@@ -16,6 +16,7 @@ Page({
         hospitalSvc.setDefaultHospital(this.data.hospital._id).then(() => {
             //设置改按钮灰色
             //this.setData({btnDefaultDisabled: true});
+            getApp().globalData.defaultHos = this.data.hospital._id;
         }).catch(err => {
             //提示设置失败
             this.setData({btnDefaultDisabled: false});
