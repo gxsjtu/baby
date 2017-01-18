@@ -76,29 +76,14 @@ Page({
         imageObj.height = imgHeight;
 
         let loadingCount = this.data.loadingCount - 1;
-        // let col1 = this.data.col1;
-        // let col2 = this.data.col2;
-
-        // if (col1H <= col2H) {
-        //     col1H += imgHeight;
-        //     col1.push(imageObj);
-        // } else {
-        //     col2H += imgHeight;
-        //     col2.push(imageObj);
-        // }
 
         let data = {
             loadingCount: loadingCount
         };
 
-        
-
         this.setData(data);
 
-
         if (!loadingCount) {
-            
-            console.log(this.data.images)
             let col1 = this.data.col1;
             let col2 = this.data.col2;
             for(let i = 0; i<this.data.images.length; i++){
@@ -111,9 +96,6 @@ Page({
                     col2.push(img);
                 }
             }
-            console.log(col1);
-            console.log(col2);
-            //data.images = [];
 
             let loadComplete = {
                 loadingCount: loadingCount,
@@ -122,12 +104,10 @@ Page({
                 images:[]
             };
             this.setData(loadComplete);
-
         }
 
     },
     showImage:function(e){
-        // wx.navigateTo({url: '../hospitalImageShow/hospitalImageShow?hospitalname='+this.data.hospitalName+'&imagename='+e.target.dataset.name+'&segment='+this.data.activeIndex});
         let curr = e.target.dataset.url;
         wx.previewImage({
             current:encodeURI(curr),
@@ -150,33 +130,33 @@ Page({
             for (var i = 0; i < this.data.hj.length; i++) {
                 var obj = this.data.hj[i];
                 images.push({
-                    pic: this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID + '.png',
+                    pic: this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID,
                     height: 0,
                     name:obj.imageID
                 });
-                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID + '.png'));
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID));
             }
         }
         if (this.data.activeIndex == 1 || this.data.activeIndex == 3) {
             for (var i = 0; i < this.data.ss.length; i++) {
                 var obj = this.data.ss[i];
                 images.push({
-                    pic: this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID + '.png',
+                    pic: this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID,
                     height: 0,
                     name:obj.imageID
                 });
-                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID + '.png'));
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID));
             }
         }
         if (this.data.activeIndex == 2 || this.data.activeIndex == 3) {
             for (var i = 0; i < this.data.bf.length; i++) {
                 var obj = this.data.bf[i];
                 images.push({
-                    pic: this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID + '.png',
+                    pic: this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID,
                     height: 0,
                     name:obj.imageID
                 });
-                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID + '.png'));
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID));
             }
         }
 

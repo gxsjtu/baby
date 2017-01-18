@@ -2,7 +2,7 @@
   <view class="view-container">
     <scroll-view scroll-y="true" style="height:{{scrollHeight}};">
       <view class="class_outer">
-        <image wx:if="{{hasHos}}" style="width: 750rpx; height: 240rpx;" src="{{imgAddress}}{{hospital.name}}/title.png" />
+        <image wx:if="{{hasHos}}" style="width: 750rpx; height: 240rpx;" src="{{imgAddress}}{{hospital.name}}/title" />
         <view class="class_cover" style="display:flex;flex-direction:row;align-items:center" bindtap="gotoImg">
           <view style="width:700rpx;height:100%;display:flex;flex-direction:column;justify-content:center;">
             <text style="padding-left:20rpx;display:block;height:26rpx;font-family: PingFangSC-Regular;font-size: 13px;">{{hospital.name}}</text>

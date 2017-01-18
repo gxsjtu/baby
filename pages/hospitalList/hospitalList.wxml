@@ -96,7 +96,7 @@
 
             <view catchtap="filterFilter">
                 <view class="filter-item">
-                    <view>{{selectFilter}}</view>
+                    <view>{{selectFilter == '无创DNA检测' ? '无创DNA' : selectFilter}}</view>
                     <view class="filter-arrow"></view>
                 </view>
             </view>
@@ -108,8 +108,8 @@
                     <view class="select-item" catchtap="selectFilter">
                         <view data-value="筛选">全部</view>
                         <view data-value="陪产导乐">陪产导乐</view>
-                        <view data-value="VIP产检套餐">VIP产检套餐/</view>
-                        <view data-value="无创DNA">无创DNA</view>
+                        <view data-value="VIP产检套餐">VIP产检套餐</view>
+                        <view data-value="无创DNA检测">无创DNA</view>
                         <view data-value="四维彩超">四维彩超</view>
                     </view>
                 </view>
@@ -118,7 +118,7 @@
         <view wx:for="{{searchArray}}" wx:for-item="item" wx:key="{{item._id}}" data-item-id="{{item._id}}" bindtap="gotoHosDetail">
             <view class="list-row">
                 <view class="list-image-wrapper">
-                    <image src="{{imgAddress}}{{item.name}}/logo.png" />
+                    <image src="{{imgAddress}}{{item.name}}/logo" />
                 </view>
                 <view class="hos-container">
                     <view class="hos-name">{{item.name}}</view>

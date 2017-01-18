@@ -2,6 +2,7 @@ const HospitalSvc = require('../../services/hospitalSvc.js')
 const GLOBAL = require('../../global.js');
 const filter = require('../../utils/lodash.filter');
 const sortBy = require('../../utils/lodash.sortby');
+const merge = require('../../utils/lodash.merge');
 
 Page({
     data: {
@@ -23,16 +24,16 @@ Page({
         selectFilter: '筛选',
         searchKey: ""
     },
-    bindp: function(e) {
-        this.setData({index: e.detail.value})
+    bindp: function (e) {
+        this.setData({ index: e.detail.value })
     },
-    gotoHosDetail: function(e) {
+    gotoHosDetail: function (e) {
         wx.navigateTo({
             url: '../hospitalDetail/hospitalDetail?id=' + e.currentTarget.dataset.itemId
         });
     },
-    onLoad: function() {
-        wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
+    onLoad: function () {
+        wx.showToast({ title: '加载中', icon: 'loading', duration: 10000, mask: true });
         var hospitalSvc = new HospitalSvc();
         hospitalSvc.getLocation().then(data => {
             var dataList = data.data.data;
@@ -76,16 +77,16 @@ Page({
             wx.hideToast();
         });
     },
-    searchFunc: function(e) {
+    searchFunc: function (e) {
         if (e.detail.value == "") {
-            this.setData({searchKey: ''})
+            this.setData({ searchKey: '' })
         } else {
-            this.setData({searchKey: e.detail.value})
+            this.setData({ searchKey: e.detail.value })
         }
         this.search();
     },
     //筛选方法
-    search: function() {
+    search: function () {
         let list = this.data.hosArray;
         if (this.data.searchKey != "") {
             list = filter(list, (item) => {
@@ -113,27 +114,57 @@ Page({
                 list = sortBy(list, ['s', 'e', 'p', 'd']);
             }
         }
-        if (this.data.selectFilter != "筛选") {}
-        this.setData({searchArray: list})
+        if (this.data.selectFilter != "筛选") {
+            console.log(list);
+            list = filter(list, (item) => {
+                var hasTerms = false;
+
+                for(let i = 0; i<item.terms[0].docs.length;i++){
+                    if(item.terms[0].docs[i].name == this.data.selectFilter)
+                    {
+                        if(item.terms[0].docs[i].isHas)
+                        {
+                            hasTerms = true;
+                        }
+                        break;
+                    }
+                }
+
+                if(!hasTerms)
+                {
+                    for(let i = 0; i<item.terms[0].docs.length;i++){
+                        if(item.terms[1].docs[i].name == this.data.selectFilter)
+                        {
+                            if(item.terms[1].docs[i].isHas)
+                            {
+                                hasTerms = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                return hasTerms;
+            });
+        }
+        this.setData({ searchArray: list })
     },
-    containerClick: function(e) {
-        this.setData({starOpen: false, areaOpen: false, orderOpen: false, filterOpen: false, hideMask: true})
+    containerClick: function (e) {
+        this.setData({ starOpen: false, areaOpen: false, orderOpen: false, filterOpen: false, hideMask: true })
     },
     //等级
-    starFilter: function(e) {
+    starFilter: function (e) {
         this.setData({
             starOpen: !this.data.starOpen,
-            hideMask: this.data.starOpen
-                ? true
-                : false
+            hideMask: this.data.starOpen ? true : false
         });
     },
-    selectStar: function(e) {
-        this.setData({selectStar: e.target.dataset.value, starOpen: false, hideMask: true});
+    selectStar: function (e) {
+        this.setData({ selectStar: e.target.dataset.value, starOpen: false, hideMask: true });
         this.search();
     },
     //区域
-    areaFilter: function(e) {
+    areaFilter: function (e) {
         this.setData({
             areaOpen: !this.data.areaOpen,
             hideMask: this.data.areaOpen
@@ -141,12 +172,12 @@ Page({
                 : false
         });
     },
-    selectArea: function(e) {
-        this.setData({selectArea: e.target.dataset.value, areaOpen: false, hideMask: true});
+    selectArea: function (e) {
+        this.setData({ selectArea: e.target.dataset.value, areaOpen: false, hideMask: true });
         this.search();
     },
     //排序
-    orderFilter: function(e) {
+    orderFilter: function (e) {
         this.setData({
             orderOpen: !this.data.orderOpen,
             hideMask: this.data.orderOpen
@@ -154,12 +185,12 @@ Page({
                 : false
         });
     },
-    selectOrder: function(e) {
-        this.setData({selectOrder: e.target.dataset.value, orderOpen: false, hideMask: true});
+    selectOrder: function (e) {
+        this.setData({ selectOrder: e.target.dataset.value, orderOpen: false, hideMask: true });
         this.search();
     },
     //筛选
-    filterFilter: function(e) {
+    filterFilter: function (e) {
         this.setData({
             filterOpen: !this.data.filterOpen,
             hideMask: this.data.filterOpen
@@ -167,8 +198,8 @@ Page({
                 : false
         });
     },
-    selectFilter: function(e) {
-        this.setData({selectFilter: e.target.dataset.value, filterOpen: false, hideMask: true});
+    selectFilter: function (e) {
+        this.setData({ selectFilter: e.target.dataset.value, filterOpen: false, hideMask: true });
         this.search();
     }
 })
