@@ -13,7 +13,7 @@
       <view class="img_item">
         <view wx:for="{{col1}}" wx:key="id">
           <view style="position:relative;width:100%;height:{{item.height}}px">
-            <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px" data-name="{{item.name}}" bindtap="showImage"></image>
+            <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px" data-url="{{item.pic}}" bindtap="showImage"></image>
             <view class="text">{{item.name}}</view>
           </view>
         </view>
@@ -21,7 +21,7 @@
       <view class="img_item">
         <view wx:for="{{col2}}" wx:key="id">
         <view style="position:relative;width:100%;height:{{item.height}}px">
-            <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px" data-name="{{item.name}}" bindtap="showImage"></image>
+            <image src="{{item.pic}}" style="width:100%;height:{{item.height}}px" data-url="{{item.pic}}"  bindtap="showImage"></image>
             <view class="text">{{item.name}}</view>
           </view>
         </view>

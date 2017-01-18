@@ -17,9 +17,9 @@
 .menu-item{
     width:50%;
     text-align:center;
-    height:96rpx;
-    line-height:96rpx;
-    font-size: 40rpx;
+    height:86rpx;
+    line-height:86rpx;
+    font-size: 35rpx;
     position: relative;
 }
 

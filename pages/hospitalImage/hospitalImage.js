@@ -1,5 +1,4 @@
 const GLOBAL = require('../../global.js');
-const merge = require('../../utils/lodash.merge');
 var col1H = 0;
 var col2H = 0;
 Page({
@@ -16,7 +15,8 @@ Page({
         bf: [],
         images: [],
         col1: [],
-        col2: []
+        col2: [],
+        previewImage:[]
     },
     onLoad: function(e) {
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
@@ -62,7 +62,6 @@ Page({
         let imgWidth = this.data.imgWidth; //图片设置的宽度
         let scale = imgWidth / oImgW; //比例计算
         let imgHeight = oImgH * scale; //自适应高度
-
         let images = this.data.images;
         let imageObj = null;
 
@@ -77,35 +76,76 @@ Page({
         imageObj.height = imgHeight;
 
         let loadingCount = this.data.loadingCount - 1;
-        let col1 = this.data.col1;
-        let col2 = this.data.col2;
+        // let col1 = this.data.col1;
+        // let col2 = this.data.col2;
 
-        if (col1H <= col2H) {
-            col1H += imgHeight;
-            col1.push(imageObj);
-        } else {
-            col2H += imgHeight;
-            col2.push(imageObj);
-        }
+        // if (col1H <= col2H) {
+        //     col1H += imgHeight;
+        //     col1.push(imageObj);
+        // } else {
+        //     col2H += imgHeight;
+        //     col2.push(imageObj);
+        // }
 
         let data = {
-            loadingCount: loadingCount,
-            col1: col1,
-            col2: col2
+            loadingCount: loadingCount
         };
 
-        if (!loadingCount) {
-            data.images = [];
-        }
+        
 
         this.setData(data);
+
+
+        if (!loadingCount) {
+            
+            console.log(this.data.images)
+            let col1 = this.data.col1;
+            let col2 = this.data.col2;
+            for(let i = 0; i<this.data.images.length; i++){
+                let img = this.data.images[i];
+                if (col1H <= col2H) {
+                    col1H += img.height;
+                    col1.push(img);
+                } else {
+                    col2H += img.height;
+                    col2.push(img);
+                }
+            }
+            console.log(col1);
+            console.log(col2);
+            //data.images = [];
+
+            let loadComplete = {
+                loadingCount: loadingCount,
+                col1: col1,
+                col2: col2,
+                images:[]
+            };
+            this.setData(loadComplete);
+
+        }
+
     },
     showImage:function(e){
-        console.log('show images:'+e.target.dataset.name);
+        // wx.navigateTo({url: '../hospitalImageShow/hospitalImageShow?hospitalname='+this.data.hospitalName+'&imagename='+e.target.dataset.name+'&segment='+this.data.activeIndex});
+        let curr = e.target.dataset.url;
+        wx.previewImage({
+            current:encodeURI(curr),
+            urls:this.data.previewImage,
+            success:function(e){
+                console.log('s');
+                console.log(e);
+            },
+            fail:function(e){
+                console.log('e');
+                console.log(e);
+            }
+        });
     },
     loadImages: function(images) {
 
         var images = [];
+        var pImages = [];
         if (this.data.activeIndex == 0 || this.data.activeIndex == 3) {
             for (var i = 0; i < this.data.hj.length; i++) {
                 var obj = this.data.hj[i];
@@ -113,7 +153,8 @@ Page({
                     pic: this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID + '.png',
                     height: 0,
                     name:obj.imageID
-                })
+                });
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID + '.png'));
             }
         }
         if (this.data.activeIndex == 1 || this.data.activeIndex == 3) {
@@ -123,7 +164,8 @@ Page({
                     pic: this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID + '.png',
                     height: 0,
                     name:obj.imageID
-                })
+                });
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID + '.png'));
             }
         }
         if (this.data.activeIndex == 2 || this.data.activeIndex == 3) {
@@ -133,7 +175,8 @@ Page({
                     pic: this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID + '.png',
                     height: 0,
                     name:obj.imageID
-                })
+                });
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID + '.png'));
             }
         }
 
@@ -144,7 +187,7 @@ Page({
         }
         col1H = 0;
         col2H = 0;
-        this.setData({loadingCount: images.length, images: images, col1: [], col2: []});
+        this.setData({loadingCount: images.length, images: images, col1: [], col2: [], previewImage: pImages});
 
     }
 })
