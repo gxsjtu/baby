@@ -21,6 +21,7 @@ App({
                             loginSvc.login(info.code, res).then(data => {
                                 this.globalData.token = data.data.token,
                                 this.globalData.defaultHos = data.data.defaultHos
+                                console.log(this.globalData.defaultHos);
                             });
                             this.globalData.userInfo = res.userInfo
                             typeof cb == "function" && cb(this.globalData.userInfo)

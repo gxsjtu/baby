@@ -55,7 +55,7 @@
       <view style="background-color:#ebebeb;height:"></view>
     </scroll-view>
     <view style="display:flex;flex-direction:row;align-items:center;height:55px;line-height:55px;">
-      <button bindtap="setDefault" class="btn-style">选择作为我的生产医院</button>
+      <button bindtap="setDefault" class="btn-style" disabled="{{btnDefaultDisabled}}">选择作为我的生产医院</button>
     </view>
     </view>
   </view>
