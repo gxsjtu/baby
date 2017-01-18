@@ -1,8 +1,9 @@
 <view class="container">
   <view class="view-container">
     <view wx:for="{{terms}}" wx:for-item="term" class="outer-s">
-      <view class="name-s">
-        {{term.name}}
+      <view style="display:flex;flex-direction:row;align-items:center;">
+        <view style="background: #FF4949;border-radius: 1px;height:10px;width:1px;margin-left:-1px"></view>
+        <view class="name-s">{{term.name}}</view> 
       </view>
       <view style="display:flex;flex-direction:row;flex-wrap:wrap;">
         <view wx:for="{{term.docs}}" wx:for-item="item" class="{{item.isHas ? 'font-s' : 'no-s'}}">
