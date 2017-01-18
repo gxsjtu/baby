@@ -47,13 +47,23 @@ page {
 }
 
 .btn-style {
-  /*padding-top: 54rpx;*/
   background: #f26a77;
-  border-radius: 200rpx;
   font-family: PingFangSC-Regular;
-  font-size: 30rpx;
+  font-size: 15px;
   color: #fff;
-  letter-spacing: -0.74rpx;
-  width: 390rpx;
-  height: 70rpx;
+  letter-spacing: -0.37px;
+  border-radius: 100px;
+}
+
+.btn-f {
+  background: #d7d7d7;
+  border-radius: 100px;
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: -0.37px;
+}
+
+button::after{
+  border: 0px;
 }

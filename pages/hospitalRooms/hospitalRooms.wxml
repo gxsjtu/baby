@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="view-container">
+    <view wx:for="{{rooms}}" wx:for-item="item" wx:key="{{item.id}}">
+        <swiper indicator-dots="true">
+            <block wx:for="item.images">
+                <swiper-item>
+                    <image src="src"></image>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+  </view>
+</view>

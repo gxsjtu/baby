@@ -1,0 +1,5 @@
+.view-container {
+  background: #fff;
+  width: 750rpx;
+  height: 100%
+}
