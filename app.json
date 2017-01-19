@@ -7,7 +7,8 @@
         "pages/hospitalImage/hospitalImage",
         "pages/hospitalTerms/hospitalTerms",
         "pages/hospitalRooms/hospitalRooms",
-        "pages/hospitalVip/hospitalVip"
+        "pages/hospitalVip/hospitalVip",
+        "pages/hospitalCard/hospitalCard"
     ],
     "window": {
         "backgroundTextStyle": "light",

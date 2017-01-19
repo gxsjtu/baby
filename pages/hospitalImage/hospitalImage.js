@@ -21,12 +21,26 @@ Page({
     onLoad: function(e) {
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         this.setData({hospitalName: e.name});
-
+        wx.setNavigationBarTitle({
+            title:e.name
+        });
         var pic = getApp().globalData.hospital.imageList;
         if (pic) {
-            let hj = pic[0]["环境"];
-            let ss = pic[0]["设施"];
-            let bf = pic[0]["病房"];
+            let hj = [];
+            let ss = [];
+            let bf = [];
+            if(pic[0]["环境"] && pic[0]["环境"].length > 0)
+            {
+                hj = pic[0]["环境"];
+            }
+            if(pic[0]["设施"] && pic[0]["设施"].length > 0)
+            {
+                ss = pic[0]["设施"];
+            }
+            if(pic[0]["病房"] && pic[0]["病房"].length > 0)
+            {
+                bf = pic[0]["病房"];
+            }
 
             this.setData({hj: hj, ss: ss, bf: bf})
         }
@@ -158,6 +172,7 @@ Page({
                 pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID));
             }
         }
+
         let baseId = "img-" + (+ new Date());
 
         for (let i = 0; i < images.length; i++) {
