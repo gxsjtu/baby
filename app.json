@@ -5,7 +5,8 @@
         "pages/hospitalList/hospitalList",
         "pages/hospitalDetail/hospitalDetail",
         "pages/hospitalImage/hospitalImage",
-        "pages/hospitalTerms/hospitalTerms"
+        "pages/hospitalTerms/hospitalTerms",
+        "pages/hospitalCard/hospitalCard"
     ],
     "window": {
         "backgroundTextStyle": "light",

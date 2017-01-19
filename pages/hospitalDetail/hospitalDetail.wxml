@@ -28,7 +28,7 @@
       </view>
       <view style="background:#fff;display:flex;flex-direction:row;border-top:2rpx solid #e4e4e4;margin-top:10rpx;box-shadow:0 10rpx 0 #ebebeb;border:1px solid #e4e4e4;">
         <view style="width: 375rpx;margin-top:10px;margin-left:10px;margin-bottom:10px;">
-          <view class="items-style border-b  border-r">
+          <view class="items-style border-b  border-r" bindtap="gotoCard">
             <image src="../../assets/images/hospitaldetail/card.png" style="width: 18px; height: 18px;"></image>
             <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">建卡流程</text>
           </view>

@@ -22,11 +22,11 @@ Page({
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         this.setData({hospitalName: e.name});
 
-        var pic = getApp().globalData.hospital.imageList[0];
+        var pic = getApp().globalData.hospital.imageList;
         if (pic) {
-            let hj = pic.image[0]["环境"];
-            let ss = pic.image[1]["设施"];
-            let bf = pic.image[2]["病房"];
+            let hj = pic[0]["环境"];
+            let ss = pic[0]["设施"];
+            let bf = pic[0]["病房"];
 
             this.setData({hj: hj, ss: ss, bf: bf})
         }
@@ -122,8 +122,7 @@ Page({
             }
         });
     },
-    loadImages: function(images) {
-
+    loadImages: function(images) {;
         var images = [];
         var pImages = [];
         if (this.data.activeIndex == 0 || this.data.activeIndex == 3) {
@@ -159,7 +158,7 @@ Page({
                 pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID));
             }
         }
-
+        debugger;
         let baseId = "img-" + (+ new Date());
 
         for (let i = 0; i < images.length; i++) {
