@@ -13,7 +13,9 @@
         <view style="font-family: PingFangSC-Regular;font-size: 18px;color: #FF4949;letter-spacing: -0.44px;position:absolute;right:5px;">{{item.price}}</view>
       </view>
       <view class="item-s" style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;">预定电话：{{item.tel}}</view>
-      <view class="item-s" style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;">预约时间：{{item.time}}</view>
+      <view class="item-s" style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;">
+       <text style="width:85px;">预约时间：</text><text>{{item.time}}</text>
+      </view>
       <view style=" margin-left: 10px;">
         <view style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;padding-top:15px;">屋内设施：</view>
         <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #6D6D6D;letter-spacing: -0.32px;padding-top:10px;padding-bottom:20px;">{{item.facility}}</view>

@@ -1,0 +1,41 @@
+.view-container {
+  width: 730rpx;
+  height: 100%;
+  background: #fff;
+  margin-top:2px;
+}
+
+.container {
+  background: #ebebeb;
+  align-items: center;
+}
+
+page {
+  height: 100%;
+}
+
+.item-s {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #6d6d6d;
+  letter-spacing: -0.32px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.item-s:last-child {
+  border-width: 0;
+}
+
+.tc-s {
+  margin-right: 10px;
+  margin-left: 10px;
+  position: relative;
+  padding-top: 15px;
+  border-bottom: 1rpx solid #ddd;
+}
+
+.tc-s:last-child {
+  border-width: 0;
+}

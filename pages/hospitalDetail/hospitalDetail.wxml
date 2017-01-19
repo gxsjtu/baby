@@ -46,7 +46,7 @@
             <image src="../../assets/images/hospitaldetail/bf.png" style="width: 18px; height: 18px;padding-left:80rpx;"></image>
             <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">病房介绍</text>
           </view>
-          <view class=" border-b" style="display:flex;flex-direction:row;align-items:center;height:50px;">
+          <view class=" border-b" style="display:flex;flex-direction:row;align-items:center;height:50px;" bindtap="gotoVIP">
             <image src="../../assets/images/hospitaldetail/cj.png" style="width: 18px; height: 18px;padding-left:80rpx;"></image>
             <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">产检VIP服务</text>
           </view>

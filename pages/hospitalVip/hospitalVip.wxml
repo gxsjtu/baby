@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="view-container">
+    <view wx:for="{{suits}}" wx:for-item="suit" wx:key="{{hospital.id}}" style="margin-top:10px;padding-bottom:10px;background:#fff">
+      <view>
+        <view style="font-family: PingFangSC-Medium;font-size: 13px;color: #FFFFFF;letter-spacing: -0.32px;height:27px;background: #fff;">
+          <view style="background:#FF4949;float:left;height:27px;line-height:27px;padding-left:15px;">
+            {{suit.title}}
+            <view style="margin-left:15px;margin-right:-13px;float: right;border-left: 22px solid #fff;border-bottom: 25px solid #fff;transform: rotate(45deg);height: 0px;width: 0px;">
+            </view>
+                        
+          </view>
+        </view>
+      </view>
+      <view wx:for="{{suit.types}}" wx:for-item="type" wx:key="{{hospital.id}}" class="tc-s">
+        <view style="display:flex;flex-direction:row;align-items:center;">
+          <view style="font-family: PingFangSC-Medium;font-size: 18px;color: #333333;letter-spacing: -0.44px;">
+            {{type.title}}
+          </view>
+          <view style="position:absolute;right:0px;font-family: PingFangSC-Regular;font-size: 17px;color: #FF4949;letter-spacing: -0.41px;">
+            {{type.price}}
+          </view>
+        </view>
+        <view wx:for="{{type.comments}}" wx:for-item="comment" wx:key="{{hospital.id}}" class="item-s">
+          <view>{{comment}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

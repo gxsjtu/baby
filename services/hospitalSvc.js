@@ -16,7 +16,7 @@ HospitalSvc.prototype.getLocation = function() {
             },
             fail: function(err) {
                 // reject(err)
-                request(GLOBAL.SERVER + "/hospital/getAll", null, "GET").then(data => {
+                request(GLOBAL.SERVER + "/hospital/getAll/-1/-1", null, "GET").then(data => {
                     resolve(data);
                 });
             }
