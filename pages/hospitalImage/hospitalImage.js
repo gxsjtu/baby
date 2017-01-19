@@ -21,7 +21,9 @@ Page({
     onLoad: function(e) {
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
         this.setData({hospitalName: e.name});
-
+        wx.setNavigationBarTitle({
+            title:e.name
+        });
         var pic = getApp().globalData.hospital.imageList;
         if (pic) {
             let hj = [];

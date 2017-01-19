@@ -33,12 +33,12 @@ page {
 }
 
 .warning {
-  font-size: 20rpx;
+  font-size: 25rpx;
   color: #ff4949;
   font-family: PingFangSC-Regular;
   /*letter-spacing: -0.25rpx;*/
-  padding-left: 80rpx;
-  padding-right: 80rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
   padding-top: 8rpx;
   padding-bottom: 8rpx;
 }

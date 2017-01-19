@@ -11,6 +11,9 @@ Page({
         let setCard = hospital.setCard;
         let hospitalName = hospital.name;
         let imgAddress = GLOBAL.SERVER + "/images/"+hospitalName;
+        wx.setNavigationBarTitle({
+            title:hospitalName
+        });
         if (setCard) {
 
             let arrWarning = setCard.warnings;
@@ -66,5 +69,23 @@ Page({
             cards:cards
         });
         
+    },
+    showImages:function(e){
+        let curr = e.target.dataset.url;
+        let images = e.target.dataset.images;
+        let urls = [];
+        for(let i = 0; i<images.length;i++){
+            urls.push(images[i].url)
+        }
+        wx.previewImage({
+            current: curr,
+            urls: urls,
+            success: function(e) {
+                
+            },
+            fail: function(e) {
+                
+            }
+        });
     }
 })
