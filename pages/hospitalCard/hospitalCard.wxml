@@ -1,0 +1,15 @@
+<view class="view-container">
+  <view class="warning-container">
+    <view class="warning">注意事项</view>
+    <view class="warning" wx:for="{{warning}}" wx:for-item="item" wx:key="index">{{index+1}}，{{item}}</view>
+  </view>
+  <view class="step-container">
+    <view class="v-line"></view>
+    <view class="card-item" wx:for="{{cards}}" wx:key="index" wx:for-item="card">
+        <view class="name">{{card.name}}</view>
+
+            <view wx:for="{{card.steps}}" wx:key="index" wx:for-item="step" class="step">{{step}}</view>
+ 
+    </view>
+  </view>
+</view>

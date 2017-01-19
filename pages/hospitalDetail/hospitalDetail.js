@@ -54,6 +54,9 @@ Page({
     gotoYW: function() {
         wx.navigateTo({url: '../hospitalTerms/hospitalTerms'});
     },
+    gotoCard:function(){
+        wx.navigateTo({url: '../hospitalCard/hospitalCard'});
+    },
     onLoad: function(e) {
         //获取窗口高度
         wx.getSystemInfo({

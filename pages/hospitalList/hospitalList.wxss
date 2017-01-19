@@ -125,7 +125,7 @@ page{
   flex-direction:row;
   align-items:center;
   color:#9d9d9d;
-  font-size:30rpx;
+  font-size:28rpx;
   width:187rpx;
   justify-content:center;
 }
