@@ -118,7 +118,7 @@
         <view wx:for="{{searchArray}}" wx:for-item="item" wx:key="{{item._id}}" data-item-id="{{item._id}}" bindtap="gotoHosDetail">
             <view class="list-row">
                 <view class="list-image-wrapper">
-                    <image src="{{imgAddress}}{{item.name}}/logo.png" />
+                    <image src="{{imgAddress}}{{item.name}}/logo" />
                 </view>
                 <view class="hos-container">
                     <view class="hos-name">{{item.name}}</view>

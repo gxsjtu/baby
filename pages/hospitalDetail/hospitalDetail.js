@@ -28,6 +28,9 @@ Page({
             url: '../hospitalImage/hospitalImage?id=' + this.data.hospital._id + '&name=' + this.data.hospital.name
         });
     },
+    gotoBF: function() {
+        wx.navigateTo({url: '../hospitalRooms/hospitalRooms'});
+    },
     callTel: function(e) {
         var hos = this.data.hospital.tel;
         var telArray = ["拨号"];
