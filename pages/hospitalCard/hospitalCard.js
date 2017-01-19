@@ -30,7 +30,7 @@ Page({
                     var image = {};
                     image.height = 0;
                     image.url = url;
-                    image.id = baseId + "-" + j;
+                    image.id = baseId + "-" + i + "-" + j;
                     image.hidden = true;
                     obj.images.push(image);
                 }
