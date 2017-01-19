@@ -1,7 +1,7 @@
 <view class="view-container">
   <view class="warning-container">
     <view class="warning">注意事项</view>
-    <view class="warning" wx:for="{{warning}}" wx:for-item="item" wx:key="index">{{index+1}}，{{item}}</view>
+    <view class="warning" wx:for="{{warning}}" wx:for-item="item" wx:key="index">{{index+1}}. {{item}}</view>
   </view>
   <view class="step-container">
     <view class="v-line"></view>
