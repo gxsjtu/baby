@@ -1,24 +1,24 @@
 page {
-  height: 100%;
+  background: #ebebeb;
 }
 
 .view-container {
-  height: 100%;
   background: #ebebeb;
 }
 
 .v-line {
   position: absolute;
-  left: 44rpx;
+  top: 46rpx;
+  left: 35rpx;
   width: 2rpx;
-  height: 100%;
+  height: 95%;
   background-image: linear-gradient(-180deg, #ffdada 85%, rgba(255, 179, 179, 0.00) 100%);
 }
 
 .card-item {
   margin-left: 10rpx;
   margin-right: 10rpx;
-  padding: 20rpx 60rpx;
+  padding: 30rpx 60rpx;
   border-bottom: 4rpx solid #f5f5f5;
 }
 
@@ -44,8 +44,9 @@ page {
 }
 
 .step-container {
+  position: relative;
   border-radius: 4rpx;
-  padding-top: 20rpx;
+  padding-top: 10rpx;
   background: #fdfdfd;
   width: 730rpx;
   margin: 0 auto;
@@ -58,6 +59,25 @@ page {
   font-size: 26rpx;
   color: #ff4949;
   letter-spacing: -0.32px;
+  padding-bottom: 10rpx;
+  position: relative;
+}
+
+.name::before{
+  content:attr(data-index);
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  position: absolute;
+  border-radius: 50%;
+  background: #ff4949;
+  color: #ffffff;
+  font-size: 20rpx;
+  text-align: center;
+  left: -50rpx;
+  top: 0rpx;
+  font-family: PingFangSC-Regular;
+  letter-spacing: -0.25px;
 }
 
 .step {
@@ -66,6 +86,8 @@ page {
   color: #3d3d3d;
   letter-spacing: -0.37px;
   position: relative;
+  margin-top: 15rpx;
+  margin-left: 0.65em;
 }
 
 .step::before{
@@ -77,4 +99,22 @@ page {
   position: absolute;
   top: 0.6em;
   left: -0.6em;
+}
+
+.image-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.step-image{
+  width: 182rpx;
+  padding: 10rpx;
+}
+
+.step-image:first-child{
+  padding-left: 0rpx;
+}
+
+.step-image:last-child{
+  padding-right: 0rpx;
 }

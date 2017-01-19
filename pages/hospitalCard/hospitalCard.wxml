@@ -6,10 +6,11 @@
   <view class="step-container">
     <view class="v-line"></view>
     <view class="card-item" wx:for="{{cards}}" wx:key="index" wx:for-item="card">
-        <view class="name">{{card.name}}</view>
-
-            <view wx:for="{{card.steps}}" wx:key="index" wx:for-item="step" class="step">{{step}}</view>
- 
+      <view class="name" data-index="{{index + 1}}">{{card.name}}</view>
+      <view wx:for="{{card.steps}}" wx:key="index" wx:for-item="step" class="step">{{step}}</view>
+      <view clss="image-container">
+        <image wx:for="{{card.images}}" hidden="{{image.hidden}}" wx:key="id" wx:for-item="image" id="{{image.id}}" src="{{image.url}}" class="step-image" style="width:{{imgWidth}}rpx;height:{{image.height}}rpx" bindload="onImageLoad" />
+      </view>
     </view>
   </view>
 </view>

@@ -1,12 +1,16 @@
 const GLOBAL = require('../../global.js');
-
+var clone = require('../../utils/lodash.clone');
 Page({
     data: {
         warning: [],
-        cards: []
+        cards: [],
+        imgWidth:182
     },
     onLoad: function (e) {
-        let setCard = getApp().globalData.hospital.setCard;
+        let hospital = getApp().globalData.hospital;
+        let setCard = hospital.setCard;
+        let hospitalName = hospital.name;
+        let imgAddress = GLOBAL.SERVER + "/images/"+hospitalName;
         if (setCard) {
 
             let arrWarning = setCard.warnings;
@@ -20,9 +24,15 @@ Page({
                 for (let j = 0; j < setCard.cards[i].steps.length; j++) {
                     obj.steps.push(setCard.cards[i].steps[j]);
                 }
-
+                let baseId = "img-" + (+ new Date());
                 for (let j = 0; j < setCard.cards[i].images.length; j++) {
-                    obj.images.push(setCard.cards[i].images[j]);
+                    let url = encodeURI(imgAddress+'/cards/'+setCard.cards[i].images[j]);
+                    var image = {};
+                    image.height = 0;
+                    image.url = url;
+                    image.id = baseId + "-" + j;
+                    image.hidden = true;
+                    obj.images.push(image);
                 }
                 arrCard.push(obj);
             }
@@ -32,6 +42,29 @@ Page({
                 cards: arrCard
             });
         }
-        console.log(this.data)
+    },
+    onImageLoad:function(e){
+        let imageId = e.currentTarget.id;
+        let oImgW = e.detail.width; //图片原始宽度
+        let oImgH = e.detail.height; //图片原始高度
+        let imgWidth = this.data.imgWidth; //图片设置的宽度
+        let scale = imgWidth / oImgW; //比例计算
+        let imgHeight = oImgH * scale; //自适应高度
+        let cards = clone(this.data.cards);
+        for (let i = 0; i < cards.length; i++) {
+            for(let j = 0; j<cards[i].images.length;j++){
+                let img = cards[i].images[j];
+                if (img.id === imageId) {
+                    img.height = imgHeight;
+                    img.hidden = false;
+                    break;
+                }
+            }
+        }
+
+        this.setData({
+            cards:cards
+        });
+        
     }
 })
