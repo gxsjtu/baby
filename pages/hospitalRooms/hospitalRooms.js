@@ -12,10 +12,5 @@ Page({
             hospital: app.globalData.hospital,
             rooms: app.globalData.hospital.rooms
         })
-        console.log('hos')
-        console.log(app.globalData.hospital);
-        // this.setData({
-        //     rooms: app.globalData.hospital.rooms
-        // })
     }
 })
