@@ -42,7 +42,7 @@
           </view>
         </view>
         <view style="width: 375rpx;margin-top:10px;margin-right:10px;margin-bottom:10px;">
-          <view class=" border-b" style="display:flex;flex-direction:row;align-items:center;height:50px;">
+          <view class=" border-b" style="display:flex;flex-direction:row;align-items:center;height:50px;" bindtap="gotoBF">
             <image src="../../assets/images/hospitaldetail/bf.png" style="width: 18px; height: 18px;padding-left:80rpx;"></image>
             <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">病房介绍</text>
           </view>

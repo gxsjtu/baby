@@ -1,13 +1,23 @@
 <view class="container">
   <view class="view-container">
-    <view wx:for="{{rooms}}" wx:for-item="item" wx:key="{{item.id}}">
-        <swiper indicator-dots="true">
-            <block wx:for="item.images">
-                <swiper-item>
-                    <image src="src"></image>
-                </swiper-item>
-            </block>
-        </swiper>
+    <view wx:for="{{rooms}}" wx:for-item="item" wx:key="{{hospital.id}}" style="width:730rpx;background:#fff; margin-top:10rpx;margin-left: 10rpx;">
+      <swiper indicator-dots="true" autoplay="true">
+        <block wx:for="{{item.images}}" wx:for-item="img" wx:key="{{img}}">
+          <swiper-item style="padding-top:10px;text-align:center;">
+            <image src="{{imgAddress}}{{hospital.name}}/rooms/{{img}}" mode="aspectFit" style="display:inline;"></image>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="item-s" style="position:relative; height:52px;">
+        <view style="font-family: PingFangSC-Regular;font-size: 16px;color: #3D3D3D;letter-spacing: -0.39px;width:310px;">{{item.name}}</view>
+        <view style="font-family: PingFangSC-Regular;font-size: 18px;color: #FF4949;letter-spacing: -0.44px;position:absolute;right:5px;">{{item.price}}</view>
+      </view>
+      <view class="item-s" style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;">预定电话：{{item.tel}}</view>
+      <view class="item-s" style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;">预约时间：{{item.time}}</view>
+      <view style=" margin-left: 10px;">
+        <view style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;padding-top:15px;">屋内设施：</view>
+        <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #6D6D6D;letter-spacing: -0.32px;padding-top:10px;padding-bottom:20px;">{{item.facility}}</view>
+      </view>
     </view>
   </view>
 </view>
