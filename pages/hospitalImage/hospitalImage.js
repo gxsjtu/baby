@@ -16,7 +16,7 @@ Page({
         images: [],
         col1: [],
         col2: [],
-        previewImage:[]
+        previewImage: []
     },
     onLoad: function(e) {
         wx.showToast({title: '加载中', icon: 'loading', duration: 10000, mask: true});
@@ -86,7 +86,7 @@ Page({
         if (!loadingCount) {
             let col1 = this.data.col1;
             let col2 = this.data.col2;
-            for(let i = 0; i<this.data.images.length; i++){
+            for (let i = 0; i < this.data.images.length; i++) {
                 let img = this.data.images[i];
                 if (col1H <= col2H) {
                     col1H += img.height;
@@ -101,22 +101,22 @@ Page({
                 loadingCount: loadingCount,
                 col1: col1,
                 col2: col2,
-                images:[]
+                images: []
             };
             this.setData(loadComplete);
         }
 
     },
-    showImage:function(e){
+    showImage: function(e) {
         let curr = e.target.dataset.url;
         wx.previewImage({
-            current:encodeURI(curr),
-            urls:this.data.previewImage,
-            success:function(e){
+            current: encodeURI(curr),
+            urls: this.data.previewImage,
+            success: function(e) {
                 console.log('s');
                 console.log(e);
             },
-            fail:function(e){
+            fail: function(e) {
                 console.log('e');
                 console.log(e);
             }
@@ -131,7 +131,7 @@ Page({
                 images.push({
                     pic: this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID,
                     height: 0,
-                    name:obj.imageID
+                    name: obj.imageID
                 });
                 pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID));
             }
@@ -142,7 +142,7 @@ Page({
                 images.push({
                     pic: this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID,
                     height: 0,
-                    name:obj.imageID
+                    name: obj.imageID
                 });
                 pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID));
             }
@@ -153,12 +153,11 @@ Page({
                 images.push({
                     pic: this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID,
                     height: 0,
-                    name:obj.imageID
+                    name: obj.imageID
                 });
                 pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID));
             }
         }
-        debugger;
         let baseId = "img-" + (+ new Date());
 
         for (let i = 0; i < images.length; i++) {
