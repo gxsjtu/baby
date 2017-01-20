@@ -122,7 +122,7 @@ Page({
 
     },
     showImage: function(e) {
-        let curr = e.target.dataset.url;
+        let curr = e.target.dataset.url.replace('thumnails','images');
         wx.previewImage({
             current: encodeURI(curr),
             urls: this.data.previewImage,
@@ -143,33 +143,33 @@ Page({
             for (var i = 0; i < this.data.hj.length; i++) {
                 var obj = this.data.hj[i];
                 images.push({
-                    pic: this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID,
+                    pic: this.data.imgAddress + this.data.hospitalName + '/thumnails/环境/' + obj.imageID,
                     height: 0,
                     name: obj.imageID
                 });
-                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/环境/' + obj.imageID));
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/images/环境/' + obj.imageID));
             }
         }
         if (this.data.activeIndex == 1 || this.data.activeIndex == 3) {
             for (var i = 0; i < this.data.ss.length; i++) {
                 var obj = this.data.ss[i];
                 images.push({
-                    pic: this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID,
+                    pic: this.data.imgAddress + this.data.hospitalName + '/thumnails/设施/' + obj.imageID,
                     height: 0,
                     name: obj.imageID
                 });
-                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/设施/' + obj.imageID));
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/images/设施/' + obj.imageID));
             }
         }
         if (this.data.activeIndex == 2 || this.data.activeIndex == 3) {
             for (var i = 0; i < this.data.bf.length; i++) {
                 var obj = this.data.bf[i];
                 images.push({
-                    pic: this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID,
+                    pic: this.data.imgAddress + this.data.hospitalName + '/thumnails/病房/' + obj.imageID,
                     height: 0,
                     name: obj.imageID
                 });
-                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/病房/' + obj.imageID));
+                pImages.push(encodeURI(this.data.imgAddress + this.data.hospitalName + '/images/病房/' + obj.imageID));
             }
         }
 
