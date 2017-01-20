@@ -152,16 +152,16 @@ page{
   align-items: flex-start;
   width:680rpx;
   z-index:1000;
-  border-radius: 4rpx;
+  border-radius: 6rpx;
 }
 
 .arrow{
   width:18rpx;
   height:18rpx;
-  border-left:2rpx solid #d3d3d3;
-  border-top:2rpx solid #d3d3d3;
+  /*border-left:2rpx solid #d3d3d3;
+  border-top:2rpx solid #d3d3d3;*/
   transform:rotate(45deg);
-  margin-top:-10rpx;
+  margin-top:-8rpx;
   background:white;
   z-index:1001;
 }
