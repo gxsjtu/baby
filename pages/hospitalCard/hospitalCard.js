@@ -4,16 +4,14 @@ Page({
     data: {
         warning: [],
         cards: [],
-        imgWidth:182
+        imgWidth: 182
     },
-    onLoad: function (e) {
+    onLoad: function(e) {
         let hospital = getApp().globalData.hospital;
         let setCard = hospital.setCard;
         let hospitalName = hospital.name;
-        let imgAddress = GLOBAL.SERVER + "/images/"+hospitalName;
-        wx.setNavigationBarTitle({
-            title:hospitalName
-        });
+        let imgAddress = GLOBAL.SERVER + "/images/" + hospitalName;
+        //wx.setNavigationBarTitle({title: hospitalName});
         if (setCard) {
 
             let arrWarning = setCard.warnings;
@@ -29,7 +27,7 @@ Page({
                 }
                 let baseId = "img-" + (+ new Date());
                 for (let j = 0; j < setCard.cards[i].images.length; j++) {
-                    let url = encodeURI(imgAddress+'/cards/'+setCard.cards[i].images[j]);
+                    let url = encodeURI(imgAddress + '/cards/' + setCard.cards[i].images[j]);
                     var image = {};
                     image.height = 0;
                     image.url = url;
@@ -40,13 +38,10 @@ Page({
                 arrCard.push(obj);
             }
 
-            this.setData({
-                warning: arrWarning,
-                cards: arrCard
-            });
+            this.setData({warning: arrWarning, cards: arrCard});
         }
     },
-    onImageLoad:function(e){
+    onImageLoad: function(e) {
         let imageId = e.currentTarget.id;
         let oImgW = e.detail.width; //图片原始宽度
         let oImgH = e.detail.height; //图片原始高度
@@ -55,7 +50,7 @@ Page({
         let imgHeight = oImgH * scale; //自适应高度
         let cards = clone(this.data.cards);
         for (let i = 0; i < cards.length; i++) {
-            for(let j = 0; j<cards[i].images.length;j++){
+            for (let j = 0; j < cards[i].images.length; j++) {
                 let img = cards[i].images[j];
                 if (img.id === imageId) {
                     img.height = imgHeight;
@@ -65,27 +60,16 @@ Page({
             }
         }
 
-        this.setData({
-            cards:cards
-        });
-        
+        this.setData({cards: cards});
+
     },
-    showImages:function(e){
+    showImages: function(e) {
         let curr = e.target.dataset.url;
         let images = e.target.dataset.images;
         let urls = [];
-        for(let i = 0; i<images.length;i++){
+        for (let i = 0; i < images.length; i++) {
             urls.push(images[i].url)
         }
-        wx.previewImage({
-            current: curr,
-            urls: urls,
-            success: function(e) {
-                
-            },
-            fail: function(e) {
-                
-            }
-        });
+        wx.previewImage({current: curr, urls: urls, success: function(e) {}, fail: function(e) {}});
     }
 })
