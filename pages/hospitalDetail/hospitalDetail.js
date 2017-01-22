@@ -57,6 +57,7 @@ Page({
                 }
             },
             fail: function (res) {
+
             }
         })
     },
