@@ -1,68 +1,49 @@
-/**index.wxss**/
 .view-container{
     height:100%;
-    background-color:rgba(237,237,237,0.8);
+    background-color:#fff;
 }
-/*选择项外边的容器*/
 .menu-container{
-    background: #FFFFFF;
+    /*background: #FFFFFF;
     box-shadow: 0 0 0 0 rgba(0,0,0,0.05), 0 0 4px 0 rgba(0,0,0,0.08);
     display:flex;
     flex-direction:row;
     justify-content:space-between;
-    margin-top:-10rpx;
+    margin-top:-10rpx;*/
+    height: 66rpx;
+    line-height: 66rpx;
+    border: 1rpx solid #FF4949;
+    border-radius: 100rpx;
+    margin: 20rpx 90rpx 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
 }
 
-/*选择项*/
 .menu-item{
     width:50%;
     text-align:center;
-    height:86rpx;
-    line-height:86rpx;
-    font-size: 35rpx;
+    height:66rpx;
+    line-height:66rpx;
+    font-size: 30rpx;
     position: relative;
+    color: #ff4949;
+    font-family: PingFangSC-Regular;
+    letter-spacing: -0.37px;
 }
 
-/*分割线*/
-.before:after{
-    content: '';
-    width:1rpx;
-    height:40%;
-    background-color: rgba(0,0,0,0.1);
-    opacity: 0.8;
-    position: absolute;
-    right: 1px;
-    top: 30%;
-}
-
-/*被选中的选择项*/
 .menu-active{
-    color:#F26A77;
-    position: relative;
-}
-
-/*选择项前边的圆点*/
-.menu-active:before{
-    content: '';
-    position: absolute;
-    width:3px;
-    height:3px;
-    background-color: #F26A77;
-    border-radius: 50%;
-    top: calc(50% - 1px);
-    left: calc(50% - 2.5em);
+    color:#fff;
+    background: #ff4949;
 }
 
 .list-container{
   padding-top:1rpx;
-  /*background-color:rgba(237,237,237,0.8);*/
   width:750rpx;
-  /*height:100%;*/
 }
 
 .list-wrap{
-  width:750rpx;
-  /*height:100%;*/
+  width:688rpx;
   margin:4rpx auto;
 }
 
@@ -93,7 +74,7 @@
 
 .list-date{
   font-size:30rpx;
-  color:#9D9D9D;
+  color:#6D6D6D;
   width:200rpx;
   text-align:right;
 }
@@ -108,5 +89,5 @@
 }
 
 page{
-  background:#f0f0f0;
+  background:#fff;
 }

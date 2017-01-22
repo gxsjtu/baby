@@ -15,7 +15,7 @@
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "妈咪驾到",
         "navigationBarTextStyle": "black",
-        "backgroundColor": "#f0f0f0"
+        "backgroundColor": "#fff"
     },
     "tabBar": {
         "list": [{

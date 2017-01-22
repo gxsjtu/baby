@@ -3,7 +3,7 @@
   <view class="view-container">
       <image style="width: 750rpx; height: 300rpx;"  src="../../assets/images/Group2.jpg" />
       <view class="menu-container">
-        <view class="menu-item before {{firstItemSelected ? 'menu-active' : ''}}" catchtap="beforeChildbirth">产前阶段</view>
+        <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="beforeChildbirth">产前阶段</view>
         <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="afterChildbirth">产后阶段</view>
       </view>
       <view class="list-container">
