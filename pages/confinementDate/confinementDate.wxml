@@ -38,6 +38,15 @@
     </view>
   </view>
   <view class="footer">
-    <button class="btn">点击检测</button>
+    <button class="btn" bindtap="check">点击检测</button>
+  </view>
+  <view class="result" hidden="{{!showResult}}" bindtap="hiddenMask">
+    <view class="result-container">
+      <view class="result-header">预产期自测结果</view>
+      <view class="result-hr"></view>
+      <view class="result-item">您的预产期是20天</view>
+      <view class="result-item">距离现在还有20天</view>
+      <view class="result-item">你处于孕期第20天</view>
+    </view>
   </view>
 </view>

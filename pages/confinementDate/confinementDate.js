@@ -1,5 +1,15 @@
 Page({
     data:{
-        
+        showResult:false
+    },
+    check:function(e){
+        this.setData({
+            showResult:true
+        });
+    },
+    hiddenMask:function(e){
+        this.setData({
+            showResult:false
+        });
     }
 })
