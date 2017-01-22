@@ -33,7 +33,7 @@ Page({
     },
     callTel: function (e) {
         var hos = this.data.hospital.tel;
-        var telArray = ["拨号"];
+        var telArray = [];
         telArray.push(hos.main.name + "：" + hos.main.number);
         if (hos.others != null && hos.others != undefined && hos.others.length > 0) {
             for (var i = 0; i < hos.others.length; i++) {
@@ -43,16 +43,23 @@ Page({
         wx.showActionSheet({
             itemList: telArray,
             success: function (res) {
+                console.log('s')
                 var telStr = telArray[res.tapIndex];
-                var idx = telStr.indexOf("：");
-                var tel = telStr.substring(idx + 1);
-                wx.makePhoneCall({
-                    phoneNumber: tel, success: function (res) {
-                        // success
+                if (telStr != null && telStr != undefined) {
+                    var idx = telStr.indexOf("：");
+                    if (idx >= 0) {
+                        var tel = telStr.substring(idx + 1);
+                        wx.makePhoneCall({
+                            phoneNumber: tel, success: function (res) {
+                                // success
+                            }
+                        })
                     }
-                })
+                }
             },
-            fail: function (res) { }
+            fail: function (res) {
+                console.log('f')
+            }
         })
     },
     gotoYW: function () {
