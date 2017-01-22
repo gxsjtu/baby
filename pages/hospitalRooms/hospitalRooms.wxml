@@ -3,13 +3,13 @@
     <view wx:for="{{rooms}}" wx:for-item="item" wx:key="{{hospital.id}}" style="width:730rpx;background:#fff; margin-top:10rpx;margin-left: 10rpx;">
       <swiper indicator-dots="true" autoplay="true">
         <block wx:if="{{item.images !=null && item.images.length > 0}}" wx:for="{{item.images}}" wx:for-item="img" wx:key="{{img}}">
-          <swiper-item style="padding-top:10px;text-align:center;">
+          <swiper-item style="text-align:center;">
             <image src="{{imgAddress}}{{hospital.name}}/rooms/{{img}}" mode="aspectFit" style="display:inline;"></image>
           </swiper-item>
         </block>
         <block wx:if="{{item.images ==null || item.images.length <= 0}}">
-          <swiper-item style="padding-top:10px;text-align:center;">
-            <image src="../../assets/images/defaultRoom.jpg" mode="aspectFit" style="display:inline;"></image>
+          <swiper-item style="text-align:center;">
+            <image src="../../assets/images/zw.png" mode="aspectFit" style="display:inline;"></image>
           </swiper-item>
         </block>
       </swiper>

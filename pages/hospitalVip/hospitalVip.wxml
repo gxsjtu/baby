@@ -1,13 +1,12 @@
 <view class="container">
   <view class="view-container">
-    <view wx:for="{{suits}}" wx:for-item="suit" wx:key="{{hospital.id}}" style="margin-top:10px;padding-bottom:10px;background:#fff">
+    <view wx:if="{{suits != null && suits != undefined && suits.length > 0}}" wx:for="{{suits}}" wx:for-item="suit" wx:key="{{hospital.id}}" style="margin-top:10px;padding-bottom:10px;background:#fff">
       <view>
         <view style="font-family: PingFangSC-Medium;font-size: 13px;color: #FFFFFF;letter-spacing: -0.32px;height:27px;background: #fff;">
           <view style="background:#FF4949;float:left;height:27px;line-height:27px;padding-left:15px;">
             {{suit.title}}
             <view style="margin-left:15px;margin-right:-13px;float: right;border-left: 22px solid #fff;border-bottom: 25px solid #fff;transform: rotate(45deg);height: 0px;width: 0px;">
             </view>
-                        
           </view>
         </view>
       </view>
@@ -23,6 +22,12 @@
         <view wx:for="{{type.comments}}" wx:for-item="comment" wx:key="{{hospital.id}}" class="item-s">
           <view>{{comment}}</view>
         </view>
+      </view>
+    </view>
+    <view wx:if="{{suits == null || suits == undefined || suits.length <= 0}}" style="height:100%;display:flex;flex-direction:row;align-items:center;">
+      <view style="text-align:center;width:100%;">
+       <image src="../../assets/images/noVIP.png"></image>
+       <view>该院暂不提供产检VIP服务</view>
       </view>
     </view>
   </view>
