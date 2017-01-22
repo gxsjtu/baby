@@ -1,0 +1,138 @@
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+}
+
+.header {
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #333;
+  letter-spacing: -0.37px;
+  text-align: center;
+  margin: 30rpx auto;
+}
+
+.content {
+  font-family: PingFangSC-Light;
+  font-size: 24rpx;
+  color: #6d6d6d;
+  letter-spacing: 0;
+  margin-left: 30rpx;
+  margin-right: 24rpx;
+}
+
+.hr {
+  width: 750rpx;
+  height: 10rpx;
+  background: #ebebeb;
+  margin-top: 40rpx;
+}
+
+.calc-header {
+  width: 750rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #3d3d3d;
+  letter-spacing: -0.37px;
+  text-align: center;
+  margin-top: 26rpx;
+}
+
+.title {
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #6d6d6d;
+  letter-spacing: -0.25px;
+  margin-left: 30rpx;
+  margin-top: 28rpx;
+}
+
+.date-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.date-item {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  background: #fff;
+  border: 1rpx solid rgba(0, 0, 0, 0.30);
+  border-radius: 100rpx;
+  height: 64rpx;
+}
+
+.year {
+  width: 204rpx;
+  margin-left: 30rpx;
+}
+
+.month, .day {
+  width: 170rpx;
+  margin-left: 40rpx;
+}
+
+.check-day {
+  width: 170rpx;
+  margin-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.date {
+  font-family: PingFangSC-Regular;
+  font-size: 32rpx;
+  color: #3d3d3d;
+  letter-spacing: -0.78rpx;
+  line-height: 32rpx;
+  margin: 16rpx 0rpx 16rpx 40rpx;
+}
+
+.unit {
+  font-family: PingFangSC-Regular;
+  font-size: 20rpx;
+  color: #9d9d9d;
+  letter-spacing: -0.5rpx;
+  line-height: 20rpx;
+  margin-top: 24rpx;
+  margin-left: 10rpx;
+}
+
+.arrow {
+  width: 18rpx;
+  height: 10rpx;
+  margin-left: 32rpx;
+}
+
+.arrow image {
+  width: 18rpx;
+  height: 10rpx;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0rpx;
+  width: 750rpx;
+  height: 110rpx;
+  background: #fafafa;
+  box-shadow: 0 0 2rpx 0 rgba(0, 0, 0, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  background: #ff4949;
+  border-radius: 200rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #fff;
+  letter-spacing: -0.74rpx;
+  width: 390rpx;
+  height: 70rpx;
+}

@@ -1,0 +1,43 @@
+<view class="container">
+  <image src="../../assets/images/Group2.jpg" style="width: 750rpx; height: 300rpx;"></image>
+  <view class="header">预产期计算原理</view>
+  <text class="content">整个孕期为40周，共280天，通过末次月经时间可以推算预产期。推算方法是按末次月经的第一日算起，月份减3或加9，日期加7。 但实际分娩日期与推算的预产期可能会相差1-2周，如果孕妇的末次月经日期记忆不清或月经不准，就需要医生代为测试预产期。
+  </text>
+  <view class="hr"></view>
+  <view class="calc-header">按末次月经自测产期</view>
+  <view class="title">末次月经日期（月经第一天）</view>
+  <view class="date-container">
+    <view class="date-item year">
+      <view class="date">2017</view>
+      <view class="unit">年</view>
+      <view class="arrow">
+        <image src="../../assets/images/combined.png" />
+      </view>
+    </view>
+    <view class="date-item month">
+      <view class="date">01</view>
+      <view class="unit">月</view>
+      <view class="arrow">
+        <image src="../../assets/images/combined.png" />
+      </view>
+    </view>
+    <view class="date-item day">
+      <view class="date">20</view>
+      <view class="unit">日</view>
+      <view class="arrow">
+        <image src="../../assets/images/combined.png" />
+      </view>
+    </view>
+  </view>
+  <view class="title">末次月经日期（月经第一天）</view>
+  <view class="date-item check-day">
+    <view class="date">20</view>
+    <view class="unit">天</view>
+    <view class="arrow">
+      <image src="../../assets/images/combined.png" />
+    </view>
+  </view>
+  <view class="footer">
+    <button class="btn">点击检测</button>
+  </view>
+</view>

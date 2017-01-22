@@ -1,6 +1,5 @@
 {
     "pages": [
-
         "pages/index/index",
         "pages/hospitalList/hospitalList",
         "pages/hospitalDetail/hospitalDetail",
@@ -8,7 +7,8 @@
         "pages/hospitalTerms/hospitalTerms",
         "pages/hospitalRooms/hospitalRooms",
         "pages/hospitalVip/hospitalVip",
-        "pages/hospitalCard/hospitalCard"
+        "pages/hospitalCard/hospitalCard",
+        "pages/confinementDate/confinementDate"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -33,7 +33,7 @@
         ],
         "selectedColor": "#F26A77",
         "color": "#6D6D6D",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "#fbfbfb",
         "borderStyle": "white"
     }
 }

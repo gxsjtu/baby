@@ -1,6 +1,4 @@
 //index.js
-//获取应用实例
-// var app = getApp()
 Page({
     data: {
         firstItemSelected: true, //现在的页面是产前阶段还是产后阶段，产前为true
@@ -90,7 +88,7 @@ Page({
         ]
     },
     onLoad: function() {
-        this.beforeChildbirth(); //初始默认进入产前阶段
+        this.beforeChildbirth();
     },
     //点击产前阶段
     beforeChildbirth: function() {
@@ -102,6 +100,9 @@ Page({
     },
     goto: function(event) {
         switch (event.target.dataset.item.id) {
+            case 1:
+                wx.navigateTo({url: '../confinementDate/confinementDate'});
+                break;
             case 2:
                 wx.navigateTo({url: '../hospitalList/hospitalList'});
                 break;
