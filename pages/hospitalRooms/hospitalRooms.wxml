@@ -9,7 +9,7 @@
         </block>
         <block wx:if="{{item.images ==null || item.images.length <= 0}}">
           <swiper-item style="padding-top:10px;text-align:center;">
-            <image src="../../assets/images/Group2.png" mode="aspectFit" style="display:inline;"></image>
+            <image src="../../assets/images/defaultRoom.jpg" mode="aspectFit" style="display:inline;"></image>
           </swiper-item>
         </block>
       </swiper>
