@@ -43,7 +43,6 @@ Page({
         wx.showActionSheet({
             itemList: telArray,
             success: function (res) {
-                console.log('s')
                 var telStr = telArray[res.tapIndex];
                 if (telStr != null && telStr != undefined) {
                     var idx = telStr.indexOf("：");
@@ -58,7 +57,6 @@ Page({
                 }
             },
             fail: function (res) {
-                console.log('f')
             }
         })
     },
