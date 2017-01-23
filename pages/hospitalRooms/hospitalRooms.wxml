@@ -7,6 +7,7 @@
             <image src="{{imgAddress}}{{hospital.name}}/rooms/{{img}}" mode="aspectFit" style="display:inline;"></image>
           </swiper-item>
         </block>
+
         <!--<block wx:if="{{item.images ==null || item.images.length <= 0}}">
           <swiper-item style="text-align:center;">
             <image src="../../assets/images/zw.png" mode="aspectFit" style="display:inline;"></image>
@@ -33,7 +34,7 @@
     <view wx:if="{{noData}}" style="height:100%;display:flex;flex-direction:row;align-items:center;">
       <view style="text-align:center;width:100%;">
         <image src="../../assets/images/noVIP.png" mode="aspectFit" style="width:50%;"></image>
-        <view style="margin-top:-60rpx;">该院暂不提供病房信息</view>
+        <view style="margin-top:-60rpx;">暂不提供该院病房介绍</view>
       </view>
     </view>
   </view>
