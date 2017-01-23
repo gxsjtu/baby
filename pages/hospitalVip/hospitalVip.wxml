@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container {{(suits && suits.length > 0)?'grey':'white'}}">
   <view class="view-container">
     <view wx:if="{{suits != null && suits != undefined && suits.length > 0}}" wx:for="{{suits}}" wx:for-item="suit" wx:key="{{hospital.id}}" style="margin-top:10px;padding-bottom:10px;background:#fff">
       <view>
@@ -26,8 +26,8 @@
     </view>
     <view wx:if="{{suits == null || suits == undefined || suits.length <= 0}}" style="height:100%;display:flex;flex-direction:row;align-items:center;">
       <view style="text-align:center;width:100%;">
-       <image src="../../assets/images/noVIP.png"></image>
-       <view>该院暂不提供产检VIP服务</view>
+       <image src="../../assets/images/noVIP.png" mode="aspectFit" style="width:50%;"></image>
+       <view style="margin-top:-60rpx;">该院暂不提供产检VIP服务</view>
       </view>
     </view>
   </view>

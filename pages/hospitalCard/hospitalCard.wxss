@@ -118,3 +118,19 @@ page {
 .step-image:last-child{
   padding-right: 0rpx;
 }
+
+.noData{
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+page{
+  position: relative;
+  height: 100%;
+}

@@ -1,8 +1,7 @@
 .view-container {
   width: 750rpx;
   height: 100%;
-  background: #ebebeb;
-  padding-bottom: 10rpx;
+  /*padding-bottom: 10rpx;*/
 }
 
 .item-s {
@@ -12,4 +11,20 @@
   align-items:center;
   margin-left: 10px;
   border-bottom: 1rpx solid #DDDDDD;
+}
+page{
+  height:100%;
+}
+.container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  
+}
+
+.grey{
+  background: #ebebeb;
+}
+.white{
+  background: white;
 }

@@ -6,12 +6,19 @@
 }
 
 .container {
-  background: #ebebeb;
   align-items: center;
 }
+.grey{
+  background: #ebebeb;
+}
+.white{
+  background: #ffffff;
+}
+
 
 page {
   height: 100%;
+  background: #fff;
 }
 
 .item-s {

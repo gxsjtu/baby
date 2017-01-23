@@ -4,9 +4,10 @@ Page({
     data: {
         warning: [],
         cards: [],
-        imgWidth: 182
+        imgWidth: 182,
+        noData: false
     },
-    onLoad: function(e) {
+    onLoad: function (e) {
         let hospital = getApp().globalData.hospital;
         let setCard = hospital.setCard;
         let hospitalName = hospital.name;
@@ -17,31 +18,38 @@ Page({
             let arrWarning = setCard.warnings;
 
             let arrCard = [];
-            for (let i = 0; i < setCard.cards.length; i++) {
-                let obj = {};
-                obj.name = setCard.cards[i].name;
-                obj.steps = [];
-                obj.images = [];
-                for (let j = 0; j < setCard.cards[i].steps.length; j++) {
-                    obj.steps.push(setCard.cards[i].steps[j]);
+            let noData = true;
+            if (setCard.cards.length > 0) {
+                for (let i = 0; i < setCard.cards.length; i++) {
+                    let obj = {};
+                    obj.name = setCard.cards[i].name;
+                    obj.steps = [];
+                    obj.images = [];
+                    for (let j = 0; j < setCard.cards[i].steps.length; j++) {
+                        obj.steps.push(setCard.cards[i].steps[j]);
+                    }
+                    let baseId = "img-" + (+ new Date());
+                    for (let j = 0; j < setCard.cards[i].images.length; j++) {
+                        let url = encodeURI(imgAddress + '/cards/' + setCard.cards[i].images[j]);
+                        var image = {};
+                        image.height = 0;
+                        image.url = url;
+                        image.id = baseId + "-" + i + "-" + j;
+                        image.hidden = true;
+                        obj.images.push(image);
+                    }
+                    arrCard.push(obj);
                 }
-                let baseId = "img-" + (+ new Date());
-                for (let j = 0; j < setCard.cards[i].images.length; j++) {
-                    let url = encodeURI(imgAddress + '/cards/' + setCard.cards[i].images[j]);
-                    var image = {};
-                    image.height = 0;
-                    image.url = url;
-                    image.id = baseId + "-" + i + "-" + j;
-                    image.hidden = true;
-                    obj.images.push(image);
-                }
-                arrCard.push(obj);
+                noData = false;
             }
 
-            this.setData({warning: arrWarning, cards: arrCard});
+            this.setData({ warning: arrWarning, cards: arrCard, noData: noData });
+        }
+        else {
+            this.setData({ noData: true });
         }
     },
-    onImageLoad: function(e) {
+    onImageLoad: function (e) {
         let imageId = e.currentTarget.id;
         let oImgW = e.detail.width; //图片原始宽度
         let oImgH = e.detail.height; //图片原始高度
@@ -60,16 +68,16 @@ Page({
             }
         }
 
-        this.setData({cards: cards});
+        this.setData({ cards: cards });
 
     },
-    showImages: function(e) {
+    showImages: function (e) {
         let curr = e.target.dataset.url;
         let images = e.target.dataset.images;
         let urls = [];
         for (let i = 0; i < images.length; i++) {
             urls.push(images[i].url)
         }
-        wx.previewImage({current: curr, urls: urls, success: function(e) {}, fail: function(e) {}});
+        wx.previewImage({ current: curr, urls: urls, success: function (e) { }, fail: function (e) { } });
     }
 })

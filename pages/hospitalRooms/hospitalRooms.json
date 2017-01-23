@@ -1,5 +1,6 @@
 {
    "navigationBarTitleText": "病房介绍",
    "navigationBarBackgroundColor": "#000",
-   "navigationBarTextStyle": "white"
+   "navigationBarTextStyle": "white",
+   "backgroundColor": "#ffffff"
 }
