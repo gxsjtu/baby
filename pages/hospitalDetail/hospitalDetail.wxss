@@ -49,7 +49,7 @@ page {
 }
 
 .btn-style {
-  background: #f26a77;
+  background: #FF4949;
   font-family: PingFangSC-Regular;
   font-size: 15px;
   color: #fff;
