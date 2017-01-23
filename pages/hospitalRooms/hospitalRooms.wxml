@@ -1,18 +1,12 @@
 <view class="container">
   <view class="view-container {{noData?'white':'grey'}}">
-    <view wx:if="{{!noData}}" wx:for="{{rooms}}" wx:for-item="item" wx:key="{{hospital.id}}" style="width:730rpx;background:#fff; margin-top:10rpx;margin-left: 10rpx;">
+    <view wx:if="{{!noData}}" wx:for="{{rooms}}" wx:for-item="item" wx:key="{{hospital.id}}" style="width:730rpx;background:#fff; margin-top:20rpx;margin-left: 10rpx;padding-top:10rpx;">
       <swiper wx:if="{{item.images !=null && item.images.length > 0}}" indicator-dots="true" autoplay="true">
         <block wx:for="{{item.images}}" wx:for-item="img" wx:key="{{img}}">
           <swiper-item style="text-align:center;">
             <image src="{{imgAddress}}{{hospital.name}}/rooms/{{img}}" mode="aspectFit" style="display:inline;"></image>
           </swiper-item>
         </block>
-
-        <!--<block wx:if="{{item.images ==null || item.images.length <= 0}}">
-          <swiper-item style="text-align:center;">
-            <image src="../../assets/images/zw.png" mode="aspectFit" style="display:inline;"></image>
-          </swiper-item>
-        </block>-->
       </swiper>
       <view wx:if="{{item.images ==null || item.images.length <= 0}}" style="height:300rpx;text-align:center;">
         <image src="../../assets/images/zw.png" mode="aspectFit" style="display:inline;"></image>
