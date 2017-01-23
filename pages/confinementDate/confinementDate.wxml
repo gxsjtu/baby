@@ -7,7 +7,7 @@
   <view class="calc-header">按末次月经自测产期</view>
   <view class="title">末次月经日期（月经第一天）</view>
   <view class="date-container">
-    <view class="date-item year">
+    <!--<view class="date-item year">
       <picker mode="date">
         <view class="date">2017</view>
         <view class="unit">年</view>
@@ -16,6 +16,7 @@
         </view>
       </picker>
     </view>
+
     <view class="date-item month">
       <view class="date">01</view>
       <view class="unit">月</view>
@@ -29,15 +30,23 @@
       <view class="arrow">
         <image src="../../assets/images/combined.png" />
       </view>
-    </view>
+    </view>-->
+
+    <picker mode="date" style="border:1px solid black;width:230rpx;background: #fff;border: 1rpx solid rgba(0, 0, 0, 0.30);border-radius: 100rpx;height: 64rpx;">
+      <view>{{year}}</view>
+      <view>年</view>
+
+    </picker>
+
+
   </view>
   <view class="title">末次月经日期（月经第一天）</view>
   <view class="date-item check-day">
-    <view class="date">20</view>
+    <!--<view class="date">20</view>
     <view class="unit">天</view>
     <view class="arrow">
       <image src="../../assets/images/combined.png" />
-    </view>
+    </view>-->
   </view>
   <view class="footer">
     <button class="btn" bindtap="check">点击检测</button>
