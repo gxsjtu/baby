@@ -35,7 +35,8 @@ Page({
     },
     check: function (e) {
         wx.showToast({ title: '计算中', icon: 'loading', duration: 10000, mask: true });
-        let last = this.data.year + '-' + this.data.month + '-' + this.data.date;
+        // let last = this.data.year + '-' + this.data.month + '-' + this.data.date;
+        let last = this.data.selectDate;
         var confinementDateSvc = new ConfinementDateSvc();
         confinementDateSvc.getBorn(last, this.data.average).then(data => {
             if (data.data.message == 'OK') {
