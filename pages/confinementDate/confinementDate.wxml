@@ -8,11 +8,13 @@
   <view class="title">末次月经日期（月经第一天）</view>
   <view class="date-container">
     <view class="date-item year">
-      <view class="date">2017</view>
-      <view class="unit">年</view>
-      <view class="arrow">
-        <image src="../../assets/images/combined.png" />
-      </view>
+      <picker mode="date">
+        <view class="date">2017</view>
+        <view class="unit">年</view>
+        <view class="arrow">
+          <image src="../../assets/images/combined.png" />
+        </view>
+      </picker>
     </view>
     <view class="date-item month">
       <view class="date">01</view>
@@ -44,9 +46,13 @@
     <view class="result-container">
       <view class="result-header">预产期自测结果</view>
       <view class="result-hr"></view>
-      <view class="result-item">您的预产期是20天</view>
-      <view class="result-item">距离现在还有20天</view>
-      <view class="result-item">你处于孕期第20天</view>
+      <view class="result-item first">您的预产期是
+        <text class="result-text"> {{preBorn}} </text>
+      </view>
+      <view class="result-item">距离现在还有
+        <text class="result-text"> {{fromNow}} </text>天</view>
+      <view class="result-item">您现在正处于孕期的
+        <text class="result-text"> {{week}} </text>周</view>
     </view>
   </view>
 </view>

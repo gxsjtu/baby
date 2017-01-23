@@ -66,6 +66,7 @@ page {
   border: 1rpx solid rgba(0, 0, 0, 0.30);
   border-radius: 100rpx;
   height: 64rpx;
+  position: relative;
 }
 
 .year {
@@ -173,8 +174,9 @@ page {
 }
 
 .result-hr {
-  border: 2rpx solid rgba(0, 0, 0, 0.10);
-  margin-top: 30rpx;
+  border: 1rpx solid rgba(0, 0, 0, 0.10);
+  width: 508rpx;
+  margin:30rpx auto 0rpx auto;
 }
 
 .result-item {
@@ -182,7 +184,19 @@ page {
   font-size: 26rpx;
   color: #6d6d6d;
   letter-spacing: -0.64rpx;
-  line-height: 26px;
-  margin-top: 34rpx;
+  line-height: 26rpx;
+  margin-bottom: 34rpx;
   text-align: center;
+}
+
+.first{
+  margin-top: 34rpx;
+}
+
+.result-text {
+  font-family: PingFangSC-Regular;
+  font-size: 40rpx;
+  color: #ff4949;
+  letter-spacing: -0.98rpx;
+  line-height: 40rpx;
 }
