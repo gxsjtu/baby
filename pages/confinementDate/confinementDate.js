@@ -13,6 +13,7 @@ Page({
         start: '',
         end: '',
         selectDate: '',
+        btnChecking: false,
         averageArr: [
             20,
             21,
@@ -42,7 +43,7 @@ Page({
             45
         ]
     },
-    onLoad: function(e) {
+    onLoad: function (e) {
         let now = new Date();
         let year = now.getFullYear();
         let month = now.getMonth() + 1;
@@ -52,8 +53,8 @@ Page({
         let selectDate = year + (month < 10
             ? '-0' + month
             : '-' + month) + (date < 10
-            ? '-0' + date
-            : '-' + date);
+                ? '-0' + date
+                : '-' + date);
         this.setData({
             start: start,
             end: end,
@@ -64,39 +65,41 @@ Page({
             average: this.data.averageArr[8]
         });
     },
-    check: function(e) {
-        wx.showToast({title: '计算中', icon: 'loading', duration: 10000, mask: true});
-        // let last = this.data.year + '-' + this.data.month + '-' + this.data.date;
+    check: function (e) {
+        this.setData({
+            btnChecking: true
+        });
         let last = this.data.selectDate;
         var confinementDateSvc = new ConfinementDateSvc();
         confinementDateSvc.getBorn(last, this.data.average).then(data => {
-            wx.hideToast();
             if (data.data.status == 0) {
                 let preBorn = data.data.data.preBorn;
                 let fromNow = data.data.data.fromNow;
                 let week = data.data.data.week;
-                this.setData({preBorn: preBorn, fromNow: fromNow, week: week, showResult: true});
+                this.setData({ preBorn: preBorn, fromNow: fromNow, week: week, showResult: true, btnChecking: false });
             } else {
-                this.setData({showResult: false});
-                wx.showToast({title: data.data.message, duration: 3000})
+                this.setData({ showResult: false, btnChecking: false });
+                wx.showToast({ title: data.data.message, duration: 3000 })
             }
 
         }).catch((err) => {
-            wx.hideToast();
+            this.setData({
+                btnChecking: false
+            });
         });
     },
-    hiddenMask: function(e) {
-        this.setData({showResult: false});
+    hiddenMask: function (e) {
+        this.setData({ showResult: false });
     },
-    changeDate: function(e) {
+    changeDate: function (e) {
         let select = e.detail.value;
         let arr = select.split('-');
-        this.setData({year: arr[0], month: arr[1], date: arr[2], selectDate: select});
+        this.setData({ year: arr[0], month: arr[1], date: arr[2], selectDate: select });
     },
-    changeAverage: function(e) {
+    changeAverage: function (e) {
         console.log(e.detail.value);
         console.log(this.data.averageArr[e.detail.value]);
         let index = e.detail.value;
-        this.setData({averageIndex: index, average: this.data.averageArr[index]});
+        this.setData({ averageIndex: index, average: this.data.averageArr[index] });
     }
 })

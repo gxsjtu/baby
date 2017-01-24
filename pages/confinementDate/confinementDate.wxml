@@ -40,7 +40,7 @@
     </picker>
   </view>
   <view class="footer">
-    <button class="btn" bindtap="check">点击检测</button>
+    <button class="btn" bindtap="check" loading="{{btnChecking}}" disabled="{{btnChecking}}">点击检测</button>
   </view>
   <view class="result" hidden="{{!showResult}}" bindtap="hiddenMask">
     <view class="result-container">
