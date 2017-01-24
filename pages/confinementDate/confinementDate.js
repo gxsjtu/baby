@@ -26,11 +26,11 @@ Page({
         this.setData({
             start: start,
             end: end,
-            year:year,
-            month:month,
-            date:date,
-            selectDate:selectDate,
-            average:this.data.averageArr[8]
+            year: year,
+            month: month,
+            date: date,
+            selectDate: selectDate,
+            average: this.data.averageArr[8]
         });
     },
     check: function (e) {
@@ -39,7 +39,8 @@ Page({
         let last = this.data.selectDate;
         var confinementDateSvc = new ConfinementDateSvc();
         confinementDateSvc.getBorn(last, this.data.average).then(data => {
-            if (data.data.message == 'OK') {
+            wx.hideToast();
+            if (data.data.status == 0) {
                 let preBorn = data.data.data.preBorn;
                 let fromNow = data.data.data.fromNow;
                 let week = data.data.data.week;
@@ -49,7 +50,16 @@ Page({
                     week: week
                 });
             }
-            wx.hideToast();
+            else {
+                this.setData({
+                    showResult: false
+                });
+                wx.showToast({
+                    title: data.data.message,
+                    duration: 3000
+                })
+            }
+
         }).catch((err) => {
             wx.hideToast();
         });
@@ -63,17 +73,17 @@ Page({
             showResult: false
         });
     },
-    changeDate: function(e){
+    changeDate: function (e) {
         let select = e.detail.value;
         let arr = select.split('-');
         this.setData({
-            year:arr[0],
-            month:arr[1],
-            date:arr[2],
+            year: arr[0],
+            month: arr[1],
+            date: arr[2],
             selectDate: select
         });
     },
-    changeAverage: function(e){
+    changeAverage: function (e) {
         console.log(e.detail.value);
         console.log(this.data.averageArr[e.detail.value]);
         let index = e.detail.value;
