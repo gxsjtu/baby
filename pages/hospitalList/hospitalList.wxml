@@ -49,7 +49,6 @@
                         <view data-value="浦东新区">浦东新区</view>
                         <view data-value="徐汇区">徐汇区</view>
                         <view data-value="黄埔区">黄埔区</view>
-                        <view data-value="卢湾区">卢湾区</view>
                         <view data-value="静安区">静安区</view>
                         <view data-value="长宁区">长宁区</view>
                         <view data-value="闵行区">闵行区</view>
@@ -57,18 +56,10 @@
                         <view data-value="普陀区">普陀区</view>
                         <view data-value="虹口区">虹口区</view>
                         <view data-value="宝山区">宝山区</view>
-                        <view data-value="闸北区">闸北区</view>
-                        <view data-value="松江区">松江区</view>
                         <view data-value="嘉定区">嘉定区</view>
-                        <view data-value="青浦区">青浦区</view>
-                        <view data-value="奉贤区">奉贤区</view>
-                        <view data-value="金山区">金山区</view>
-                        <view data-value="崇明县">崇明县</view>
                     </scroll-view>
                 </view>
             </view>
-
-
 
             <view catchtap="orderFilter">
                 <view class="filter-item">
