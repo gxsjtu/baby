@@ -72,13 +72,14 @@ page {
 
 .btn {
   background: #ff4949;
-  border-radius: 200rpx;
+  border-radius: 100px;
   font-family: PingFangSC-Regular;
-  font-size: 30rpx;
+  font-size: 15px;
   color: #fff;
-  letter-spacing: -0.74rpx;
+  letter-spacing: -0.37px;
   width: 390rpx;
   height: 70rpx;
+  line-height: 70rpx;
 }
 
 .result {
