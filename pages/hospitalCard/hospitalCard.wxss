@@ -1,136 +1,138 @@
 page {
-  background: #ebebeb;
+    background: #ebebeb;
 }
 
 .view-container {
-  background: #ebebeb;
+    background: #ebebeb;
 }
 
 .v-line {
-  position: absolute;
-  top: 46rpx;
-  left: 36rpx;
-  width: 2rpx;
-  height: 95%;
-  background-image: linear-gradient(-180deg, #ffdada 85%, rgba(255, 179, 179, 0.00) 100%);
+    position: absolute;
+    top: 46rpx;
+    left: 36rpx;
+    width: 2rpx;
+    height: 95%;
+    background-image: linear-gradient(-180deg, #ffdada 85%, rgba(255, 179, 179, 0.00) 100%);
 }
 
 .card-item {
-  margin-left: 10rpx;
-  margin-right: 10rpx;
-  padding: 30rpx 60rpx;
-  border-bottom: 4rpx solid #f5f5f5;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+    padding: 30rpx 60rpx;
+    border-bottom: 4rpx solid #f5f5f5;
 }
 
 .warning-container {
-  background: #fdfdfd;
-  border-radius: 4rpx;
-  width: 730rpx;
-  margin: 0 auto;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
-  margin-top: 10rpx;
+    background: #fdfdfd;
+    border-radius: 4rpx;
+    width: 730rpx;
+    margin: 0 auto;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    margin-top: 10rpx;
 }
 
 .warning {
-  font-size: 26rpx;
-  color: #ff4949;
-  font-family: PingFangSC-Regular;
-  /*letter-spacing: -0.25rpx;*/
-  padding-left: 40rpx;
-  padding-right: 40rpx;
-  padding-top: 8rpx;
-  padding-bottom: 8rpx;
+    font-size: 26rpx;
+    color: #ff4949;
+    font-family: PingFangSC-Regular;
+    /*letter-spacing: -0.25rpx;*/
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+    padding-top: 8rpx;
+    padding-bottom: 8rpx;
 }
 
 .step-container {
-  position: relative;
-  border-radius: 4rpx;
-  padding-top: 10rpx;
-  background: #fdfdfd;
-  width: 730rpx;
-  margin: 0 auto;
-  margin-top: 10rpx;
-  height: 100%;
+    position: relative;
+    border-radius: 4rpx;
+    padding-top: 10rpx;
+    background: #fdfdfd;
+    width: 730rpx;
+    margin: 0 auto;
+    margin-top: 10rpx;
+    height: 100%;
 }
 
 .name {
-  font-family: PingFangSC-Regular;
-  font-size: 26rpx;
-  color: #ff4949;
-  letter-spacing: -0.32px;
-  padding-bottom: 10rpx;
-  position: relative;
+    font-family: PingFangSC-Regular;
+    font-size: 26rpx;
+    color: #ff4949;
+    letter-spacing: -0.32px;
+    padding-bottom: 10rpx;
+    position: relative;
 }
 
-.name::before{
-  content:attr(data-index);
-  width: 36rpx;
-  height: 36rpx;
-  line-height: 36rpx;
-  position: absolute;
-  border-radius: 50%;
-  background: #ff4949;
-  color: #ffffff;
-  font-size: 20rpx;
-  text-align: center;
-  left: -52rpx;
-  top: 0rpx;
-  font-family: PingFangSC-Regular;
-  letter-spacing: -0.25px;
+.name::before {
+    content: attr(data-index);
+    width: 36rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    position: absolute;
+    border-radius: 50%;
+    background: #ff4949;
+    color: #ffffff;
+    font-size: 20rpx;
+    text-align: center;
+    left: -52rpx;
+    top: 0rpx;
+    font-family: PingFangSC-Regular;
+    letter-spacing: -0.25px;
 }
 
 .step {
-  font-family: PingFangSC-Regular;
-  font-size: 30rpx;
-  color: #3d3d3d;
-  letter-spacing: -0.37px;
-  position: relative;
-  margin-top: 15rpx;
-  margin-left: 0.65em;
+    font-family: PingFangSC-Regular;
+    font-size: 30rpx;
+    color: #3d3d3d;
+    letter-spacing: -0.37px;
+    position: relative;
+    margin-top: 15rpx;
+    margin-left: 0.65em;
 }
 
-.step::before{
-  content: '';
-  width: 6rpx;
-  height: 6rpx;
-  border-radius: 50%;
-  background: #8c8c8c;
-  position: absolute;
-  top: 0.6em;
-  left: -0.6em;
+.step::before {
+    content: '';
+    width: 6rpx;
+    height: 6rpx;
+    border-radius: 50%;
+    background: #8c8c8c;
+    position: absolute;
+    top: 0.6em;
+    left: -0.6em;
 }
 
-.image-container{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.step-image{
-  width: 182rpx;
-  padding: 10rpx;
+.image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.step-image:first-child{
-  padding-left: 0rpx;
+.step-image {
+    width: 182rpx;
+    padding: 10rpx;
 }
 
-.step-image:last-child{
-  padding-right: 0rpx;
+.step-image:first-child {
+    padding-left: 0rpx;
 }
 
-.noData{
-  background: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.step-image:last-child {
+    padding-right: 0rpx;
 }
-page{
-  position: relative;
-  height: 100%;
+
+.noData {
+    background: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+page {
+    position: relative;
+    height: 100%;
 }

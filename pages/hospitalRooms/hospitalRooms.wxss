@@ -1,31 +1,33 @@
 .view-container {
-  width: 750rpx;
-  height: 100%;
-  /*padding-bottom: 10rpx;*/
+    width: 750rpx;
+    height: 100%;
+    /*padding-bottom: 10rpx;*/
 }
 
 .item-s {
-  display: flex;
-  flex-direction: row;
-  height:52px;
-  align-items:center;
-  margin-left: 10px;
-  border-bottom: 1rpx solid #DDDDDD;
-}
-page{
-  height:100%;
-  background: #ebebeb;
-}
-.container{
-  height: 100%;
-  display: flex;
-  align-items: center;
-  
+    display: flex;
+    flex-direction: row;
+    height: 52px;
+    align-items: center;
+    margin-left: 10px;
+    border-bottom: 1rpx solid #DDDDDD;
 }
 
-.grey{
-  background: #ebebeb;
+page {
+    height: 100%;
+    background: #ebebeb;
 }
-.white{
-  background: white;
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.grey {
+    background: #ebebeb;
+}
+
+.white {
+    background: white;
 }

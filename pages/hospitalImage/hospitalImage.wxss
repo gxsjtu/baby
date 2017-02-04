@@ -1,40 +1,45 @@
-page{
-    height:100%;
+page {
+    height: 100%;
 }
-.view-container{
-    height:100%;
+
+.view-container {
+    height: 100%;
 }
-.segment-container{
-    width:750rpx;
-    height:50px;
-    background:#fff;
-    box-shadow: 0 0 4px 0 rgba(0,0,0,0.10), 0 0 0 0 #DDDDDD;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
+
+.segment-container {
+    width: 750rpx;
+    height: 50px;
+    background: #fff;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.10), 0 0 0 0 #DDDDDD;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-.segment-item{
-    width:187rpx;
-    height:50px;
-    text-align:center;
-    font-family:PingFangSC-Regular;
-    font-size:15px;
-    color:#6d6d6d;
-    line-height:50px;
+
+.segment-item {
+    width: 187rpx;
+    height: 50px;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+    font-size: 15px;
+    color: #6d6d6d;
+    line-height: 50px;
 }
-.segment-item:first-child,.segment-item:last-child{
-    width:188rpx;
+
+.segment-item:first-child, .segment-item:last-child {
+    width: 188rpx;
 }
-.active{
-    color:#E77575;
+
+.active {
+    color: #E77575;
     position: relative;
 }
 
-.active::before{
+.active::before {
     content: '';
     position: absolute;
-    width:3px;
-    height:3px;
+    width: 3px;
+    height: 3px;
     background-color: #F26A77;
     border-radius: 50%;
     top: calc(50% - 1px);
@@ -42,23 +47,23 @@ page{
 }
 
 .img_item {
-  width: 48%;
-  margin: 1%;
-  display: inline-block;
-  vertical-align: top;
+    width: 48%;
+    margin: 1%;
+    display: inline-block;
+    vertical-align: top;
 }
 
-.text{
-    position:absolute;
-    bottom:0px;
-    width:93.5%;
-    height:28px;
-    background-color:#000;
-    opacity:0.6;
-    margin-left:0.5%;
-    padding-left:10px;
-    color:#fff;
-    font-size:13px;
+.text {
+    position: absolute;
+    bottom: 0px;
+    width: 93.5%;
+    height: 28px;
+    background-color: #000;
+    opacity: 0.6;
+    margin-left: 0.5%;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 13px;
     font-family: PingFangSC-Light;
     letter-spacing: -0.32px;
     line-height: 28px;
