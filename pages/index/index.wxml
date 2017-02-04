@@ -1,26 +1,26 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="view-container">
-      <image style="width: 750rpx; height: 300rpx;"  src="../../assets/images/Group2.jpg" />
-      <view class="menu-container">
-        <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="beforeChildbirth">产前阶段</view>
-        <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="afterChildbirth">产后阶段</view>
-      </view>
-      <view class="list-container">
-        <view hidden="{{!firstItemSelected}}" class="list-wrap">
-          <view wx:for="{{beforeListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
-            <view class="list-title" data-item="{{item}}">{{item.title}}</view>
-            <view class="list-date" data-item="{{item}}">{{item.date}}</view>
-            <view class="list-arrow" data-item="{{item}}"></view>
-          </view>
+    <view class="view-container">
+        <image style="width: 750rpx; height: 300rpx;" src="../../assets/images/index.jpg" />
+        <view class="menu-container">
+            <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="beforeChildbirth">产前阶段</view>
+            <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="afterChildbirth">产后阶段</view>
         </view>
-        <view hidden="{{firstItemSelected}}" class="list-wrap">
-          <view wx:for="{{afterListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
-            <view class="list-title" data-item="{{item}}" >{{item.title}}</view>
-            <view class="list-date" data-item="{{item}}" >{{item.date}}</view>
-            <view class="list-arrow" data-item="{{item}}"></view>
-          </view>
+        <view class="list-container">
+            <view hidden="{{!firstItemSelected}}" class="list-wrap">
+                <view wx:for="{{beforeListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
+                    <view class="list-title" data-item="{{item}}">{{item.title}}</view>
+                    <view class="list-date" data-item="{{item}}">{{item.date}}</view>
+                    <view class="list-arrow" data-item="{{item}}"></view>
+                </view>
+            </view>
+            <view hidden="{{firstItemSelected}}" class="list-wrap">
+                <view wx:for="{{afterListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
+                    <view class="list-title" data-item="{{item}}">{{item.title}}</view>
+                    <view class="list-date" data-item="{{item}}">{{item.date}}</view>
+                    <view class="list-arrow" data-item="{{item}}"></view>
+                </view>
+            </view>
         </view>
-      </view>
-  </view>
+    </view>
 </view>
