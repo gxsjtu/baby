@@ -1,5 +1,5 @@
 <view class="container">
-  <image src="../../assets/images/Group2.jpg" style="width: 750rpx; height: 300rpx;"></image>
+  <image src="../../assets/images/Group2.png" style="width: 750rpx; height: 300rpx;"></image>
   <view class="header">预产期计算原理</view>
   <text class="content">整个孕期为40周，共280天，通过末次月经时间可以推算预产期。推算方法是按末次月经的第一日算起，月份减3或加9，日期加7。 但实际分娩日期与推算的预产期可能会相差1-2周，如果孕妇的末次月经日期记忆不清或月经不准，就需要医生代为测试预产期。
   </text>
