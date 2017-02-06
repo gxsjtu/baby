@@ -1,5 +1,5 @@
 const merge = require('lodash.merge');
-
+const Promise = require('./promise.min.js');
 module.exports.request = function(url, data, method) {
     return new Promise((resolve, reject) => {
         wx.request({

@@ -1,5 +1,5 @@
 const GLOBAL = require('../global.js');
-
+const Promise = require('../utils/promise.min.js');
 function LoginSvc(){
 
 }
