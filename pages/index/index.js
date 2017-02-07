@@ -85,29 +85,64 @@ Page({
                 title: '申请生育保险',
                 date: '(宝宝出生后)'
             }
-        ]
+        ],
+        hideMask: true,
+        alertText: ''
     },
-    onLoad: function() {
+    onLoad: function () {
         this.beforeChildbirth();
+
     },
     //点击产前阶段
-    beforeChildbirth: function() {
-        this.setData({firstItemSelected: true})
+    beforeChildbirth: function () {
+        this.setData({ firstItemSelected: true })
     },
     //点击产后阶段
-    afterChildbirth: function() {
-        this.setData({firstItemSelected: false})
+    afterChildbirth: function () {
+        this.setData({ firstItemSelected: false })
     },
-    goto: function(event) {
+    goto: function (event) {
         switch (event.target.dataset.item.id) {
             case 1:
-                wx.navigateTo({url: '../confinementDate/confinementDate'});
+                wx.navigateTo({ url: '../confinementDate/confinementDate' });
                 break;
             case 2:
-                wx.navigateTo({url: '../hospitalList/hospitalList'});
+                wx.navigateTo({ url: '../hospitalList/hospitalList' });
+                break;
+            case 4:
+                //医院建大卡产检,需要判断是否选择了默认医院。
+                let defaultHos = getApp().globalData.defaultHos;
+                if (defaultHos) {
+                    getApp().globalData.hospital = defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
                 break;
             default:
-
+                break;
         }
+    },
+    hide: function (event) {
+        this.setData({
+            hideMask: true
+        })
+    },
+    fullClick: function (event) {
+        //勿删
+    },
+    showAlert: function (msg) {
+        this.setData({
+            hideMask: false,
+            alertText: msg
+        })
+    },
+    gotoSelect:function(event){
+        this.setData({
+            hideMask: true,
+            alertText: ''
+        })
+        wx.navigateTo({ url: '../hospitalList/hospitalList' });
     }
 })

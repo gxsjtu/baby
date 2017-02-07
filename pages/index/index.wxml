@@ -1,26 +1,42 @@
+
 <!--index.wxml-->
-<view class="container">
-    <view class="view-container">
-        <image style="width: 750rpx; height: 300rpx;" src="../../assets/images/index.jpg" />
-        <view class="menu-container">
-            <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="beforeChildbirth">产前阶段</view>
-            <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="afterChildbirth">产后阶段</view>
-        </view>
-        <view class="list-container">
-            <view hidden="{{!firstItemSelected}}" class="list-wrap">
-                <view wx:for="{{beforeListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
-                    <view class="list-title" data-item="{{item}}">{{item.title}}</view>
-                    <view class="list-date" data-item="{{item}}">{{item.date}}</view>
-                    <view class="list-arrow" data-item="{{item}}"></view>
-                </view>
-            </view>
-            <view hidden="{{firstItemSelected}}" class="list-wrap">
-                <view wx:for="{{afterListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
-                    <view class="list-title" data-item="{{item}}">{{item.title}}</view>
-                    <view class="list-date" data-item="{{item}}">{{item.date}}</view>
-                    <view class="list-arrow" data-item="{{item}}"></view>
-                </view>
-            </view>
-        </view>
+<view class="container {{hideMask?'':'crop'}}">
+  <view class="view-container">
+    <image style="width: 750rpx; height: 300rpx;" src="../../assets/images/index.jpg" />
+    <view class="menu-container">
+      <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="beforeChildbirth">产前阶段</view>
+      <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="afterChildbirth">产后阶段</view>
     </view>
+    <view class="list-container">
+      <view hidden="{{!firstItemSelected}}" class="list-wrap">
+        <view wx:for="{{beforeListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
+          <view class="list-title" data-item="{{item}}">{{item.title}}</view>
+          <view class="list-date" data-item="{{item}}">{{item.date}}</view>
+          <view class="list-arrow" data-item="{{item}}"></view>
+        </view>
+      </view>
+      <view hidden="{{firstItemSelected}}" class="list-wrap">
+        <view wx:for="{{afterListData}}" wx:for-item="item" wx:key="id" class="list-item" data-item="{{item}}" bindtap="goto">
+          <view class="list-title" data-item="{{item}}">{{item.title}}</view>
+          <view class="list-date" data-item="{{item}}">{{item.date}}</view>
+          <view class="list-arrow" data-item="{{item}}"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="mask" hidden="{{hideMask}}" bindtap="hide">
+    <view class="full">
+      <view class="alert" catchtap="alertClick">
+        <view style="height:350rpx;display:flex;flex-direction: column;align-items:center;">
+        <view style="height:50rpx;"></view>
+            <image src="../../assets/images/timg.jpg" style="width:156rpx;height:156rpx;"></image>
+            <view style="height:30rpx;"></view>
+          <view style="text-align:center;padding-left:30rpx;padding-right:30rpx;">{{alertText}}</view>
+        </view>
+        <view style="display:flex;flex-direction:row;align-items:center;height:55px;position:absolute;bottom:20rpx;width:100%;background:#fff">
+          <button bindtap="gotoSelect" class="btn-style">选择我的生产医院</button>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
