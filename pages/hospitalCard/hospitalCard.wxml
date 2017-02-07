@@ -1,39 +1,40 @@
 <view class="view-container" wx:if="{{!noData}}">
-    <view class="image-container">
-        <image src="../../assets/images/index.jpg"></image>
-        <view class="title">
-            <view class="title-header">{{option}}介绍:</view>
-            <view class="title-content">
-                <view class="word">{{title}}</view>
-                <view class="arrow"></view>
-            </view>
-        </view>
+  <view class="image-container">
+    <image src="{{imageUrl}}"></image>
+    <view class="title">
+      <view class="title-header">{{option}}介绍:</view>
+      <view class="title-content">
+        <view class="word">{{title}}</view>
+        <view class="arrow"></view>
+      </view>
     </view>
-    <view class="step-container">
-        <view class="v-line"></view>
-
-        <view class="card-item">
-            <view class="exclamation">所需材料</view>
-            <view class="document" wx:for="{{documents}}" wx:for-item="document" wx:key="index">{{document}}</view>
-        </view>
-
-        <view class="card-item">
-            <view class="exclamation">注意事项</view>
-            <view class="document" wx:for="{{warning}}" wx:for-item="warn" wx:key="index">{{warn}}</view>
-        </view>
-
-        <view class="card-item" wx:for="{{cards}}" wx:key="index" wx:for-item="card">
-            <view class="name" data-index="{{index + 1}}">{{card.name}}</view>
-            <view wx:for="{{card.steps}}" wx:key="index" wx:for-item="step" class="step">{{step}}</view>
-            <view clss="image-container">
-                <image wx:for="{{card.images}}" hidden="{{image.hidden}}" wx:key="id" wx:for-item="image" id="{{image.id}}" src="{{image.url}}" class="step-image" style="width:{{imgWidth}}rpx;height:{{image.height}}rpx" bindload="onImageLoad" bindtap="showImages" data-images="{{card.images}}" data-url="{{image.url}}" />
-            </view>
-        </view>
+  </view>
+  <view class="step-container">
+    <view class="v-line"></view>
+    <view class="card-item">
+      <view class="exclamation">所需材料</view>
+      <view class="split"></view>
+      <view class="document" wx:for="{{documents}}" wx:for-item="document" wx:key="index">{{document}}</view>
     </view>
+    <view class="card-item">
+      <view class="exclamation">注意事项</view>
+      <view class="split"></view>
+      <view class="document" wx:for="{{warning}}" wx:for-item="warn" wx:key="index">{{warn}}</view>
+    </view>
+    <view class="card-item" wx:for="{{cards}}" wx:key="index" wx:for-item="card">
+      <view class="name" data-index="{{index + 1}}">{{card.name}}</view>
+      <view class="split"></view>
+      <view wx:for="{{card.steps}}" wx:key="index" wx:for-item="step" class="step">{{step}}</view>
+      <view clss="image-container">
+        <image wx:for="{{card.images}}" hidden="{{image.hidden}}" wx:key="id" wx:for-item="image" id="{{image.id}}" src="{{image.url}}" class="step-image" style="width:{{imgWidth}}rpx;height:{{image.height}}rpx" bindload="onImageLoad" bindtap="showImages" data-images="{{card.images}}"
+        data-url="{{image.url}}" />
+      </view>
+    </view>
+  </view>
 </view>
 <view wx:if="{{noData}}" class="noData">
-    <view style="text-align:center;width:100%;">
-        <image src="../../assets/images/noVIP.png" mode="aspectFit" style="width:50%;"></image>
-        <view style="margin-top:-60rpx;">暂不提供该院建卡信息</view>
-    </view>
+  <view style="text-align:center;width:100%;">
+    <image src="../../assets/images/noVIP.png" mode="aspectFit" style="width:50%;"></image>
+    <view style="margin-top:-60rpx;">暂不提供该院建卡信息</view>
+  </view>
 </view>
