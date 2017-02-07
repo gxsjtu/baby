@@ -13,10 +13,11 @@ Page({
         //show loading
         var hospitalSvc = new HospitalSvc();
         this.setData({ btnDefaultDisabled: true });
+        console.log(this.data.hospital);
         hospitalSvc.setDefaultHospital(this.data.hospital._id).then(() => {
             //设置改按钮灰色
             //this.setData({btnDefaultDisabled: true});
-            getApp().globalData.defaultHos = this.data.hospital._id;
+            getApp().globalData.defaultHos = this.data.hospital;
         }).catch(err => {
             //提示设置失败
             this.setData({ btnDefaultDisabled: false });
@@ -89,7 +90,7 @@ Page({
             var globalData = getApp().globalData;
             globalData.hospital = data.data.data;
             this.setData({ hospital: globalData.hospital, hasHos: true })
-            if (globalData.defaultHos === this.data.hospital._id) {
+            if (globalData.defaultHos._id === this.data.hospital._id) {
                 this.setData({ btnDefaultDisabled: true });
             }
 
