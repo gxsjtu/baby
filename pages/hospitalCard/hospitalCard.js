@@ -4,50 +4,60 @@ Page({
     data: {
         warning: [],
         cards: [],
+        documents: ['身份证、预约单'],
         imgWidth: 182,
+        title: '唐氏筛查是唐氏综合症产前筛选检查的简称。60%患儿在胎内早期即流产，存活者有明显的智能落后、特殊面容、生长发育障碍和多发畸形。目的是通过化验孕妇的血液，结合孕妇的年龄，体重，孕周等方面来判断胎儿患先天愚型、神经管缺陷的危险系数。',
+        option: '唐氏筛查',
         noData: false
     },
-    onLoad: function (e) {
+    onLoad: function (param) {
+        this.getPageData(param.do);
+    },
+    getPageData: function (option) {
         let hospital = getApp().globalData.hospital;
-        let setCard = hospital.setCard;
         let hospitalName = hospital.name;
         let imgAddress = GLOBAL.SERVER + "/images/" + hospitalName;
-        //wx.setNavigationBarTitle({title: hospitalName});
-        if (setCard) {
 
-            let arrWarning = setCard.warnings;
-
-            let arrCard = [];
-            let noData = true;
-            if (setCard.cards.length > 0) {
-                for (let i = 0; i < setCard.cards.length; i++) {
-                    let obj = {};
-                    obj.name = setCard.cards[i].name;
-                    obj.steps = [];
-                    obj.images = [];
-                    for (let j = 0; j < setCard.cards[i].steps.length; j++) {
-                        obj.steps.push(setCard.cards[i].steps[j]);
+        if (option == 'card') {
+            //建大卡
+            if (hospital.setCard) {
+                let setCard = hospital.setCard;
+                let arrWarning = setCard.warnings;
+                let arrCard = [];
+                let noData = true;
+                if (setCard.cards.length > 0) {
+                    for (let i = 0; i < setCard.cards.length; i++) {
+                        let obj = {};
+                        obj.name = setCard.cards[i].name;
+                        obj.steps = [];
+                        obj.images = [];
+                        for (let j = 0; j < setCard.cards[i].steps.length; j++) {
+                            obj.steps.push(setCard.cards[i].steps[j]);
+                        }
+                        let baseId = "img-" + (+ new Date());
+                        for (let j = 0; j < setCard.cards[i].images.length; j++) {
+                            let url = encodeURI(imgAddress + '/cards/' + setCard.cards[i].images[j]);
+                            var image = {};
+                            image.height = 0;
+                            image.url = url;
+                            image.id = baseId + "-" + i + "-" + j;
+                            image.hidden = true;
+                            obj.images.push(image);
+                        }
+                        arrCard.push(obj);
                     }
-                    let baseId = "img-" + (+ new Date());
-                    for (let j = 0; j < setCard.cards[i].images.length; j++) {
-                        let url = encodeURI(imgAddress + '/cards/' + setCard.cards[i].images[j]);
-                        var image = {};
-                        image.height = 0;
-                        image.url = url;
-                        image.id = baseId + "-" + i + "-" + j;
-                        image.hidden = true;
-                        obj.images.push(image);
-                    }
-                    arrCard.push(obj);
+                    noData = false;
                 }
-                noData = false;
-            }
 
-            this.setData({ warning: arrWarning, cards: arrCard, noData: noData });
+                this.setData({ warning: arrWarning, cards: arrCard, noData: noData });
+            }
+            else {
+                this.setData({
+                    noData: true
+                });
+            }
         }
-        else {
-            this.setData({ noData: true });
-        }
+
     },
     onImageLoad: function (e) {
         let imageId = e.currentTarget.id;
@@ -67,9 +77,7 @@ Page({
                 }
             }
         }
-
         this.setData({ cards: cards });
-
     },
     showImages: function (e) {
         let curr = e.target.dataset.url;
