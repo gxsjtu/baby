@@ -2,9 +2,9 @@
   <view class="image-container">
     <image src="{{imageUrl}}"></image>
     <view class="title">
-      <view class="title-header">{{option}}介绍:</view>
+      <view class="title-header">{{title[0]}}</view>
       <view class="title-content">
-        <view class="word">{{title}}</view>
+        <view class="word">{{title[1]}}</view>
         <view class="arrow"></view>
       </view>
     </view>

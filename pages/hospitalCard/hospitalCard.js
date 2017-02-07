@@ -4,7 +4,7 @@ Page({
     data: {
         warning: [],
         cards: [],
-        documents: ['身份证、预约单'],
+        documents: [],
         imgWidth: 182,
         imageUrl:'',
         title: '唐氏筛查是唐氏综合症产前筛选检查的简称。60%患儿在胎内早期即流产，存活者有明显的智能落后、特殊面容、生长发育障碍和多发畸形。目的是通过化验孕妇的血液，结合孕妇的年龄，体重，孕周等方面来判断胎儿患先天愚型、神经管缺陷的危险系数。',
@@ -24,6 +24,8 @@ Page({
             if (hospital.setCard) {
                 let setCard = hospital.setCard;
                 let arrWarning = setCard.warnings;
+                let documents = setCard.documents;
+                let title = setCard.titles;
                 let arrCard = [];
                 let noData = true;
                 let url = encodeURI(imgAddress + '/cards/title');
@@ -51,7 +53,7 @@ Page({
                     noData = false;
                 }
 
-                this.setData({ warning: arrWarning, cards: arrCard, noData: noData,imageUrl:url});
+                this.setData({ warning: arrWarning, cards: arrCard, noData: noData,imageUrl:url,documents:documents,title:title});
             }
             else {
                 this.setData({
