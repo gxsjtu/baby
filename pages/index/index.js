@@ -114,7 +114,7 @@ Page({
                 let defaultHos = getApp().globalData.defaultHos;
                 if (defaultHos) {
                     getApp().globalData.hospital = defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard' });
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=card' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
