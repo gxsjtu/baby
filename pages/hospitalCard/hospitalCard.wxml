@@ -18,6 +18,7 @@
       </view>
       <view class="split"></view>
       <view class="document" wx:for="{{documents}}" wx:for-item="document" wx:key="index">{{document}}</view>
+      <view class="split"></view>
     </view>
     <view class="card-item">
       <view class="note-container">
@@ -26,6 +27,7 @@
       </view>
       <view class="split"></view>
       <view class="document" wx:for="{{warning}}" wx:for-item="warn" wx:key="index">{{warn}}</view>
+      <view class="split"></view>
     </view>
     <view class="card-item" wx:for="{{cards}}" wx:key="index" wx:for-item="card">
           <view class="note-container">
@@ -39,6 +41,7 @@
         <image wx:for="{{card.images}}" hidden="{{image.hidden}}" wx:key="id" wx:for-item="image" id="{{image.id}}" src="{{image.url}}" class="step-image" style="width:{{imgWidth}}rpx;height:{{image.height}}rpx" bindload="onImageLoad" bindtap="showImages" data-images="{{card.images}}"
         data-url="{{image.url}}" />
       </view>
+      <view class="split"></view>
     </view>
   </view>
 </view>
