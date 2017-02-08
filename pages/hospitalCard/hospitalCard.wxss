@@ -8,18 +8,17 @@ page {
 
 .v-line {
   position: absolute;
-  top: 0rpx;
-  left: 36rpx;
-  width: 2rpx;
+  top: 0px;
+  left: 18px;
+  width: 1px;
   height: 100%;
   background-image: linear-gradient(-180deg, #ffdada 85%, rgba(255, 179, 179, 0.00) 100%);
+  z-index: 10;
 }
 
 .card-item {
-  margin-left: 10rpx;
-  margin-right: 10rpx;
-  padding: 30rpx 60rpx;
-  border-bottom: 4rpx solid #f5f5f5;
+  padding: 0px 0px;
+  border-bottom: 2px solid #f5f5f5;
 }
 
 .step-container {
@@ -37,58 +36,46 @@ page {
   font-size: 13px;
   color: #ff4949;
   letter-spacing: -0.32px;
-  /*padding-bottom: 10rpx;*/
-  position: relative;
+  margin-left: 10px;
 }
 
-.name::before {
-  content: attr(data-index);
-  width: 36rpx;
-  height: 36rpx;
-  line-height: 36rpx;
-  position: absolute;
-  border-radius: 50%;
-  background: #ff4949;
-  color: #fff;
-  font-size: 20rpx;
-  text-align: center;
-  left: -52rpx;
-  top: 0rpx;
-  font-family: PingFangSC-Regular;
-  letter-spacing: -0.25px;
+.note-container{
+  display: flex;
+  margin-top: 20px;
+  margin-left: 10px;
 }
 
-.exclamation::before {
-  content: '!';
-  color: #ff4949;
-  background: white;
-  width: 36rpx;
-  height: 36rpx;
-  line-height: 36rpx;
-  position: absolute;
-  border-radius: 50%;
-  font-size: 15px;
-  text-align: center;
-  left: -52rpx;
-  top: -2rpx;
-  font-family: PingFangSC-Regular;
-  border: 1px solid #ff4949;
+.note{
+  width:16px;
+  height:16px;
+  text-align:center;
+  line-height:16px;
+  font-size: 13px;
+  z-index: 11;
+}
+
+.note-exclamation{
+  background:white;
+  border:1px solid #ff4949;
+  border-radius:50%;
+  color:#ff4949;
 }
 
 .step,.document {
   font-family: PingFangSC-Regular;
-  font-size: 30rpx;
+  font-size: 15px;
   color: #3d3d3d;
   letter-spacing: -0.37px;
   position: relative;
   margin-top: 15rpx;
-  margin-left: 0.65em;
+  margin-left: 50px;
+  margin-right: 10px;
 }
 
 .step::before,.document::before {
   content: '';
-  width: 6rpx;
-  height: 6rpx;
+  width: 3px;
+  height: 3px;
   border-radius: 50%;
   background: #8c8c8c;
   position: absolute;
@@ -100,6 +87,7 @@ page {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-left: 40px;
 }
 
 .step-image {
@@ -132,14 +120,14 @@ page {
   height: 100%;
 }
 
-.image-container {
+.title-image {
   width: 730rpx;
   height: 322rpx;
   position: relative;
   margin: 0 auto;
 }
 
-.image-container image {
+.title-image image {
   width: 100%;
   height: 100%;
 }
@@ -188,5 +176,5 @@ page {
 }
 
 .split{
-  height: 10rpx;
+  height: 16rpx;
 }
