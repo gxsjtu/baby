@@ -45,6 +45,6 @@
 <view wx:if="{{noData}}" class="noData">
   <view style="text-align:center;width:100%;">
     <image src="../../assets/images/noVIP.png" mode="aspectFit" style="width:50%;"></image>
-    <view style="margin-top:-60rpx;">暂不提供该院建卡信息</view>
+    <view style="margin-top:-60rpx;">暂不提供该院{{option}}信息</view>
   </view>
 </view>

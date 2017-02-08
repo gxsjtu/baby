@@ -7,8 +7,8 @@ Page({
         documents: [],
         imgWidth: 182,
         imageUrl: '',
-        title: '唐氏筛查是唐氏综合症产前筛选检查的简称。60%患儿在胎内早期即流产，存活者有明显的智能落后、特殊面容、生长发育障碍和多发畸形。目的是通过化验孕妇的血液，结合孕妇的年龄，体重，孕周等方面来判断胎儿患先天愚型、神经管缺陷的危险系数。',
-        option: '唐氏筛查',
+        title: '',
+        option: '',
         noData: false
     },
     onLoad: function (param) {
@@ -19,50 +19,71 @@ Page({
         let hospitalName = hospital.name;
         let imgAddress = GLOBAL.SERVER + "/images/" + hospitalName;
 
+        let pageData = {};
+        let userOption = '';
         if (option == 'card') {
             //建大卡
+            userOption = '建卡';
             if (hospital.setCard) {
-                let setCard = hospital.setCard;
-                let arrWarning = setCard.warnings;
-                let documents = setCard.documents;
-                let title = setCard.titles;
-                let arrCard = [];
-                let noData = true;
-                let url = encodeURI(imgAddress + '/cards/title');
-                if (setCard.cards.length > 0) {
-                    for (let i = 0; i < setCard.cards.length; i++) {
-                        let obj = {};
-                        obj.name = setCard.cards[i].name;
-                        obj.steps = [];
-                        obj.images = [];
-                        for (let j = 0; j < setCard.cards[i].steps.length; j++) {
-                            obj.steps.push(setCard.cards[i].steps[j]);
-                        }
-                        let baseId = "img-" + (+ new Date());
-                        if (setCard.cards[i].images) {
-                            for (let j = 0; j < setCard.cards[i].images.length; j++) {
-                                let url = encodeURI(imgAddress + '/cards/' + setCard.cards[i].images[j]);
-                                var image = {};
-                                image.height = 0;
-                                image.url = url;
-                                image.id = baseId + "-" + i + "-" + j;
-                                image.hidden = true;
-                                obj.images.push(image);
-                            }
-                        }
-                        arrCard.push(obj);
-                    }
-                    noData = false;
-                }
-
-                this.setData({ warning: arrWarning, cards: arrCard, noData: noData, imageUrl: url, documents: documents, title: title });
+                pageData = hospital.setCard;
             }
             else {
                 this.setData({
-                    noData: true
+                    noData: true,
+                    option: userOption
                 });
             }
         }
+        else if (option == 'down') {
+            userOption = '唐筛';
+            if (hospital.down) {
+                pageData = hospital.down;
+            }
+            else {
+                this.setData({
+                    noData: true,
+                    option: userOption
+                });
+            }
+        }
+
+        wx.setNavigationBarTitle({
+            title: userOption
+        })
+
+        let arrWarning = pageData.warnings;
+        let documents = pageData.documents;
+        let title = pageData.titles;
+        let arrCard = [];
+        let noData = true;
+        let url = encodeURI(imgAddress + '/cards/title');
+        if (pageData.cards.length > 0) {
+            for (let i = 0; i < pageData.cards.length; i++) {
+                let obj = {};
+                obj.name = pageData.cards[i].name;
+                obj.steps = [];
+                obj.images = [];
+                for (let j = 0; j < pageData.cards[i].steps.length; j++) {
+                    obj.steps.push(pageData.cards[i].steps[j]);
+                }
+                let baseId = "img-" + (+ new Date());
+                if (pageData.cards[i].images) {
+                    for (let j = 0; j < pageData.cards[i].images.length; j++) {
+                        let url = encodeURI(imgAddress + '/cards/' + pageData.cards[i].images[j]);
+                        var image = {};
+                        image.height = 0;
+                        image.url = url;
+                        image.id = baseId + "-" + i + "-" + j;
+                        image.hidden = true;
+                        obj.images.push(image);
+                    }
+                }
+                arrCard.push(obj);
+            }
+            noData = false;
+        }
+
+        this.setData({ warning: arrWarning, cards: arrCard, noData: noData, imageUrl: url, documents: documents, title: title, option: userOption });
 
     },
     onImageLoad: function (e) {

@@ -102,6 +102,7 @@ Page({
         this.setData({ firstItemSelected: false })
     },
     goto: function (event) {
+        let app = getApp().globalData;
         switch (event.target.dataset.item.id) {
             case 1:
                 wx.navigateTo({ url: '../confinementDate/confinementDate' });
@@ -111,10 +112,21 @@ Page({
                 break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
-                let defaultHos = getApp().globalData.defaultHos;
-                if (defaultHos) {
-                    getApp().globalData.hospital = defaultHos;
+                
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
                     wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=card' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
+            case 5:
+                //医院建大卡产检,需要判断是否选择了默认医院。
+
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=down' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
