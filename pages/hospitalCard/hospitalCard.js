@@ -6,7 +6,7 @@ Page({
         cards: [],
         documents: [],
         imgWidth: 182,
-        imageUrl:'',
+        imageUrl: '',
         title: '唐氏筛查是唐氏综合症产前筛选检查的简称。60%患儿在胎内早期即流产，存活者有明显的智能落后、特殊面容、生长发育障碍和多发畸形。目的是通过化验孕妇的血液，结合孕妇的年龄，体重，孕周等方面来判断胎儿患先天愚型、神经管缺陷的危险系数。',
         option: '唐氏筛查',
         noData: false
@@ -39,21 +39,23 @@ Page({
                             obj.steps.push(setCard.cards[i].steps[j]);
                         }
                         let baseId = "img-" + (+ new Date());
-                        for (let j = 0; j < setCard.cards[i].images.length; j++) {
-                            let url = encodeURI(imgAddress + '/cards/' + setCard.cards[i].images[j]);
-                            var image = {};
-                            image.height = 0;
-                            image.url = url;
-                            image.id = baseId + "-" + i + "-" + j;
-                            image.hidden = true;
-                            obj.images.push(image);
+                        if (setCard.cards[i].images) {
+                            for (let j = 0; j < setCard.cards[i].images.length; j++) {
+                                let url = encodeURI(imgAddress + '/cards/' + setCard.cards[i].images[j]);
+                                var image = {};
+                                image.height = 0;
+                                image.url = url;
+                                image.id = baseId + "-" + i + "-" + j;
+                                image.hidden = true;
+                                obj.images.push(image);
+                            }
                         }
                         arrCard.push(obj);
                     }
                     noData = false;
                 }
 
-                this.setData({ warning: arrWarning, cards: arrCard, noData: noData,imageUrl:url,documents:documents,title:title});
+                this.setData({ warning: arrWarning, cards: arrCard, noData: noData, imageUrl: url, documents: documents, title: title });
             }
             else {
                 this.setData({
