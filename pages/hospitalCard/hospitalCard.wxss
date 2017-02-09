@@ -180,7 +180,8 @@ page {
 
 .title {
   position: absolute;
-  width: 730rpx;
+  width: 700rpx;
+  padding-right:30rpx;
   height: 114rpx;
   background: rgba(0, 0, 0, 0.7);
   bottom: 0;
