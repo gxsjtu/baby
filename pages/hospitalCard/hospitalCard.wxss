@@ -8,7 +8,6 @@ page {
 }
 
 .mask {
-  /*overflow: hidden;*/
   height: 100%;
 }
 
