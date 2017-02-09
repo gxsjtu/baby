@@ -115,18 +115,25 @@ Page({
                 
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=card' });
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
             case 5:
-                //医院建大卡产检,需要判断是否选择了默认医院。
-
+                 if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=downs' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
+                case 6:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=down' });
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=inspections' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
