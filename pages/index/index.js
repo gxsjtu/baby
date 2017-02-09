@@ -34,7 +34,7 @@ Page({
                 date: '(孕22-24周)'
             }, {
                 id: 8,
-                title: '选择月嫂 / 月子中心',
+                title: '选择月子中心',
                 date: '(孕25-26周)'
             }, {
                 id: 9,
@@ -48,12 +48,8 @@ Page({
                 id: 11,
                 title: '入院前准备',
                 date: '(孕36-37周)'
-            }, {
+            },  {
                 id: 12,
-                title: '选月子餐',
-                date: '(孕37-39周)'
-            }, {
-                id: 13,
                 title: '生产攻略',
                 date: '(孕37-39周)'
             }
@@ -112,7 +108,7 @@ Page({
                 break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
-                
+
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
                     wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards' });
