@@ -84,13 +84,22 @@
 .credential-name {
   font-family: PingFangSC-Regular;
   font-size: 10px;
-  color: #6d6d6d;
   letter-spacing: -0.24px;
-  line-height: 13px;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  width: 290rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-left: 10rpx;
 }
 
 .credential-container {
   margin-top: 26rpx;
+  width: 300rpx;
+  height: 160rpx;
+  position: relative;
 }
 
 .credential-container:nth-child(even) {
@@ -98,8 +107,8 @@
 }
 
 .credential-container image {
-  width: 300rpx;
-  height: 160rpx;
+  width: 100%;
+  height: 100%;
 }
 
 .label {
