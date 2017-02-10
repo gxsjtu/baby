@@ -7,7 +7,7 @@
     <view class="wrap">
       <view>简称(小卡)，是由上海妇女保健所发放的，记录孕产妇健康情况的手册，是孕妇生产的重要证件之一，医院建立打卡时会要求出示。</view>
       <view style="height:54rpx;"></view>
-      <image style="width: 420rpx; height: 300rpx;" src="../../assets/images/hospitalList/header.jpg" />
+      <image style="width: 520rpx; height: 300rpx;" src="../../assets/images/lessCardContent.jpg" />
       <view style="height:20rpx;"></view>
       <view>现在为你推荐建卡攻略，首先选择<span style="color:#ff7b7f;">孕妈</span>的户籍所在地</view>
     </view>
