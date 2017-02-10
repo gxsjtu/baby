@@ -1,8 +1,8 @@
 const HospitalSvc = require('../../services/hospitalSvc.js')
 const GLOBAL = require('../../global.js');
-const filter = require('../../utils/lodash.filter');
-const sortBy = require('../../utils/lodash.sortby');
-const merge = require('../../utils/lodash.merge');
+// const filter = require('../../utils/lodash.filter');
+// const sortBy = require('../../utils/lodash.sortby');
+const _ = require('../../utils/lodash.min.js');
 
 Page({
     data: {
@@ -67,7 +67,7 @@ Page({
                 }
             }
 
-            dataList = sortBy(dataList, ['d', 's', 'e', 'p']);
+            dataList = _.sortBy(dataList, ['d', 's', 'e', 'p']);
 
             this.setData({
                 searchArray: dataList, //查询结果
@@ -90,34 +90,33 @@ Page({
     search: function () {
         let list = this.data.hosArray;
         if (this.data.searchKey != "") {
-            list = filter(list, (item) => {
+            list = _.filter(list, (item) => {
                 return item.name.indexOf(this.data.searchKey) >= 0
             })
         }
         if (this.data.selectStar != "等级") {
-            list = filter(list, (item) => {
+            list = _.filter(list, (item) => {
                 return item.level.indexOf(this.data.selectStar) >= 0
             });
         }
         if (this.data.selectArea != "区域") {
-            list = filter(list, (item) => {
+            list = _.filter(list, (item) => {
                 return item.district.indexOf(this.data.selectArea) >= 0
             });
         }
         if (this.data.selectOrder != "排序") {
             if (this.data.selectOrder == "距离") {
-                list = sortBy(list, ['d', 's', 'e', 'p']);
+                list = _.sortBy(list, ['d', 's', 'e', 'p']);
             } else if (this.data.selectOrder == "口碑") {
-                list = sortBy(list, ['score', 's', 'e', 'p', 'd']);
+                list = _.sortBy(list, ['score', 's', 'e', 'p', 'd']);
             } else if (this.data.selectOrder == "生产费用") {
-                list = sortBy(list, ['p', 's', 'e', 'd']);
+                list = _.sortBy(list, ['p', 's', 'e', 'd']);
             } else if (this.data.selectOrder == "建卡时间") {
-                list = sortBy(list, ['s', 'e', 'p', 'd']);
+                list = _.sortBy(list, ['s', 'e', 'p', 'd']);
             }
         }
         if (this.data.selectFilter != "筛选") {
-            console.log(list);
-            list = filter(list, (item) => {
+            list = _.filter(list, (item) => {
                 var hasTerms = false;
 
                 for (let i = 0; i < item.terms[0].docs.length; i++) {

@@ -1,10 +1,11 @@
-const merge = require('lodash.merge');
+// const merge = require('lodash.merge');
+var _ = require('lodash.min.js');
 const Promise = require('./promise.min.js');
 module.exports.request = function(url, data, method) {
     return new Promise((resolve, reject) => {
         wx.request({
             url: url,
-            data: merge(data, {}) ,
+            data: _.merge(data, {}) ,
             header: {
                 Authorization: "Bearer " + getApp().globalData.token,
                 // 'content-type': 'application/form-url'

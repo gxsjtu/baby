@@ -1,5 +1,6 @@
 const GLOBAL = require('../../global.js');
-var clone = require('../../utils/lodash.clone');
+// var clone = require('../../utils/lodash.clone');
+var _ = require('../../utils/lodash.min.js');
 Page({
     data: {
         warning: [],
@@ -129,7 +130,7 @@ Page({
         let imgWidth = this.data.imgWidth; //图片设置的宽度
         let scale = imgWidth / oImgW; //比例计算
         let imgHeight = oImgH * scale; //自适应高度
-        let cards = clone(this.data.cards);
+        let cards = _.clone(this.data.cards);
         for (let i = 0; i < cards.length; i++) {
             for (let j = 0; j < cards[i].images.length; j++) {
                 let img = cards[i].images[j];

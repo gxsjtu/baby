@@ -1,5 +1,6 @@
 const HospitalSvc = require('../../services/hospitalSvc.js');
-const filter = require('../../utils/lodash.filter');
+// const filter = require('../../utils/lodash.filter');
+var _ = require('../../utils/lodash.min.js');
 
 Page({
     data: {
@@ -18,7 +19,7 @@ Page({
                     for (var i = 0; i < hospital.packages.length; i++) {
                         let pItems = hospital.packages[i].items;
                         for (var j = 0; j < pItems.length; j++) {
-                            let item = filter(packages, (p) => {
+                            let item = _.filter(packages, (p) => {
                                 return p == pItems[j].id;
                             })
                             if (item != null && item != undefined && item.length > 0) {
@@ -53,7 +54,7 @@ Page({
                 for (var i = 0; i < hospital.packages.length; i++) {
                     let pItems = hospital.packages[i].items;
                     for (var j = 0; j < pItems.length; j++) {
-                        let item = filter(userPackages, (p) => {
+                        let item = _.filter(userPackages, (p) => {
                             return p == pItems[j].id;
                         })
                         console.log(item);
