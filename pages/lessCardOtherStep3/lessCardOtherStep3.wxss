@@ -27,13 +27,13 @@
 .content {
   margin: 30rpx auto 0rpx auto;
   width: 690rpx;
-  /*height: 862rpx;*/
+  height: 274rpx;
   border: 1px solid rgba(254, 97, 97, 0.2);
   border-radius: 2px;
   font-family: PingFangSC-Regular;
-  font-size: 13px;
-  color: #6d6d6d;
-  letter-spacing: -0.31px;
+  font-size: 15px;
+  color: #3d3d3d;
+  letter-spacing: -0.36px;
 }
 
 .wrap {

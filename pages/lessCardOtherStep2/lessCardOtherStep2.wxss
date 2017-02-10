@@ -27,7 +27,7 @@
 .content {
   margin: 30rpx auto 0rpx auto;
   width: 690rpx;
-  /*height: 862rpx;*/
+  height: 774rpx;
   border: 1px solid rgba(254, 97, 97, 0.2);
   border-radius: 2px;
   font-family: PingFangSC-Regular;
@@ -46,7 +46,7 @@
   display: flex;
   justify-content: center;
   width: 750rpx;
-  margin-top: 26rpx;
+  margin-top: 60rpx;
 }
 
 .footer-btn {
@@ -56,24 +56,10 @@
   letter-spacing: -0.39px;
   background: #ff4949;
   border-radius: 40px;
-  width: 266rpx;
+  width: 550rpx;
   height: 70rpx;
   line-height: 70rpx;
   text-align: center;
-}
-
-.footer-btn:last-child {
-  margin-left: 58rpx;
-}
-
-.question {
-  font-family: PingFangSC-Medium;
-  font-size: 12px;
-  color: #ff4949;
-  letter-spacing: -0.29px;
-  width: 750rpx;
-  text-align: center;
-  margin-top: 26rpx;
 }
 
 .credentials {
@@ -96,7 +82,7 @@
 }
 
 .credential-container {
-  margin-top: 20rpx;
+  margin-top: 24rpx;
   width: 300rpx;
   height: 160rpx;
   position: relative;
@@ -116,8 +102,6 @@
   font-size: 15px;
   color: #3d3d3d;
   letter-spacing: -0.36px;
-  margin-top: 0rpx;
-  margin-bottom: 0rpx;
 }
 
 .note {
