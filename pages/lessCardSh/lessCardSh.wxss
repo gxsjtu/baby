@@ -27,7 +27,7 @@
 .content {
   margin: 30rpx auto 0rpx auto;
   width: 690rpx;
-  height: 774rpx;
+  height: 862rpx;
   border: 1px solid rgba(254, 97, 97, 0.2);
   border-radius: 2px;
   font-family: PingFangSC-Regular;

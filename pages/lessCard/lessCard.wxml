@@ -1,8 +1,19 @@
 <view class="container">
-
-    <view class="header">
-        <image src="../../assets/images/lessCard.jpg"></image>
-        <view class="title">上海市孕产妇健康手册</view>
+  <view class="header">
+    <image src="../../assets/images/lessCard.jpg"></image>
+    <view class="title">上海市孕产妇健康手册</view>
+  </view>
+  <view class="content">
+    <view class="wrap">
+      <view>简称(小卡)，是由上海妇女保健所发放的，记录孕产妇健康情况的手册，是孕妇生产的重要证件之一，医院建立打卡时会要求出示。</view>
+      <view style="height:54rpx;"></view>
+      <image style="width: 420rpx; height: 300rpx;" src="../../assets/images/hospitalList/header.jpg" />
+      <view style="height:20rpx;"></view>
+      <view>现在为你推荐建卡攻略，首先选择<span style="color:#ff7b7f;">孕妈</span>的户籍所在地</view>
     </view>
-
+  </view>
+  <view class="footer">
+    <view class="footer-btn" bindtap="shCensus">上海市户籍</view>
+    <view class="footer-btn" bindtap="otherCensus">外省市户籍</view>
+  </view>
 </view>
