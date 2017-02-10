@@ -5,12 +5,26 @@
   </view>
   <view class="content">
     <view class="wrap">
+      <view class="label">办理材料：</view>
+      <view class="credentials">
+        <view wx:for="{{credentials}}" wx:key="index" wx:for-item="credential" class="credential-container">
+          <image src="{{credential.src}}" />
+          <view class="credential-name">{{credential.name}}</view>
+        </view>
+      </view>
 
-    <!--<image style="width: 420rpx; height: 300rpx;" src="../../assets/images/hospitalList/header.jpg" />-->
+      <view class="label">办理地点:</view>
 
+      <view class="note">孕妈户籍所在地社区医院</view>
+
+      <view class="label">注意事项:</view>
+
+      <view class="note">1，以上材料请准备夫妻双方的</view>
+      <view class="note">2，通常办事机构会留存复印件，请提前自备，以节省办事时间</view>
 
     </view>
   </view>
+  <view class="question">是否需要继续为您推荐具体办事地点、联系电话、交通路线？</view>
   <view class="footer">
     <view class="footer-btn">非常需要</view>
     <view class="footer-btn">不啦！谢谢</view>

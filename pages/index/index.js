@@ -129,6 +129,15 @@ Page({
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
+                case 9:
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=fhrms' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
             case 10:
                 //待产包
                 if (app.defaultHos) {

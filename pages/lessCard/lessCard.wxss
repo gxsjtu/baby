@@ -57,9 +57,12 @@
   letter-spacing: -0.39px;
   background: #ff4949;
   border-radius: 40px;
-  padding: 14rpx 54rpx;
+  width: 266rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
 }
 
-.footer-btn:last-child{
+.footer-btn:last-child {
   margin-left: 58rpx;
 }
