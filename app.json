@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/lessCardOptions/lessCardOptions",
         "pages/index/index",
         "pages/hospitalList/hospitalList",
         "pages/hospitalDetail/hospitalDetail",
@@ -23,7 +24,8 @@
         "backgroundColor": "#fff"
     },
     "tabBar": {
-        "list": [{
+        "list": [
+            {
                 "pagePath": "pages/index/index",
                 "text": "孕事任务",
                 "iconPath": "assets/images/tabs/do_selected.png",
