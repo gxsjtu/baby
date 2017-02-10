@@ -68,7 +68,7 @@ Page({
     },
     gotoCard: function () {
         //wx.navigateTo({ url: '../hospitalCard/hospitalCard' });
-        wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=card' });
+        wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards' });
     },
     gotoVIP: function () {
         wx.navigateTo({ url: '../hospitalVip/hospitalVip' });
