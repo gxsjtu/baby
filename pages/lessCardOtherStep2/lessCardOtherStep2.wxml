@@ -14,6 +14,6 @@
     </view>
   </view>
   <view class="footer">
-    <view class="footer-btn" bindtap="next">完成后，继续下一步</view>
+    <view class="footer-btn" bindtap="gotoNext">完成后，继续下一步</view>
   </view>
 </view>

@@ -9,7 +9,7 @@ Page({
             {name:'联系卡',src:'../../assets/images/credential6.jpg'}
         ]
     },
-    next: function(e){
+    gotoNext: function(e){
         wx.navigateTo({ url: '../lessCardOtherStep3/lessCardOtherStep3' });
     }
 })

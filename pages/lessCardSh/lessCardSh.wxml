@@ -24,7 +24,7 @@
   <view class="question">是否需要继续为您推荐具体办事地点、联系电话、交通路线？</view>
   <view class="footer">
     <view class="footer-btn" bindtap="gotoOption">非常需要</view>
-    <view class="footer-btn">不啦！谢谢</view>
+    <view class="footer-btn" bindtap="gotoSummary">不啦！谢谢</view>
   </view>
   <view style="height:30rpx;"></view>
 </view>
