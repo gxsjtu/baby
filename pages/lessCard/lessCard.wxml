@@ -1,0 +1,8 @@
+<view class="container">
+
+    <view class="header">
+        <image src="../../assets/images/lessCard.jpg"></image>
+        <view class="title">上海市孕产妇健康手册</view>
+    </view>
+
+</view>

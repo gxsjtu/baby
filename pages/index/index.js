@@ -106,6 +106,9 @@ Page({
             case 2:
                 wx.navigateTo({ url: '../hospitalList/hospitalList' });
                 break;
+            case 3:
+                wx.navigateTo({ url: '../lessCard/lessCard' });
+                break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
 
@@ -130,6 +133,15 @@ Page({
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
                     wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=inspections' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
+            case 7:
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=ogtts' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');

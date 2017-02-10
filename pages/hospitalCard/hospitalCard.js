@@ -59,6 +59,19 @@ Page({
                 });
             }
         }
+        else if(option == 'ogtts'){
+            userOption = '糖耐量';
+            if (hospital.ogtt) {
+                pageData = hospital.ogtt;
+            }
+            else {
+                this.setData({
+                    noData: true,
+                    option: userOption
+                });
+            }
+        }
+        //ogtts
 
         wx.setNavigationBarTitle({
             title: userOption
