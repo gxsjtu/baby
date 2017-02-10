@@ -48,7 +48,7 @@ Page({
                 id: 11,
                 title: '入院前准备',
                 date: '(孕36-37周)'
-            },  {
+            }, {
                 id: 12,
                 title: '生产攻略',
                 date: '(孕37-39周)'
@@ -118,7 +118,7 @@ Page({
                 }
                 break;
             case 5:
-                 if (app.defaultHos) {
+                if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
                     wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=downs' });
                 }
@@ -126,7 +126,7 @@ Page({
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
-                case 6:
+            case 6:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
                     wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=inspections' });
@@ -134,6 +134,9 @@ Page({
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
+                break;
+            case 8:
+                wx.navigateTo({ url: '../matronCenter/matron' });
                 break;
             default:
                 break;
@@ -153,7 +156,7 @@ Page({
             alertText: msg
         })
     },
-    gotoSelect:function(event){
+    gotoSelect: function (event) {
         this.setData({
             hideMask: true,
             alertText: ''

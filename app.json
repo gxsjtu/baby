@@ -8,7 +8,8 @@
         "pages/hospitalRooms/hospitalRooms",
         "pages/hospitalVip/hospitalVip",
         "pages/hospitalCard/hospitalCard",
-        "pages/confinementDate/confinementDate"
+        "pages/confinementDate/confinementDate",
+        "pages/matronCenter/matron"
     ],
     "window": {
         "backgroundTextStyle": "light",
