@@ -29,4 +29,5 @@
     <view class="footer-btn">非常需要</view>
     <view class="footer-btn">不啦！谢谢</view>
   </view>
+  <view style="height:30rpx;"></view>
 </view>

@@ -12,7 +12,8 @@
         "pages/hospitalPackages/hospitalPackages",
         "pages/matronCenter/matron",
         "pages/lessCard/lessCard",
-        "pages/lessCardSh/lessCardSh"
+        "pages/lessCardSh/lessCardSh",
+        "pages/lessCardOtherStep1/lessCardOtherStep1"
     ],
     "window": {
         "backgroundTextStyle": "light",
