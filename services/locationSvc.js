@@ -77,6 +77,30 @@ var LocationSvc = function() {
                 }
             ]
         }, {
+            district: '虹口区',
+            streets: [
+                {
+                    name: '',
+                    service: {
+                        name: '',
+                        tel: '',
+                        address: ''
+                    }
+                }
+            ]
+        }, {
+            district: '闸北区',
+            streets: [
+                {
+                    name: '',
+                    service: {
+                        name: '',
+                        tel: '',
+                        address: ''
+                    }
+                }
+            ]
+        }, {
             district: '松江区',
             streets: [
                 {
@@ -126,30 +150,6 @@ var LocationSvc = function() {
             ]
         }, {
             district: '崇明县',
-            streets: [
-                {
-                    name: '',
-                    service: {
-                        name: '',
-                        tel: '',
-                        address: ''
-                    }
-                }
-            ]
-        }, {
-            district: '虹口区',
-            streets: [
-                {
-                    name: '',
-                    service: {
-                        name: '',
-                        tel: '',
-                        address: ''
-                    }
-                }
-            ]
-        }, {
-            district: '闸北区',
             streets: [
                 {
                     name: '',
