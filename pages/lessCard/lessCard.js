@@ -3,6 +3,6 @@ Page({
         wx.navigateTo({ url: '../lessCardSh/lessCardSh' });
     },
     otherCensus: function(e){
-        wx.navigateTo({ url: '../lessCardOtherStep1/lessCardOtherStep1' });
+        wx.navigateTo({ url: '../lessCardOtherStep/lessCardOtherStep' });
     }
 })

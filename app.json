@@ -13,11 +13,9 @@
         "pages/matronCenter/matron",
         "pages/lessCard/lessCard",
         "pages/lessCardSh/lessCardSh",
-        "pages/lessCardOtherStep1/lessCardOtherStep1",
+        "pages/lessCardOtherStep/lessCardOtherStep",
         "pages/lessCardOptions/lessCardOptions",
-        "pages/lessCardSummary/lessCardSummary",
-        "pages/lessCardOtherStep2/lessCardOtherStep2",
-        "pages/lessCardOtherStep3/lessCardOtherStep3"
+        "pages/lessCardSummary/lessCardSummary"
     ],
     "window": {
         "backgroundTextStyle": "light",
