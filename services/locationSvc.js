@@ -165,11 +165,22 @@ var LocationSvc = function() {
 };
 
 LocationSvc.prototype.getDistricts = function() {
-    lodash.forEach(this.locations, x => {
-        console.log(x);
+    return new Promise((resolve, reject) => {
+        var d = [];
+        lodash.forEach(this.locations, x => {
+            d.push(x.district);
+        });
+        resolve(d);
     });
 };
 
-LocationSvc.prototype.getStreetsByDistrict = function(district) {};
+LocationSvc.prototype.getStreetsByDistrict = function(district) {
+    return new Promise((resolve, reject) => {
+        var target = _.find(this.locations, x => {
+            return x.district === district;
+        });
+        resolve(target);
+    });
+};
 
 module.exports = LocationSvc;
