@@ -1,4 +1,5 @@
 //index.js
+const LocationSvc = require('../../services/locationSvc.js');
 Page({
     data: {
         firstItemSelected: true, //现在的页面是产前阶段还是产后阶段，产前为true
@@ -130,14 +131,16 @@ Page({
                 }
                 break;
             case 10:
+                 var locationSvc = new LocationSvc();
+                 locationSvc.getDistricts();
                 //待产包
-                if (app.defaultHos) {
-                    getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=package' });
-                }
-                else {
-                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
-                }
+                // if (app.defaultHos) {
+                //     getApp().globalData.hospital = app.defaultHos;
+                //     wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=package' });
+                // }
+                // else {
+                //     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                // }
                 break;
             case 6:
                 if (app.defaultHos) {
