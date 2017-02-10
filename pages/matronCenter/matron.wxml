@@ -20,7 +20,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/red.png"></image>
         </view>
-        <view class="tel">4001763340</view>
+        <view class="tel" bindtap="call" data-phone="4001763340">4001763340</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -50,7 +50,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/red.png"></image>
         </view>
-        <view class="tel">4000303096-046003</view>
+        <view class="tel" bindtap="call" data-phone="4000303096-046003">4000303096-046003</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -80,7 +80,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">4000303096-04247</view>
+        <view class="tel" bindtap="call" data-phone="4000303096-04247">4000303096-04247</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -110,7 +110,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">4000303096-04233</view>
+        <view class="tel" bindtap="call" data-phone="4000303096-04233">4000303096-04233</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -140,7 +140,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">13916693424</view>
+        <view class="tel" bindtap="call" data-phone="13916693424">13916693424</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -170,7 +170,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">021-62718655</view>
+        <view class="tel" bindtap="call" data-phone="021-62718655">021-62718655</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -200,7 +200,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">4000303096-03522</view>
+        <view class="tel" bindtap="call" data-phone="4000303096-03522">4000303096-03522</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -230,7 +230,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">4000303096-05021</view>
+        <view class="tel" bindtap="call" data-phone="4000303096-05021">4000303096-05021</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -260,7 +260,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">021-20579288</view>
+        <view class="tel" bindtap="call" data-phone="021-20579288">021-20579288</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -290,7 +290,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">4000181189</view>
+        <view class="tel" bindtap="call" data-phone="4000181189">4000181189</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -320,7 +320,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">4001763275</view>
+        <view class="tel" bindtap="call" data-phone="4001763275">4001763275</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -350,7 +350,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">4001103508</view>
+        <view class="tel" bindtap="call" data-phone="4001103508">4001103508</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -380,7 +380,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/redgrey.png"></image>
         </view>
-        <view class="tel">021-60717511</view>
+        <view class="tel" bindtap="call" data-phone="021-60717511">021-60717511</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -410,7 +410,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/grey.png"></image>
         </view>
-        <view class="tel">4000303096-06864</view>
+        <view class="tel" bindtap="call" data-phone="4000303096-06864">4000303096-06864</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
@@ -440,7 +440,7 @@
           <image class="rate" src="../../assets/images/red.png"></image>
           <image class="rate" src="../../assets/images/grey.png"></image>
         </view>
-        <view class="tel">4000303096-06010</view>
+        <view class="tel" bindtap="call" data-phone="4000303096-06010">4000303096-06010</view>
       </view>
       <view class="item-split"></view>
       <view class="remark">
