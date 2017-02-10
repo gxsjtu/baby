@@ -9,6 +9,7 @@ Page({
         imageUrl: '',
         title: '',
         option: '',
+        showDesc: false,
         noData: false
     },
     onLoad: function (param) {
@@ -21,7 +22,7 @@ Page({
 
         let pageData = {};
         let userOption = '';
-        if (option == 'card') {
+        if (option == 'cards') {
             //建大卡
             userOption = '建卡';
             if (hospital.setCard) {
@@ -34,7 +35,7 @@ Page({
                 });
             }
         }
-        else if (option == 'down') {
+        else if (option == 'downs') {
             userOption = '唐筛';
             if (hospital.down) {
                 pageData = hospital.down;
@@ -46,17 +47,41 @@ Page({
                 });
             }
         }
+        else if(option == 'inspections'){
+            userOption = '大排畸';
+            if (hospital.inspection) {
+                pageData = hospital.inspection;
+            }
+            else {
+                this.setData({
+                    noData: true,
+                    option: userOption
+                });
+            }
+        }
+        else if(option == 'ogtts'){
+            userOption = '糖耐量';
+            if (hospital.ogtt) {
+                pageData = hospital.ogtt;
+            }
+            else {
+                this.setData({
+                    noData: true,
+                    option: userOption
+                });
+            }
+        }
+        //ogtts
 
         wx.setNavigationBarTitle({
             title: userOption
         })
-
         let arrWarning = pageData.warnings;
         let documents = pageData.documents;
         let title = pageData.titles;
         let arrCard = [];
         let noData = true;
-        let url = encodeURI(imgAddress + '/cards/title');
+        let url = encodeURI(imgAddress + '/'+option+'/title');
         if (pageData.cards.length > 0) {
             for (let i = 0; i < pageData.cards.length; i++) {
                 let obj = {};
@@ -69,7 +94,7 @@ Page({
                 let baseId = "img-" + (+ new Date());
                 if (pageData.cards[i].images) {
                     for (let j = 0; j < pageData.cards[i].images.length; j++) {
-                        let url = encodeURI(imgAddress + '/cards/' + pageData.cards[i].images[j]);
+                        let url = encodeURI(imgAddress + '/'+option+'/' + pageData.cards[i].images[j]);
                         var image = {};
                         image.height = 0;
                         image.url = url;
@@ -114,5 +139,18 @@ Page({
             urls.push(images[i].url)
         }
         wx.previewImage({ current: curr, urls: urls, success: function (e) { }, fail: function (e) { } });
+    },
+    showTitle: function(e){
+        this.setData({
+            showDesc:true
+        });
+    },
+    clickDesc: function(e){
+        //勿删
+    },
+    hideMask: function(e){
+        this.setData({
+            showDesc:false
+        });
     }
 })

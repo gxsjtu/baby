@@ -10,11 +10,7 @@
                         <text style="padding-left:20rpx;display:block;height:26rpx;font-family: PingFangSC-Regular;font-size: 14px;">{{hospital.name}}</text>
                         <text style="padding-left:20rpx;padding-top:12rpx;font-family: PingFangSC-Regular;font-size: 12px;">{{hospital.level}}</text>
                     </view>
-
-                    <!--<view class="border-" style="width:20px;">-->
                     <image src="../../assets/images/hospitaldetail/rightPic.png" style="height:14px;width:14px;"></image>
-
-                    <!--</view>-->
                 </view>
             </view>
             <view style="background:#fff;display:flex;flex-direction:row;width:750rpx;align-items:center;box-shadow:0 10rpx 0 #ebebeb;border-bottom:2rpx solid #e4e4e4;height:51px;">

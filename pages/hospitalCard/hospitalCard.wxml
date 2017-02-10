@@ -1,17 +1,24 @@
-<view class="view-container" wx:if="{{!noData}}">
-  <view class="title-image">
-    <image src="{{imageUrl}}"></image>
-    <view class="title">
-      <view class="title-header">{{title[0]}}</view>
-      <view class="title-content">
-        <view class="word">{{title[1]}}</view>
-        <view class="arrow"></view>
-      </view>
+<view class="view-container {{showDesc ? '' : 'mask'}}" wx:if="{{!noData}}">
+  <view class="desc" bindtap="hideMask" hidden="{{!showDesc}}" wx:if="{{title}}">
+    <view class="desc-container" catchtap="clickDesc">
+      <view class="desc-title">{{title[0]}}</view>
+      <view class="desc-word">{{title[1]}}</view>
     </view>
   </view>
+  <view class="title-image">
+    <image src="{{imageUrl}}"></image>
+    <view class="title" style="display:flex;flex-direction:row;align-items:center" bindtap="showTitle" wx:if="{{title}}">
+      <view style="width:700rpx;height:100%;display:flex;flex-direction:column;justify-content:center;">
+        <text style="padding-left:20rpx;display:block;height:26rpx;font-family: PingFangSC-Regular;font-size: 14px;">{{title[0]}}</text>
+        <text style="padding-left:20rpx;padding-top:12rpx;font-family: PingFangSC-Regular;font-size: 12px;height:20px;line-height:20px;overflow:hidden;">{{title[1]}}</text>
+      </view>
+      <image src="../../assets/images/hospitaldetail/rightPic.png" style="height:14px;width:14px;"></image>
+    </view>
+  </view>
+
   <view class="step-container">
     <view class="v-line"></view>
-    <view class="card-item">
+    <view class="card-item" wx:if="{{documents && documents.length > 0}}">
       <view class="note-container">
         <view class="note note-exclamation">!</view>
         <view class="exclamation">所需材料</view>
@@ -20,7 +27,7 @@
       <view class="document" wx:for="{{documents}}" wx:for-item="document" wx:key="index">{{document}}</view>
       <view class="split"></view>
     </view>
-    <view class="card-item">
+    <view class="card-item" wx:if="{{warning && warning.length > 0}}">
       <view class="note-container">
         <view class="note note-exclamation">!</view>
         <view class="exclamation">注意事项</view>
@@ -30,11 +37,10 @@
       <view class="split"></view>
     </view>
     <view class="card-item" wx:for="{{cards}}" wx:key="index" wx:for-item="card">
-          <view class="note-container">
+      <view class="note-container">
         <view class="note note-name" style="background:#ff4949;color:white;border-radius:50%;">{{index + 1}}</view>
         <view class="name">{{card.name}}</view>
       </view>
-      <!--<view class="name" data-index="{{index + 1}}">{{card.name}}</view>-->
       <view class="split"></view>
       <view wx:for="{{card.steps}}" wx:key="index" wx:for-item="step" class="step">{{step}}</view>
       <view class="image-container">

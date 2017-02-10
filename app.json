@@ -9,7 +9,9 @@
         "pages/hospitalVip/hospitalVip",
         "pages/hospitalCard/hospitalCard",
         "pages/confinementDate/confinementDate",
-        "pages/hospitalPackages/hospitalPackages"
+        "pages/hospitalPackages/hospitalPackages",
+        "pages/matronCenter/matron",
+        "pages/lessCard/lessCard"
     ],
     "window": {
         "backgroundTextStyle": "light",

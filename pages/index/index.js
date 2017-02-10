@@ -34,7 +34,7 @@ Page({
                 date: '(孕22-24周)'
             }, {
                 id: 8,
-                title: '选择月嫂 / 月子中心',
+                title: '选择月子中心',
                 date: '(孕25-26周)'
             }, {
                 id: 9,
@@ -50,10 +50,6 @@ Page({
                 date: '(孕36-37周)'
             }, {
                 id: 12,
-                title: '选月子餐',
-                date: '(孕37-39周)'
-            }, {
-                id: 13,
                 title: '生产攻略',
                 date: '(孕37-39周)'
             }
@@ -110,23 +106,24 @@ Page({
             case 2:
                 wx.navigateTo({ url: '../hospitalList/hospitalList' });
                 break;
+            case 3:
+                wx.navigateTo({ url: '../lessCard/lessCard' });
+                break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
 
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=card' });
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
             case 5:
-                //医院建大卡产检,需要判断是否选择了默认医院。
-
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=down' });
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=downs' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
@@ -142,6 +139,15 @@ Page({
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
+            case 6:
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=inspections' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
             case 11:
                 //入院前准备
                 if (app.defaultHos) {
@@ -151,6 +157,18 @@ Page({
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
+                break;
+            case 7:
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=ogtts' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
+            case 8:
+                wx.navigateTo({ url: '../matronCenter/matron' });
                 break;
             default:
                 break;

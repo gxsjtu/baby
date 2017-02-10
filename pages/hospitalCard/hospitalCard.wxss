@@ -4,6 +4,51 @@ page {
 
 .view-container {
   background: #ebebeb;
+  position: relative;
+}
+
+.mask {
+  height: 100%;
+}
+
+.desc {
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.desc-container {
+  z-index: 1000;
+  width: 670rpx;
+  margin: 362rpx auto 0;
+}
+
+.desc-title {
+  background-image: linear-gradient(-95deg, #ff6f6f 0%, #ff4949 54%, #ff6868 100%);
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -0.43px;
+  line-height: 96rpx;
+  height: 96rpx;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.desc-word {
+  background: white;
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #6d6d6d;
+  letter-spacing: -0.31px;
+  padding: 40rpx 32rpx 40rpx 30rpx;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .v-line {
@@ -28,7 +73,7 @@ page {
   background: #fdfdfd;
   width: 730rpx;
   margin: 0 auto;
-  height: 100%;
+  /*height: 100%;*/
 }
 
 .name, .exclamation {
@@ -39,29 +84,29 @@ page {
   margin-left: 10px;
 }
 
-.note-container{
+.note-container {
   display: flex;
   margin-top: 20px;
   margin-left: 10px;
 }
 
-.note{
-  width:16px;
-  height:16px;
-  text-align:center;
-  line-height:16px;
+.note {
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
   font-size: 13px;
   z-index: 11;
 }
 
-.note-exclamation{
-  background:white;
-  border:1px solid #ff4949;
-  border-radius:50%;
-  color:#ff4949;
+.note-exclamation {
+  background: white;
+  border: 1px solid #ff4949;
+  border-radius: 50%;
+  color: #ff4949;
 }
 
-.step,.document {
+.step, .document {
   font-family: PingFangSC-Regular;
   font-size: 15px;
   color: #3d3d3d;
@@ -72,7 +117,7 @@ page {
   margin-right: 10px;
 }
 
-.step::before,.document::before {
+.step::before, .document::before {
   content: '';
   width: 3px;
   height: 3px;
@@ -134,11 +179,12 @@ page {
 
 .title {
   position: absolute;
-  width: 730rpx;
+  width: 700rpx;
+  padding-right:30rpx;
   height: 114rpx;
   background: rgba(0, 0, 0, 0.7);
   bottom: 0;
-  color: white;
+  color: rgba(255,255,255,0.7);
 }
 
 .title-header {
@@ -164,6 +210,8 @@ page {
   width: 680rpx;
   height: 28rpx;
   overflow: hidden;
+  white-space: nowrap;
+  line-height: 28rpx;
 }
 
 .arrow {
@@ -175,6 +223,6 @@ page {
   margin-top: 8rpx;
 }
 
-.split{
+.split {
   height: 16rpx;
 }
