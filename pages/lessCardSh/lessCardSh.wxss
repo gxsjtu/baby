@@ -27,7 +27,7 @@
 .content {
   margin: 30rpx auto 0rpx auto;
   width: 690rpx;
-  height: 862rpx;
+  /*height: 862rpx;*/
   border: 1px solid rgba(254, 97, 97, 0.2);
   border-radius: 2px;
   font-family: PingFangSC-Regular;
@@ -107,6 +107,8 @@
   font-size: 15px;
   color: #3d3d3d;
   letter-spacing: -0.36px;
+  margin-top: 34rpx;
+  margin-bottom: 10rpx;
 }
 
 .note {
