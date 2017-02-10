@@ -1,6 +1,5 @@
 {
     "pages": [
-        "pages/lessCardOptions/lessCardOptions",
         "pages/index/index",
         "pages/hospitalList/hospitalList",
         "pages/hospitalDetail/hospitalDetail",
@@ -14,7 +13,9 @@
         "pages/matronCenter/matron",
         "pages/lessCard/lessCard",
         "pages/lessCardSh/lessCardSh",
-        "pages/lessCardOtherStep1/lessCardOtherStep1"
+        "pages/lessCardOtherStep1/lessCardOtherStep1",
+        "pages/lessCardOptions/lessCardOptions",
+        "pages/lessCardSummary/lessCardSummary"
     ],
     "window": {
         "backgroundTextStyle": "light",
