@@ -112,7 +112,7 @@ Page({
                 break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
-                
+
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
                     wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=card' });
@@ -127,6 +127,26 @@ Page({
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
                     wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=down' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
+            case 10:
+                //待产包
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=package' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
+            case 11:
+                //入院前准备
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=ready' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
@@ -150,7 +170,7 @@ Page({
             alertText: msg
         })
     },
-    gotoSelect:function(event){
+    gotoSelect: function (event) {
         this.setData({
             hideMask: true,
             alertText: ''

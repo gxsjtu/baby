@@ -7,7 +7,8 @@ Page({
         hospital: {},
         imgAddress: GLOBAL.SERVER + "/images/",
         imgSrc: "#",
-        btnDefaultDisabled: false
+        btnDefaultDisabled: false,
+        ishid: true
     },
     setDefault: function () {
         //show loading
@@ -71,6 +72,16 @@ Page({
     },
     gotoVIP: function () {
         wx.navigateTo({ url: '../hospitalVip/hospitalVip' });
+    },
+    showM: function () {
+        this.setData({
+            ishid:false
+        })
+    },
+    hidModal: function(){
+        this.setData({
+            ishid:true
+        })
     },
     onLoad: function (e) {
         //获取窗口高度

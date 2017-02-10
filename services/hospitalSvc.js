@@ -43,4 +43,14 @@ HospitalSvc.prototype.setDefaultHospital = function(hosId) {
     })
 }
 
+HospitalSvc.prototype.updatePackages = function(pId){
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/user/updatePackages/" + pId).then(data => {
+            resolve(data);
+        }).catch(ertr => {
+            console.log(err);
+        })
+    })
+}
+
 module.exports = HospitalSvc;

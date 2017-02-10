@@ -33,9 +33,10 @@ Page({
         });
     },
     onLoad: function () {
-        wx.showToast({ title: '加载中', icon: 'loading', duration: 10000, mask: true });
+
         var hospitalSvc = new HospitalSvc();
         hospitalSvc.getLocation().then(data => {
+            wx.showToast({ title: '加载中', icon: 'loading', duration: 10000, mask: true });
             var dataList = data.data.data;
 
             for (let i = 0; i < dataList.length; i++) {
@@ -119,24 +120,19 @@ Page({
             list = filter(list, (item) => {
                 var hasTerms = false;
 
-                for(let i = 0; i<item.terms[0].docs.length;i++){
-                    if(item.terms[0].docs[i].name == this.data.selectFilter)
-                    {
-                        if(item.terms[0].docs[i].isHas)
-                        {
+                for (let i = 0; i < item.terms[0].docs.length; i++) {
+                    if (item.terms[0].docs[i].name == this.data.selectFilter) {
+                        if (item.terms[0].docs[i].isHas) {
                             hasTerms = true;
                         }
                         break;
                     }
                 }
 
-                if(!hasTerms)
-                {
-                    for(let i = 0; i<item.terms[0].docs.length;i++){
-                        if(item.terms[1].docs[i].name == this.data.selectFilter)
-                        {
-                            if(item.terms[1].docs[i].isHas)
-                            {
+                if (!hasTerms) {
+                    for (let i = 0; i < item.terms[0].docs.length; i++) {
+                        if (item.terms[1].docs[i].name == this.data.selectFilter) {
+                            if (item.terms[1].docs[i].isHas) {
                                 hasTerms = true;
                             }
                             break;

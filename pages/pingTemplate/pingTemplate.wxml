@@ -1,0 +1,11 @@
+<template name="pingTemp">
+  <view class="result-container">
+    <view>
+      服务评分
+    </view>
+    <view>
+      <textarea placeholder="撰写评论" />
+      <button bindtap="hidModal">取消</button>
+    </view>
+  </view>
+</template>
