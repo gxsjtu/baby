@@ -6,7 +6,7 @@ Page({
     data: {
         list: []
     },
-    goReady: function (e) {
+    goReady: function(e) {
         let hospital = getApp().globalData.hospital;
         var pid = e.currentTarget.dataset.packageId;
         var hospitalSvc = new HospitalSvc();
@@ -23,25 +23,21 @@ Page({
                                 return p == pItems[j].id;
                             })
                             if (item != null && item != undefined && item.length > 0) {
-                                pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true });
+                                pItemList.push({id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true});
                             } else {
-                                pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
+                                pItemList.push({id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false});
                             }
                         }
-                        pList.push({ name: hospital.packages[i].name, items: pItemList });
+                        pList.push({name: hospital.packages[i].name, items: pItemList});
                     }
-                    this.setData({
-                        list: pList
-                    })
+                    this.setData({list: pList})
                 } else {
-                    this.setData({
-                        list: hospital.packages
-                    })
+                    this.setData({list: hospital.packages})
                 }
             }
         });
     },
-    onLoad: function (param) {
+    onLoad: function(param) {
         let fromStr = param.from;
         let hospital = getApp().globalData.hospital;
 
@@ -57,26 +53,18 @@ Page({
                         let item = _.filter(userPackages, (p) => {
                             return p == pItems[j].id;
                         })
-                        console.log(item);
                         if (item != null && item != undefined && item.length > 0) {
-                            pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true });
+                            pItemList.push({id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true});
                         } else {
-                            pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
+                            pItemList.push({id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false});
                         }
                     }
-                    pList.push({ name: hospital.packages[i].name, items: pItemList });
+                    pList.push({name: hospital.packages[i].name, items: pItemList});
                 }
-                this.setData({
-                    list: pList
-                })
+                this.setData({list: pList})
+            } else {
+                this.setData({list: hospital.packages})
             }
-            else {
-                this.setData({
-                    list: hospital.packages
-                })
-            }
-        } else {
-
-        }
+        } else {}
     }
 })
