@@ -3,30 +3,13 @@
     <image src="../../assets/images/lessCard.jpg"></image>
     <view class="title">外省市户籍小卡办理攻略</view>
   </view>
-  <view class="content">
-    <view class="wrap">
-      <view class="label">办理事项：</view>
-      <view class="credentials">
-        <view wx:for="{{credentials1}}" wx:key="index" wx:for-item="credential" class="credential-container">
-          <image src="{{credential.src}}" />
-          <view class="credential-name">{{credential.name}}</view>
-        </view>
-      </view>
-      <view class="note">孕妈是外省市户籍，需要先到户籍所在地计生部门办理“准生证”和“流动人口婚育证明”</view>
-    </view>
-  </view>
-
-<view style="display:flex;justify-content:center;width:750rpx;height:120rpx;align-items:center;">
-  <image src="../../assets/images/down.png" style="width:80rpx;height:80rpx;"></image>
-</view>
-
 
   <view class="content" style="margin-top:0rpx;">
     <view class="wrap">
       <view class="label">办理材料：</view>
-      <view class="note">带好身份证、户口本、结婚证、准生证、流动人口生育证明，去居住地所在居委会或所在街道计计生部门办理<span style="color:#ff7b7f;">“上海市流动人口生育联系卡”</span> </view>
+      <view class="note">带好身份证、户口本、结婚证，去居住地所在居委会或所在街道计计生部门办理<span style="color:#ff7b7f;">“上海市流动人口生育联系卡”</span> </view>
       <view class="credentials">
-        <view wx:for="{{credentials2}}" wx:key="index" wx:for-item="credential" class="credential-container">
+        <view wx:for="{{credentials}}" wx:key="index" wx:for-item="credential" class="credential-container">
           <image src="{{credential.src}}" />
           <view class="credential-name">{{credential.name}}</view>
         </view>
