@@ -2,7 +2,6 @@
   <view class="desc" bindtap="hideMask" hidden="{{!showDesc}}" wx:if="{{title}}">
     <view class="desc-container" catchtap="clickDesc">
       <view class="desc-title">{{title[0]}}</view>
-      <view style="height:20rpx;"></view>
       <view class="desc-word">{{title[1]}}</view>
     </view>
   </view>
