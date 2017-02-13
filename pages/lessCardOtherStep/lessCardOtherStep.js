@@ -14,9 +14,9 @@ Page({
         ]
     },
     gotoOption: function(e){
-        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions' });
+        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?from=other' });
     },
     gotoSummary: function(e){
-        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary' });
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?from=other' });
     }
 })
