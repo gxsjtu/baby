@@ -112,8 +112,10 @@ Page({
         var locationSvc = new LocationSvc();
         locationSvc.completeAll(this.data.typeStr, this.data.selectArea, street, this.data.addrDetail).then(data => {
             console.log(data);
-            //  wx.navigateTo({url: '../lessCardSummary/lessCardSummary'});
-             wx.navigateTo({ url: '../lessCardSummary/lessCardSummary' });
+            if (data.data.message == "OK") {
+                getApp().globalData.resultStreets = this.data.resultStreets;
+                wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr });
+            }
         })
     }
 })

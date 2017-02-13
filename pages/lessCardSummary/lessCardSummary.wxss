@@ -67,7 +67,7 @@ page {
   color: #6d6d6d;
   letter-spacing: -0.36px;
   margin-top: 15px;
-  margin-left: 15px;
+  margin-left: 30rpx;
 }
 
 .font-l {
@@ -98,4 +98,8 @@ page {
   font-size: 16px;
   color: #fff;
   letter-spacing: -0.39px;
+}
+
+scroll-view {
+  height: 150px;
 }

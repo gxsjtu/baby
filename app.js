@@ -36,6 +36,7 @@ App({
         token: null,
         defaultHos: null,
         hospital: null,
-        user: null
+        user: null,
+        resultStreets: null
     }
 })
