@@ -7,9 +7,9 @@ Page({
         ]
     },
      gotoOption: function(e){
-        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?from=native' });
+        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=1' });//上海
     },
     gotoSummary: function(e){
-        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?from=native' });
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=2' });//外省
     }
 })

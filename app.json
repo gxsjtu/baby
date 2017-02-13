@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/lessCardSummary/lessCardSummary",
         "pages/index/index",
         "pages/hospitalList/hospitalList",
         "pages/hospitalDetail/hospitalDetail",
@@ -15,7 +16,6 @@
         "pages/lessCardSh/lessCardSh",
         "pages/lessCardOtherStep/lessCardOtherStep",
         "pages/lessCardOptions/lessCardOptions",
-        "pages/lessCardSummary/lessCardSummary",
         "pages/babyCensus/babyCensus"
     ],
     "window": {
