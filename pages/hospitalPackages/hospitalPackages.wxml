@@ -8,8 +8,8 @@
       </view>
       <view>
         <view wx:for="{{item.items}}" wx:for-item="doc" wx:key="{{doc.id}}" class="list-item" bindtap="goReady" data-package-id="{{doc.id}}">
-          <view class="{{doc.isReady ? 'name-linef' : 'name-line'}}"><span class="list-name">{{doc.name}}</span></view>
-          <view class="list-qty">{{doc.quantity}}</view>
+          <view class="{{doc.isReady ? 'name-linef' : 'name-line'}}"><view class="list-name">{{doc.name}}</view></view>
+          <view class="list-qty {{doc.isReady ? 'list-qty-linef' : 'list-qty-line'}}">{{doc.quantity}}</view>
           <view style="padding-left:5px;">
             <image src="{{doc.isReady ? '../../assets/images/hospitaldetail/gx.png' : '../../assets/images/hospitaldetail/wg.png'}}" style="height:15px;width:15px;"></image>
           </view>
