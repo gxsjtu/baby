@@ -13,7 +13,9 @@
         "pages/matronCenter/matron",
         "pages/lessCard/lessCard",
         "pages/lessCardSh/lessCardSh",
-        "pages/lessCardOtherStep1/lessCardOtherStep1"
+        "pages/lessCardOtherStep/lessCardOtherStep",
+        "pages/lessCardOptions/lessCardOptions",
+        "pages/lessCardSummary/lessCardSummary"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -23,7 +25,8 @@
         "backgroundColor": "#fff"
     },
     "tabBar": {
-        "list": [{
+        "list": [
+            {
                 "pagePath": "pages/index/index",
                 "text": "孕事任务",
                 "iconPath": "assets/images/tabs/do_selected.png",

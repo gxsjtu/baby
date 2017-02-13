@@ -13,6 +13,7 @@ Page({
         hospitalSvc.updatePackages(pid).then(data => {
             if (data.data.message == "OK") {
                 var packages = data.data.data;
+                console.log(packages);
                 if (packages != null && packages != undefined && packages.length > 0) {
                     var pList = [];
                     var pItemList = [];
@@ -34,6 +35,7 @@ Page({
                 } else {
                     this.setData({list: hospital.packages})
                 }
+                getApp().globalData.userPackages = packages;
             }
         });
     },

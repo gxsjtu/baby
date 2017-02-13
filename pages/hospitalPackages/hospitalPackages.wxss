@@ -14,7 +14,6 @@
   font-size: 13px;
   color: #6d6d6d;
   letter-spacing: -0.31px;
-  width: 550rpx;
 }
 
 .list-qty {
@@ -26,12 +25,22 @@
   text-align: right;
 }
 
-.list-namef {
+/*.list-namef {
   font-family: PingFangSC-Regular;
   font-size: 13px;
   color: #6d6d6d;
   letter-spacing: -0.31px;
+  width: 550rpx;
+}*/
+
+.name-line {
+  text-decoration: none;
+  width: 550rpx;
+}
+
+.name-linef {
   text-decoration: line-through;
+  color: #FF4949;
   width: 550rpx;
 }
 

@@ -27,7 +27,7 @@
 .content {
   margin: 30rpx auto 0rpx auto;
   width: 690rpx;
-  /*height: 862rpx;*/
+  /*height: 774rpx;*/
   border: 1px solid rgba(254, 97, 97, 0.2);
   border-radius: 2px;
   font-family: PingFangSC-Regular;
@@ -46,7 +46,7 @@
   display: flex;
   justify-content: center;
   width: 750rpx;
-  margin-top: 26rpx;
+  margin-top: 30rpx;
 }
 
 .footer-btn {
@@ -64,16 +64,6 @@
 
 .footer-btn:last-child {
   margin-left: 58rpx;
-}
-
-.question {
-  font-family: PingFangSC-Medium;
-  font-size: 12px;
-  color: #ff4949;
-  letter-spacing: -0.29px;
-  width: 750rpx;
-  text-align: center;
-  margin-top: 26rpx;
 }
 
 .credentials {
@@ -116,8 +106,6 @@
   font-size: 15px;
   color: #3d3d3d;
   letter-spacing: -0.36px;
-  margin-top: 0rpx;
-  margin-bottom: 0rpx;
 }
 
 .note {
@@ -125,4 +113,13 @@
   font-size: 13px;
   color: #6d6d6d;
   letter-spacing: -0.31px;
+}
+
+.question {
+  font-family: PingFangSC-Medium;
+  font-size: 12px;
+  color: #ff4949;
+  letter-spacing: -0.29px;
+  text-align: left;
+  padding: 26rpx;
 }

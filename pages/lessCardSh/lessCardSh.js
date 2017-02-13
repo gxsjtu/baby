@@ -5,5 +5,11 @@ Page({
             {name:'户口本',src:'../../assets/images/credential2.jpg'},
             {name:'结婚证',src:'../../assets/images/credential3.jpg'}
         ]
+    },
+     gotoOption: function(e){
+        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions' });
+    },
+    gotoSummary: function(e){
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary' });
     }
 })

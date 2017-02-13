@@ -1,7 +1,9 @@
 const Promise = require('../utils/promise.min.js');
 const lodash = require('../utils/lodash.min.js');
+const GLOBAL = require('../global.js');
+const request = require('../utils/request.js').request;
 
-var LocationSvc = function() {
+var LocationSvc = function () {
 
     this.locations = [
         {
@@ -717,7 +719,7 @@ var LocationSvc = function() {
     ];
 };
 
-LocationSvc.prototype.getDistricts = function() {
+LocationSvc.prototype.getDistricts = function () {
     return new Promise((resolve, reject) => {
         var d = [];
         lodash.forEach(this.locations, x => {
@@ -727,7 +729,7 @@ LocationSvc.prototype.getDistricts = function() {
     });
 };
 
-LocationSvc.prototype.getStreetsByDistrict = function(district) {
+LocationSvc.prototype.getStreetsByDistrict = function (district) {
     return new Promise((resolve, reject) => {
         var target = _.find(this.locations, x => {
             return x.district === district;
@@ -735,5 +737,27 @@ LocationSvc.prototype.getStreetsByDistrict = function(district) {
         resolve(target);
     });
 };
+
+LocationSvc.prototype.getCurrentLocation = function () {
+    return new Promise((resolve, reject) => {
+        wx.getLocation({
+            type: 'wgs84',
+            success: function (res) {
+                var latitude = res.latitude //纬度
+                var longitude = res.longitude //经度
+                  request(GLOBAL.SERVER + "/user/getLocation/" + longitude + "/" + latitude, null, "GET").then(data => {
+                    resolve(data);
+                })
+            },
+            fail: function(err) {
+                // reject(err)
+                // request(GLOBAL.SERVER + "/hospital/getAll/-1/-1", null, "GET").then(data => {
+                //     resolve(data);
+                // });
+                console.log("拒绝")
+            }
+        })
+    })
+}
 
 module.exports = LocationSvc;
