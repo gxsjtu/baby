@@ -129,7 +129,7 @@ Page({
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
-                case 9:
+            case 9:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
                     wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=fhrms' });
@@ -157,16 +157,6 @@ Page({
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
-            case 11:
-                //入院前准备
-                if (app.defaultHos) {
-                    getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=ready' });
-                }
-                else {
-                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
-                }
-                break;
             case 7:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
@@ -178,6 +168,28 @@ Page({
                 break;
             case 8:
                 wx.navigateTo({ url: '../matronCenter/matron' });
+                break;
+            case 11:
+                //入院前准备
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=ready' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
+            case 23:
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=census' });
+                break;
+            case 24:
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=medical' });
+                break;
+            case 25:
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=fund' });
+                break;
+            case 26:
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=birth' });
                 break;
             default:
                 break;
