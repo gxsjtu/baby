@@ -43,7 +43,7 @@ page {
   font-size: 13px;
   color: #3d3d3d;
   letter-spacing: -0.31px;
-  width: 187rpx;
+  width: 250rpx;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.10);
   margin-left: 15px;
@@ -88,7 +88,7 @@ page {
   margin-left: 30rpx;
 }
 
-.select-item > view, scroll-view view {
+.select-item view {
   color: #3d3d3d;
   font-family: PingFangSC-Regular;
   padding: 30rpx 10rpx;
@@ -131,7 +131,7 @@ scroll-view {
 .content {
   margin: 30rpx auto 0rpx auto;
   width: 690rpx;
-  height: 886rpx;
+  height: 900rpx;
   border: 1px solid rgba(254, 97, 97, 0.2);
   border-radius: 2px;
   font-family: PingFangSC-Regular;
@@ -150,4 +150,29 @@ scroll-view {
   font-size: 16px;
   color: #fff;
   letter-spacing: -0.39px;
+}
+
+.street-n {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #3d3d3d;
+  letter-spacing: -0.36px;
+}
+
+.font-l {
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-top: 15px;
+  color: #b0b0b0;
+  font-size: 22rpx;
+  font-family: PingFangSC-Regular;
+}
+
+.area-l {
+  padding-left: 15px;
+  padding-bottom: 10px;
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #b0b0b0;
+  letter-spacing: -0.31px;
 }

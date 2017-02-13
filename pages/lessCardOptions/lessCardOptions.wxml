@@ -3,9 +3,9 @@
   <view class="view-container">
     <view class="content">
       <view class="title-s">
-        请录入孕妈的户籍地址
+        请录入孕妈的{{addr}}
       </view>
-      <view style="padding-left:15px;padding-bottom:10px;font-family: PingFangSC-Regular;font-size: 13px;color: #b0b0b0;letter-spacing: -0.31px;">
+      <view style="padding-left: 15px;padding-bottom: 10px;font-family: PingFangSC-Regular;font-size: 13px;color: #b0b0b0;letter-spacing: -0.31px;">
         所在地区
       </view>
       <view class="filter-container">
@@ -19,18 +19,9 @@
           <view class="arrow area-arrow"></view>
           <view>
             <scroll-view scroll-y="true" class="select-item" catchtap="selectArea">
-              <view data-value="区域">全部</view>
-              <view data-value="浦东新区">浦东新区</view>
-              <view data-value="徐汇区">徐汇区</view>
-              <view data-value="黄埔区">黄埔区</view>
-              <view data-value="静安区">静安区</view>
-              <view data-value="长宁区">长宁区</view>
-              <view data-value="闵行区">闵行区</view>
-              <view data-value="杨浦区">杨浦区</view>
-              <view data-value="普陀区">普陀区</view>
-              <view data-value="虹口区">虹口区</view>
-              <view data-value="宝山区">宝山区</view>
-              <view data-value="嘉定区">嘉定区</view>
+              <view wx:for="{{districts}}" wx:for-item="item" wx:key="{{item}}" data-value="{{item}}">
+                {{item}}
+              </view>
             </scroll-view>
           </view>
         </view>
@@ -45,17 +36,9 @@
           <view>
             <scroll-view scroll-y="true" class="select-item" catchtap="selectStreet">
               <view data-value="区域">全部</view>
-              <view data-value="浦东新区">浦东新区</view>
-              <view data-value="徐汇区">徐汇区</view>
-              <view data-value="黄埔区">黄埔区</view>
-              <view data-value="静安区">静安区</view>
-              <view data-value="长宁区">长宁区</view>
-              <view data-value="闵行区">闵行区</view>
-              <view data-value="杨浦区">杨浦区</view>
-              <view data-value="普陀区">普陀区</view>
-              <view data-value="虹口区">虹口区</view>
-              <view data-value="宝山区">宝山区</view>
-              <view data-value="嘉定区">嘉定区</view>
+              <view wx:for="{{streets}}" wx:for-item="street" wx:key="{{street.name}}" data-value="{{street.name}}">
+                {{street.name}}
+              </view>
             </scroll-view>
           </view>
         </view>
@@ -63,14 +46,16 @@
       <view style="margin-left:15px;border: 1px solid rgba(0, 0, 0, 0.10);width:630rpx;">
         <input type="text" placeholder="请输入详细地址" />
       </view>
-      <view style="margin-bottom:15px;margin-left:15px;margin-top:15px;color:#b0b0b0;font-size:22rpx;font-family: PingFangSC-Regular;">
+      <view style="margin-bottom: 15px;margin-left: 15px;margin-top: 15px;color: #b0b0b0;font-size: 22rpx;font-family: PingFangSC-Regular;">
         (如果街道不详，则列出该区所有社区医院的列表。)
       </view>
-      <view wx:for="{{streets}}" wx:for-item="{{street}}" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
-        <view>办事地点名称</view>
-        <view>{{street.name}}</view>
-        <view>{{street.address}}</view>
-      </view>
+      <scroll-view scroll-y="true">
+        <view wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
+          <view class="street-n">办事地点名称</view>
+          <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">{{street.service.name}}</view>
+          <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.service.address}}</view>
+        </view>
+      </scroll-view>
     </view>
     <view style="display:flex;flex-direction:row;align-items:center;height:55px;position:absolute;bottom:40rpx;width:100%;background:#fff">
       <button bindtap="allComplete" class="btn-style">办事任务完成</button>

@@ -1847,12 +1847,18 @@ LocationSvc.prototype.getDistricts = function () {
 
 LocationSvc.prototype.getStreetsByDistrict = function (district) {
     return new Promise((resolve, reject) => {
-        var target = _.find(this.locations, x => {
+        var target = lodash.find(this.locations, x => {
             return x.district === district;
         });
         resolve(target);
     });
 };
+
+// LocationSvc.prototype.getStreetsByStreetName = function (streetName){
+//     return new Promise((resolve, reject) => {
+//         var target = lodash.find
+//     })
+// }
 
 LocationSvc.prototype.getCurrentLocation = function () {
     return new Promise((resolve, reject) => {
