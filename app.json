@@ -13,10 +13,10 @@
         "pages/matronCenter/matron",
         "pages/lessCard/lessCard",
         "pages/lessCardSh/lessCardSh",
-        "pages/lessCardOtherStep/lessCardOtherStep",
         "pages/lessCardOptions/lessCardOptions",
         "pages/lessCardSummary/lessCardSummary",
-        "pages/babyCensus/babyCensus"
+        "pages/babyCensus/babyCensus",
+        "pages/my/my"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -34,7 +34,7 @@
                 "selectedIconPath": "assets/images/tabs/do_unselected.png"
             },
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/my/my",
                 "text": "我的",
                 "iconPath": "assets/images/tabs/accompany_selected.png",
                 "selectedIconPath": "assets/images/tabs/accompany_unselected.png"

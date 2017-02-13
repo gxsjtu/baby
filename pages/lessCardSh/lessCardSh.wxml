@@ -1,7 +1,7 @@
 <view class="container">
   <view class="header">
     <image src="../../assets/images/lessCard.jpg"></image>
-    <view class="title">上海本市户籍小卡办理攻略</view>
+    <view class="title">{{header}}</view>
   </view>
   <view class="content">
     <view class="wrap">
@@ -14,10 +14,10 @@
       </view>
       <view style="height:36rpx;"></view>
       <view class="label">办理地点:</view>
-      <view class="note">孕妈户籍所在地社区医院</view>
+      <view class="note">{{address}}</view>
       <view style="height:36rpx;"></view>
       <view class="label">注意事项:</view>
-      <view class="note">1. 双方身份证、双方户口本、双方结婚证、早期检查单（医院开具或现场检查）</view>
+      <view class="note">1. {{need}}</view>
       <view class="note">2. 通常办事机构会留存复印件，请提前自备，以节省办事时间</view>
       <view class="note">3. 部分社区医院可能需要：医保卡、居委会开的孕情单</view>
     </view>
