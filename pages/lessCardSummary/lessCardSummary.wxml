@@ -5,19 +5,55 @@
   </view>
   <view class="content">
     <view class="top-title">
-        办事材料:
+      办事材料:
     </view>
     <view class="style-f">
-        夫妻双方身份证
+      夫妻双方身份证
     </view>
     <view class="style-f">
-        夫妻双方户口本
+      夫妻双方户口本
     </view>
     <view class="style-f">
-        夫妻双方结婚证
+      夫妻双方结婚证
     </view>
     <view class="top-title" style="margin-top:40px;">
-        办事地点:
+      办事地点:
     </view>
+    <view class="font-s">
+      <view style="margin-top:10px;">
+        长寿路街道社区医院
+      </view>
+      <view style="margin-top:10px;">
+        地址：东新路230弄20号
+      </view>
+      <view style="margin-top:10px;">
+        电话：021-62041721
+      </view>
+      <view style="display:flex;flex-direction:row;margin-top:10px;">
+        <view style="width:130px;">
+          工作时间：
+        </view>
+        <view>
+          周一至周五8:30—17:00 周六至周日8:30—16:01（法定节假日除外）
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="margin-top:30px;display:flex;flex-direction:row;">
+    <view class="view-b" style="border-right:1px solid rgba(0,0,0,0.10);">
+      <image src="../../assets/images/hospitaldetail/yy.png" style="height:21px;width:21px;"></image>
+      <view class="font-l">
+        有用：356
+      </view>
+    </view>
+    <view class="view-b">
+      <image src="../../assets/images/hospitaldetail/xz.png" style="height:21px;width:21px;"></image>
+      <view class="font-l">
+        领取勋章
+      </view>
+    </view>
+  </view>
+  <view style="display:flex;flex-direction:row;align-items:center;height:55px;position:absolute;bottom:40rpx;width:100%;background:#fff">
+    <button class="btn-style">设置系统提醒</button>
   </view>
 </view>
