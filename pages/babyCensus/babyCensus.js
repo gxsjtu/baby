@@ -150,7 +150,7 @@ Page({
                     src: '../../assets/images/babyCensus4.jpg',
                     name: '',
                     width: '680',
-                    height: '460'
+                    height: '452'
                 },
                 note: [{
                     title: '办事材料:',
