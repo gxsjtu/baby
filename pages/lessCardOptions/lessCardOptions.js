@@ -36,7 +36,7 @@ Page({
             })
         })
 
-        var address = getApp().globalData.userAddress;
+        var address = getApp().globalData.user.address;
         if (address != null && address != undefined) {
             locationSvc.getStreetsByDistrict(address.huJi.district).then(data => {
                 this.setData({

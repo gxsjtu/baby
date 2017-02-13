@@ -21,10 +21,7 @@ App({
                             loginSvc.login(info.code, res).then(data => {
                                 this.globalData.token = data.data.token;
                                 this.globalData.defaultHos = data.data.defaultHos;
-                                this.globalData.userPackages = data.data.packages;
-                                console.log('aaaa');
-                                console.log(data.data.address);
-                                this.globalData.userAddress = data.data.address;
+                                this.globalData.user = data.data.user;
                             });
                             this.globalData.userInfo = res.userInfo
                             typeof cb == "function" && cb(this.globalData.userInfo)
@@ -39,7 +36,6 @@ App({
         token: null,
         defaultHos: null,
         hospital: null,
-        userPackages: null,
-        userAddress: null
+        user: null
     }
 })

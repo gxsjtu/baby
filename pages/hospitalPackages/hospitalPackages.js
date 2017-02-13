@@ -44,7 +44,7 @@ Page({
         let hospital = getApp().globalData.hospital;
 
         if (fromStr == "package") {
-            let userPackages = getApp().globalData.userPackages;
+            let userPackages = getApp().globalData.user.packages;
             // console.log(userPackages);
             if (userPackages != null && userPackages != undefined && userPackages.length > 0) {
                 var pList = [];
