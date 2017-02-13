@@ -16,8 +16,12 @@
     </view>
   </view>
 
+<view style="display:flex;justify-content:center;width:750rpx;height:120rpx;align-items:center;">
+  <image src="../../assets/images/down.png" style="width:80rpx;height:80rpx;"></image>
+</view>
 
-  <view class="content">
+
+  <view class="content" style="margin-top:0rpx;">
     <view class="wrap">
       <view class="label">办理材料：</view>
       <view class="note">带好身份证、户口本、结婚证、准生证、流动人口生育证明，去居住地所在居委会或所在街道计计生部门办理<span style="color:#ff7b7f;">“上海市流动人口生育联系卡”</span> </view>
