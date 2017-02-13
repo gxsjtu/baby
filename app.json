@@ -15,7 +15,8 @@
         "pages/lessCardSh/lessCardSh",
         "pages/lessCardOtherStep/lessCardOtherStep",
         "pages/lessCardOptions/lessCardOptions",
-        "pages/lessCardSummary/lessCardSummary"
+        "pages/lessCardSummary/lessCardSummary",
+        "pages/babyCensus/babyCensus"
     ],
     "window": {
         "backgroundTextStyle": "light",
