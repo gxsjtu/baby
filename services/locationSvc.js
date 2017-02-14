@@ -2288,18 +2288,18 @@ var LocationSvc = function() {
                         address: '塔城路360弄8号',
                         time: '周一至周五8：30－17：00 周六至周日8：30-16：00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '新成路街道',
                     service: {
@@ -2308,18 +2308,18 @@ var LocationSvc = function() {
                         address: '新成路155号',
                         time: '周一至周五8:30-17:00 周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '真新新村街道',
                     service: {
@@ -2328,18 +2328,18 @@ var LocationSvc = function() {
                         address: '清峪路985号',
                         time: '周一至周五8：30-17：00 周六至周日9：00-16：00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '马陆镇',
                     service: {
@@ -2348,18 +2348,18 @@ var LocationSvc = function() {
                         address: '沪宜公路2228号',
                         time: '周一至周五8：30－17：00 周六至周日8：30-16：00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '南翔镇',
                     service: {
@@ -2368,18 +2368,18 @@ var LocationSvc = function() {
                         address: '古漪园路358号',
                         time: '周一至周五上午8：00－11：00 下午13：00－17：00周六至周日上午8：00－11：00；下午13：00－17：00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '江桥镇',
                     service: {
@@ -2388,18 +2388,18 @@ var LocationSvc = function() {
                         address: '华江支路129号5号楼',
                         time: '周一至周五8:30-17:00  周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '黄渡镇',
                     service: {
@@ -2408,18 +2408,18 @@ var LocationSvc = function() {
                         address: '绿苑路39号',
                         time: '周一至周五8:30-17:00  周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '安亭镇',
                     service: {
@@ -2428,18 +2428,18 @@ var LocationSvc = function() {
                         address: '民丰路988号',
                         time: '周一至周五8:30—17:00 周六至周日8:30—16:00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '外冈镇',
                     service: {
@@ -2448,18 +2448,18 @@ var LocationSvc = function() {
                         address: '瞿门路518号',
                         time: '周一至周五8:30-17:00  周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '徐行镇',
                     service: {
@@ -2468,18 +2468,18 @@ var LocationSvc = function() {
                         address: '新建一路1568号',
                         time: '周一至周五8:30-17:00  周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '华亭镇',
                     service: {
@@ -2488,18 +2488,18 @@ var LocationSvc = function() {
                         address: '高石路1433号',
                         time: '周一至周五8:30—17:00 周六至周日8:30—16:01（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '嘉定工业区',
                     service: {
@@ -2508,18 +2508,18 @@ var LocationSvc = function() {
                         address: '永盛路2703号',
                         time: '周一至周五8:30-17:00  周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '菊园新区',
                     service: {
@@ -2528,18 +2528,18 @@ var LocationSvc = function() {
                         address: '平城路811号',
                         time: '周一至周五8:30-17:00  周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }
             ]
         }, {
@@ -2553,18 +2553,18 @@ var LocationSvc = function() {
                         address: '卫零路485号',
                         time: '周一至周五上午8:30-11:15 下午13:30-16:30 周六、周日上午8:30-11:15 （法定节假日除外）'
                     },
-					police: {
-						name: '石化街道派出所',
-						tel: '021-57934110',
-						address: '沪杭公路8718号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '石化街道派出所',
+                        tel: '021-57934110',
+                        address: '沪杭公路8718号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '枫泾镇',
                     service: {
@@ -2573,18 +2573,18 @@ var LocationSvc = function() {
                         address: '枫杰路51号',
                         time: '周一至周五8:30-17:00  周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '枫泾镇派出所',
-						tel: '021-57351300',
-						address: '新枫路130号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '枫泾镇派出所',
+                        tel: '021-57351300',
+                        address: '新枫路130号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '朱泾镇',
                     service: {
@@ -2593,18 +2593,18 @@ var LocationSvc = function() {
                         address: '人民路360号',
                         time: '周一至周五上午8:30-11:00 下午13:00-16:30；周六、周日上午8:30—11:00（法定节假日除外）'
                     },
-					police: {
-						name: '朱泾镇派出所',
-						tel: '021-57320430',
-						address: '临源街655号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '朱泾镇派出所',
+                        tel: '021-57320430',
+                        address: '临源街655号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '亭林镇',
                     service: {
@@ -2613,18 +2613,18 @@ var LocationSvc = function() {
                         address: '亭升路550弄33号',
                         time: '周一至周五8：15-16:45 周六、周日上午8:15-11:15 （法定节假日除外）'
                     },
-					police: {
-						name: '亭林镇派出所',
-						tel: '021-57233669',
-						address: '亭学路110号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '亭林镇派出所',
+                        tel: '021-57233669',
+                        address: '亭学路110号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '漕泾镇',
                     service: {
@@ -2633,18 +2633,18 @@ var LocationSvc = function() {
                         address: '漕泾镇中一西路601号',
                         time: '周一至周五8:30-17:00  周六至周日8:30-16:00（法定节假日除外）'
                     },
-					police: {
-						name: '漕泾镇派出所',
-						tel: '021-57252110',
-						address: '海创路399号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '漕泾镇派出所',
+                        tel: '021-57252110',
+                        address: '海创路399号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '山阳镇',
                     service: {
@@ -2653,18 +2653,18 @@ var LocationSvc = function() {
                         address: '亭卫路1500号',
                         time: '周一至周五上午8:30-11:00，下午12:45-16:30；周六、周日上午8:30-11:00  （法定节假日除外）'
                     },
-					police: {
-						name: '山阳镇派出所',
-						tel: '021-57242111',
-						address: '海光路77号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '山阳镇派出所',
+                        tel: '021-57242111',
+                        address: '海光路77号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '金山卫镇',
                     service: {
@@ -2673,18 +2673,18 @@ var LocationSvc = function() {
                         address: '卫镇古城路319号',
                         time: '周一至周五上午：8:15—11:15；下午：1：00—4:30 周末上午：8:15—11:15 （节假日除外）'
                     },
-					police: {
-						name: '金山卫镇派出所',
-						tel: '021-57260110',
-						address: '南阳湾路1853号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '金山卫镇派出所',
+                        tel: '021-57260110',
+                        address: '南阳湾路1853号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '张堰镇',
                     service: {
@@ -2693,18 +2693,18 @@ var LocationSvc = function() {
                         address: '张堰镇东贤路951号',
                         time: '周一至周五上午：8:15—11:15；下午：1：00—4:30 周末上午：8:15—11:30 （节假日除外）'
                     },
-					police: {
-						name: '张堰镇派出所',
-						tel: '021-57210110',
-						address: '松金公路2520弄9号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '张堰镇派出所',
+                        tel: '021-57210110',
+                        address: '松金公路2520弄9号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '廊下镇',
                     service: {
@@ -2713,18 +2713,18 @@ var LocationSvc = function() {
                         address: '金山区景乐路228号',
                         time: '周一至周五上午8:30-16:30;周六、周日上午8:30-11:30 （节假日除外）'
                     },
-					police: {
-						name: '廊下镇派出所',
-						tel: '021-57390110',
-						address: '漕廊公路7855号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '廊下镇派出所',
+                        tel: '021-57390110',
+                        address: '漕廊公路7855号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '吕巷镇',
                     service: {
@@ -2733,18 +2733,18 @@ var LocationSvc = function() {
                         address: '吕巷镇溪南路58号',
                         time: '周一至周五上午8:30-16:30;周六、周日上午8:30-11:00 （节假日除外）'
                     },
-					police: {
-						name: '吕巷镇派出所',
-						tel: '021-57370110',
-						address: '朱吕公路6988号',
-						time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
+                    police: {
+                        name: '吕巷镇派出所',
+                        tel: '021-57370110',
+                        address: '朱吕公路6988号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    }
                 }, {
                     name: '金山工业区',
                     service: {
@@ -2752,20 +2752,19 @@ var LocationSvc = function() {
                         tel: '021-57270729',
                         address: '金山工业区恒顺路280弄15号',
                         time: '周一至周五上午8:30-16:30;周六、周日上午8:30-11:00 （节假日除外）'
+                    },
+                    police: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
-					,
-					police: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-},
-					hospital: {
-						name: '',
-						tel: '',
-						address: '',
-						time: ''
-}
                 }
             ]
         }
