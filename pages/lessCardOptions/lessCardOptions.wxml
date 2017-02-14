@@ -9,7 +9,7 @@
         所在地区
       </view>
       <view class="filter-container">
-        <view catchtap="areaFilter">
+        <view catchtap="areaFilter" style="height:60rpx;">
           <view class="filter-item">
             <view>{{selectArea}}</view>
             <view class="filter-arrow"></view>
@@ -25,7 +25,7 @@
             </scroll-view>
           </view>
         </view>
-        <view catchtap="streetFilter">
+        <view catchtap="streetFilter" style="height:60rpx;">
           <view class="filter-item">
             <view>{{selectStreet}}</view>
             <view class="filter-arrow"></view>
@@ -35,7 +35,7 @@
           <view class="arrow street-arrow"></view>
           <view>
             <scroll-view scroll-y="true" class="select-item" catchtap="selectStreet">
-              <view data-value="区域">全部</view>
+              <view data-value="街道">全部</view>
               <view wx:for="{{streets}}" wx:for-item="street" wx:key="{{street.name}}" data-value="{{street.name}}">
                 {{street.name}}
               </view>
@@ -44,10 +44,10 @@
         </view>
       </view>
       <view style="margin-left:15px;border: 1px solid rgba(0, 0, 0, 0.10);width:630rpx;">
-        <input type="text" placeholder="请输入详细地址" value="{{addrDetail}}" bindinput="inputDetail" />
+        <input type="text" placeholder="请输入详细地址" value="{{addrDetail}}" bindblur="inputDetail" style="height:60rpx;"/>
       </view>
       <view style="margin-bottom: 15px;margin-left: 15px;margin-top: 15px;color: #b0b0b0;font-size: 22rpx;font-family: PingFangSC-Regular;">
-        (如果街道不详，则列出该区所有社区医院的列表。)
+        (如果街道不详，则列出该区所有{{typeName}}的列表。)
       </view>
       <scroll-view scroll-y="true">
         <view wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">

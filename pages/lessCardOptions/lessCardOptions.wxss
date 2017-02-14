@@ -47,8 +47,9 @@ page {
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.10);
   margin-left: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  /*padding-top: 5px;
+  padding-bottom: 5px;*/
+  height:60rpx;
 }
 
 .filter-arrow {
@@ -97,7 +98,7 @@ page {
 }
 
 scroll-view {
-  height: 500rpx;
+  height: 630rpx;
 }
 
 .select-item > view::last-child {
@@ -131,7 +132,7 @@ scroll-view {
 .content {
   margin: 30rpx auto 0rpx auto;
   width: 690rpx;
-  height: 900rpx;
+  height: 1030rpx;
   border: 1px solid rgba(254, 97, 97, 0.2);
   border-radius: 2px;
   font-family: PingFangSC-Regular;
