@@ -226,7 +226,7 @@ var LocationSvc = function() {
                         name: '湖南路派出所',
                         tel: '021-64370540',
                         address: '江阳南路203号',
-                        time: ''
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -246,7 +246,7 @@ var LocationSvc = function() {
                         name: '天平路派出所',
                         tel: '021-64336776',
                         address: '衡山路696弄1号',
-                        time: ''
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -266,7 +266,7 @@ var LocationSvc = function() {
                         name: '枫林路派出所',
                         tel: '021-64189900',
                         address: '双峰路396号',
-                        time: ''
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -286,7 +286,7 @@ var LocationSvc = function() {
                         name: '徐家汇派出所',
                         tel: '021-64380527',
                         address: '零陵路801号',
-                        time: ''
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -306,7 +306,7 @@ var LocationSvc = function() {
                         name: '斜土路派出所',
                         tel: '021-64042433',
                         address: '零陵路51号',
-                        time: ''
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -326,7 +326,7 @@ var LocationSvc = function() {
                         name: '长桥新村派出所',
                         tel: '021-64102445',
                         address: '罗香路100号 （龙川路646号）',
-                        time: ''
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -346,7 +346,7 @@ var LocationSvc = function() {
                         name: '漕河泾派出所',
                         tel: '021-54480560',
                         address: '康健路80号 （南宁路668号）',
-                        time: ''
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -366,7 +366,7 @@ var LocationSvc = function() {
                         name: '虹梅派出所',
                         tel: '021-64369873',
                         address: '虹漕路7号',
-                        time: ''
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -383,10 +383,10 @@ var LocationSvc = function() {
                         time: '周一至周日 上午8:30-11:30；下午13:30-17:00'
                     },
                     police: {
-                        name: '',
-                        tel: '',
-                        address: '',
-                        time: ''
+                        name: '康健新村派出所',
+                        tel: '021-64362677',
+                        address: '桂林东街201号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -403,10 +403,10 @@ var LocationSvc = function() {
                         time: '周一至周日8:30-17:00（周六、周日及法定节假日11:30-13:30不办理业务）'
                     },
                     police: {
-                        name: '',
-                        tel: '',
-                        address: '',
-                        time: ''
+                        name: '田林新村派出所',
+                        tel: '021-64366396',
+                        address: '宜山路655弄3号田林14村120号 （柳州路688号）',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -423,10 +423,10 @@ var LocationSvc = function() {
                         time: '周一至周日8：30——17：00（法定节假日除外）'
                     },
                     police: {
-                        name: '',
-                        tel: '',
-                        address: '',
-                        time: ''
+                        name: '凌云路派出所',
+                        tel: '021-64530587',
+                        address: '凌云路33号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -443,10 +443,10 @@ var LocationSvc = function() {
                         time: '周一至周日8：30——17：00（法定节假日除外）'
                     },
                     police: {
-                        name: '',
-                        tel: '',
-                        address: '',
-                        time: ''
+                        name: '龙华派出所',
+                        tel: '021-23038627',
+                        address: '龙华路2796号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
@@ -463,10 +463,10 @@ var LocationSvc = function() {
                         time: '周一至周日8:30-17:00（法定节假日除外)'
                     },
                     police: {
-                        name: '',
-                        tel: '',
-                        address: '',
-                        time: ''
+                        name: '华泾派出所',
+                        tel: '021-54829900',
+                        address: '龙吴路2449号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
                     },
                     hospital: {
                         name: '',
