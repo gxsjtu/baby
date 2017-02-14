@@ -486,6 +486,18 @@ var LocationSvc = function() {
                         tel: '021-62266220',
                         address: '长宁路396弄79号',
                         time: '周一至周日8：30-16：30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '华阳路派出所',
+                        tel: '021-62525767',
+                        address: '定西路1291号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '新华路街道',
@@ -494,6 +506,18 @@ var LocationSvc = function() {
                         tel: '021-62941011',
                         address: '法华镇路521号',
                         time: '周一至周日8：30-16：30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '新华路派出所',
+                        tel: '021-23030010',
+                        address: '法华镇路475号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '江苏路街道',
@@ -502,6 +526,18 @@ var LocationSvc = function() {
                         tel: '021-62256600',
                         address: '江苏路563弄8号',
                         time: '周一至周五 8:30－16:30 ；周六至周日 上午8:30－11:30，下午13:30－16:30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '江苏路派出所',
+                        tel: '021-62106334',
+                        address: '利西路108号 （愚岩路1177号）',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '天山路街道',
@@ -510,6 +546,18 @@ var LocationSvc = function() {
                         tel: '021-62281033',
                         address: '娄山关路天山二村64号乙',
                         time: '周一至周日8：30-16：30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '天山路派出所',
+                        tel: '021-62598760',
+                        address: '紫云路365号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '周家桥街道',
@@ -518,6 +566,18 @@ var LocationSvc = function() {
                         tel: '021-52061155',
                         address: '云雾山路551弄48号',
                         time: '周一至周日8：30-16：30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '周家桥派出所',
+                        tel: '021-62598037',
+                        address: '长宁路1448弄8号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '虹桥街道',
@@ -526,6 +586,18 @@ var LocationSvc = function() {
                         tel: '021-22850900',
                         address: '中山西路1030弄51号',
                         time: '周一至周五8:30-16:30 双休日8:30-11:30 13:30-16:30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '虹桥路派出所',
+                        tel: '021-23030310',
+                        address: '虹桥路1151号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '仙霞新村街道',
@@ -534,6 +606,18 @@ var LocationSvc = function() {
                         tel: '021-62959244',
                         address: '虹古路206号',
                         time: '周一至周日8：30-16：30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '仙霞路派出所',
+                        tel: '021-62340769',
+                        address: '芙蓉江路100弄2号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '程家桥街道',
@@ -542,6 +626,18 @@ var LocationSvc = function() {
                         tel: '021-22300100',
                         address: '虹桥路2282号',
                         time: '周一至周日8：30-16：30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '程家桥派出所',
+                        tel: '021-23030360',
+                        address: '哈密路1721号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '北新泾街道',
@@ -550,6 +646,18 @@ var LocationSvc = function() {
                         tel: '021-52188321',
                         address: '新泾一村144号',
                         time: '周一至周日8：30-16：30（法定节假日除外）'
+                    },
+                    police: {
+                        name: '北新泾派出所',
+                        tel: '021-62389606',
+                        address: '平塘路205号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }, {
                     name: '新泾镇',
@@ -558,6 +666,18 @@ var LocationSvc = function() {
                         tel: '021-52160606',
                         address: '新泾镇泉口路66号',
                         time: '周一至周日8：30-16：31（法定节假日除外）'
+                    },
+                    police: {
+                        name: '新泾派出所',
+                        tel: '021-52199033',
+                        address: '剑河路500号',
+                        time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+                    },
+                    hospital: {
+                        name: '',
+                        tel: '',
+                        address: '',
+                        time: ''
                     }
                 }
             ]
@@ -2109,19 +2229,22 @@ LocationSvc.prototype.getDistricts = function() {
     });
 };
 
-LocationSvc.prototype.getDetailByName = function (name) {
-	return new Promise((resolve, reject) => {
-		lodash.forEach(this.locations, x => {
-				var obj = lodash.filter(x.streets,(s) => {
-					return s.name == name;
-				})
-				if(obj != null && obj != undefined && obj.length > 0)
-				{
-					var objs = {districtName: x.district, streets: x.streets, obj:obj};
-					resolve(objs);
-				}
-		})
-	})
+LocationSvc.prototype.getDetailByName = function(name) {
+    return new Promise((resolve, reject) => {
+        lodash.forEach(this.locations, x => {
+            var obj = lodash.filter(x.streets, (s) => {
+                return s.name == name;
+            })
+            if (obj != null && obj != undefined && obj.length > 0) {
+                var objs = {
+                    districtName: x.district,
+                    streets: x.streets,
+                    obj: obj
+                };
+                resolve(objs);
+            }
+        })
+    })
 }
 
 LocationSvc.prototype.getStreetsByDistrict = function(district) {
