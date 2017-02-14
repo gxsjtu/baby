@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="header">
+    <view class="avatar">
+      <image src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="nickName">
+      {{userInfo.nickName}}
+    </view>
+  </view>
+  <view class="info-container">
+    <view class="header-container">
+      <view class="redblock"></view>
+      <view class="title">个人信息</view>
+    </view>
+    <view class="item-container">
+      <view class="item-name">预产期</view>
+      <view class="item-value"><input type="text" bindinput="setConfinementDate" value="{{confinementDate}}" /></view>
+    </view>
+    <view class="item-container">
+      <view class="item-name">手机号码</view>
+      <view class="item-value"><input type="text" bindinput="setPhone" value="{{phone}}" /></view>
+    </view>
+    <view class="item-container">
+      <view class="item-name">户籍地址</view>
+      <view class="item-value"><input type="text" bindinput="setCensus" value="{{census}}" /></view>
+    </view>
+    <view class="item-container">
+      <view class="item-name">居住地址</view>
+      <view class="item-value"><input type="text" bindinput="setCurrentAddress" value="{{currentAddress}}" /></view>
+    </view>
+    <view class="item-container">
+      <view class="item-name">生产医院</view>
+      <view class="item-value">{{hospitalName}}</view>
+    </view>
+    <view class="item-container">
+      <view class="item-name">主治医生</view>
+      <view class="item-value">{{doctor}}</view>
+    </view>
+
+<!--<view style="padding:40rpx;">
+    <button bindtap="saveInfo" disabled="{{btnDisabled}}" class="{{btnDisabled ? 'btn-f' : 'btn-style'}}">保存</button>
+</view>-->
+    
+
+  </view>
+</view>

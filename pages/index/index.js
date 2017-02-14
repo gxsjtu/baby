@@ -129,25 +129,6 @@ Page({
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
-            case 9:
-                if (app.defaultHos) {
-                    getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=fhrms' });
-                }
-                else {
-                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
-                }
-                break;
-            case 10:
-                //待产包
-                if (app.defaultHos) {
-                    getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=package' });
-                }
-                else {
-                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
-                }
-                break;
             case 6:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
@@ -169,6 +150,25 @@ Page({
             case 8:
                 wx.navigateTo({ url: '../matronCenter/matron' });
                 break;
+            case 9:
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=fhrms' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
+            case 10:
+                //待产包
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=package' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
             case 11:
                 //入院前准备
                 if (app.defaultHos) {
@@ -178,6 +178,10 @@ Page({
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
+                break;
+            case 12:
+                //生产攻略
+                wx.navigateTo({ url: '../laborPrepare/laborPrepare' });
                 break;
             case 23:
                 wx.navigateTo({ url: '../babyCensus/babyCensus?do=census&fromStr=2' });

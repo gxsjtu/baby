@@ -17,7 +17,8 @@
         "pages/lessCardSummary/lessCardSummary",
         "pages/babyCensus/babyCensus",
         "pages/my/my",
-        "pages/userInfo/userInfo"
+        "pages/userInfo/userInfo",
+        "pages/laborPrepare/laborPrepare"
     ],
     "window": {
         "backgroundTextStyle": "light",

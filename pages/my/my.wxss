@@ -1,10 +1,7 @@
 .header {
   width: 750rpx;
   height: 294rpx;
-  background-image: url(../../assets/images/path.png);
-  background-repeat: no-repeat;
-  background-position-y: 90rpx;
-  background: white;
+  background:white url(../../assets/images/path.png) no-repeat bottom;
 }
 
 .avatar {
@@ -81,11 +78,10 @@
     transform: rotate(-45deg)
 }
 
-.container{
+/*.container{
     height: 100%;
-    background: #ebebeb;
 }
 
 page{
     height: 100%;
-}
+}*/
