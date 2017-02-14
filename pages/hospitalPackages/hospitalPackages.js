@@ -67,6 +67,9 @@ Page({
             } else {
                 this.setData({list: hospital.packages})
             }
-        } else {}
+        } else {
+            let userPackages = getApp().globalData.user;
+            console.log(userPackages);
+        }
     }
 })
