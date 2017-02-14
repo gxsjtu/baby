@@ -78,11 +78,10 @@
     transform: rotate(-45deg)
 }
 
-.container{
+/*.container{
     height: 100%;
-    background: #ebebeb;
 }
 
 page{
     height: 100%;
-}
+}*/

@@ -31,7 +31,14 @@ Page({
         {   
             let juzhu = globalData.user.address.juZhu;
             this.setData({
-                currentAddress:juzhu.district+juzhu.street+juzhu.detail
+                currentAddress:juzhu.detail
+            });
+        }
+        if(globalData.user.address && globalData.user.address.huJi)
+        {   
+            let huJi = globalData.user.address.huJi;
+            this.setData({
+                census:huJi.detail
             });
         }
     },
