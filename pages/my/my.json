@@ -1,1 +1,7 @@
-{}
+{
+    "navigationBarTitleText": "个人主页",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh": false
+}
