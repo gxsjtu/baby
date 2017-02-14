@@ -1853,7 +1853,8 @@ LocationSvc.prototype.getDetailByName = function (name) {
 				})
 				if(obj != null && obj != undefined && obj.length > 0)
 				{
-					resolve(obj);
+					var objs = {districtName: x.district, streets: x.streets, obj:obj};
+					resolve(objs);
 				}
 		})
 	})
