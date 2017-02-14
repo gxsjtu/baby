@@ -26,7 +26,7 @@
           </view>
         </view>
         <view catchtap="streetFilter" style="height:60rpx;">
-          <view class="filter-item">
+          <view class="filter-street">
             <view>{{selectStreet}}</view>
             <view class="filter-arrow"></view>
           </view>
@@ -44,7 +44,7 @@
         </view>
       </view>
       <view style="margin-left:15px;border: 1px solid rgba(0, 0, 0, 0.10);width:630rpx;">
-        <input type="text" placeholder="请输入详细地址" value="{{addrDetail}}" bindblur="inputDetail" style="height:60rpx;"/>
+        <input type="text" placeholder="请输入详细地址" value="{{addrDetail}}" bindblur="inputDetail" style="height:60rpx;  font-family:PingFangSC-Regular;font-size: 13px;color: #3d3d3d;padding-left:40rpx;"/>
       </view>
       <view style="margin-bottom: 15px;margin-left: 15px;margin-top: 15px;color: #b0b0b0;font-size: 22rpx;font-family: PingFangSC-Regular;">
         (如果街道不详，则列出该区所有{{typeName}}的列表。)
@@ -52,7 +52,8 @@
       <scroll-view scroll-y="true">
         <view wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
           <view class="street-n">办事地点名称</view>
-          <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">{{street.service.name}}</view>
+          <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">
+          {{street.service.name}}</view>
           <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.service.address}}</view>
         </view>
       </scroll-view>

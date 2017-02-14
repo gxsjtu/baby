@@ -2109,17 +2109,19 @@ LocationSvc.prototype.getDistricts = function() {
     });
 };
 
-LocationSvc.prototype.getDetailByName = function(name) {
-    return new Promise((resolve, reject) => {
-        lodash.forEach(this.locations, x => {
-            var obj = lodash.filter(x.streets, (s) => {
-                return s.name == name;
-            })
-            if (obj != null && obj != undefined && obj.length > 0) {
-                resolve(obj);
-            }
-        })
-    })
+LocationSvc.prototype.getDetailByName = function (name) {
+	return new Promise((resolve, reject) => {
+		lodash.forEach(this.locations, x => {
+				var obj = lodash.filter(x.streets,(s) => {
+					return s.name == name;
+				})
+				if(obj != null && obj != undefined && obj.length > 0)
+				{
+					var objs = {districtName: x.district, streets: x.streets, obj:obj};
+					resolve(objs);
+				}
+		})
+	})
 }
 
 LocationSvc.prototype.getStreetsByDistrict = function(district) {
