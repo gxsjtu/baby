@@ -1511,7 +1511,19 @@ var LocationSvc = function() {
                         tel: '021-65207539',
                         address: '长阳路3066号',
                         time: '周一至周日 上午8:30-11:30 下午13:30-17:00'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '大桥街道',
                     service: {
@@ -1519,7 +1531,19 @@ var LocationSvc = function() {
                         tel: '021-65701838',
                         address: '平凉路1730号',
                         time: '周一至周日上午8：30-11:30 下午13:30-17:00 夏令时下午14:00-17:00'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '平凉路街道',
                     service: {
@@ -1527,7 +1551,19 @@ var LocationSvc = function() {
                         tel: '021-65850951',
                         address: '吉林路18号',
                         time: '周一至周日上午8:30-11:30 下午13:30-17:00 夏令时下午14:00-17:00（国定节假日除外）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '江浦路街道',
                     service: {
@@ -1535,7 +1571,19 @@ var LocationSvc = function() {
                         tel: '021-65853533',
                         address: '许昌路1150号',
                         time: '周一至周日 上午8:30-11:30 下午1:30-5:00（夏令时下午2:00-5:00)国定节假日除外'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '控江路街道',
                     service: {
@@ -1543,7 +1591,19 @@ var LocationSvc = function() {
                         tel: '021-55803280',
                         address: '周家嘴路3209号',
                         time: '周一至周日上午8:30-11:30 下午13:30-17:00 夏令时下午14:00-17:00（国定节假日除外）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '殷行街道',
                     service: {
@@ -1551,7 +1611,19 @@ var LocationSvc = function() {
                         tel: '021-65063740',
                         address: '国和路1047号',
                         time: '周一至周日8：30-17：00（法定节假日除外）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '长白新村街道',
                     service: {
@@ -1559,7 +1631,19 @@ var LocationSvc = function() {
                         tel: '021-65482211',
                         address: '延吉东路107号',
                         time: '周一至周日 上午8:30-11:30 下午13:30-17:00（夏令时14:00-17:00）（国定节假日除外）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '延吉新村街道',
                     service: {
@@ -1567,7 +1651,19 @@ var LocationSvc = function() {
                         tel: '021-65482211',
                         address: '延吉中路77号',
                         time: '周一至周五  8:30-17:00  周六、周日08:30-11:30 13:30-17:00（国定节假日除外）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '五角场街道',
                     service: {
@@ -1575,7 +1671,19 @@ var LocationSvc = function() {
                         tel: '021-55621137',
                         address: '政通路100弄11号',
                         time: '周一至周五8:30-17:00 周六、日8:30-11:30,13:30-17:00（国定节假日除外，夏令时另行通知）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '四平路街道',
                     service: {
@@ -1583,7 +1691,19 @@ var LocationSvc = function() {
                         tel: '021-65145236',
                         address: '鞍山路158号',
                         time: '周一至周日 上午8：30-11：30下午13：30-17：00（国定节假日除外）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '新江湾城街道',
                     service: {
@@ -1591,7 +1711,19 @@ var LocationSvc = function() {
                         tel: '021-55130258',
                         address: '政悦路329号',
                         time: '周一至周日 上午8:30-11:30 ，下午13:30-17:00（夏令时下午14:00-17:00）（国定节假日除外）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }, {
                     name: '五角场镇',
                     service: {
@@ -1599,7 +1731,19 @@ var LocationSvc = function() {
                         tel: '021-65564636',
                         address: '国和路425号',
                         time: '周一至周日上午8:30-11:30，下午13:30-17:00（夏令时间周一至周日上午8:30-11:30，下午14:00-17:00）'
-                    }
+                    },
+										police: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: '周一至周五 上午8:00-12:00 下午2:00-6:00（法定节假日除外）'
+										},
+										hospital: {
+										    name: '',
+										    tel: '',
+										    address: '',
+										    time: ''
+										}
                 }
             ]
         }, {
@@ -2090,7 +2234,7 @@ var LocationSvc = function() {
                 }
             ]
         }, {
-            district: '浦东新区',
+            district: '闵行区',
             streets: [
                 {
                     name: '江川路街道',
