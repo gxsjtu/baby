@@ -1,16 +1,12 @@
 <view class="view-container">
+  <view class="menu-container">
+    <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="naturalLabour">顺产</view>
+    <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="cesarean">剖腹产</view>
+  </view>
+  
   <view class="step-container">
     <view class="v-line"></view>
-    <view class="card-item" wx:if="{{documents && documents.length > 0}}">
-      <view class="note-container">
-        <view class="note note-exclamation">!</view>
-        <view class="exclamation">所需材料</view>
-      </view>
-      <view class="split"></view>
-      <view class="document" wx:for="{{documents}}" wx:for-item="document" wx:key="index">{{document}}</view>
-      <view class="split"></view>
-    </view>
-    <view class="card-item" wx:if="{{warning && warning.length > 0}}">
+    <view class="card-item">
       <view class="note-container">
         <view class="note note-exclamation">!</view>
         <view class="exclamation">注意事项</view>
@@ -22,12 +18,10 @@
     <view class="card-item" wx:for="{{cards}}" wx:key="index" wx:for-item="card">
       <view class="note-container">
         <view class="note note-name" style="background:#ff4949;color:white;border-radius:50%;">{{index + 1}}</view>
-        <view class="name">{{card.name}}</view>
+        <view class="name">{{card}}</view>
+        
       </view>
-      <view class="split"></view>
-      <view wx:for="{{card.steps}}" wx:key="index" wx:for-item="step" class="step">{{step}}</view>
-      <view class="image-container">
-      </view>
+      <view style="height:24rpx;width:100%;"></view>
       <view class="split"></view>
     </view>
   </view>
