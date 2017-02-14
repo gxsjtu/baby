@@ -98,7 +98,7 @@ page {
 }
 
 scroll-view {
-  height: 630rpx;
+  height: 590rpx;
 }
 
 .select-item > view::last-child {

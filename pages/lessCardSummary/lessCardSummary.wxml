@@ -8,13 +8,13 @@
       <view class="top-title">
         办事材料:
       </view>
-      <view  class="font-s" style="margin-top:20rpx;margin-left:60rpx;">
+      <view  class="font-s" style="margin-top:20rpx;margin-left:62rpx;">
         夫妻双方身份证
       </view>
-      <view  class="font-s" style="margin-top:20rpx;margin-left:60rpx;">
+      <view  class="font-s" style="margin-top:20rpx;margin-left:62rpx;">
         夫妻双方户口本
       </view>
-      <view  class="font-s" style="margin-top:20rpx;margin-left:60rpx;">
+      <view  class="font-s" style="margin-top:20rpx;margin-left:62rpx;">
         夫妻双方结婚证
       </view>
       <view class="top-title" style="margin-top:40px;" hidden="{{ishid}}">

@@ -71,7 +71,7 @@ Page({
             locationSvc.getStreetsByDistrict(districtStr).then(data => {
 
                 var strs = [];
-                if (streetStr != "" && streetStr != "街道") {
+                if (streetStr != "" && streetStr != "街道" && streetStr != "区域") {
                     strs = _.filter(data.streets, (street) => {
                         return street.name == streetStr;
                     })

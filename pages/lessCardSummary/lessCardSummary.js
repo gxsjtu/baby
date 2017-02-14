@@ -5,7 +5,6 @@ Page({
         delta: ""
     },
     onLoad: function (e) {
-        console.log(e);
         this.data.delta = e.delta;
         if (e.type == "1") {
             var ss = getApp().globalData.resultStreets;
