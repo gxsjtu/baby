@@ -1845,6 +1845,20 @@ LocationSvc.prototype.getDistricts = function () {
 	});
 };
 
+LocationSvc.prototype.getDetailByName = function (name) {
+	return new Promise((resolve, reject) => {
+		lodash.forEach(this.locations, x => {
+				var obj = lodash.filter(x.streets,(s) => {
+					return s.name == name;
+				})
+				if(obj != null && obj != undefined && obj.length > 0)
+				{
+					resolve(obj);
+				}
+		})
+	})
+}
+
 LocationSvc.prototype.getStreetsByDistrict = function (district) {
 	return new Promise((resolve, reject) => {
 		var target = lodash.find(this.locations, x => {
@@ -1864,9 +1878,7 @@ LocationSvc.prototype.completeAll = function (strType, district, street, detail)
 
 LocationSvc.prototype.getByDetail = function (detail) {
 	return new Promise((resolve, reject) => {
-		request(GLOBAL.SERVER + "/user/getStreet", {address:detail}, "POST").then(data => {
-			console.log('detail');
-			console.log(data);
+		request(GLOBAL.SERVER + "/user/getStreet", { address: detail }, "POST").then(data => {
 			resolve(data);
 		})
 	})

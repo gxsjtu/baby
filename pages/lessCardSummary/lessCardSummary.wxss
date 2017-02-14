@@ -65,7 +65,7 @@ page {
   font-size: 15px;
   color: #6d6d6d;
   letter-spacing: -0.36px;
-  margin-left: 30rpx;
+  padding-left: 30rpx;
 }
 
 .font-l {

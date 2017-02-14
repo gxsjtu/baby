@@ -1,10 +1,12 @@
 Page({
     data: {
         streets: [],
-        ishid: false
+        ishid: false,
+        delta: ""
     },
     onLoad: function (e) {
-
+        console.log(e);
+        this.data.delta = e.delta;
         if (e.type == "1") {
             var ss = getApp().globalData.resultStreets;
             if (ss == null || ss == undefined || ss.length <= 0) {
@@ -21,6 +23,16 @@ Page({
             this.setData({
                 ishid: true
             })
+        }
+    },
+    goBack: function () {
+        console.log('aa');
+        //    wx.navigateTo({ url: '../index/index' });
+        if (this.data.delta == "y") {
+            wx.navigateBack({ delta: 4 });
+        }
+        else {
+            wx.navigateBack({ delta: 3 });
         }
     }
 })

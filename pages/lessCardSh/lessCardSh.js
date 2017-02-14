@@ -1,9 +1,10 @@
 Page({
     data: {
-
+        fromStr:""
     },
     onLoad: function (param) {
         this.getPageData(param.from);
+        this.data.fromStr = param.fromStr;
     },
     getPageData: function (option) {
         if (option == 'native') {
@@ -68,9 +69,9 @@ Page({
         }
     },
     gotoOption: function (e) {
-        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option }); //上海
+        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&fromStr=' + this.data.fromStr }); //上海
     },
     gotoSummary: function (e) {
-        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option }); //外省
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&fromStr=' + this.data.fromStr}); //外省
     }
 })

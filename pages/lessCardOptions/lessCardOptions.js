@@ -14,20 +14,49 @@ Page({
         addr: "户籍地址", //居住地址
         typeStr: 1,
         addrDetail: "",
-        typeName: "社区医院"
+        typeName: "社区医院",
+        fromStr:""
     },
     onLoad: function (e) {
+        var fromStr = e.fromStr;
+        if(fromStr == "1"){
+            this.setData({
+                typeName: "社区医院"
+            })
+        }else if(fromStr == "2"){
+            this.setData({
+                typeName: "派出所"
+            })
+        }else if(fromStr == "3"){
+            this.setData({
+                typeName:"事务受理中心"
+            })
+        }
+        var address = getApp().globalData.user.address;
+        var districtStr = "";
+        var streetStr = "";
+        var detailStr = "";
         if (e.type == "1") {
             this.setData({
                 addr: "户籍地址",
                 typeStr: 1
             })
+            if (address != null && address != undefined) {
+                districtStr = address.huJi.district;
+                streetStr = address.huJi.street;
+                detailStr = address.huJi.detail;
+            }
         }
         else {
             this.setData({
                 addr: "居住地址",
                 typeStr: 2
             })
+            if (address != null && address != undefined) {
+                districtStr = address.juZhu.district;
+                streetStr = address.juZhu.street;
+                detailStr = address.juZhu.detail;
+            }
         }
 
         var locationSvc = new LocationSvc();
@@ -39,27 +68,39 @@ Page({
 
         var address = getApp().globalData.user.address;
         if (address != null && address != undefined) {
-            locationSvc.getStreetsByDistrict(address.huJi.district).then(data => {
-                var selectS = address.huJi.street;
+            locationSvc.getStreetsByDistrict(districtStr).then(data => {
+
                 var strs = [];
-                if (selectS != "" && selectS != "街道") {
+                if (streetStr != "" && streetStr != "街道") {
                     strs = _.filter(data.streets, (street) => {
-                        return street.name == selectS;
+                        return street.name == streetStr;
                     })
                 }
                 else {
                     strs = data.streets;
-                    selectS = "街道";
+                    streetStr = "街道";
+                }
+
+                if (detailStr != "" && detailStr != null && detailStr != undefined) {
+                    locationSvc.getByDetail(this.data.addrDetail).then(data => {
+                        if (data.data.message == "OK") {
+                            locationSvc.getDetailByName(data.data.data.district).then(data => {
+                                strs = data;
+                            })
+                        }
+                    })
                 }
 
                 this.setData({
                     streets: data.streets,
                     resultStreets: strs,
-                    selectArea: address.huJi.district,
-                    selectStreet: selectS,
-                    addrDetail: address.huJi.detail
+                    selectArea: districtStr,
+                    selectStreet: streetStr,
+                    addrDetail: detailStr
                 })
             })
+
+
         }
         else {
             locationSvc.getCurrentLocation().then(data => {
@@ -127,7 +168,13 @@ Page({
 
         var locationSvc = new LocationSvc();
         locationSvc.getByDetail(this.data.addrDetail).then(data => {
-
+            if (data.data.message == "OK") {
+                locationSvc.getDetailByName(data.data.data.district).then(data => {
+                    this.setData({
+                        resultStreets: data
+                    })
+                })
+            }
         })
     },
     allComplete: function (e) {
@@ -139,7 +186,7 @@ Page({
         locationSvc.completeAll(this.data.typeStr, this.data.selectArea, street, this.data.addrDetail).then(data => {
             if (data.data.message == "OK") {
                 getApp().globalData.resultStreets = this.data.resultStreets;
-                wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr });
+                wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y'});
             }
         })
     }

@@ -8,22 +8,22 @@
       <view class="top-title">
         办事材料:
       </view>
-      <view  class="font-s" style="margin-top:20rpx;">
+      <view  class="font-s" style="margin-top:20rpx;margin-left:60rpx;">
         夫妻双方身份证
       </view>
-      <view  class="font-s" style="margin-top:20rpx;">
+      <view  class="font-s" style="margin-top:20rpx;margin-left:60rpx;">
         夫妻双方户口本
       </view>
-      <view  class="font-s" style="margin-top:20rpx;">
+      <view  class="font-s" style="margin-top:20rpx;margin-left:60rpx;">
         夫妻双方结婚证
       </view>
       <view class="top-title" style="margin-top:40px;" hidden="{{ishid}}">
         办事地点:
       </view>
-      <view class="font-s" wx:for="{{streets}}" wx:for-item="street" wx:key="{{street.name}}"  hidden="{{ishid}}" style="padding-bottom:20rpx;">
+      <view class="font-s" wx:for="{{streets}}" wx:for-item="street" wx:key="{{street.name}}"  hidden="{{ishid}}" style="padding-bottom:20rpx;  border-bottom: 1rpx solid rgba(211, 211, 211, 0.3);">
         <view style="display:flex;flex-direction:row;margin-top:10px;">
           <view style="width:150rpx;text-align:right;">
-             
+            名称：
           </view>
           <view style="width:500rpx;">
             {{street.service.name}}
@@ -71,6 +71,6 @@
     </view>
   </view>
   <view style="display:flex;flex-direction:row;align-items:center;height:55px;position:absolute;bottom:40rpx;width:100%;background:#fff">
-    <button class="btn-style">设置系统提醒</button>
+    <button class="btn-style" bindtap="goBack">返回代办列表</button>
   </view>
 </view>

@@ -1,6 +1,6 @@
 Page({
     data: {
-
+        fromStr:""
     },
     onLoad: function (param) {
         this.getPageData(param.do);
