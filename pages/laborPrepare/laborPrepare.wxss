@@ -1,5 +1,6 @@
 .view-container {
   position: relative;
+  background:#ebebeb;
 }
 
 .mask {
@@ -77,6 +78,7 @@
   color: #ff4949;
   letter-spacing: -0.32px;
   margin-left: 10px;
+  width: 640rpx;
 }
 
 .note-container {
@@ -227,7 +229,7 @@ page {
     line-height: 66rpx;
     border: 1rpx solid #FF4949;
     border-radius: 100rpx;
-    margin: 20rpx 90rpx 0;
+    margin: 0rpx 90rpx 0;
     display: flex;
     flex-direction: row;
     align-items: center;

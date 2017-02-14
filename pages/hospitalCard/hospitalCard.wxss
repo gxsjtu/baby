@@ -82,6 +82,7 @@ page {
   color: #ff4949;
   letter-spacing: -0.32px;
   margin-left: 10px;
+  width: 640rpx;
 }
 
 .note-container {

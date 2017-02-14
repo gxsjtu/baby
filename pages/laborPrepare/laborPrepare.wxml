@@ -1,8 +1,15 @@
 <view class="view-container">
-  <view class="menu-container">
+<view style="width:730rpx;height:322rpx;margin:0 auto;">
+  <image src="../../assets/images/labor.jpg" style="width:730rpx;height:322rpx;"></image>
+</view>
+
+<view style="background:white;width:730rpx;margin:0 auto;padding-top:30rpx;">
+    <view class="menu-container">
     <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="naturalLabour">顺产</view>
     <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="cesarean">剖腹产</view>
   </view>
+</view>
+
   
   <view class="step-container">
     <view class="v-line"></view>
