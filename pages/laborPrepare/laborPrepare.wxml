@@ -1,16 +1,13 @@
 <view class="view-container">
-<view style="width:730rpx;height:322rpx;margin:0 auto;">
-  <image src="../../assets/images/labor.jpg" style="width:730rpx;height:322rpx;"></image>
-</view>
-
-<view style="background:white;width:730rpx;margin:0 auto;padding-top:30rpx;">
-    <view class="menu-container">
-    <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="naturalLabour">顺产</view>
-    <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="cesarean">剖腹产</view>
+  <view style="width:730rpx;height:322rpx;margin:0 auto;">
+    <image src="../../assets/images/labor.jpg" style="width:730rpx;height:322rpx;"></image>
   </view>
-</view>
-
-  
+  <view style="background:white;width:730rpx;margin:0 auto;padding-top:30rpx;">
+    <view class="menu-container">
+      <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="naturalLabour">顺产</view>
+      <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="cesarean">剖腹产</view>
+    </view>
+  </view>
   <view class="step-container">
     <view class="v-line"></view>
     <view class="card-item">
@@ -25,9 +22,10 @@
     <view class="card-item" wx:for="{{cards}}" wx:key="index" wx:for-item="card">
       <view class="note-container">
         <view class="note note-name" style="background:#ff4949;color:white;border-radius:50%;">{{index + 1}}</view>
-        <view class="name">{{card}}</view>
-        
+        <view class="name">{{card.name}}</view>
       </view>
+      <view class="split"></view>
+      <view wx:for="{{card.steps}}" wx:key="index" wx:for-item="step" class="step">{{step}}</view>
       <view style="height:24rpx;width:100%;"></view>
       <view class="split"></view>
     </view>
