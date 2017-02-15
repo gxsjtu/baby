@@ -107,7 +107,7 @@ Page({
                 wx.navigateTo({ url: '../hospitalList/hospitalList' });
                 break;
             case 3:
-                wx.navigateTo({ url: '../lessCard/lessCard?fromStr=1' });//1代表社区医院
+                wx.navigateTo({ url: '../lessCard/lessCard?page=lessCard&fromStr=1' });//1代表社区医院
                 break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
@@ -214,18 +214,7 @@ Page({
                 getApp().globalData.dataList = dList;
                 break;
             case 26:
-                wx.navigateTo({ url: '../babyCensus/babyCensus?do=birth&fromStr=3&pageId=26' });
-                var dList = [];
-                dList.push("夫妻双方的身份证原件及复印件");
-                dList.push("结婚证原件及复印件");
-                dList.push("夫妻双方户口簿原件及复印件");
-                dList.push("医疗机构出具的《生育医学证明》原件及复印件");
-                dList.push("本人实名制银行结算账户卡（折）原件及复印件");
-                dList.push("根据个人的不同情况，还需分别携带下列材料：");
-                dList.push("①委托他人办理的，需携带委托书和被委托人身份证原件及复印件");
-                dList.push("②对于外省市户籍的生育妇女，需携带准生证");
-                dList.push("③对于在外省市生育的妇女，需携带县级以上医院出具的注明产妇生育情况（难产或顺产）的出院小结和小孩《出生医学证明》");
-                getApp().globalData.dataList = dList;
+                wx.navigateTo({ url: '../lessCard/lessCard?page=birth&fromStr=3&pageId=26' });
                 break;
             default:
                 break;

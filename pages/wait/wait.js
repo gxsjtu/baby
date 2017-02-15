@@ -3,8 +3,8 @@ Page({
 
     },
     onLoad: function (e) {
-        wx.setNavigationBarTitle({
-            title: e.name
-        })
+        // wx.setNavigationBarTitle({
+        //     title: e.name
+        // })
     }
 })
