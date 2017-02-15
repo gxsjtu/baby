@@ -19,6 +19,7 @@ Page({
                 dList.push("②对于外省市户籍的生育妇女，需携带准生证");
                 dList.push("③对于在外省市生育的妇女，需携带县级以上医院出具的注明产妇生育情况（难产或顺产）的出院小结和小孩《出生医学证明》");
             }
+            dList.push("申办表格本人需填写《生育保险待遇申领单》（申领6）");
             getApp().globalData.dataList = dList;
         }
         else if (param.page == 'lessCard') {

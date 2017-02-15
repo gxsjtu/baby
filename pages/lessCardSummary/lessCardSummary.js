@@ -6,11 +6,15 @@ Page({
         pageId:""
     },
     onLoad: function (e) {
+        let globalData = getApp().globalData;
+        this.setData({
+            needs:globalData.dataList
+        });
         this.data.delta = e.delta;
         var pId = e.pageId;
         this.data.pageId = pId;
         if (e.type == "1") {
-            var ss = getApp().globalData.resultStreets;
+            var ss = globalData.resultStreets;
             if (ss == null || ss == undefined || ss.length <= 0) {
                 this.setData({
                     ishid: true
@@ -18,7 +22,7 @@ Page({
             }
             else {
                 this.setData({
-                    streets: getApp().globalData.resultStreets
+                    streets: globalData.resultStreets
                 })
             }
         } else {
