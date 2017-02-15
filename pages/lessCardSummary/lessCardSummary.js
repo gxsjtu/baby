@@ -2,10 +2,13 @@ Page({
     data: {
         streets: [],
         ishid: false,
-        delta: ""
+        delta: "",
+        pageId:""
     },
     onLoad: function (e) {
         this.data.delta = e.delta;
+        var pId = e.pageId;
+        this.data.pageId = pId;
         if (e.type == "1") {
             var ss = getApp().globalData.resultStreets;
             if (ss == null || ss == undefined || ss.length <= 0) {
@@ -25,7 +28,6 @@ Page({
         }
     },
     goBack: function () {
-        console.log('aa');
         //    wx.navigateTo({ url: '../index/index' });
         if (this.data.delta == "y") {
             wx.navigateBack({ delta: 4 });

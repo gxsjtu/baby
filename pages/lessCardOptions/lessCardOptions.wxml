@@ -50,7 +50,19 @@
         (如果街道不详，则列出该区所有{{typeName}}的列表。)
       </view>
       <scroll-view scroll-y="true">
-        <view wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
+        <view hidden="{{bsHidden}}" wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
+          <view class="street-n">办事地点名称</view>
+          <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">
+          {{street.service.name}}</view>
+          <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.service.address}}</view>
+        </view>
+        <view hidden="{{jcHidden}}" wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
+          <view class="street-n">办事地点名称</view>
+          <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">
+          {{street.police.name}}</view>
+          <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.police.address}}</view>
+        </view>
+        <view hidden="{{yyHidden}}" wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
           <view class="street-n">办事地点名称</view>
           <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">
           {{street.service.name}}</view>

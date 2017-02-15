@@ -37,6 +37,7 @@ App({
         defaultHos: null,
         hospital: null,
         user: null,
-        resultStreets: null
+        resultStreets: null,
+        dataList: null //小卡材料列表
     }
 })

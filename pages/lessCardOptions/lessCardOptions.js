@@ -15,21 +15,55 @@ Page({
         typeStr: 1,
         addrDetail: "",
         typeName: "社区医院",
-        fromStr:""
+        fromStr: "",
+        pageId: "",
+        bsHidden:true,
+        jcHidden:true
     },
     onLoad: function (e) {
+        var pId = e.pageId;
+        this.data.pageId = pId;
         var fromStr = e.fromStr;
-        if(fromStr == "1"){
+        console.log('pp');
+        console.log(pId);
+        if (pId == "23") {
+            console.log('233');
+            wx.setNavigationBarTitle({
+                title: '申报新生儿户口'
+            });
+        } else if (pId == "24") {
+            wx.setNavigationBarTitle({
+                title: '办理宝宝医疗保险'
+            });
+        } else if (pId == "25") {
+            wx.setNavigationBarTitle({
+                title: '办理少儿住院互助基金'
+            });
+        } else if (pId == "26") {
+            wx.setNavigationBarTitle({
+                title: '申报生育保险'
+            });
+        }
+        if (fromStr == "1") {
             this.setData({
-                typeName: "社区医院"
+                typeName: "社区医院",
+                jcHidden:true,
+                bsHidden:true,
+                yyHidden:false
             })
-        }else if(fromStr == "2"){
+        } else if (fromStr == "2") {
             this.setData({
-                typeName: "派出所"
+                typeName: "派出所",
+                jcHidden:false,
+                bsHidden:true,
+                yyHidden:true
             })
-        }else if(fromStr == "3"){
+        } else if (fromStr == "3") {
             this.setData({
-                typeName:"事务受理中心"
+                typeName: "事务受理中心",
+                jcHidden:true,
+                bsHidden:false,
+                yyHidden:true
             })
         }
         var address = getApp().globalData.user.address;
@@ -173,9 +207,9 @@ Page({
                     // console.log(data.obj[0].name);
                     this.setData({
                         resultStreets: data.obj,
-                        streets:data.streets,
-                        selectArea:data.districtName,
-                        selectStreet:data.obj[0].name
+                        streets: data.streets,
+                        selectArea: data.districtName,
+                        selectStreet: data.obj[0].name
                     })
                 })
             }
@@ -190,7 +224,7 @@ Page({
         locationSvc.completeAll(this.data.typeStr, this.data.selectArea, street, this.data.addrDetail).then(data => {
             if (data.data.message == "OK") {
                 getApp().globalData.resultStreets = this.data.resultStreets;
-                wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y'});
+                wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y' + '&pageId=' + this.data.pageId });
             }
         })
     }
