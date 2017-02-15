@@ -29,21 +29,18 @@ Page({
         }
         if (param.from == 'native') {
             this.data.option = 1;
-            // this.setData({
-            //     option: 1//本市
-            // });
         }
         else {
             this.data.option = 2;
-            // this.setData({
-            //     option: 2//外省
-            // });
         }
         this.getPageData(option);
         this.data.fromStr = param.fromStr;
     },
     getPageData: function (option) {
         if (option == 'native') {
+            wx.setNavigationBarTitle({
+                title: '办理小卡攻略'
+            });
             this.setData({
                 credentials: [
                     {
@@ -67,6 +64,9 @@ Page({
             });
         }
         else if (option == 'other') {
+            wx.setNavigationBarTitle({
+                title: '办理小卡攻略'
+            });
             this.setData({
                 credentials: [
                     {
@@ -102,6 +102,9 @@ Page({
             });
         }
         else if (option == 'birth') {
+            wx.setNavigationBarTitle({
+                title: '申请生育保险攻略'
+            });
             this.setData({
                 credentials: [],
                 header: '申报生育保险攻略',
@@ -119,6 +122,9 @@ Page({
                     '申办表格本人需填写《生育保险待遇申领单》（申领6）。']
             });
         }
+
+
+
     },
     gotoOption: function (e) {
         wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&pageId=' + this.data.page + '&fromStr=' + this.data.fromStr }); //上海
