@@ -25,10 +25,19 @@ Page({
             wx.setNavigationBarTitle({
                 title: '办理小卡总结'
             });
-            this.setData({
-                title: '办理小卡总结',
-                needs: ['夫妻双方身份证', '夫妻双方户口本', '夫妻双方结婚证']
-            });
+            if (e.type == "1") {
+                this.setData({
+                    title: '办理小卡总结',
+                    needs: ['夫妻双方身份证', '夫妻双方户口本', '夫妻双方结婚证','早期检查单']
+                });
+            }
+            else {
+                this.setData({
+                    title: '办理小卡总结',
+                    needs: ['夫妻双方身份证', '夫妻双方户口本', '夫妻双方结婚证','早期检查单','居住证及复印件(正反面)或租房合同']
+                });
+            }
+
 
         }
 
