@@ -107,7 +107,7 @@ Page({
                 wx.navigateTo({ url: '../hospitalList/hospitalList' });
                 break;
             case 3:
-                wx.navigateTo({ url: '../lessCard/lessCard?fromStr=1' });//1代表社区医院
+                wx.navigateTo({ url: '../lessCard/lessCard?page=lessCard&fromStr=1' });//1代表社区医院
                 break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
@@ -193,7 +193,7 @@ Page({
                 wx.navigateTo({ url: '../babyCensus/babyCensus?do=fund&fromStr=1&type=1' });
                 break;
             case 26:
-                wx.navigateTo({ url: '../babyCensus/babyCensus?do=birth&fromStr=3' });
+                wx.navigateTo({ url: '../lessCard/lessCard?page=birth&fromStr=3' });
                 break;
             default:
                 break;

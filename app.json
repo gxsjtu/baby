@@ -41,6 +41,12 @@
                 "text": "我的",
                 "iconPath": "assets/images/tabs/accompany_selected.png",
                 "selectedIconPath": "assets/images/tabs/accompany_unselected.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "礼盒",
+                "iconPath": "assets/images/tabs/boxgrey.png",
+                "selectedIconPath": "assets/images/tabs/boxred.png"
             }
         ],
         "selectedColor": "#F26A77",
