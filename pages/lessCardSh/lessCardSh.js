@@ -1,8 +1,10 @@
 Page({
     data: {
         fromStr: "",
+        page: ''
     },
     onLoad: function (param) {
+        this.data.page = param.page;
         let option = '';
         if (param.page == 'birth') {
             //生育保险
@@ -26,14 +28,16 @@ Page({
             option = param.from;
         }
         if (param.from == 'native') {
-            this.setData({
-                option: 1//本市
-            });
+            this.data.option = 1;
+            // this.setData({
+            //     option: 1//本市
+            // });
         }
         else {
-            this.setData({
-                option: 2//外省
-            });
+            this.data.option = 2;
+            // this.setData({
+            //     option: 2//外省
+            // });
         }
         this.getPageData(option);
         this.data.fromStr = param.fromStr;
@@ -117,9 +121,10 @@ Page({
         }
     },
     gotoOption: function (e) {
-        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&fromStr=' + this.data.fromStr }); //上海
+        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&pageId=' + this.data.page + '&fromStr=' + this.data.fromStr }); //上海
     },
     gotoSummary: function (e) {
-        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&fromStr=' + this.data.fromStr }); //外省
+        console.log(this.data.page);
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&pageId=' + this.data.page + '&fromStr=' + this.data.fromStr }); //外省
     }
 })
