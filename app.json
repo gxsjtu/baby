@@ -18,7 +18,8 @@
         "pages/babyCensus/babyCensus",
         "pages/my/my",
         "pages/userInfo/userInfo",
-        "pages/laborPrepare/laborPrepare"
+        "pages/laborPrepare/laborPrepare",
+        "pages/wait/wait"
     ],
     "window": {
         "backgroundTextStyle": "light",
