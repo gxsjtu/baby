@@ -16,6 +16,7 @@ Page({
          wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.typeStr + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId }); //上海
     },
     noNeedClick: function(){
+        getApp().globalData.resultStreets = [];//点击暂不需要 清空事务中心或者医院或者派出所列表 小结页不显示
         wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=n&fromStr=' + this.data.fromStr}); //外省
     },
     getPageData: function (option) {

@@ -32,7 +32,7 @@ Page({
 
         }
 
-        if (e.type == "1") {
+        // if (e.type == "1") {
             var ss = globalData.resultStreets;
             if (ss == null || ss == undefined || ss.length <= 0) {
                 this.setData({
@@ -44,11 +44,11 @@ Page({
                     streets: globalData.resultStreets
                 })
             }
-        } else {
-            this.setData({
-                ishid: true
-            })
-        }
+        // } else {
+        //     this.setData({
+        //         ishid: true
+        //     })
+        // }
     },
     goBack: function () {
         //    wx.navigateTo({ url: '../index/index' });

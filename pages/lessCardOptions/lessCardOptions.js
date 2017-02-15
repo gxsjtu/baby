@@ -20,42 +20,39 @@ Page({
         bsHidden: true,
         jcHidden: true
     },
-    onLoad: function(e) {
+    onLoad: function (e) {
         var pId = e.pageId;
         this.data.pageId = pId;
         var fromStr = e.fromStr;
-        console.log('pp');
-        console.log(pId);
         if (pId == "23") {
-            console.log('233');
-            wx.setNavigationBarTitle({title: '申报新生儿户口'});
+            wx.setNavigationBarTitle({ title: '申报新生儿户口' });
         } else if (pId == "24") {
-            wx.setNavigationBarTitle({title: '办理宝宝医疗保险'});
+            wx.setNavigationBarTitle({ title: '办理宝宝医疗保险' });
         } else if (pId == "25") {
-            wx.setNavigationBarTitle({title: '办理少儿住院互助基金'});
+            wx.setNavigationBarTitle({ title: '办理少儿住院互助基金' });
         } else if (pId == "26") {
-            wx.setNavigationBarTitle({title: '申报生育保险'});
+            wx.setNavigationBarTitle({ title: '申报生育保险' });
         }
         if (fromStr == "1") {
-            this.setData({typeName: "社区医院", jcHidden: true, bsHidden: true, yyHidden: false})
+            this.setData({ typeName: "社区医院", jcHidden: true, bsHidden: true, yyHidden: false })
         } else if (fromStr == "2") {
-            this.setData({typeName: "派出所", jcHidden: false, bsHidden: true, yyHidden: true})
+            this.setData({ typeName: "派出所", jcHidden: false, bsHidden: true, yyHidden: true })
         } else if (fromStr == "3") {
-            this.setData({typeName: "事务受理中心", jcHidden: true, bsHidden: false, yyHidden: true})
+            this.setData({ typeName: "事务受理中心", jcHidden: true, bsHidden: false, yyHidden: true })
         }
         var address = getApp().globalData.user.address;
         var districtStr = "";
         var streetStr = "";
         var detailStr = "";
         if (e.type == "1") {
-            this.setData({addr: "户籍地址", typeStr: 1})
+            this.setData({ addr: "户籍地址", typeStr: 1 })
             if (address != null && address != undefined) {
                 districtStr = address.huJi.district;
                 streetStr = address.huJi.street;
                 detailStr = address.huJi.detail;
             }
         } else {
-            this.setData({addr: "居住地址", typeStr: 2})
+            this.setData({ addr: "居住地址", typeStr: 2 })
             if (address != null && address != undefined) {
                 districtStr = address.juZhu.district;
                 streetStr = address.juZhu.street;
@@ -65,7 +62,7 @@ Page({
 
         var locationSvc = new LocationSvc();
         locationSvc.getDistricts().then(data => {
-            this.setData({districts: data})
+            this.setData({ districts: data })
         })
 
         var address = getApp().globalData.user.address;
@@ -82,20 +79,20 @@ Page({
                     streetStr = "街道";
                 }
 
-                this.setData({streets: data.streets, resultStreets: strs, selectArea: districtStr, selectStreet: streetStr, addrDetail: detailStr})
+                this.setData({ streets: data.streets, resultStreets: strs, selectArea: districtStr, selectStreet: streetStr, addrDetail: detailStr })
             })
         } else {
             locationSvc.getCurrentLocation().then(data => {
                 if (data.data.message == "OK") {
-                    this.setData({selectArea: data.data.data})
+                    this.setData({ selectArea: data.data.data })
                     locationSvc.getStreetsByDistrict(data.data.data).then(data => {
-                        this.setData({streets: data.streets, resultStreets: data.streets})
+                        this.setData({ streets: data.streets, resultStreets: data.streets })
                     })
                 }
             })
         }
     },
-    selectArea: function(e) {
+    selectArea: function (e) {
         var dis = e.target.dataset.value;
         var locationSvc = new LocationSvc();
         locationSvc.getStreetsByDistrict(dis).then(data => {
@@ -109,7 +106,7 @@ Page({
             })
         })
     },
-    areaFilter: function(e) {
+    areaFilter: function (e) {
         this.setData({
             areaOpen: !this.data.areaOpen,
             hideMask: this.data.areaOpen
@@ -117,7 +114,7 @@ Page({
                 : false
         });
     },
-    streetFilter: function(e) {
+    streetFilter: function (e) {
         this.setData({
             streetOpen: !this.data.streetOpen,
             hideMask: this.data.streetOpen
@@ -125,39 +122,39 @@ Page({
                 : false
         });
     },
-    selectStreet: function(e) {
+    selectStreet: function (e) {
         var selectS = e.target.dataset.value;
 
         if (selectS == "街道") {
             var locationSvc = new LocationSvc();
             locationSvc.getStreetsByDistrict(this.data.selectArea).then(data => {
-                this.setData({resultStreets: data.streets, streetOpen: false, hideMask: true, selectStreet: selectS})
+                this.setData({ resultStreets: data.streets, streetOpen: false, hideMask: true, selectStreet: selectS })
             })
         } else {
             var strs = _.filter(this.data.streets, (street) => {
                 return street.name == selectS;
             })
 
-            this.setData({selectStreet: selectS, streetOpen: false, hideMask: true, resultStreets: strs});
+            this.setData({ selectStreet: selectS, streetOpen: false, hideMask: true, resultStreets: strs });
         }
     },
-    containerClick: function(e) {
-        this.setData({areaOpen: false, streetOpen: false, hideMask: true})
+    containerClick: function (e) {
+        this.setData({ areaOpen: false, streetOpen: false, hideMask: true })
     },
-    inputDetail: function(e) {
-        this.setData({addrDetail: e.detail.value})
+    inputDetail: function (e) {
+        this.setData({ addrDetail: e.detail.value })
 
         var locationSvc = new LocationSvc();
         locationSvc.getByDetail(this.data.addrDetail).then(data => {
             if (data.data.message == "OK") {
                 locationSvc.getDetailByName(data.data.data.district).then(data => {
                     // console.log(data.obj[0].name);
-                    this.setData({resultStreets: data.obj, streets: data.streets, selectArea: data.districtName, selectStreet: data.obj[0].name})
+                    this.setData({ resultStreets: data.obj, streets: data.streets, selectArea: data.districtName, selectStreet: data.obj[0].name })
                 })
             }
         })
     },
-    allComplete: function(e) {
+    allComplete: function (e) {
         var street = "";
         if (this.data.selectStreet != "街道" && this.data.selectStreet != "" && this.data.selectStreet != undefined && this.data.selectStreet != null) {
             street = this.data.selectStreet;
@@ -165,7 +162,19 @@ Page({
         var locationSvc = new LocationSvc();
         locationSvc.completeAll(this.data.typeStr, this.data.selectArea, street, this.data.addrDetail).then(data => {
             if (data.data.message == "OK") {
+                console.log('ok');
+                console.log(this.data.resultStreets);
                 getApp().globalData.resultStreets = this.data.resultStreets;
+                if (this.data.typeStr == 1) {//本市
+                    getApp().globalData.user.address.huJi.detail = this.data.addrDetail;
+                    getApp().globalData.user.address.huJi.district = this.data.selectArea;
+                    getApp().globalData.user.address.huJi.street = street;
+                }
+                else {
+                    getApp().globalData.user.address.juZhu.detail = this.data.addrDetail;
+                    getApp().globalData.user.address.juZhu.district = this.data.selectArea;
+                    getApp().globalData.user.address.juZhu.street = street;
+                }
                 wx.navigateTo({
                     url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y' + '&pageId=' + this.data.pageId
                 });

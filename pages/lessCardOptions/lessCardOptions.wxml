@@ -65,8 +65,8 @@
         <view hidden="{{yyHidden}}" wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
           <view class="street-n">办事地点名称</view>
           <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">
-          {{street.service.name}}</view>
-          <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.service.address}}</view>
+          {{street.hospital.name}}</view>
+          <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.hospital.address}}</view>
         </view>
       </scroll-view>
     </view>
