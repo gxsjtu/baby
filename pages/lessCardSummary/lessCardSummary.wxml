@@ -71,6 +71,6 @@
     </view>
   </view>
   <view style="display:flex;flex-direction:row;align-items:center;height:55px;position:absolute;bottom:40rpx;width:100%;background:#fff">
-    <button class="btn-style" bindtap="goBack">返回代办列表</button>
+    <button class="btn-style" bindtap="goBack">返回待办列表</button>
   </view>
 </view>
