@@ -184,13 +184,13 @@ Page({
                 wx.navigateTo({ url: '../laborPrepare/laborPrepare' });
                 break;
             case 23:
-                wx.navigateTo({ url: '../babyCensus/babyCensus?do=census&fromStr=2' });
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=census&fromStr=2&type=1' });
                 break;
             case 24:
-                wx.navigateTo({ url: '../babyCensus/babyCensus?do=medical&fromStr=3' });
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=medical&fromStr=3&type=1' });
                 break;
             case 25:
-                wx.navigateTo({ url: '../babyCensus/babyCensus?do=fund&fromStr=1' });
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=fund&fromStr=1&type=1' });
                 break;
             case 26:
                 wx.navigateTo({ url: '../babyCensus/babyCensus?do=birth&fromStr=3' });

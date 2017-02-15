@@ -28,8 +28,8 @@
   </view>
   <view class="question">是否需要为你推荐具体办事地点及攻略？</view>
   <view class="footer">
-    <view class="footer-btn">非常需要</view>
-    <view class="footer-btn">暂不需要</view>
+    <view class="footer-btn" bindtap="needClick">非常需要</view>
+    <view class="footer-btn" bindtap="noNeedClick">暂不需要</view>
   </view>
   <view style="height:30rpx;"></view>
 </view>

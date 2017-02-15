@@ -9,6 +9,6 @@ Page({
         wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=native&fromStr=' + this.data.fromStr });
     },
     otherCensus: function (e) {
-        wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=other&fromStr=' + + this.data.fromStr });
+        wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=other&fromStr=' + this.data.fromStr });
     }
 })

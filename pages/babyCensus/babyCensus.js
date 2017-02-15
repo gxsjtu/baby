@@ -1,9 +1,18 @@
 Page({
     data: {
-        fromStr:""
+        fromStr:"",
+        typeStr:"1"
     },
     onLoad: function (param) {
         this.getPageData(param.do);
+        this.data.fromStr = param.fromStr;
+        this.data.typeStr = param.type;
+    },
+    needClick: function(){
+         wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.typeStr + '&fromStr=' + this.data.fromStr }); //上海
+    },
+    noNeedClick: function(){
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=n&fromStr=' + this.data.fromStr}); //外省
     },
     getPageData: function (option) {
         if (option == 'census') {
