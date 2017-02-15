@@ -5,8 +5,8 @@
   </view>
   <view class="content">
     <view class="wrap">
-      <view class="label">办理材料：</view>
-      <view class="credentials">
+      <view class="label" wx:if="{{credentials.length > 0}}">办理材料：</view>
+      <view class="credentials" wx:if="{{credentials.length > 0}}">
         <view wx:for="{{credentials}}" wx:key="index" wx:for-item="credential" class="credential-container">
           <image src="{{credential.src}}" />
           <view class="credential-name">{{credential.name}}</view>
@@ -16,11 +16,8 @@
       <view class="label">办理地点:</view>
       <view class="note">{{address}}</view>
       <view style="height:36rpx;"></view>
-      <view class="label">注意事项:</view>
-      <view class="note" wx:for="{{notes}}" wx:key="index" wx:for-item="note">{{index+1}}. {{note}}</view>
-      <!--<view class="note">1. {{need}}</view>
-      <view class="note">2. 通常办事机构会留存复印件，请提前自备，以节省办事时间</view>
-      <view class="note">3. 部分社区医院可能需要：医保卡、居委会开的孕情单</view>-->
+      <view class="label">{{name}}:</view>
+      <view class="note" wx:for="{{notes}}" wx:key="index" wx:for-item="note">{{note}}</view>
     </view>
   </view>
   <view class="question">是否需要继续为您推荐具体办事地点、联系电话、交通路线？</view>
