@@ -87,7 +87,7 @@ Page({
 
         wx.setNavigationBarTitle({
             title: userOption
-        })
+        });
         let arrWarning = pageData.warnings;
         let documents = pageData.documents;
         let title = pageData.titles;

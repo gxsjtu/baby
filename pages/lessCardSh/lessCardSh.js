@@ -1,8 +1,10 @@
 Page({
     data: {
         fromStr: "",
+        page: ''
     },
     onLoad: function (param) {
+        this.data.page = param.page;
         let option = '';
         if (param.page == 'birth') {
             //生育保险
@@ -19,20 +21,23 @@ Page({
                 dList.push("②对于外省市户籍的生育妇女，需携带准生证");
                 dList.push("③对于在外省市生育的妇女，需携带县级以上医院出具的注明产妇生育情况（难产或顺产）的出院小结和小孩《出生医学证明》");
             }
+            dList.push("申办表格本人需填写《生育保险待遇申领单》（申领6）");
             getApp().globalData.dataList = dList;
         }
         else if (param.page == 'lessCard') {
             option = param.from;
         }
         if (param.from == 'native') {
-            this.setData({
-                option: 1//本市
-            });
+            this.data.option = 1;
+            // this.setData({
+            //     option: 1//本市
+            // });
         }
         else {
-            this.setData({
-                option: 2//外省
-            });
+            this.data.option = 2;
+            // this.setData({
+            //     option: 2//外省
+            // });
         }
         this.getPageData(option);
         this.data.fromStr = param.fromStr;
@@ -116,9 +121,10 @@ Page({
         }
     },
     gotoOption: function (e) {
-        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&fromStr=' + this.data.fromStr }); //上海
+        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&pageId=' + this.data.page + '&fromStr=' + this.data.fromStr }); //上海
     },
     gotoSummary: function (e) {
-        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&fromStr=' + this.data.fromStr }); //外省
+        console.log(this.data.page);
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&pageId=' + this.data.page + '&fromStr=' + this.data.fromStr }); //外省
     }
 })
