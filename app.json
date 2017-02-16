@@ -38,7 +38,7 @@
             },
             {
                 "pagePath": "pages/wait/wait",
-                "text": "试用",
+                "text": "申领礼包",
                 "iconPath": "assets/images/tabs/boxgrey.png",
                 "selectedIconPath": "assets/images/tabs/boxred.png"
             },
