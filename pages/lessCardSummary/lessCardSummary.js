@@ -15,8 +15,6 @@ Page({
         var pId = e.pageId;
         this.data.pageId = pId;
         var fromStr = e.fromStr;
-        console.log('strrrr');
-        console.log(fromStr);
 
         if (pId == 'birth') {
             wx.setNavigationBarTitle({ title: '申请生育保险小结' });
@@ -44,7 +42,6 @@ Page({
             if (fromStr == "1") {
                 this.setData({ jcHidden: true, bsHidden: true, yyHidden: false })
             } else if (fromStr == "2") {
-                console.log('22222');
                 this.setData({ jcHidden: false, bsHidden: true, yyHidden: true })
             } else if (fromStr == "3") {
                 this.setData({ jcHidden: true, bsHidden: false, yyHidden: true })

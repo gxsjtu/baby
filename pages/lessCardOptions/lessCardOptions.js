@@ -26,18 +26,25 @@ Page({
         this.data.pageId = pId;
         var fromStr = e.fromStr;
         this.data.fromStr = fromStr;
-        if (pId == "23") {
-            wx.setNavigationBarTitle({ title: '申报新生儿户口' });
-        } else if (pId == "24") {
-            wx.setNavigationBarTitle({ title: '办理宝宝医疗保险' });
-        } else if (pId == "25") {
-            wx.setNavigationBarTitle({ title: '办理少儿住院互助基金' });
-        } else if (pId == "26") {
-            wx.setNavigationBarTitle({ title: '申报生育保险' });
-        }
-        else {
+
+        // if (pId == "23") {
+        //     wx.setNavigationBarTitle({ title: '申报新生儿户口' });
+        // } else if (pId == "24") {
+        //     wx.setNavigationBarTitle({ title: '办理宝宝医疗保险' });
+        // } else if (pId == "25") {
+        //     wx.setNavigationBarTitle({ title: '办理少儿住院互助基金' });
+        // } else if (pId == "26") {
+        //     wx.setNavigationBarTitle({ title: '申报生育保险' });
+        // }
+        // else {
+        //     wx.setNavigationBarTitle({ title: '办理小卡攻略' });
+        // }
+
+        if (pId != "23" && pId != "24" && pId != "25" && pId != "26") {
             wx.setNavigationBarTitle({ title: '办理小卡攻略' });
         }
+
+
         if (fromStr == "1") {
             this.setData({ typeName: "社区医院", jcHidden: true, bsHidden: true, yyHidden: false })
         } else if (fromStr == "2") {

@@ -9,8 +9,6 @@ Page({
         this.data.fromStr = param.fromStr;//区别‘社区医院’四个字
         this.data.typeStr = param.type;//区别本市还是外省
         this.data.pageId = param.pageId;//区别title
-        console.log('111');
-        console.log(this.data.pageId);
     },
     needClick: function(){
          wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.typeStr + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId }); //上海
