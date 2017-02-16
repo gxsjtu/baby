@@ -32,10 +32,10 @@
       <view class="item-name">生产医院</view>
       <view class="item-value">{{hospitalName}}</view>
     </view>
-    <view class="item-container">
+    <!--<view class="item-container">
       <view class="item-name">主治医生</view>
       <view class="item-value">{{doctor}}</view>
-    </view>
+    </view>-->
 
 <!--<view style="padding:40rpx;">
     <button bindtap="saveInfo" disabled="{{btnDisabled}}" class="{{btnDisabled ? 'btn-f' : 'btn-style'}}">保存</button>

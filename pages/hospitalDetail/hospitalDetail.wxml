@@ -30,21 +30,23 @@
                         <image src="../../assets/images/hospitaldetail/card.png" style="width: 18px; height: 18px;"></image>
                         <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">建卡流程</text>
                     </view>
-                    <view class="items-style border-b  border-r" bindtap="gotoYW">
+                    <!--<view class="items-style border-b  border-r" bindtap="gotoYW">-->
+                    <view class="items-style border-r" bindtap="gotoYW">
                         <image src="../../assets/images/hospitaldetail/yw.png" style="width: 18px; height: 18px;"></image>
                         <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">医务设施</text>
                     </view>
-                    <view class="items-style  border-r">
+                    <!--<view class="items-style  border-r">
                         <image src="../../assets/images/hospitaldetail/zj.png" style="width: 18px; height: 18px;"></image>
                         <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">专家介绍</text>
-                    </view>
+                    </view>-->
                 </view>
                 <view style="width: 375rpx;margin-top:10px;margin-right:10px;margin-bottom:10px;">
                     <view class=" border-b" style="display:flex;flex-direction:row;align-items:center;height:50px;" bindtap="gotoBF">
                         <image src="../../assets/images/hospitaldetail/bf.png" style="width: 18px; height: 18px;padding-left:80rpx;"></image>
                         <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">病房介绍</text>
                     </view>
-                    <view class=" border-b" style="display:flex;flex-direction:row;align-items:center;height:50px;" bindtap="gotoVIP">
+                    <!--<view class=" border-b" style="display:flex;flex-direction:row;align-items:center;height:50px;" bindtap="gotoVIP">-->
+                    <view style="display:flex;flex-direction:row;align-items:center;height:50px;" bindtap="gotoVIP">
                         <image src="../../assets/images/hospitaldetail/cj.png" style="width: 18px; height: 18px;padding-left:80rpx;"></image>
                         <text style="font-size:15px;color:#3D3D3D;padding-left:12rpx;font-family:PingFangSC-Regular;">产检VIP服务</text>
                     </view>
