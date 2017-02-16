@@ -84,6 +84,18 @@ Page({
                 });
             }
         }
+        else if(option == 'day42s'){
+             userOption = '产后42天检查';
+            if (hospital.fhrm) {
+                pageData = hospital.day42;
+            }
+            else {
+                this.setData({
+                    noData: true,
+                    option: userOption
+                });
+            }
+        }
 
         wx.setNavigationBarTitle({
             title: userOption

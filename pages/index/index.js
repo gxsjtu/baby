@@ -183,6 +183,15 @@ Page({
                 //生产攻略
                 wx.navigateTo({ url: '../laborPrepare/laborPrepare' });
                 break;
+            case 22:
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=day42s' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
             case 23:
                 wx.navigateTo({ url: '../babyCensus/babyCensus?do=census&fromStr=2&type=1&pageId=23' });//pageID用来区分页面名字的绑定
                 var dList = [];
