@@ -1,0 +1,20 @@
+.optInTemplate-container {
+  width: 750rpx;
+  background: #fafafa;
+  box-shadow: 0 0 0 0 rgba(221, 221, 221, 0.50), 0 0 0 0 rgba(221, 221, 221, 0.50);
+  height: 100rpx;
+  display: flex;
+  /*flex-direction: row;*/
+  align-items: center;
+  justify-content: center;
+}
+
+.optInTemplate-split{
+  width: 4rpx;
+  height: 60rpx;
+  border: 1rpx solid rgba(0,0,0,0.10);
+}
+
+.optInTemplate-item{
+  width: 70rpx;
+}

@@ -183,6 +183,15 @@ Page({
                 //生产攻略
                 wx.navigateTo({ url: '../laborPrepare/laborPrepare' });
                 break;
+            case 21:
+                if (app.defaultHos) {
+                    getApp().globalData.hospital = app.defaultHos;
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=bornCerts' });
+                }
+                else {
+                    this.showAlert('您没有选择生产医院，请先选择一个生产医院');
+                }
+                break;
             case 22:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;

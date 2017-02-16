@@ -85,9 +85,21 @@ Page({
             }
         }
         else if(option == 'day42s'){
-             userOption = '产后42天检查';
-            if (hospital.fhrm) {
+            userOption = '产后42天检查';
+            if (hospital.day42) {
                 pageData = hospital.day42;
+            }
+            else {
+                this.setData({
+                    noData: true,
+                    option: userOption
+                });
+            }
+        }
+        else if(option == 'bornCerts'){
+            userOption = '出生医学证明';
+            if (hospital.bornCert) {
+                pageData = hospital.bornCert;
             }
             else {
                 this.setData({

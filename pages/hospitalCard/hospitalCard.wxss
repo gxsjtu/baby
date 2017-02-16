@@ -1,3 +1,5 @@
+
+
 page {
   background: #ebebeb;
 }
@@ -181,11 +183,11 @@ page {
 .title {
   position: absolute;
   width: 700rpx;
-  padding-right:30rpx;
+  padding-right: 30rpx;
   height: 90rpx;
   background: rgba(0, 0, 0, 0.7);
   bottom: 0;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .title-header {
