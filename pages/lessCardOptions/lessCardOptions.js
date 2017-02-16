@@ -35,6 +35,9 @@ Page({
         } else if (pId == "26") {
             wx.setNavigationBarTitle({ title: '申报生育保险' });
         }
+        else {
+            wx.setNavigationBarTitle({ title: '办理小卡攻略' });
+        }
         if (fromStr == "1") {
             this.setData({ typeName: "社区医院", jcHidden: true, bsHidden: true, yyHidden: false })
         } else if (fromStr == "2") {

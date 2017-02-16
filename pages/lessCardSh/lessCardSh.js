@@ -1,9 +1,11 @@
 Page({
     data: {
         fromStr: "",
-        page: ''
+        page: '',
+        pageId:''
     },
     onLoad: function (param) {
+        this.data.pageId = param.pageId;
         this.data.page = param.page;
         let option = '';
         if (param.page == 'birth') {
@@ -127,7 +129,7 @@ Page({
         }
     },
     gotoOption: function (e) {
-        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&pageId=' + this.data.page + '&fromStr=' + this.data.fromStr }); //上海
+        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr }); //上海
     },
     gotoSummary: function (e) {
         getApp().globalData.resultStreets = [];//点击暂不需要 清空事务中心或者医院或者派出所列表 小结页不显示
