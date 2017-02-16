@@ -1,0 +1,5 @@
+<template name="optInTemplate">
+    <view class="optInTemplate-container">
+
+    </view>
+</template>

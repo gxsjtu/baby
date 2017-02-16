@@ -1,3 +1,4 @@
+<include src="../optInTemplate/optInTemplate" />
 <view class="container">
   <view class="header">
     <image src="../../assets/images/lessCard.jpg"></image>
@@ -48,8 +49,7 @@
           </view>
         </view>
       </view>
-
-      <view hidden="{{jcHidden}}" class="font-s" wx:for="{{streets}}" wx:for-item="street" wx:key="{{street.name}}"  style="padding-bottom:20rpx;  border-bottom: 1rpx solid rgba(211, 211, 211, 0.3);">
+      <view hidden="{{jcHidden}}" class="font-s" wx:for="{{streets}}" wx:for-item="street" wx:key="{{street.name}}" style="padding-bottom:20rpx;  border-bottom: 1rpx solid rgba(211, 211, 211, 0.3);">
         <view style="display:flex;flex-direction:row;margin-top:10px;">
           <view style="width:150rpx;text-align:right;">
             名称：
@@ -83,8 +83,7 @@
           </view>
         </view>
       </view>
-
-      <view hidden="{{yyHidden}}" class="font-s" wx:for="{{streets}}" wx:for-item="street" wx:key="{{street.name}}"  style="padding-bottom:20rpx;  border-bottom: 1rpx solid rgba(211, 211, 211, 0.3);">
+      <view hidden="{{yyHidden}}" class="font-s" wx:for="{{streets}}" wx:for-item="street" wx:key="{{street.name}}" style="padding-bottom:20rpx;  border-bottom: 1rpx solid rgba(211, 211, 211, 0.3);">
         <view style="display:flex;flex-direction:row;margin-top:10px;">
           <view style="width:150rpx;text-align:right;">
             名称：
@@ -120,6 +119,7 @@
       </view>
     </view>
   </view>
+  <template is="optInTemplate"></template>
   <view style="display:flex;flex-direction:row;align-items:center;height:55px;width:100%;background:#fff">
     <button class="btn-style" bindtap="goBack">返回待办列表</button>
   </view>
