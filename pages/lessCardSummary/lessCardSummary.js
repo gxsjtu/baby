@@ -17,10 +17,8 @@ Page({
         var fromStr = e.fromStr;
 
         if (pId == '26') {
-            wx.setNavigationBarTitle({ title: '申请生育保险小结' });
             this.setData({ title: '申请生育保险小结', needs: globalData.dataList });
         } else if (pId == '3') {
-            wx.setNavigationBarTitle({ title: '办理小卡总结' });
             if (e.type == "1") {
                 this.setData({
                     title: '办理小卡总结',
@@ -35,13 +33,10 @@ Page({
 
         } else {
             if (pId == "23") {
-                wx.setNavigationBarTitle({ title: '申报宝宝户口' });
                 this.setData({ title: '申报宝宝户口', needs: globalData.dataList });
             } else if (pId == "24") {
-                wx.setNavigationBarTitle({ title: '办理宝宝医疗保险' });
                 this.setData({ title: '办理宝宝医疗保险', needs: globalData.dataList });
             } else if (pId == "25") {
-                wx.setNavigationBarTitle({ title: '办理少儿互助基金' });
                 this.setData({ title: '办理少儿互助基金', needs: globalData.dataList });
             }
         }

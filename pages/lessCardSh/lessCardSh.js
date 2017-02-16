@@ -104,9 +104,9 @@ Page({
             });
         }
         else if (option == 'birth') {
-            wx.setNavigationBarTitle({
-                title: '申请生育保险攻略'
-            });
+            // wx.setNavigationBarTitle({
+            //     title: '申请生育保险攻略'
+            // });
             let notes = ['1、夫妻双方的身份证原件及复印件；',
                 '2、结婚证原件及复印件；',
                 '3、夫妻双方户口簿原件及复印件；',

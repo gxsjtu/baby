@@ -191,7 +191,6 @@ Page({
         locationSvc.getByDetail(this.data.addrDetail).then(data => {
             if (data.data.message == "OK") {
                 locationSvc.getDetailByName(data.data.data.district).then(data => {
-                    // console.log(data.obj[0].name);
                     this.setData({ resultStreets: data.obj, streets: data.streets, selectArea: data.districtName, selectStreet: data.obj[0].name })
                 })
                 if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
@@ -200,6 +199,9 @@ Page({
                 else {
                     this.setData({ ishid: true });
                 }
+            }
+            else {
+                this.setData({ resultStreets: [], ishid: true });
             }
         })
     },
