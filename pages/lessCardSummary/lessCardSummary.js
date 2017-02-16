@@ -3,20 +3,26 @@ Page({
         streets: [],
         ishid: false,
         delta: "",
-        pageId: ""
+        pageId: "",
+        bsHidden: true,
+        jcHidden: true,
+        yyHidden: true
     },
-    onLoad: function(e) {
+    onLoad: function (e) {
         let globalData = getApp().globalData;
 
         this.data.delta = e.delta;
         var pId = e.pageId;
         this.data.pageId = pId;
+        var fromStr = e.fromStr;
+        console.log('strrrr');
+        console.log(fromStr);
 
         if (pId == 'birth') {
-            wx.setNavigationBarTitle({title: '申请生育保险小结'});
-            this.setData({title: '申请生育保险小结', needs: globalData.dataList});
+            wx.setNavigationBarTitle({ title: '申请生育保险小结' });
+            this.setData({ title: '申请生育保险小结', needs: globalData.dataList });
         } else if (pId == 'lessCard') {
-            wx.setNavigationBarTitle({title: '办理小卡总结'});
+            wx.setNavigationBarTitle({ title: '办理小卡总结' });
             if (e.type == "1") {
                 this.setData({
                     title: '办理小卡总结',
@@ -31,18 +37,28 @@ Page({
 
         }
 
-            var ss = globalData.resultStreets;
-            if (ss == null || ss == undefined || ss.length <= 0) {
-                this.setData({ishid: true})
-            } else {
-                this.setData({streets: globalData.resultStreets})
-            }
-    },
-    goBack: function() {
-        if (this.data.delta == "y") {
-            wx.navigateBack({delta: 4});
+        var ss = globalData.resultStreets;
+        if (ss == null || ss == undefined || ss.length <= 0) {
+            this.setData({ ishid: true, jcHidden: true, bsHidden: true, yyHidden: true  })
         } else {
-            wx.navigateBack({delta: 3});
+            if (fromStr == "1") {
+                this.setData({ jcHidden: true, bsHidden: true, yyHidden: false })
+            } else if (fromStr == "2") {
+                console.log('22222');
+                this.setData({ jcHidden: false, bsHidden: true, yyHidden: true })
+            } else if (fromStr == "3") {
+                this.setData({ jcHidden: true, bsHidden: false, yyHidden: true })
+            }
+            this.setData({ streets: globalData.resultStreets })
+        }
+
+
+    },
+    goBack: function () {
+        if (this.data.delta == "y") {
+            wx.navigateBack({ delta: 4 });
+        } else {
+            wx.navigateBack({ delta: 3 });
         }
     }
 })

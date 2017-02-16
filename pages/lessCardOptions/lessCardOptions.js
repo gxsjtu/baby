@@ -18,12 +18,14 @@ Page({
         fromStr: "",
         pageId: "",
         bsHidden: true,
-        jcHidden: true
+        jcHidden: true,
+        yyHidden: true
     },
     onLoad: function (e) {
         var pId = e.pageId;
         this.data.pageId = pId;
         var fromStr = e.fromStr;
+        this.data.fromStr = fromStr;
         if (pId == "23") {
             wx.setNavigationBarTitle({ title: '申报新生儿户口' });
         } else if (pId == "24") {
@@ -162,8 +164,6 @@ Page({
         var locationSvc = new LocationSvc();
         locationSvc.completeAll(this.data.typeStr, this.data.selectArea, street, this.data.addrDetail).then(data => {
             if (data.data.message == "OK") {
-                console.log('ok');
-                console.log(this.data.resultStreets);
                 getApp().globalData.resultStreets = this.data.resultStreets;
                 if (this.data.typeStr == 1) {//本市
                     getApp().globalData.user.address.huJi.detail = this.data.addrDetail;
@@ -176,7 +176,7 @@ Page({
                     getApp().globalData.user.address.juZhu.street = street;
                 }
                 wx.navigateTo({
-                    url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y' + '&pageId=' + this.data.pageId
+                    url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y' + '&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr
                 });
             }
         })
