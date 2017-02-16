@@ -114,8 +114,8 @@ Page({
                 image: {
                     src: '../../assets/images/babyCensus3.jpg',
                     name: '医疗证',
-                    width: '680',
-                    height: '1006'
+                    width: '340',
+                    height: '503'
                 },
                 note: [{
                     title: '参加对象:',
