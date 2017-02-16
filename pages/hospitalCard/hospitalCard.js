@@ -188,5 +188,14 @@ Page({
         this.setData({
             showDesc: false
         });
+    },
+    usefulClick:function(e){
+
+    },
+    medalClick:function(e){
+
+    },
+    errorClick:function(e){
+        
     }
 })
