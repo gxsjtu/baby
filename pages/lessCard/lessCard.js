@@ -7,16 +7,16 @@ Page({
     onLoad: function (e) {
         this.data.fromStr = e.fromStr;
         this.data.pageId = e.pageId;
-        this.setPageData(e.page);
+        this.setPageData(e.pageId);
     },
     shCensus: function (e) {
         wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=native&page=' + this.data.page + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId });
     },
     otherCensus: function (e) {
-        wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=other&page=' + this.data.page + '&fromStr=' + this.data.fromStr });
+        wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=other&page=' + this.data.page + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId });
     },
     setPageData: function (param) {
-        if (param == 'lessCard') {
+        if (param == '3') {
             wx.setNavigationBarTitle({
                 title: '办理小卡攻略'
             });
@@ -32,7 +32,7 @@ Page({
                 page: 'lessCard'
             });
         }
-        else if (param == 'birth') {
+        else if (param == '26') {
             // wx.setNavigationBarTitle({
             //     title: '申报生育保险攻略'
             // })

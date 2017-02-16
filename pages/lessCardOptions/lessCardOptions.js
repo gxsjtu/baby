@@ -187,7 +187,6 @@ Page({
     },
     inputDetail: function (e) {
         this.setData({ addrDetail: e.detail.value })
-
         var locationSvc = new LocationSvc();
         locationSvc.getByDetail(this.data.addrDetail).then(data => {
             if (data.data.message == "OK") {

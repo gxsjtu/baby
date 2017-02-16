@@ -16,10 +16,10 @@ Page({
         this.data.pageId = pId;
         var fromStr = e.fromStr;
 
-        if (pId == 'birth') {
+        if (pId == '26') {
             wx.setNavigationBarTitle({ title: '申请生育保险小结' });
             this.setData({ title: '申请生育保险小结', needs: globalData.dataList });
-        } else if (pId == 'lessCard') {
+        } else if (pId == '3') {
             wx.setNavigationBarTitle({ title: '办理小卡总结' });
             if (e.type == "1") {
                 this.setData({

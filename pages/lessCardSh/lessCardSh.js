@@ -133,6 +133,6 @@ Page({
     },
     gotoSummary: function (e) {
         getApp().globalData.resultStreets = [];//点击暂不需要 清空事务中心或者医院或者派出所列表 小结页不显示
-        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&pageId=' + this.data.page + '&fromStr=' + this.data.fromStr }); //外省
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr }); //外省
     }
 })
