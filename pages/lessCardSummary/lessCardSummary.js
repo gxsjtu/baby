@@ -33,11 +33,22 @@ Page({
                 });
             }
 
+        } else {
+            if (pId == "23") {
+                wx.setNavigationBarTitle({ title: '申报宝宝户口' });
+                this.setData({ title: '申报宝宝户口', needs: globalData.dataList });
+            } else if (pId == "24") {
+                wx.setNavigationBarTitle({ title: '办理宝宝医疗保险' });
+                this.setData({ title: '办理宝宝医疗保险', needs: globalData.dataList });
+            } else if (pId == "25") {
+                wx.setNavigationBarTitle({ title: '办理少儿互助基金' });
+                this.setData({ title: '办理少儿互助基金', needs: globalData.dataList });
+            }
         }
 
         var ss = globalData.resultStreets;
         if (ss == null || ss == undefined || ss.length <= 0) {
-            this.setData({ ishid: true, jcHidden: true, bsHidden: true, yyHidden: true  })
+            this.setData({ ishid: true, jcHidden: true, bsHidden: true, yyHidden: true })
         } else {
             if (fromStr == "1") {
                 this.setData({ jcHidden: true, bsHidden: true, yyHidden: false })

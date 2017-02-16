@@ -15,13 +15,13 @@ Page({
     },
     noNeedClick: function(){
         getApp().globalData.resultStreets = [];//点击暂不需要 清空事务中心或者医院或者派出所列表 小结页不显示
-        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=n&fromStr=' + this.data.fromStr}); //外省
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=n&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId}); //外省
     },
     getPageData: function (option) {
         if (option == 'census') {
-            wx.setNavigationBarTitle({
-                title: '申报新生儿户口'
-            });
+            // wx.setNavigationBarTitle({
+            //     title: '申报新生儿户口'
+            // });
             this.setData({
                 header: '新生儿户籍办理攻略',
                 title: {
@@ -54,9 +54,9 @@ Page({
 
         }
         else if (option == 'medical') {
-            wx.setNavigationBarTitle({
-                title: '办理宝宝医疗保险'
-            });
+            // wx.setNavigationBarTitle({
+            //     title: '办理宝宝医疗保险'
+            // });
             this.setData({
                 header: '少儿居民医保办理攻略',
                 title: {
@@ -100,9 +100,9 @@ Page({
             });
         }
         else if (option == 'fund') {
-            wx.setNavigationBarTitle({
-                title: '办理少儿住院互助基金'
-            });
+            // wx.setNavigationBarTitle({
+            //     title: '办理少儿住院互助基金'
+            // });
             this.setData({
                 header: '少儿住院互助基金办理攻略',
                 title: {

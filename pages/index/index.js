@@ -193,6 +193,7 @@ Page({
                 }
                 break;
             case 23:
+                getApp().globalData.dataList = [];
                 wx.navigateTo({ url: '../babyCensus/babyCensus?do=census&fromStr=2&type=1&pageId=23' });//pageID用来区分页面名字的绑定
                 var dList = [];
                 dList.push("《出生医学证明》");
@@ -203,26 +204,21 @@ Page({
                 getApp().globalData.dataList = dList;
                 break;
             case 24:
+                getApp().globalData.dataList = [];
                 wx.navigateTo({ url: '../babyCensus/babyCensus?do=medical&fromStr=3&type=1&pageId=24' });
                 var dList = [];
-                // dList.push("《出生医学证明》");
-                // dList.push("父亲《结婚证》");
-                // dList.push("父母双方的《居民户口簿》");
-                // dList.push("父母双方的《居民身份证》或现役军人身份证件或《中华人民共和国护照》或《中华人民共和国旅行证》");
-                // dList.push("监护人的书面申请");
+                dList.push("户口簿或居住证");
                 getApp().globalData.dataList = dList;
                 break;
             case 25:
+                getApp().globalData.dataList = [];
                 wx.navigateTo({ url: '../babyCensus/babyCensus?do=fund&fromStr=1&type=1&pageId=25' });
                 var dList = [];
-                // dList.push("《出生医学证明》");
-                // dList.push("父亲《结婚证》");
-                // dList.push("父母双方的《居民户口簿》");
-                // dList.push("父母双方的《居民身份证》或现役军人身份证件或《中华人民共和国护照》或《中华人民共和国旅行证》");
-                // dList.push("监护人的书面申请");
+                dList.push("户口簿或居住证");
                 getApp().globalData.dataList = dList;
                 break;
             case 26:
+                getApp().globalData.dataList = [];
                 wx.navigateTo({ url: '../lessCard/lessCard?page=birth&fromStr=3&pageId=26' });
                 break;
             default:

@@ -44,28 +44,41 @@
         </view>
       </view>
       <view style="margin-left:15px;border: 1px solid rgba(0, 0, 0, 0.10);width:630rpx;">
-        <input type="text" placeholder="请输入详细地址" value="{{addrDetail}}" bindblur="inputDetail" style="height:60rpx;  font-family:PingFangSC-Regular;font-size: 13px;color: #3d3d3d;padding-left:40rpx;"/>
+        <input type="text" placeholder="请输入详细地址" value="{{addrDetail}}" bindblur="inputDetail" style="height:60rpx;  font-family:PingFangSC-Regular;font-size: 13px;color: #3d3d3d;padding-left:42rpx;" />
       </view>
       <view style="margin-bottom: 15px;margin-left: 15px;margin-top: 15px;color: #b0b0b0;font-size: 22rpx;font-family: PingFangSC-Regular;">
         (如果街道不详，则列出该区所有{{typeName}}的列表。)
       </view>
       <scroll-view scroll-y="true">
+        <view class="street-n" hidden="{{ishid}}">办事地点名称</view>
         <view hidden="{{bsHidden}}" wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
-          <view class="street-n">办事地点名称</view>
-          <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">
-          {{street.service.name}}</view>
+          <view style="display:flex;flex-direction:row;align-items:center;margin-top:10px;">
+            <!--<view>-->
+              <image src="../../assets/images/hospitaldetail/wg.png" style="height:15px;width:15px;"></image>
+            <!--</view>-->
+            <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-left:3px;">
+              {{street.service.name}}</view>
+          </view>
           <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.service.address}}</view>
         </view>
         <view hidden="{{jcHidden}}" wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
-          <view class="street-n">办事地点名称</view>
-          <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">
-          {{street.police.name}}</view>
+          <view style="display:flex;flex-direction:row;align-items:center;margin-top:10px;">
+            <!--<view>-->
+              <image src="../../assets/images/hospitaldetail/wg.png" style="height:15px;width:15px;"></image>
+            <!--</view>-->
+            <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-left:3px;">
+              {{street.police.name}}</view>
+          </view>
           <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.police.address}}</view>
         </view>
         <view hidden="{{yyHidden}}" wx:for="{{resultStreets}}" wx:for-item="street" wx:key="{{street.name}}" style="margin-left:15px;margin-top:15px;padding-bottom:15px;border-bottom:1px solid rgba(0,0,0,0.10); width:630rpx;">
-          <view class="street-n">办事地点名称</view>
-          <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-top:10px;">
-          {{street.hospital.name}}</view>
+          <view style="display:flex;flex-direction:row;align-items:center;margin-top:10px;">
+            <!--<view>-->
+              <image src="../../assets/images/hospitaldetail/wg.png" style="height:15px;width:15px;"></image>
+            <!--</view>-->
+            <view style="font-family: PingFangSC-Regular;font-size: 13px;color: #898989;letter-spacing: -0.31px;margin-left:3px;">
+              {{street.hospital.name}}</view>
+          </view>
           <view style="font-size: 22rpx;font-family: PingFangSC-Regular;color: #b0b0b0;margin-top:10px;">地址：{{street.hospital.address}}</view>
         </view>
       </scroll-view>

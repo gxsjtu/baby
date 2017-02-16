@@ -173,6 +173,7 @@ scroll-view {
   font-size: 15px;
   color: #3d3d3d;
   letter-spacing: -0.36px;
+  padding-left:15px;
 }
 
 .font-l {

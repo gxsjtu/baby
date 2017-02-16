@@ -19,7 +19,8 @@ Page({
         pageId: "",
         bsHidden: true,
         jcHidden: true,
-        yyHidden: true
+        yyHidden: true,
+        ishid: true
     },
     onLoad: function (e) {
         var pId = e.pageId;
@@ -27,22 +28,22 @@ Page({
         var fromStr = e.fromStr;
         this.data.fromStr = fromStr;
 
-        // if (pId == "23") {
-        //     wx.setNavigationBarTitle({ title: '申报新生儿户口' });
-        // } else if (pId == "24") {
-        //     wx.setNavigationBarTitle({ title: '办理宝宝医疗保险' });
-        // } else if (pId == "25") {
-        //     wx.setNavigationBarTitle({ title: '办理少儿住院互助基金' });
-        // } else if (pId == "26") {
-        //     wx.setNavigationBarTitle({ title: '申报生育保险' });
-        // }
-        // else {
-        //     wx.setNavigationBarTitle({ title: '办理小卡攻略' });
-        // }
-
-        if (pId != "23" && pId != "24" && pId != "25" && pId != "26") {
+        if (pId == "23") {
+            wx.setNavigationBarTitle({ title: '申报新生儿户口' });
+        } else if (pId == "24") {
+            wx.setNavigationBarTitle({ title: '办理宝宝医疗保险' });
+        } else if (pId == "25") {
+            wx.setNavigationBarTitle({ title: '办理少儿住院互助基金' });
+        } else if (pId == "26") {
+            wx.setNavigationBarTitle({ title: '申报生育保险' });
+        }
+        else {
             wx.setNavigationBarTitle({ title: '办理小卡攻略' });
         }
+
+        // if (pId != "23" && pId != "24" && pId != "25" && pId != "26") {
+        //     wx.setNavigationBarTitle({ title: '办理小卡攻略' });
+        // }
 
 
         if (fromStr == "1") {
@@ -92,6 +93,12 @@ Page({
                 }
 
                 this.setData({ streets: data.streets, resultStreets: strs, selectArea: districtStr, selectStreet: streetStr, addrDetail: detailStr })
+                if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                    this.setData({ ishid: false });
+                }
+                else {
+                    this.setData({ ishid: true });
+                }
             })
         } else {
             locationSvc.getCurrentLocation().then(data => {
@@ -99,6 +106,12 @@ Page({
                     this.setData({ selectArea: data.data.data })
                     locationSvc.getStreetsByDistrict(data.data.data).then(data => {
                         this.setData({ streets: data.streets, resultStreets: data.streets })
+                        if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                            this.setData({ ishid: false });
+                        }
+                        else {
+                            this.setData({ ishid: true });
+                        }
                     })
                 }
             })
@@ -116,6 +129,12 @@ Page({
                 hideMask: true,
                 selectStreet: "街道"
             })
+            if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                this.setData({ ishid: false });
+            }
+            else {
+                this.setData({ ishid: true });
+            }
         })
     },
     areaFilter: function (e) {
@@ -141,6 +160,12 @@ Page({
             var locationSvc = new LocationSvc();
             locationSvc.getStreetsByDistrict(this.data.selectArea).then(data => {
                 this.setData({ resultStreets: data.streets, streetOpen: false, hideMask: true, selectStreet: selectS })
+                if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                    this.setData({ ishid: false });
+                }
+                else {
+                    this.setData({ ishid: true });
+                }
             })
         } else {
             var strs = _.filter(this.data.streets, (street) => {
@@ -148,7 +173,14 @@ Page({
             })
 
             this.setData({ selectStreet: selectS, streetOpen: false, hideMask: true, resultStreets: strs });
+            if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                this.setData({ ishid: false });
+            }
+            else {
+                this.setData({ ishid: true });
+            }
         }
+
     },
     containerClick: function (e) {
         this.setData({ areaOpen: false, streetOpen: false, hideMask: true })
@@ -163,6 +195,12 @@ Page({
                     // console.log(data.obj[0].name);
                     this.setData({ resultStreets: data.obj, streets: data.streets, selectArea: data.districtName, selectStreet: data.obj[0].name })
                 })
+                if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                    this.setData({ ishid: false });
+                }
+                else {
+                    this.setData({ ishid: true });
+                }
             }
         })
     },
