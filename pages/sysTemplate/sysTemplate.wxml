@@ -1,5 +1,0 @@
-<template name="plTemp">
-    <view style="position:absolute;right:10px;top:50%;" bindtap="showM">
-        <image src="../../assets/images/hospitaldetail/pl.png" style="width:41px;height:92px;"></image>
-    </view>
-</template>
