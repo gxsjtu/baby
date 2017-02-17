@@ -89,7 +89,7 @@ page {
 }
 
 .alert-title {
-  width: 100%;
+  width: 670rpx;
   height: 96rpx;
   background-image: linear-gradient(-95deg, #ff6f6f 0%, #ff4949 54%, #ff6868 100%);
   font-family: PingFangSC-Medium;
@@ -101,7 +101,7 @@ page {
 }
 
 .alert-desc {
-  width: 100%;
+  width: 570rpx;
   padding: 70rpx 50rpx;
   font-family: PingFangSC-Regular;
   font-size: 13px;
@@ -114,6 +114,6 @@ page {
   margin-top: 30rpx;
 }
 
-.alert-comment:first{
+.alert-comment:first-child{
   margin-top: 0;
 }
