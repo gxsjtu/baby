@@ -14,17 +14,15 @@ Page({
         noData: false,
         pageId: '',
         optIn: {
-            number: 0,
-            enable: [true]
+            num: 0,
+            enable: [true, true, true]
         }
     },
     onLoad: function (param) {
         this.getPageData(param.do);
         var actionSvc = new ActionSvc();
-        actionSvc.goodsCount(this.data.hospitalId, this.data.pageId).then((data) => {
-            console.log(data);
-            this.setOptInData();
-        });
+        this.setOptInData();
+
     },
     getPageData: function (option) {
         let hospital = getApp().globalData.hospital;
@@ -212,11 +210,16 @@ Page({
         if (this.data.optIn.enable[0]) {
             var actionSvc = new ActionSvc();
             actionSvc.clickGood(this.data.hospitalId, this.data.pageId).then((data) => {
-                console.log(data);
-
-                this.setData({
-                    'optIn.enable[0]': false
-                });
+                if (data.data.message == 'OK') {
+                    this.setData({
+                        'optIn.enable[0]': false,
+                        'optIn.num': this.data.optIn.num + 1
+                    });
+                    //更新globalData
+                    let goods = getApp().globalData.user.goods;
+                    let good = {hospitalId: this.data.hospitalId, pageId: this.data.pageId};
+                    goods.push(good);
+                }
             });
         }
     },
@@ -232,6 +235,24 @@ Page({
     },
     setOptInData: function (e) {
         //确定点赞、领取勋章和纠错哪个能用
-        
+        var actionSvc = new ActionSvc();
+        actionSvc.goodsCount(this.data.hospitalId, this.data.pageId).then((data) => {
+            this.setData({
+                'optIn.num': (data.data.data ? data.data.data : 0)
+            });
+            let goods = getApp().globalData.user.goods;
+            let good = _.find(goods, { hospitalId: this.data.hospitalId, pageId: this.data.pageId });
+            if (good) {
+                //已点过赞
+                this.setData({
+                    'optIn.enable[0]': false
+                });
+            }
+            else {
+                this.setData({
+                    'optIn.enable[0]': true
+                });
+            }
+        });
     }
 })

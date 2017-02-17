@@ -2,7 +2,7 @@
   <view class="optInTemplate-container">
     <view class="optInTemplate-item" bindtap="usefulClick">
       <image src="{{enable[0]?'../../assets/images/useful.png':'../../assets/images/usefuldisable.jpg'}}" />
-      <view class="optInTemplate-title">有用:{{number}}</view>
+      <view class="optInTemplate-title">有用:{{num}}</view>
     </view>
     <view class="optInTemplate-split"></view>
     <view class="optInTemplate-item" bindtap="medalClick">
