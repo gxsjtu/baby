@@ -6,7 +6,8 @@ Page({
         pageId: "",
         bsHidden: true,
         jcHidden: true,
-        yyHidden: true
+        yyHidden: true,
+        tempData: {number:356,disable:[false,true,false]}
     },
     onLoad: function (e) {
         let globalData = getApp().globalData;
@@ -54,8 +55,6 @@ Page({
             }
             this.setData({ streets: globalData.resultStreets })
         }
-
-
     },
     goBack: function () {
         if (this.data.delta == "y") {
@@ -63,5 +62,8 @@ Page({
         } else {
             wx.navigateBack({ delta: 3 });
         }
+    },
+    medalClick: function () {
+
     }
 })
