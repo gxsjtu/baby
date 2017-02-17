@@ -1,12 +1,14 @@
 const GLOBAL = require('../../global.js');
 var _ = require('../../utils/lodash.min.js');
-const ActionSvc = require('../../services/actionSvc.js')
+var optIn = require('../../utils/optIn.js');
+
 Page({
     data: {
         fromStr: "",
         typeStr: "1",
         pageId: "",
         pageName: '',
+        hospitalId: '',
         optIn: {
             num: 0,
             enable: [true, true, true]
@@ -17,7 +19,8 @@ Page({
         this.data.fromStr = param.fromStr;//区别‘社区医院’四个字
         this.data.typeStr = param.type;//区别本市还是外省
         this.data.pageId = param.pageId;//区别title
-        this.setOptInData();
+        // debugger;
+        optIn.setOptInData(this);
     },
     needClick: function () {
         wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.typeStr + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId }); //上海
@@ -148,54 +151,14 @@ Page({
             });
         }
     },
-    setOptInData: function (e) {
-        //确定点赞、领取勋章和纠错哪个能用
-        var actionSvc = new ActionSvc();
-        actionSvc.goodsCount('', this.data.pageName).then((data) => {
-            this.setData({
-                'optIn.num': (data.data.data ? data.data.data : 0)
-            });
-            let goods = getApp().globalData.user.goods;
-            let good = _.find(goods, { hospitalId: '', pageId: this.data.pageName });
-            if (good) {
-                //已点过赞
-                this.setData({
-                    'optIn.enable[0]': false
-                });
-            }
-            else {
-                this.setData({
-                    'optIn.enable[0]': true
-                });
-            }
-        });
-    },
     usefulClick: function (e) {
         //点赞
-        if (this.data.optIn.enable[0]) {
-            var actionSvc = new ActionSvc();
-            actionSvc.clickGood('', this.data.pageName).then((data) => {
-                if (data.data.message == 'OK') {
-                    this.setData({
-                        'optIn.enable[0]': false,
-                        'optIn.num': this.data.optIn.num + 1
-                    });
-                    //更新globalData
-                    let goods = getApp().globalData.user.goods;
-                    let good = {hospitalId: '', pageId: this.data.pageName};
-                    goods.push(good);
-                }
-            });
-        }
+        optIn.usefulClick(this);
     },
     medalClick: function (e) {
-        if (this.data.optIn.enable[1]) {
-
-        }
+        optIn.medalClick(this);
     },
     errorClick: function (e) {
-        if (this.data.optIn.enable[2]) {
-
-        }
+        optIn.errorClick(this);
     }
 })
