@@ -123,4 +123,7 @@
   <view style="display:flex;flex-direction:row;align-items:center;height:55px;width:100%;background:#fff">
     <button class="btn-style" bindtap="goBack">返回待办列表</button>
   </view>
+  <view animation="{{animationData}}">
+    <image src="../../assets/images/lqxz.png"></image>
+  </view>
 </view>

@@ -77,6 +77,16 @@ Page({
 
     },
     errorClick: function (e) {
+        var animation = wx.createAnimation({
+          duration: 400,
+          timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+          delay: 0,
+          transformOrigin: '50% 50% 0'
+        })
 
+        animation.scale(2,2).rotate(45).step();
+        this.setData({
+            animationData: animation.export()
+        })
     }
 })
