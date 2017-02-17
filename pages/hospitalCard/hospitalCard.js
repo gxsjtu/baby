@@ -12,7 +12,7 @@ Page({
         option: '',
         showDesc: false,
         noData: false,
-        pageId: '',
+        pageName: '',
         optIn: {
             num: 0,
             enable: [true, true, true]
@@ -20,7 +20,6 @@ Page({
     },
     onLoad: function (param) {
         this.getPageData(param.do);
-        var actionSvc = new ActionSvc();
         this.setOptInData();
 
     },
@@ -34,7 +33,7 @@ Page({
         let userOption = '';
         if (option == 'cards') {
             //建大卡
-            this.data.pageId = 'hospitalCard-cards';
+            this.data.pageName = 'hospitalCard-cards';
             userOption = '建卡';
             if (hospital.setCard) {
                 pageData = hospital.setCard;
@@ -47,7 +46,7 @@ Page({
             }
         }
         else if (option == 'downs') {
-            this.data.pageId = 'hospitalCard-downs';
+            this.data.pageName = 'hospitalCard-downs';
             userOption = '唐筛';
             if (hospital.down) {
                 pageData = hospital.down;
@@ -60,7 +59,7 @@ Page({
             }
         }
         else if (option == 'inspections') {
-            this.data.pageId = 'hospitalCard-inspections';
+            this.data.pageName = 'hospitalCard-inspections';
             userOption = '大排畸';
             if (hospital.inspection) {
                 pageData = hospital.inspection;
@@ -73,7 +72,7 @@ Page({
             }
         }
         else if (option == 'ogtts') {
-            this.data.pageId = 'hospitalCard-ogtts';
+            this.data.pageName = 'hospitalCard-ogtts';
             userOption = '糖耐量';
             if (hospital.ogtt) {
                 pageData = hospital.ogtt;
@@ -86,7 +85,7 @@ Page({
             }
         }
         else if (option == 'fhrms') {
-            this.data.pageId = 'hospitalCard-fhrms';
+            this.data.pageName = 'hospitalCard-fhrms';
             userOption = '胎心监护';
             if (hospital.fhrm) {
                 pageData = hospital.fhrm;
@@ -99,7 +98,7 @@ Page({
             }
         }
         else if (option == 'day42s') {
-            this.data.pageId = 'hospitalCard-day42s';
+            this.data.pageName = 'hospitalCard-day42s';
             userOption = '产后42天检查';
             if (hospital.day42) {
                 pageData = hospital.day42;
@@ -112,7 +111,7 @@ Page({
             }
         }
         else if (option == 'bornCerts') {
-            this.data.pageId = 'hospitalCard-bornCerts';
+            this.data.pageName = 'hospitalCard-bornCerts';
             userOption = '出生医学证明';
             if (hospital.bornCert) {
                 pageData = hospital.bornCert;
@@ -209,7 +208,7 @@ Page({
         //点赞
         if (this.data.optIn.enable[0]) {
             var actionSvc = new ActionSvc();
-            actionSvc.clickGood(this.data.hospitalId, this.data.pageId).then((data) => {
+            actionSvc.clickGood(this.data.hospitalId, this.data.pageName).then((data) => {
                 if (data.data.message == 'OK') {
                     this.setData({
                         'optIn.enable[0]': false,
@@ -217,7 +216,7 @@ Page({
                     });
                     //更新globalData
                     let goods = getApp().globalData.user.goods;
-                    let good = {hospitalId: this.data.hospitalId, pageId: this.data.pageId};
+                    let good = {hospitalId: this.data.hospitalId, pageId: this.data.pageName};
                     goods.push(good);
                 }
             });
@@ -236,12 +235,12 @@ Page({
     setOptInData: function (e) {
         //确定点赞、领取勋章和纠错哪个能用
         var actionSvc = new ActionSvc();
-        actionSvc.goodsCount(this.data.hospitalId, this.data.pageId).then((data) => {
+        actionSvc.goodsCount(this.data.hospitalId, this.data.pageName).then((data) => {
             this.setData({
                 'optIn.num': (data.data.data ? data.data.data : 0)
             });
             let goods = getApp().globalData.user.goods;
-            let good = _.find(goods, { hospitalId: this.data.hospitalId, pageId: this.data.pageId });
+            let good = _.find(goods, { hospitalId: this.data.hospitalId, pageId: this.data.pageName });
             if (good) {
                 //已点过赞
                 this.setData({
