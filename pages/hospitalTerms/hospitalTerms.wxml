@@ -3,12 +3,20 @@
     <view wx:for="{{terms}}" wx:for-item="term" wx:key="{{term.id}}" class="outer-s">
       <view style="display:flex;flex-direction:row;align-items:center;">
         <view style="background: #FF4949;border-radius: 1px;height:10px;width:1px;margin-left:-1px"></view>
-        <view class="name-s">{{term.name}}</view> 
+        <view class="name-s">{{term.name}}</view>
       </view>
       <view style="display:flex;flex-direction:row;flex-wrap:wrap;">
-        <view wx:for="{{term.docs}}" wx:for-item="item"  wx:key="{{term.id}}" class="{{item.isHas ? 'font-s' : 'no-s'}}">
+        <view wx:for="{{term.docs}}" wx:for-item="item" wx:key="{{term.id}}" class="{{item.isHas ? 'font-s' : 'no-s'}}" bindtap="showAlert" data-term="{{item}}">
           {{item.name}}
         </view>
+      </view>
+    </view>
+  </view>
+  <view class="alert" hidden="{{!showAlert}}" bindtap="clickMask">
+    <view class="alert-container" catchtap="clickAlert">
+      <view class="alert-title">{{alert.title}}</view>
+      <view class="alert-desc">
+        <view class="alert-comment" wx:for="{{alert.comments}}" wx:for-item="comment" wx:key="{{index}}">{{comment}}</view>
       </view>
     </view>
   </view>
