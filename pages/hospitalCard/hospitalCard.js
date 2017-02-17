@@ -1,6 +1,6 @@
 const GLOBAL = require('../../global.js');
-// var clone = require('../../utils/lodash.clone');
 var _ = require('../../utils/lodash.min.js');
+const ActionSvc = require('../../services/actionSvc.js')
 Page({
     data: {
         warning: [],
@@ -11,20 +11,32 @@ Page({
         title: '',
         option: '',
         showDesc: false,
-        noData: false
+        noData: false,
+        pageId: '',
+        optIn: {
+            number: 0,
+            enable: [true]
+        }
     },
     onLoad: function (param) {
         this.getPageData(param.do);
+        var actionSvc = new ActionSvc();
+        actionSvc.goodsCount(this.data.hospitalId, this.data.pageId).then((data) => {
+            console.log(data);
+            this.setOptInData();
+        });
     },
     getPageData: function (option) {
         let hospital = getApp().globalData.hospital;
         let hospitalName = hospital.name;
+        this.data.hospitalId = hospital._id;
         let imgAddress = GLOBAL.SERVER + "/images/" + hospitalName;
 
         let pageData = {};
         let userOption = '';
         if (option == 'cards') {
             //建大卡
+            this.data.pageId = 'hospitalCard-cards';
             userOption = '建卡';
             if (hospital.setCard) {
                 pageData = hospital.setCard;
@@ -37,6 +49,7 @@ Page({
             }
         }
         else if (option == 'downs') {
+            this.data.pageId = 'hospitalCard-downs';
             userOption = '唐筛';
             if (hospital.down) {
                 pageData = hospital.down;
@@ -49,6 +62,7 @@ Page({
             }
         }
         else if (option == 'inspections') {
+            this.data.pageId = 'hospitalCard-inspections';
             userOption = '大排畸';
             if (hospital.inspection) {
                 pageData = hospital.inspection;
@@ -61,6 +75,7 @@ Page({
             }
         }
         else if (option == 'ogtts') {
+            this.data.pageId = 'hospitalCard-ogtts';
             userOption = '糖耐量';
             if (hospital.ogtt) {
                 pageData = hospital.ogtt;
@@ -73,6 +88,7 @@ Page({
             }
         }
         else if (option == 'fhrms') {
+            this.data.pageId = 'hospitalCard-fhrms';
             userOption = '胎心监护';
             if (hospital.fhrm) {
                 pageData = hospital.fhrm;
@@ -84,7 +100,8 @@ Page({
                 });
             }
         }
-        else if(option == 'day42s'){
+        else if (option == 'day42s') {
+            this.data.pageId = 'hospitalCard-day42s';
             userOption = '产后42天检查';
             if (hospital.day42) {
                 pageData = hospital.day42;
@@ -96,7 +113,8 @@ Page({
                 });
             }
         }
-        else if(option == 'bornCerts'){
+        else if (option == 'bornCerts') {
+            this.data.pageId = 'hospitalCard-bornCerts';
             userOption = '出生医学证明';
             if (hospital.bornCert) {
                 pageData = hospital.bornCert;
@@ -189,13 +207,31 @@ Page({
             showDesc: false
         });
     },
-    usefulClick:function(e){
+    usefulClick: function (e) {
+        //点赞
+        if (this.data.optIn.enable[0]) {
+            var actionSvc = new ActionSvc();
+            actionSvc.clickGood(this.data.hospitalId, this.data.pageId).then((data) => {
+                console.log(data);
 
+                this.setData({
+                    'optIn.enable[0]': false
+                });
+            });
+        }
     },
-    medalClick:function(e){
+    medalClick: function (e) {
+        if (this.data.optIn.enable[1]) {
 
+        }
     },
-    errorClick:function(e){
+    errorClick: function (e) {
+        if (this.data.optIn.enable[2]) {
+
+        }
+    },
+    setOptInData: function (e) {
+        //确定点赞、领取勋章和纠错哪个能用
         
     }
 })

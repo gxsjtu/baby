@@ -1,3 +1,4 @@
+<import src="../optInTemplate/optInTemplate.wxml" />
 <view class="view-container {{showDesc ? '' : 'mask'}}" wx:if="{{!noData}}">
   <view class="desc" bindtap="hideMask" hidden="{{!showDesc}}" wx:if="{{title}}">
     <view class="desc-container" catchtap="clickDesc">
@@ -15,7 +16,6 @@
       <image src="../../assets/images/hospitaldetail/rightPic.png" style="height:14px;width:14px;"></image>
     </view>
   </view>
-
   <view class="step-container">
     <view class="v-line"></view>
     <view class="card-item" wx:if="{{documents && documents.length > 0}}">
@@ -50,6 +50,7 @@
       <view class="split"></view>
     </view>
   </view>
+  <template is="optInTemplate" data="{{...optIn}}"></template>
 </view>
 <view wx:if="{{noData}}" class="noData">
   <view style="text-align:center;width:100%;">

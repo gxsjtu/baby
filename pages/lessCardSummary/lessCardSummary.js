@@ -63,5 +63,20 @@ Page({
         } else {
             wx.navigateBack({ delta: 3 });
         }
+    },
+    usefulClick: function (e) {
+        //点赞
+        var actionSvc = new ActionSvc();
+        var app = getApp();
+        console.log(app);
+        // actionSvc.clickGood().then(()=>{
+
+        // });
+    },
+    medalClick: function (e) {
+
+    },
+    errorClick: function (e) {
+
     }
 })

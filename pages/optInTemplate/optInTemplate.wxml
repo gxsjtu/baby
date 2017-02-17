@@ -1,17 +1,17 @@
 <template name="optInTemplate">
   <view class="optInTemplate-container">
     <view class="optInTemplate-item" bindtap="usefulClick">
-      <image src="{{disable[0]?'../../assets/images/usefuldisable.jpg':'../../assets/images/useful.png'}}" />
+      <image src="{{enable[0]?'../../assets/images/useful.png':'../../assets/images/usefuldisable.jpg'}}" />
       <view class="optInTemplate-title">有用:{{number}}</view>
     </view>
     <view class="optInTemplate-split"></view>
     <view class="optInTemplate-item" bindtap="medalClick">
-     <image src="{{disable[1]?'../../assets/images/medaldisable.jpg':'../../assets/images/medal.png'}}" />
+     <image src="{{enable[1]?'../../assets/images/medal.png':'../../assets/images/medaldisable.jpg'}}" />
       <view class="optInTemplate-title">领取勋章</view>
     </view>
     <view class="optInTemplate-split"></view>
     <view class="optInTemplate-item" bindtap="errorClick">
-     <image src="{{disable[2]?'../../assets/images/errordisable.jpg':'../../assets/images/error.jpg'}}" />
+     <image src="{{enable[2]?'../../assets/images/error.jpg':'../../assets/images/errordisable.jpg'}}" />
       <view class="optInTemplate-title">纠错</view>
     </view>
   </view>
