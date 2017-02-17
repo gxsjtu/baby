@@ -6,7 +6,8 @@ Page({
         pageId: "",
         bsHidden: true,
         jcHidden: true,
-        yyHidden: true
+        yyHidden: true,
+        tempData: {number:356,disable:[false,true,false]}
     },
     onLoad: function (e) {
         let globalData = getApp().globalData;
@@ -54,8 +55,6 @@ Page({
             }
             this.setData({ streets: globalData.resultStreets })
         }
-
-
     },
     goBack: function () {
         if (this.data.delta == "y") {
@@ -64,6 +63,7 @@ Page({
             wx.navigateBack({ delta: 3 });
         }
     },
+
     usefulClick: function (e) {
         //点赞
         var actionSvc = new ActionSvc();
