@@ -1,4 +1,6 @@
 //index.js
+const LoggerSvc = require('../../services/logger.js')
+
 Page({
     data: {
         firstItemSelected: true, //现在的页面是产前阶段还是产后阶段，产前为true
@@ -99,6 +101,11 @@ Page({
     },
     goto: function (event) {
         let app = getApp().globalData;
+        let nickName = app.userInfo.nickName;
+        let title = event.currentTarget.dataset.item.title;
+        var loggerSvc = new LoggerSvc();
+        loggerSvc.write(nickName,title).then();
+
         switch (event.target.dataset.item.id) {
             case 1:
                 wx.navigateTo({ url: '../confinementDate/confinementDate' });

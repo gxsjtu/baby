@@ -20,7 +20,8 @@ Page({
             num: 0,
             enable: [true, true, true]
         },
-        animationData: {}
+        animationData: {},
+        showMask: false
     },
     onLoad: function (param) {
         this.getPageData(param.do);

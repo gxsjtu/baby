@@ -92,13 +92,20 @@ function medalClick(_this) {
 
 function errorClick(_this) {
     if (_this.data.optIn.enable[2]) {
-
+        _this.setData({
+            'optIn.showMask':true
+        });
     }
+}
+
+function confirmInfo(_this){
+
 }
 
 module.exports = {
     setOptInData: setOptInData,
     usefulClick: usefulClick,
     medalClick: medalClick,
-    errorClick: errorClick
+    errorClick: errorClick,
+    confirmInfo:confirmInfo
 }

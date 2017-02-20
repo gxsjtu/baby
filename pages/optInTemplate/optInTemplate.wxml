@@ -15,4 +15,7 @@
       <view class="optInTemplate-title">纠错</view>
     </view>
   </view>
+  <view class="optInTemplate-error-container">
+    <textarea placeholder="撰写纠错信息" auto-focus bindconfirm="confirmInfo"/>
+  </view>
 </template>
