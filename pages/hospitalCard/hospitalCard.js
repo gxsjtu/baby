@@ -200,7 +200,8 @@ Page({
     },
     showTitle: function (e) {
         this.setData({
-            showDesc: true
+            showDesc: true,
+            showMask:true
         });
     },
     clickDesc: function (e) {
