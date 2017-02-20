@@ -17,7 +17,8 @@ Page({
         hospitalId:'',
         optIn: {
             num: 0,
-            enable: [true, true, true]
+            enable: [true, true, true],
+            showMask:false
         }
     },
     onLoad: function (param) {

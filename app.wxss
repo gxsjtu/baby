@@ -49,3 +49,12 @@ page {
   letter-spacing: -0.31px;
   margin-left: 10rpx;
 }
+
+.optInTemplate-error-container{
+  position: absolute;
+  width: 750rpx;
+  height:700rpx;
+  top: 50rpx;
+  left: 0;
+  z-index: 1000;
+}

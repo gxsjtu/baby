@@ -1,5 +1,5 @@
 <import src="../optInTemplate/optInTemplate.wxml" />
-<view class="view-container {{showDesc ? '' : 'mask'}}" wx:if="{{!noData}}">
+<view class="view-container {{(showDesc || optIn.showMask) ? '' : 'mask'}}" wx:if="{{!noData}}">
   <view class="desc" bindtap="hideMask" hidden="{{!showDesc}}" wx:if="{{title}}">
     <view class="desc-container" catchtap="clickDesc">
       <view class="desc-title">{{title[0]}}</view>
