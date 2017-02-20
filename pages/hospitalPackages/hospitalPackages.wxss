@@ -11,7 +11,8 @@
 
 .list-name {
   font-family: PingFangSC-Regular;
-  font-size: 13px;
+  /*font-size: 13px;*/
+  font-size: 28rpx;
   /*color: #6d6d6d;*/
   letter-spacing: -0.31px;
 }
