@@ -22,10 +22,22 @@ Page({
             showError: false
         },
         isXZHid: true,
-       
+
         animationData: {},
+        modalBottom: ""
     },
     onLoad: function (param) {
+        wx.getSystemInfo({
+            success: (res) => {
+                // console.log()
+                var h = (res.windowHeight / 2 - 150) + "px";
+
+                this.setData({
+                    modalBottom: h
+                })
+                console.log(this.data.modalBottom);
+            }
+        })
         this.getPageData(param.do);
         optIn.setOptInData(this);
 
@@ -201,7 +213,7 @@ Page({
     showTitle: function (e) {
         this.setData({
             showDesc: true,
-            showMask:true
+            showMask: true
         });
     },
     clickDesc: function (e) {
@@ -211,6 +223,7 @@ Page({
         this.setData({
             showDesc: false,
             showMask: false,
+            isXZHid: true,
             'optIn.showError': false
         });
     },
@@ -226,7 +239,8 @@ Page({
     },
     hidAnimat: function () {
         this.setData({
-            isXZHid: true
+            isXZHid: true,
+            showMask: false
         })
     }
 })

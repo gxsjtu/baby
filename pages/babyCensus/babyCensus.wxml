@@ -28,7 +28,7 @@
     </view>
   </view>
 
-<template is="optInTemplate" data="{{...optIn}}"></template>
+<!--<template is="optInTemplate" data="{{...optIn}}"></template>-->
 
   <view class="question">是否需要为你推荐具体办事地点及攻略？</view>
   <view class="footer">

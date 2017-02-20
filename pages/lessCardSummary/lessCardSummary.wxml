@@ -1,5 +1,7 @@
 <import src="../optInTemplate/optInTemplate.wxml" />
 <view class="container">
+  <view class="desc" bindtap="hideMask" hidden="{{!showMask}}">
+  </view>
   <view class="header">
     <image src="../../assets/images/lessCard.jpg"></image>
     <view class="title">{{title}}</view>
@@ -120,14 +122,14 @@
     </view>
   </view>
   <template is="optInTemplate" data="{{...optIn}}"></template>
-  <view style="display:flex;flex-direction:row;align-items:center;height:55px;width:100%;background:#fff">
+  <view style="display:flex;flex-direction:row;align-items:center;height:55px;width:100%;background:#fff;padding-top:10px;">
     <button class="btn-style" bindtap="goBack">返回待办列表</button>
   </view>
-  <view animation="{{animationData}}" class="result" hidden="{{isXZHid}}" bindtap="hidAnimat">
+  <view animation="{{animationData}}" class="result" hidden="{{isXZHid}}" bindtap="hidAnimat" style="bottom:{{modalBottom}}">
   <view style="position:relative;height:600rpx;">
     <image src="../../assets/images/lqxz.png" style="width:600rpx;height:560rpx;"></image>
-    <view style="position:absolute;width:600rpx;text-align:center;bottom:50px;font-family: PingFangSC-Regular;font-size: 13px;color: #3d3d3d;letter-spacing: -0.31px;">“小卡好战士”</view>
-    <view style="position:absolute;width:600rpx;text-align:center;bottom:30px;font-size: 10px;color: #6d6d6d;letter-spacing: -0.31px;">恭喜你获得“小卡好战士”勋章</view>
+    <view style="position:absolute;width:600rpx;text-align:center;bottom:50px;font-family: PingFangSC-Regular;font-size: 13px;color: #3d3d3d;letter-spacing: -0.31px;">“{{xzType}}”</view>
+    <view style="position:absolute;width:600rpx;text-align:center;bottom:30px;font-size: 10px;color: #6d6d6d;letter-spacing: -0.31px;">恭喜你获得“{{xzType}}”勋章</view>
   </view>
   </view>
 </view>

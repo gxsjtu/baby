@@ -56,7 +56,8 @@ function medalClick(_this) {
         animationStart.scale(0, 0).opacity(0).step();
         _this.setData({
             animationData: animationStart.export(),
-            isXZHid: false
+            isXZHid: false,
+            showMask: true
         })
         setTimeout(() => {
             var animation = wx.createAnimation({
@@ -71,20 +72,15 @@ function medalClick(_this) {
             })
         }, 300)
 
-        // console.log('pname');
-        // console.log(_this.data.pageName);
-        // let modals = getApp().globalData.user.modals;
-        // console.log(goods);
-
-        // var actionSvc = new ActionSvc();
-        // actionSvc.getModal(_this.data.pageName).then(data => {
-        //     if (data.data.message == 'OK') {
-        //         getApp().globalData.user.modals.push(_this.data.pageName);
-        //         _this.setData({
-        //             'optIn.enable[1]': false
-        //         });
-        //     }
-        // })
+        var actionSvc = new ActionSvc();
+        actionSvc.getModal(_this.data.pageName).then(data => {
+            if (data.data.message == 'OK') {
+                getApp().globalData.user.modals.push(_this.data.pageName);
+                _this.setData({
+                    'optIn.enable[1]': false
+                });
+            }
+        })
 
 
     }

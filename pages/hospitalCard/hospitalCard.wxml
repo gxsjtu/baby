@@ -51,6 +51,13 @@
     </view>
   </view>
   <template is="optInTemplate" data="{{...optIn}}"></template>
+  <view animation="{{animationData}}" class="result" hidden="{{isXZHid}}" bindtap="hidAnimat" style="bottom:{{modalBottom}};">
+  <view style="position:relative;height:600rpx;">
+    <image src="../../assets/images/lqxz.png" style="width:600rpx;height:560rpx;"></image>
+    <view style="position:absolute;width:600rpx;text-align:center;bottom:50px;font-family: PingFangSC-Regular;font-size: 13px;color: #3d3d3d;letter-spacing: -0.31px;">“大卡小英雄”</view>
+    <view style="position:absolute;width:600rpx;text-align:center;bottom:30px;font-size: 10px;color: #6d6d6d;letter-spacing: -0.31px;">恭喜你获得“大卡小英雄”勋章</view>
+  </view>
+  </view>
 </view>
 <view wx:if="{{noData}}" class="noData">
   <view style="text-align:center;width:100%;">
