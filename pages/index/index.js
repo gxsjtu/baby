@@ -101,8 +101,8 @@ Page({
     },
     goto: function (event) {
         let app = getApp().globalData;
-        let nickName = app.userInfo.nickName;
-        let title = event.currentTarget.dataset.item.title;
+        let nickName = encodeURI(app.userInfo.nickName);
+        let title = encodeURI(event.currentTarget.dataset.item.title);
         var loggerSvc = new LoggerSvc();
         loggerSvc.write(nickName,title).then();
 

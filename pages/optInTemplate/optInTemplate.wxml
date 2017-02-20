@@ -14,8 +14,8 @@
       <image src="{{enable[2]?'../../assets/images/error.jpg':'../../assets/images/errordisable.jpg'}}" />
       <view class="optInTemplate-title">纠错</view>
     </view>
-    <view class="optInTemplate-error-container" hidden="{{!showError}}">
-      <textarea placeholder="撰写纠错信息" auto-focus bindconfirm="confirmInfo" placeholder-class="optInTemplate-placeholder" />
+    <view class="optInTemplate-error-container" wx:if="{{showError}}">
+      <textarea placeholder="撰写纠错信息" bindconfirm="confirmInfo" placeholder-class="optInTemplate-placeholder" />
     </view>
   </view>
 </template>
