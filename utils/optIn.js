@@ -43,7 +43,49 @@ function usefulClick(_this) {
 }
 
 function medalClick(_this) {
+
     if (_this.data.optIn.enable[1]) {
+        console.log('true')
+        var animationStart = wx.createAnimation({
+            duration: 200,
+            timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+            delay: 0,
+            transformOrigin: '50% 50% 0'
+        })
+
+        animationStart.scale(0, 0).opacity(0).step();
+        _this.setData({
+            animationData: animationStart.export(),
+            isXZHid: false
+        })
+        setTimeout(() => {
+            var animation = wx.createAnimation({
+                duration: 500,
+                timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+                delay: 0
+            })
+
+            animation.scale(1, 1).opacity(1).step();
+            _this.setData({
+                animationData: animation.export()
+            })
+        }, 300)
+
+        // console.log('pname');
+        // console.log(_this.data.pageName);
+        // let modals = getApp().globalData.user.modals;
+        // console.log(goods);
+
+        // var actionSvc = new ActionSvc();
+        // actionSvc.getModal(_this.data.pageName).then(data => {
+        //     if (data.data.message == 'OK') {
+        //         getApp().globalData.user.modals.push(_this.data.pageName);
+        //         _this.setData({
+        //             'optIn.enable[1]': false
+        //         });
+        //     }
+        // })
+
 
     }
 }

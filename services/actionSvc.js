@@ -26,6 +26,16 @@ ActionSvc.prototype.goodsCount = function (hospitalId, pageId) {
     })
 };
 
-ActionSvc.prototype.getModal = function (pageId) { };
+// ActionSvc.prototype.get
+
+ActionSvc.prototype.getModal = function (pageId) {
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/user/getModal/" + pageId, "", "GET").then(data => {
+            resolve(data);
+        }).catch(err => {
+            console.log(err);
+        })
+    })
+};
 
 module.exports = ActionSvc;

@@ -14,11 +14,13 @@ Page({
         showDesc: false,
         noData: false,
         pageName: '',
-        hospitalId:'',
+        hospitalId: '',
+        isXZHid: true,
         optIn: {
             num: 0,
             enable: [true, true, true]
-        }
+        },
+        animationData: {}
     },
     onLoad: function (param) {
         this.getPageData(param.do);
@@ -215,5 +217,10 @@ Page({
     },
     errorClick: function (e) {
         optIn.errorClick(this);
+    },
+    hidAnimat: function () {
+        this.setData({
+            isXZHid: true
+        })
     }
 })

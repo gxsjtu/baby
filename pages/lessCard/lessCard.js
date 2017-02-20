@@ -1,19 +1,20 @@
 Page({
     data: {
         fromStr: "",
-        page: '',
+        pageName: '',
         pageId:''
     },
     onLoad: function (e) {
         this.data.fromStr = e.fromStr;
         this.data.pageId = e.pageId;
+        this.data.pageName = e.pageName;
         this.setPageData(e.pageId);
     },
     shCensus: function (e) {
-        wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=native&page=' + this.data.page + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId });
+        wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=native&pageName=' + this.data.pageName + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId });
     },
     otherCensus: function (e) {
-        wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=other&page=' + this.data.page + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId });
+        wx.navigateTo({ url: '../lessCardSh/lessCardSh?from=other&pageName=' + this.data.pageName + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId });
     },
     setPageData: function (param) {
         if (param == '3') {
