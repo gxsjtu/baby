@@ -14,11 +14,12 @@ Page({
         showDesc: false,
         noData: false,
         pageName: '',
-        hospitalId:'',
+        hospitalId: '',
+        showMask: false,
         optIn: {
             num: 0,
             enable: [true, true, true],
-            showMask:false
+            showError: false
         }
     },
     onLoad: function (param) {
@@ -204,7 +205,9 @@ Page({
     },
     hideMask: function (e) {
         this.setData({
-            showDesc: false
+            showDesc: false,
+            showMask: false,
+            'optIn.showError': false
         });
     },
     usefulClick: function (e) {

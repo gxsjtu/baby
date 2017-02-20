@@ -22,6 +22,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .optInTemplate-item {
@@ -50,11 +51,25 @@ page {
   margin-left: 10rpx;
 }
 
-.optInTemplate-error-container{
+.optInTemplate-error-container {
   position: absolute;
   width: 750rpx;
-  height:700rpx;
-  top: 50rpx;
+  height: 600rpx;
+  bottom: 100rpx;
   left: 0;
   z-index: 1000;
+  background: white;
+}
+
+.optInTemplate-error-container textarea {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  letter-spacing: -0.31px;
+}
+
+.optInTemplate-placeholder {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #9d9d9d;
+  letter-spacing: -0.31px;
 }

@@ -51,7 +51,8 @@ function medalClick(_this) {
 function errorClick(_this) {
     if (_this.data.optIn.enable[2]) {
         _this.setData({
-            'optIn.showMask':true
+            showMask:true,
+            'optIn.showError':true
         });
     }
 }
