@@ -20,7 +20,10 @@ Page({
             num: 0,
             enable: [true, true, true],
             showError: false
-        }
+        },
+        isXZHid: true,
+       
+        animationData: {},
     },
     onLoad: function (param) {
         this.getPageData(param.do);
@@ -219,5 +222,10 @@ Page({
     },
     errorClick: function (e) {
         optIn.errorClick(this);
+    },
+    hidAnimat: function () {
+        this.setData({
+            isXZHid: true
+        })
     }
 })

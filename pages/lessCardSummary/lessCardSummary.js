@@ -1,3 +1,6 @@
+const optIn = require("../../utils/optIn.js");
+var _ = require('../../utils/lodash.min.js');
+
 Page({
     data: {
         streets: [],
@@ -7,10 +10,26 @@ Page({
         bsHidden: true,
         jcHidden: true,
         yyHidden: true,
-        tempData: {number:356,disable:[false,true,false]}
+        optIn: {
+            num: 0,
+            enable: [true, true, true]
+        },
+        isXZHid: true,
+        pageName: '',
+        animationData:{}
     },
     onLoad: function (e) {
+        this.data.pageName = e.pageName;
         let globalData = getApp().globalData;
+        let modals = getApp().globalData.user.modals;
+        var modal = _.filter(modals, (m) => {
+            return m == this.data.pageName;
+        })
+        if(modal != null && modal != undefined && modal.length > 0){
+            this.setData({
+                "optIn.enable[1]": false
+            })
+        }
 
         this.data.delta = e.delta;
         var pId = e.pageId;
@@ -74,19 +93,14 @@ Page({
         // });
     },
     medalClick: function (e) {
-
+        optIn.medalClick(this);
     },
     errorClick: function (e) {
-        var animation = wx.createAnimation({
-          duration: 400,
-          timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
-          delay: 0,
-          transformOrigin: '50% 50% 0'
-        })
 
-        animation.scale(2,2).rotate(45).step();
+    },
+    hidAnimat: function () {
         this.setData({
-            animationData: animation.export()
+            isXZHid: true
         })
     }
 })

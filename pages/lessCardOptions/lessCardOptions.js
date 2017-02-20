@@ -20,14 +20,15 @@ Page({
         bsHidden: true,
         jcHidden: true,
         yyHidden: true,
-        ishid: true
+        ishid: true,
+        pageName: ''
     },
     onLoad: function (e) {
         var pId = e.pageId;
         this.data.pageId = pId;
         var fromStr = e.fromStr;
         this.data.fromStr = fromStr;
-
+        this.data.pageName = e.pageName;
         if (pId == "23") {
             wx.setNavigationBarTitle({ title: '申报新生儿户口' });
         } else if (pId == "24") {
@@ -225,7 +226,7 @@ Page({
                     getApp().globalData.user.address.juZhu.street = street;
                 }
                 wx.navigateTo({
-                    url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y' + '&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr
+                    url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y' + '&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr + '&pageName=' + this.data.pageName
                 });
             }
         })
