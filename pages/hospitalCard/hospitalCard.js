@@ -242,5 +242,9 @@ Page({
             isXZHid: true,
             showMask: false
         })
+    },
+    confirmInfo:function(e){
+        let inputValue = e.detail.value;
+        optIn.confirmInfo(this,inputValue);
     }
 })

@@ -95,8 +95,11 @@ function errorClick(_this) {
     }
 }
 
-function confirmInfo(_this){
-
+function confirmInfo(_this,inputValue){
+    _this.setData({
+        showMask:false,
+        'optIn.showError':false
+    });
 }
 
 module.exports = {
