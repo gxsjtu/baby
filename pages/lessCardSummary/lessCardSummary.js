@@ -13,7 +13,8 @@ Page({
         yyHidden: true,
         optIn: {
             num: 0,
-            enable: [true, true, true]
+            enable: [true, true, true],
+            showError: false
         },
         isXZHid: true,
         pageName: '',
@@ -107,7 +108,7 @@ Page({
         optIn.medalClick(this);
     },
     errorClick: function (e) {
-
+        optIn.errorClick(this);
     },
     hidAnimat: function () {
         this.setData({
@@ -118,7 +119,12 @@ Page({
     hideMask: function (e) {
         this.setData({
             showMask: false,
-            isXZHid: true
+            isXZHid: true,
+            'optIn.showError': false
         });
     },
+    confirmInfo:function(e){
+        let inputValue = e.detail.value;
+        optIn.confirmInfo(this, inputValue);
+    }
 })
