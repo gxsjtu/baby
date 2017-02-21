@@ -38,4 +38,16 @@ ActionSvc.prototype.getModal = function (pageId) {
     })
 };
 
+ActionSvc.prototype.giveCorrection = function (hospitalId, pageId, content) {
+    return new Promise((resolve, reject) => {
+        console.log('request');
+        request(GLOBAL.SERVER + "/user/giveCorrection/", { hospitalId: hospitalId, pageId: pageId, content: content }, "POST").then(data => { 
+            console.log(data);
+            resolve(data);
+        }).catch(err => {
+            console.log(err);
+        })
+    })
+};
+
 module.exports = ActionSvc;

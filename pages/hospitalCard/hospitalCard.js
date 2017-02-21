@@ -241,6 +241,7 @@ Page({
         })
     },
     confirmInfo:function(e){
+        console.log(e.detail.value);
         let inputValue = e.detail.value;
         optIn.confirmInfo(this,inputValue);
     }
