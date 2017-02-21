@@ -26,14 +26,17 @@ Page({
         pageName: "",
         animationData: {},
         modalBottom: "",
-        xzType: ""
+        xzType: "",
+        scrollHeight:""
     },
     onLoad: function (param) {
         wx.getSystemInfo({
             success: (res) => {
                 var h = (res.windowHeight / 2 - 150) + "px";
+                var s = (res.windowHeight - 50) + "px";
                 this.setData({
-                    modalBottom: h
+                    modalBottom: h,
+                    scrollHeight: s
                 })
             }
         })

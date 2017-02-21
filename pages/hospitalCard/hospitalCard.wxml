@@ -1,5 +1,5 @@
 <import src="../optInTemplate/optInTemplate.wxml" />
-<view class="view-container {{(showMask) ? '' : 'mask'}}" wx:if="{{!noData}}">
+<scroll-view scroll-y="true" class="view-container {{(showMask) ? '' : 'mask'}}" wx:if="{{!noData}}" style="height:{{scrollHeight}}">
   <view class="desc" bindtap="hideMask" hidden="{{!showMask}}">
     <view class="desc-container" catchtap="clickDesc" hidden="{{!showDesc}}" wx:if="{{title}}">
       <view class="desc-title">{{title[0]}}</view>
@@ -50,13 +50,13 @@
       <view class="split"></view>
     </view>
   </view>
-  <template is="optInTemplate" data="{{...optIn}}"></template>
-  <view animation="{{animationData}}" class="result" hidden="{{isXZHid}}" bindtap="hidAnimat" style="bottom:{{modalBottom}};">
+</scroll-view>
+<template is="optInTemplate" data="{{...optIn}}"></template>
+<view animation="{{animationData}}" class="result" hidden="{{isXZHid}}" bindtap="hidAnimat" style="bottom:{{modalBottom}};">
   <view style="position:relative;height:600rpx;">
     <image src="../../assets/images/lqxz.png" style="width:600rpx;height:560rpx;"></image>
     <view style="position:absolute;width:600rpx;text-align:center;bottom:50px;font-family: PingFangSC-Regular;font-size: 13px;color: #3d3d3d;letter-spacing: -0.31px;">“{{xzType}}”</view>
     <view style="position:absolute;width:600rpx;text-align:center;bottom:30px;font-size: 10px;color: #6d6d6d;letter-spacing: -0.31px;">恭喜你获得“{{xzType}}”勋章</view>
-  </view>
   </view>
 </view>
 <view wx:if="{{noData}}" class="noData">
