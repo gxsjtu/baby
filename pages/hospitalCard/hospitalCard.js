@@ -39,7 +39,7 @@ Page({
         })
         this.getPageData(param.do);
         optIn.setOptInData(this);
-        this.data.pageName = param.pageName;
+        //this.data.pageName = param.pageName;
         var actionSvc = new ActionSvc();
         actionSvc.getModalByPageName(this.data.pageName).then(data => {
             this.setData({ xzType: data });
