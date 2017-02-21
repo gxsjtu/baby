@@ -1,6 +1,7 @@
 const GLOBAL = require('../../global.js');
 var _ = require('../../utils/lodash.min.js');
 var optIn = require('../../utils/optIn.js');
+const ActionSvc = require("../../services/actionSvc.js");
 
 Page({
     data: {
@@ -22,9 +23,10 @@ Page({
             showError: false
         },
         isXZHid: true,
-
+        pageName: "",
         animationData: {},
-        modalBottom: ""
+        modalBottom: "",
+        xzType: ""
     },
     onLoad: function (param) {
         wx.getSystemInfo({
@@ -37,6 +39,11 @@ Page({
         })
         this.getPageData(param.do);
         optIn.setOptInData(this);
+        this.data.pageName = param.pageName;
+        var actionSvc = new ActionSvc();
+        actionSvc.getModalByPageName(this.data.pageName).then(data => {
+            this.setData({ xzType: data });
+        })
 
     },
     getPageData: function (option) {
@@ -240,8 +247,8 @@ Page({
             showMask: false
         })
     },
-    confirmInfo:function(e){
+    confirmInfo: function (e) {
         let inputValue = e.detail.value;
-        optIn.confirmInfo(this,inputValue);
+        optIn.confirmInfo(this, inputValue);
     }
 })

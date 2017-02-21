@@ -55,7 +55,6 @@ function usefulClick(_this) {
 function medalClick(_this) {
 
     if (_this.data.optIn.enable[1]) {
-        console.log('true')
         var animationStart = wx.createAnimation({
             duration: 200,
             timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"

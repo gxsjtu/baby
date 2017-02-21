@@ -121,7 +121,7 @@ Page({
 
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards' });
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards&pageName=hospitalCard' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');

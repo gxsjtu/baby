@@ -51,26 +51,22 @@ Page({
         } else if (fromStr == "3") {
             this.setData({ typeName: "事务受理中心", jcHidden: true, bsHidden: false, yyHidden: true })
         }
+
         var address = getApp().globalData.user.address;
-        // if(getApp().globalData.user){
-        //     wx.showToast({title:'yes'});
-        // }
-        // else{
-        //     wx.showToast({title:'no'});
-        // }
+
         var districtStr = "";
         var streetStr = "";
         var detailStr = "";
         if (e.type == "1") {
             this.setData({ addr: "户籍地址", typeStr: 1 })
-            if (address.huJi) {
+            if (address && address.huJi) {
                 districtStr = address.huJi.district;
                 streetStr = address.huJi.street;
                 detailStr = address.huJi.detail;
             }
         } else {
             this.setData({ addr: "居住地址", typeStr: 2 })
-            if (address.juZhu) {
+            if (address && address.juZhu) {
                 districtStr = address.juZhu.district;
                 streetStr = address.juZhu.street;
                 detailStr = address.juZhu.detail;
@@ -82,7 +78,6 @@ Page({
             this.setData({ districts: data })
         })
 
-        var address = getApp().globalData.user.address;
         if (address != null && address != undefined) {
             if (e.type == "1" && address.huJi) {
                 locationSvc.getStreetsByDistrict(districtStr).then(data => {
@@ -132,7 +127,7 @@ Page({
                         this.setData({ selectArea: data.data.data })
                         locationSvc.getStreetsByDistrict(data.data.data).then(data => {
                             this.setData({ streets: data.streets, resultStreets: data.streets })
-                            if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0)                            {
+                            if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
                                 this.setData({ ishid: false });
                             }
                             else {

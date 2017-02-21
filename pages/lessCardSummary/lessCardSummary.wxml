@@ -8,6 +8,7 @@
   </view>
   <view class="content">
     <view style="margin-bottom:30rpx;">
+    <scroll-view scroll-y="true" style="height:{{scrollHeight}};">
       <view class="top-title">
         办事材料:
       </view>
@@ -119,6 +120,7 @@
           </view>
         </view>
       </view>
+      </scroll-view>
     </view>
   </view>
   <template is="optInTemplate" data="{{...optIn}}"></template>

@@ -1,5 +1,6 @@
 const optIn = require("../../utils/optIn.js");
 var _ = require('../../utils/lodash.min.js');
+const ActionSvc = require("../../services/actionSvc.js");
 
 Page({
     data: {
@@ -19,28 +20,27 @@ Page({
         animationData: {},
         xzType: "",
         showMask: false,
-        modalBottom: ""
+        modalBottom: "",
+        scrollHeight: ""
     },
     onLoad: function (e) {
         wx.getSystemInfo({
             success: (res) => {
                 var h = (res.windowHeight / 2 - 150) + "px";
+                var s = (res.windowHeight - 246) + "px";
                 this.setData({
-                    modalBottom: h
+                    modalBottom: h,
+                    scrollHeight: s
                 })
             }
         })
         this.data.pageName = e.pageName;
+        var actionSvc = new ActionSvc()
+        actionSvc.getModalByPageName(this.data.pageName).then(data => {
+            this.setData({ xzType: data });
+        })
+
         let globalData = getApp().globalData;
-        // let modals = getApp().globalData.user.modals;
-        // var modal = _.filter(modals, (m) => {
-        //     return m == this.data.pageName;
-        // })
-        // if (modal != null && modal != undefined && modal.length > 0) {
-        //     this.setData({
-        //         "optIn.enable[1]": false
-        //     })
-        // }
 
         this.data.delta = e.delta;
         var pId = e.pageId;
@@ -48,17 +48,15 @@ Page({
         var fromStr = e.fromStr;
 
         if (pId == '26') {
-            this.setData({ title: '申请生育保险小结', needs: globalData.dataList, xzType: "致富达人" });
+            this.setData({ title: '申请生育保险小结', needs: globalData.dataList });
         } else if (pId == '3') {
             if (e.type == "1") {
                 this.setData({
-                    xzType: "小卡好战士",
                     title: '办理小卡总结',
                     needs: ['夫妻双方身份证', '夫妻双方户口本', '夫妻双方结婚证', '早期检查单（医院开具或现场检查）']
                 });
             } else {
                 this.setData({
-                    xzType: "小卡好战士",
                     title: '办理小卡总结',
                     needs: ['夫妻双方身份证', '夫妻双方户口本', '夫妻双方结婚证', '早期检查单（医院开具或现场检查）', '居住证及复印件(正反面)或租房合同']
                 });
@@ -66,11 +64,11 @@ Page({
 
         } else {
             if (pId == "23") {
-                this.setData({ title: '申报宝宝户口', needs: globalData.dataList, xzType: "五好家庭" });
+                this.setData({ title: '申报宝宝户口', needs: globalData.dataList });
             } else if (pId == "24") {
-                this.setData({ title: '办理宝宝医疗保险', needs: globalData.dataList, xzType: "无忧青年" });
+                this.setData({ title: '办理宝宝医疗保险', needs: globalData.dataList });
             } else if (pId == "25") {
-                this.setData({ title: '办理少儿互助基金', needs: globalData.dataList, xzType: "互助榜样" });
+                this.setData({ title: '办理少儿互助基金', needs: globalData.dataList });
             }
         }
 
