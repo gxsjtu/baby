@@ -27,8 +27,8 @@
   <view class="mask" hidden="{{hideMask}}" bindtap="hide">
     <view class="full">
       <view class="alert">
-        <view style="height:207px;display:flex;flex-direction: column;align-items:center;">
-          <image src="../../assets/images/select.png" style="width:200px;height:207px;" catchtap="gotoSelect"></image>
+        <view style="height:530rpx;display:flex;flex-direction: column;align-items:center;">
+          <image src="../../assets/images/select.png" style="width:500rpx;height:530rpx;" catchtap="gotoSelect"></image>
         </view>
       </view>
     </view>

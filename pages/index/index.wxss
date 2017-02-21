@@ -106,7 +106,7 @@ page{
 .alert{
   position: absolute;
   width: 700rpx;
-  height: 207px;
+  height: 530rpx;
   top: 50%;
   left: 50%;
   margin-top: -250rpx;
