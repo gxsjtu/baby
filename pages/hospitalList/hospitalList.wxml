@@ -3,7 +3,7 @@
     <view class="mask" hidden="{{hideMask}}"></view>
     <view class="view-container">
         <view class="search-bar">
-            <image src="../../assets/images/hospitalList/location.png" />
+            <image src="../../assets/images/location.png" />
             <view class="location-text">上海</view>
             <view class="search-container">
                 <image src="../../assets/images/hospitalList/Shape.png" />

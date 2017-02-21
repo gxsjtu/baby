@@ -36,6 +36,7 @@ Page({
     },
     onLoad: function () {
         this.getPageData();
+        optIn.setOptInData(this);
     },
     getPageData: function () {
         let arrWarning = [];

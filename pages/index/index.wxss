@@ -106,10 +106,10 @@ page{
 .alert{
   position: absolute;
   width: 700rpx;
-  height: 530rpx;
+  height: 398rpx;
   top: 50%;
   left: 50%;
-  margin-top: -250rpx;
+  margin-top: -200rpx;
   margin-left: -350rpx;
   z-index: 1000;
   /*background: white;*/

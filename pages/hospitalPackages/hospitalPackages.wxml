@@ -2,7 +2,7 @@
 <view class="container">
   <view class="desc" bindtap="hideMask" hidden="{{!showMask}}">
   </view>
-  <image style="width: 750rpx; height: 272rpx;" src="../../assets/images/hospitaldetail/dcb.jpg" />
+  <image style="width: 750rpx; height: 272rpx;" src="../../assets/images/dcb.jpg" />
   <view class="view-container">
     <view wx:for="{{list}}" wx:for-item="item" wx:key="{{item.name}}" class="outer-s">
       <view style="display:flex;flex-direction:row;align-items:center;">
@@ -16,7 +16,7 @@
           </view>
           <view class="list-qty {{doc.isReady ? 'list-qty-linef' : 'list-qty-line'}}">{{doc.quantity}}</view>
           <view style="padding-left:5px;">
-            <image src="{{doc.isReady ? '../../assets/images/hospitaldetail/gx.png' : '../../assets/images/hospitaldetail/wg.png'}}" style="height:15px;width:15px;"></image>
+            <image src="{{doc.isReady ? '../../assets/images/gx.png' : '../../assets/images/wg.png'}}" style="height:15px;width:15px;"></image>
           </view>
         </view>
       </view>

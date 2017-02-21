@@ -12,7 +12,7 @@ Page({
         modalBottom: "",
         optIn: {
             num: 0,
-            enable: [true, true, true],
+            enable: [true, true, false],
             showError: false
         },
         showResult: false,
