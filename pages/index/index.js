@@ -107,7 +107,11 @@ Page({
         let nickName = encodeURI(app.userInfo.nickName);
         let title = encodeURI(event.currentTarget.dataset.item.title);
         var loggerSvc = new LoggerSvc();
+<<<<<<< HEAD
         loggerSvc.write(nickName, title).then();
+=======
+        loggerSvc.write(nickName,title).then();
+>>>>>>> origin/master
 
         switch (event.target.dataset.item.id) {
             case 1:
@@ -116,10 +120,15 @@ Page({
             case 2:
                 wx.navigateTo({url: '../hospitalList/hospitalList'});
                 break;
+<<<<<<< HEAD
             case 3: <<<<<<< HEAD
                 wx.navigateTo({url: '../lessCard/lessCard?pageId=3&fromStr=1&page=lessCard'}); //1代表社区医院
                 =======wx.navigateTo({url: '../lessCard/lessCard?pageId=3&fromStr=1&pageName=lessCard'}); //1代表社区医院
                 >>>>>>>origin / master
+=======
+            case 3:
+                wx.navigateTo({ url: '../lessCard/lessCard?pageId=3&fromStr=1&pageName=lessCard' });//1代表社区医院
+>>>>>>> origin/master
                 break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
@@ -206,7 +215,7 @@ Page({
                 break;
             case 23:
                 getApp().globalData.dataList = [];
-                wx.navigateTo({url: '../babyCensus/babyCensus?do=census&fromStr=2&type=1&pageId=23&pageName=census'}); //pageID用来区分页面名字的绑定
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=census&fromStr=2&type=1&pageId=23&pageName=census' });//pageID用来区分页面名字的绑定
                 var dList = [];
                 dList.push("《出生医学证明》");
                 dList.push("父亲《结婚证》");
@@ -217,21 +226,21 @@ Page({
                 break;
             case 24:
                 getApp().globalData.dataList = [];
-                wx.navigateTo({url: '../babyCensus/babyCensus?do=medical&fromStr=3&type=1&pageId=24&pageName=medical'});
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=medical&fromStr=3&type=1&pageId=24&pageName=medical' });
                 var dList = [];
                 dList.push("户口簿或居住证");
                 getApp().globalData.dataList = dList;
                 break;
             case 25:
                 getApp().globalData.dataList = [];
-                wx.navigateTo({url: '../babyCensus/babyCensus?do=fund&fromStr=1&type=1&pageId=25&pageName=fund'});
+                wx.navigateTo({ url: '../babyCensus/babyCensus?do=fund&fromStr=1&type=1&pageId=25&pageName=fund' });
                 var dList = [];
                 dList.push("户口簿或居住证");
                 getApp().globalData.dataList = dList;
                 break;
             case 26:
                 getApp().globalData.dataList = [];
-                wx.navigateTo({url: '../lessCard/lessCard?page=birth&fromStr=3&pageId=26&pageName=birth'});
+                wx.navigateTo({ url: '../lessCard/lessCard?page=birth&fromStr=3&pageId=26&pageName=birth' });
                 break;
             default:
                 break;
