@@ -1,3 +1,4 @@
+<import src="../optInTemplate/optInTemplate.wxml" />
 <view class="container">
   <image style="width: 750rpx; height: 272rpx;" src="../../assets/images/hospitaldetail/dcb.jpg" />
   <view class="view-container">
@@ -13,12 +14,9 @@
           <view style="padding-left:5px;">
             <image src="{{doc.isReady ? '../../assets/images/hospitaldetail/gx.png' : '../../assets/images/hospitaldetail/wg.png'}}" style="height:15px;width:15px;"></image>
           </view>
-
-          <!--<view class="list-arrow">
-            <image src="../../assets/images/hospitaldetail/wg.png" style="height:14px;width:14px;"></image>
-          </view>-->
         </view>
       </view>
     </view>
   </view>
+  <template is="optInTemplate" data="{{...optIn}}"></template>
 </view>

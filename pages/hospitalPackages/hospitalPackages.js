@@ -4,6 +4,11 @@ var _ = require('../../utils/lodash.min.js');
 
 Page({
     data: {
+        optIn: {
+            num: 0,
+            enable: [true, true, true],
+            showError: false
+        },
         fromStr: "",
         list: []
     },

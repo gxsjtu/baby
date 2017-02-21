@@ -2,6 +2,11 @@ const ConfinementDateSvc = require('../../services/confinementDateSvc.js')
 
 Page({
     data: {
+        optIn: {
+            num: 0,
+            enable: [true, true, true],
+            showError: false
+        },
         showResult: false,
         averageIndex: 8,
         year: '',

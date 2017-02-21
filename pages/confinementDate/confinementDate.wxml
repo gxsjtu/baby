@@ -1,3 +1,4 @@
+<import src="../optInTemplate/optInTemplate.wxml" />
 <view class="container">
     <image src="../../assets/images/confinementDate.jpg" style="width: 750rpx; height: 300rpx;"></image>
     <view class="header">预产期计算原理</view>
@@ -39,7 +40,9 @@
             </view>
         </picker>
     </view>
+      
     <view class="footer">
+        <template is="optInTemplate" data="{{...optIn}}"></template>
         <button class="btn" bindtap="check" loading="{{btnChecking}}" disabled="{{btnChecking}}">点击检测</button>
     </view>
     <view class="result" hidden="{{!showResult}}" bindtap="hiddenMask">
