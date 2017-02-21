@@ -2,6 +2,16 @@ const ActionSvc = require('../services/actionSvc.js');
 var _ = require('lodash.min.js');
 function setOptInData(_this) {
     //确定点赞、领取勋章和纠错哪个能用
+    let modals = getApp().globalData.user.modals;
+    var modal = _.filter(modals, (m) => {
+        return m == _this.data.pageName;
+    })
+    if (modal != null && modal != undefined && modal.length > 0) {
+        _this.setData({
+            "optIn.enable[1]": false
+        })
+    }
+
     var actionSvc = new ActionSvc();
     actionSvc.goodsCount(_this.data.hospitalId, _this.data.pageName).then((data) => {
         _this.setData({
@@ -19,16 +29,6 @@ function setOptInData(_this) {
             _this.setData({
                 'optIn.enable[0]': true
             });
-        }
-
-        let modals = getApp().globalData.user.modals;
-        var modal = _.filter(modals, (m) => {
-            return m == this.data.pageName;
-        })
-        if (modal != null && modal != undefined && modal.length > 0) {
-            this.setData({
-                "optIn.enable[1]": false
-            })
         }
     });
 }
@@ -112,7 +112,7 @@ function confirmInfo(_this, inputValue) {
     if (inputValue) {
         console.log('beigin');
         var actionSvc = new ActionSvc();
-        actionSvc.giveCorrection(_this.data.hospitalId, _this.data.pageName, inputValue).then(data=>{
+        actionSvc.giveCorrection(_this.data.hospitalId, _this.data.pageName, inputValue).then(data => {
             console.log(data);
         })
     }

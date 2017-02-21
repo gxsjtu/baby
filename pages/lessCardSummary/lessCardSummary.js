@@ -1,6 +1,7 @@
 const optIn = require("../../utils/optIn.js");
 var _ = require('../../utils/lodash.min.js');
 const ActionSvc = require("../../services/actionSvc.js");
+var optInSvc = require('../../utils/optIn.js');
 
 Page({
     data: {
@@ -36,6 +37,7 @@ Page({
             }
         })
         this.data.pageName = e.pageName;
+        optInSvc.setOptInData(this);
         var actionSvc = new ActionSvc()
         actionSvc.getModalByPageName(this.data.pageName).then(data => {
             this.setData({ xzType: data });

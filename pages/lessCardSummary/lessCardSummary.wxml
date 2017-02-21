@@ -7,7 +7,7 @@
     <view class="title">{{title}}</view>
   </view>
   <view class="content">
-    <view style="margin-bottom:30rpx;">
+    <view style="margin-bottom:15px;">
     <scroll-view scroll-y="true" style="height:{{scrollHeight}};">
       <view class="top-title">
         办事材料:

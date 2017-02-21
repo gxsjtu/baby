@@ -5,7 +5,7 @@
 
 .header {
   width: 750rpx;
-  height: 168rpx;
+  height: 84px;
   position: relative;
 }
 
@@ -26,9 +26,8 @@
 }
 
 .content {
-  margin: 30rpx auto;
+  margin: 15px auto;
   width: 690rpx;
-  /*height: 700rpx;*/
   border: 1px solid rgba(254, 97, 97, 0.2);
   border-radius: 2px;
   font-family: PingFangSC-Regular;
