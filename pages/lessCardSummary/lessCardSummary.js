@@ -107,10 +107,10 @@ Page({
         // });
     },
     medalClick: function (e) {
-        optIn.medalClick(this);
+        optInSvc.medalClick(this);
     },
     errorClick: function (e) {
-        optIn.errorClick(this);
+        optInSvc.errorClick(this);
     },
     hidAnimat: function () {
         this.setData({

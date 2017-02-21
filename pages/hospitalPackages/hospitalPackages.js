@@ -1,9 +1,17 @@
 const HospitalSvc = require('../../services/hospitalSvc.js');
 // const filter = require('../../utils/lodash.filter');
 var _ = require('../../utils/lodash.min.js');
+var optIn = require('../../utils/optIn.js');
+const ActionSvc = require("../../services/actionSvc.js");
 
 Page({
     data: {
+        isXZHid: true,
+        pageName: '',
+        animationData: {},
+        xzType: "",
+        showMask: false,
+        modalBottom: "",
         optIn: {
             num: 0,
             enable: [true, true, true],
@@ -76,10 +84,24 @@ Page({
         });
     },
     onLoad: function (param) {
+        wx.getSystemInfo({
+            success: (res) => {
+                var h = (res.windowHeight / 2 - 150) + "px";
+                this.setData({
+                    modalBottom: h
+                })
+            }
+        })
         var fromStr = param.from;
         this.data.fromStr = fromStr;
         var hospital = getApp().globalData.hospital;
 
+        this.data.pageName = param.pageName;
+        optIn.setOptInData(this);
+        var actionSvc = new ActionSvc()
+        actionSvc.getModalByPageName(this.data.pageName).then(data => {
+            this.setData({ xzType: data });
+        })
         if (fromStr == "package") {
             var userPackages = getApp().globalData.user.packages;
             // console.log(userPackages);
@@ -131,5 +153,29 @@ Page({
             }
             // console.log(hospital);
         }
+    },
+    hideMask: function (e) {
+        this.setData({
+            showDesc: false,
+            showMask: false,
+            isXZHid: true,
+            'optIn.showError': false
+        });
+    },
+    usefulClick: function (e) {
+        //点赞
+        optIn.usefulClick(this);
+    },
+    medalClick: function (e) {
+        optIn.medalClick(this);
+    },
+    errorClick: function (e) {
+        optIn.errorClick(this);
+    },
+    hidAnimat: function () {
+        this.setData({
+            isXZHid: true,
+            showMask: false
+        })
     }
 })

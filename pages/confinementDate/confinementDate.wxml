@@ -1,61 +1,69 @@
 <import src="../optInTemplate/optInTemplate.wxml" />
 <view class="container">
-    <image src="../../assets/images/confinementDate.jpg" style="width: 750rpx; height: 300rpx;"></image>
-    <view class="header">预产期计算原理</view>
-    <text class="content">整个孕期为40周，共280天，通过末次月经时间可以推算预产期。推算方法是按末次月经的第一日算起，月份减3或加9，日期加7。 但实际分娩日期与推算的预产期可能会相差1-2周，如果孕妇的末次月经日期记忆不清或月经不准，就需要医生代为测试预产期。
+  <view class="desc" bindtap="hideMask" hidden="{{!showMask}}">
+  </view>
+  <image src="../../assets/images/confinementDate.jpg" style="width: 750rpx; height: 300rpx;"></image>
+  <view class="header">预产期计算原理</view>
+  <text class="content">整个孕期为40周，共280天，通过末次月经时间可以推算预产期。推算方法是按末次月经的第一日算起，月份减3或加9，日期加7。 但实际分娩日期与推算的预产期可能会相差1-2周，如果孕妇的末次月经日期记忆不清或月经不准，就需要医生代为测试预产期。
   </text>
-    <view class="hr"></view>
-    <view class="calc-header">按末次月经自测产期</view>
-    <view class="title">末次月经日期（月经第一天）</view>
-    <view class="date-container">
-        <picker mode="date" style="width:230rpx;margin-left:30rpx;" start="{{start}}" end="{{end}}" value="{{selectDate}}" bindchange="changeDate">
-            <view class="picker-container">
-                <view class="year">{{year}}</view>
-                <view class="unit">年</view>
-                <image src="../../assets/images/combined.png" style="margin-left:60rpx;" />
-            </view>
-        </picker>
-        <picker mode="date" style="width:170rpx;margin-left:30rpx;" start="{{start}}" end="{{end}}" value="{{selectDate}}" bindchange="changeDate">
-            <view class="picker-container">
-                <view class="month">{{month}}</view>
-                <view class="unit">月</view>
-                <image src="../../assets/images/combined.png" style="margin-left:30rpx;" />
-            </view>
-        </picker>
-        <picker mode="date" style="width:170rpx;margin-left:30rpx;" start="{{start}}" end="{{end}}" value="{{selectDate}}" bindchange="changeDate">
-            <view class="picker-container">
-                <view class="date">{{date}}</view>
-                <view class="unit">日</view>
-                <image src="../../assets/images/combined.png" style="margin-left:30rpx;" />
-            </view>
-        </picker>
+  <view class="hr"></view>
+  <view class="calc-header">按末次月经自测产期</view>
+  <view class="title">末次月经日期（月经第一天）</view>
+  <view class="date-container">
+    <picker mode="date" style="width:230rpx;margin-left:30rpx;" start="{{start}}" end="{{end}}" value="{{selectDate}}" bindchange="changeDate">
+      <view class="picker-container">
+        <view class="year">{{year}}</view>
+        <view class="unit">年</view>
+        <image src="../../assets/images/combined.png" style="margin-left:60rpx;" />
+      </view>
+    </picker>
+    <picker mode="date" style="width:170rpx;margin-left:30rpx;" start="{{start}}" end="{{end}}" value="{{selectDate}}" bindchange="changeDate">
+      <view class="picker-container">
+        <view class="month">{{month}}</view>
+        <view class="unit">月</view>
+        <image src="../../assets/images/combined.png" style="margin-left:30rpx;" />
+      </view>
+    </picker>
+    <picker mode="date" style="width:170rpx;margin-left:30rpx;" start="{{start}}" end="{{end}}" value="{{selectDate}}" bindchange="changeDate">
+      <view class="picker-container">
+        <view class="date">{{date}}</view>
+        <view class="unit">日</view>
+        <image src="../../assets/images/combined.png" style="margin-left:30rpx;" />
+      </view>
+    </picker>
+  </view>
+  <view class="title">平均月经周期</view>
+  <view class="average-date">
+    <picker mode="selector" style="width:170rpx;margin-left:30rpx;" value="{{averageIndex}}" range="{{averageArr}}" bindchange="changeAverage">
+      <view class="picker-container">
+        <view class="average">{{average}}</view>
+        <view class="unit">天</view>
+        <image src="../../assets/images/combined.png" style="margin-left:30rpx;" />
+      </view>
+    </picker>
+  </view>
+  <view class="footer">
+    <template is="optInTemplate" data="{{...optIn}}"></template>
+    <button class="btn" bindtap="check" loading="{{btnChecking}}" disabled="{{btnChecking}}">点击检测</button>
+  </view>
+  <view class="result" hidden="{{!showResult}}" bindtap="hiddenMask">
+    <view class="result-container">
+      <view class="result-header">预产期自测结果</view>
+      <view class="result-hr"></view>
+      <view class="result-item first">您的预产期是
+        <text class="result-text"> {{preBorn}} </text>
+      </view>
+      <view class="result-item">距离现在还有
+        <text class="result-text"> {{fromNow}} </text>天</view>
+      <view class="result-item">您现在正处于孕期的
+        <text class="result-text"> {{week}} </text>周</view>
     </view>
-    <view class="title">平均月经周期</view>
-    <view class="average-date">
-        <picker mode="selector" style="width:170rpx;margin-left:30rpx;" value="{{averageIndex}}" range="{{averageArr}}" bindchange="changeAverage">
-            <view class="picker-container">
-                <view class="average">{{average}}</view>
-                <view class="unit">天</view>
-                <image src="../../assets/images/combined.png" style="margin-left:30rpx;" />
-            </view>
-        </picker>
+  </view>
+  <view animation="{{animationData}}" class="result1" hidden="{{isXZHid}}" bindtap="hidAnimat" style="bottom:{{modalBottom}}">
+    <view style="position:relative;height:600rpx;">
+      <image src="../../assets/images/lqxz.png" style="width:600rpx;height:560rpx;"></image>
+      <view style="position:absolute;width:600rpx;text-align:center;bottom:50px;font-family: PingFangSC-Regular;font-size: 13px;color: #3d3d3d;letter-spacing: -0.31px;">“{{xzType}}”</view>
+      <view style="position:absolute;width:600rpx;text-align:center;bottom:30px;font-size: 10px;color: #6d6d6d;letter-spacing: -0.31px;">恭喜你获得“{{xzType}}”勋章</view>
     </view>
-      
-    <view class="footer">
-        <template is="optInTemplate" data="{{...optIn}}"></template>
-        <button class="btn" bindtap="check" loading="{{btnChecking}}" disabled="{{btnChecking}}">点击检测</button>
-    </view>
-    <view class="result" hidden="{{!showResult}}" bindtap="hiddenMask">
-        <view class="result-container">
-            <view class="result-header">预产期自测结果</view>
-            <view class="result-hr"></view>
-            <view class="result-item first">您的预产期是
-                <text class="result-text"> {{preBorn}} </text>
-            </view>
-            <view class="result-item">距离现在还有
-                <text class="result-text"> {{fromNow}} </text>天</view>
-            <view class="result-item">您现在正处于孕期的
-                <text class="result-text"> {{week}} </text>周</view>
-        </view>
-    </view>
+  </view>
 </view>

@@ -67,8 +67,8 @@
 }
 
 .container {
+  position: relative;
   background: #ebebeb;
-  height: 100%;
 }
 
 .view-container {
@@ -76,4 +76,25 @@
   width: 730rpx;
   margin-top: 10rpx;
   margin-left: 10rpx;
+}
+
+.desc {
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.result {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    padding-top: 50%;
+    justify-content: center;
 }

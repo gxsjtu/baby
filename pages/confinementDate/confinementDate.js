@@ -1,7 +1,15 @@
 const ConfinementDateSvc = require('../../services/confinementDateSvc.js')
+var optIn = require('../../utils/optIn.js');
+const ActionSvc = require("../../services/actionSvc.js");
 
 Page({
     data: {
+        isXZHid: true,
+        pageName: '',
+        animationData: {},
+        xzType: "",
+        showMask: false,
+        modalBottom: "",
         optIn: {
             num: 0,
             enable: [true, true, true],
@@ -49,12 +57,21 @@ Page({
         ]
     },
     onLoad: function (e) {
+        wx.getSystemInfo({
+            success: (res) => {
+                var h = (res.windowHeight / 2 - 150) + "px";
+                this.setData({
+                    modalBottom: h
+                })
+            }
+        })
         let now = new Date();
         let year = now.getFullYear();
         let month = now.getMonth() + 1;
         let date = now.getDate();
         let start = (year - 1) + '-01-01';
         let end = (year + 1) + '-12-31';
+
         let selectDate = year + (month < 10
             ? '-0' + month
             : '-' + month) + (date < 10
@@ -69,6 +86,12 @@ Page({
             selectDate: selectDate,
             average: this.data.averageArr[8]
         });
+        this.data.pageName = e.pageName;
+        optIn.setOptInData(this);
+        var actionSvc = new ActionSvc()
+        actionSvc.getModalByPageName(this.data.pageName).then(data => {
+            this.setData({ xzType: data });
+        })
     },
     check: function (e) {
         this.setData({
@@ -106,5 +129,29 @@ Page({
         console.log(this.data.averageArr[e.detail.value]);
         let index = e.detail.value;
         this.setData({ averageIndex: index, average: this.data.averageArr[index] });
+    },
+    hideMask: function (e) {
+        this.setData({
+            showDesc: false,
+            showMask: false,
+            isXZHid: true,
+            'optIn.showError': false
+        });
+    },
+    usefulClick: function (e) {
+        //点赞
+        optIn.usefulClick(this);
+    },
+    medalClick: function (e) {
+        optIn.medalClick(this);
+    },
+    errorClick: function (e) {
+        optIn.errorClick(this);
+    },
+    hidAnimat: function () {
+        this.setData({
+            isXZHid: true,
+            showMask: false
+        })
     }
 })

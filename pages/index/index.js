@@ -110,7 +110,7 @@ Page({
         loggerSvc.write(nickName, title);
         switch (event.target.dataset.item.id) {
             case 1:
-                wx.navigateTo({url: '../confinementDate/confinementDate'});
+                wx.navigateTo({url: '../confinementDate/confinementDate?pageName=confinementDate'});
                 break;
             case 2:
                 wx.navigateTo({url: '../hospitalList/hospitalList'});
@@ -168,7 +168,7 @@ Page({
                 //待产包
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({url: '../hospitalPackages/hospitalPackages?from=package'});
+                    wx.navigateTo({url: '../hospitalPackages/hospitalPackages?from=package&pageName=hospitalPackage'});
                 } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
@@ -177,7 +177,7 @@ Page({
                 //入院前准备
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({url: '../hospitalPackages/hospitalPackages?from=ready'});
+                    wx.navigateTo({url: '../hospitalPackages/hospitalPackages?from=ready&pageName=hospitalReady'});
                 } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }

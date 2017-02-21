@@ -90,8 +90,6 @@ function medalClick(_this) {
                 });
             }
         })
-
-
     }
 }
 

@@ -41,6 +41,18 @@ ActionSvc.prototype.getModal = function (pageId) {
 ActionSvc.prototype.getModalByPageName = function (pageName) {
     return new Promise((resolve, reject) => {
         switch (pageName) {
+            case "hospitalReady":
+                var xzName = "三八红旗手";
+                resolve(xzName);
+                break;
+            case "hospitalPackage":
+                var xzName = "待产劳模";
+                resolve(xzName);
+                break;
+            case "confinementDate":
+                var xzName = "荣誉二道杠";
+                resolve(xzName);
+                break;
             case "lessCard":
                 var xzName = "小卡好战士";
                 resolve(xzName);
@@ -65,7 +77,7 @@ ActionSvc.prototype.getModalByPageName = function (pageName) {
                 var xzName = "致富达人";
                 resolve(xzName);
                 break;
-                default:
+            default:
                 var xzName = "";
                 resolve(xzName);
                 break;
@@ -76,7 +88,7 @@ ActionSvc.prototype.getModalByPageName = function (pageName) {
 ActionSvc.prototype.giveCorrection = function (hospitalId, pageId, content) {
     return new Promise((resolve, reject) => {
         console.log('request');
-        request(GLOBAL.SERVER + "/user/giveCorrection/", { hospitalId: hospitalId, pageId: pageId, content: content }, "POST").then(data => { 
+        request(GLOBAL.SERVER + "/user/giveCorrection/", { hospitalId: hospitalId, pageId: pageId, content: content }, "POST").then(data => {
             console.log(data);
             resolve(data);
         }).catch(err => {
