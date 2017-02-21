@@ -84,7 +84,7 @@
       </scroll-view>
     </view>
     <view style="display:flex;flex-direction:row;align-items:center;height:55px;position:absolute;bottom:40rpx;width:100%;background:#fff">
-      <button bindtap="allComplete" class="btn-style">办事任务完成</button>
+      <button bindtap="allComplete" loading="{{isLoading}}" class="btn-style">办事任务完成</button>
     </view>
   </view>
 </view>

@@ -20,6 +20,16 @@ function setOptInData(_this) {
                 'optIn.enable[0]': true
             });
         }
+
+        let modals = getApp().globalData.user.modals;
+        var modal = _.filter(modals, (m) => {
+            return m == this.data.pageName;
+        })
+        if (modal != null && modal != undefined && modal.length > 0) {
+            this.setData({
+                "optIn.enable[1]": false
+            })
+        }
     });
 }
 
@@ -43,20 +53,69 @@ function usefulClick(_this) {
 }
 
 function medalClick(_this) {
+
     if (_this.data.optIn.enable[1]) {
+        console.log('true')
+        var animationStart = wx.createAnimation({
+            duration: 200,
+            timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+            delay: 0,
+            transformOrigin: '50% 50% 0'
+        })
+
+        animationStart.scale(0, 0).opacity(0).step();
+        _this.setData({
+            animationData: animationStart.export(),
+            isXZHid: false,
+            showMask: true
+        })
+        setTimeout(() => {
+            var animation = wx.createAnimation({
+                duration: 500,
+                timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+                delay: 0
+            })
+
+            animation.scale(1, 1).opacity(1).step();
+            _this.setData({
+                animationData: animation.export()
+            })
+        }, 300)
+
+        var actionSvc = new ActionSvc();
+        actionSvc.getModal(_this.data.pageName).then(data => {
+            if (data.data.message == 'OK') {
+                getApp().globalData.user.modals.push(_this.data.pageName);
+                _this.setData({
+                    'optIn.enable[1]': false
+                });
+            }
+        })
+
 
     }
 }
 
 function errorClick(_this) {
     if (_this.data.optIn.enable[2]) {
-
+        _this.setData({
+            showMask:true,
+            'optIn.showError':true
+        });
     }
+}
+
+function confirmInfo(_this,inputValue){
+    _this.setData({
+        showMask:false,
+        'optIn.showError':false
+    });
 }
 
 module.exports = {
     setOptInData: setOptInData,
     usefulClick: usefulClick,
     medalClick: medalClick,
-    errorClick: errorClick
+    errorClick: errorClick,
+    confirmInfo:confirmInfo
 }

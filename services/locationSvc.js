@@ -4485,13 +4485,6 @@ LocationSvc.prototype.getCurrentLocation = function() {
                 request(GLOBAL.SERVER + "/user/getLocation/" + longitude + "/" + latitude, null, "GET").then(data => {
                     resolve(data);
                 })
-            },
-            fail: function(err) {
-                // reject(err)
-                // request(GLOBAL.SERVER + "/hospital/getAll/-1/-1", null, "GET").then(data => {
-                //     resolve(data);
-                // });
-                console.log("拒绝")
             }
         })
     })

@@ -33,11 +33,11 @@
 }
 
 .menu-name{
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .menu-desc{
-    font-size: 10px;
+    font-size: 14px;
     color: #bbb;
     margin-top: 4rpx;
 }

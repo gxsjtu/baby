@@ -19,14 +19,24 @@ App({
                             //申请sessionkey和openid
                             let loginSvc = new LoginSvc();
                             loginSvc.login(info.code, res).then(data => {
+                                // wx.showToast({title:'user'});
                                 this.globalData.token = data.data.token;
                                 this.globalData.defaultHos = data.data.defaultHos;
                                 this.globalData.user = data.data.user;
+                                
+                            }).catch(err => {
+                                // wx.showToast({title:err.message});
                             });
                             this.globalData.userInfo = res.userInfo
                             typeof cb == "function" && cb(this.globalData.userInfo)
+                        },
+                        fail: (err) => {
+                            //  wx.showToast({title:'loginerr'});
                         }
                     })
+                },
+                fail:(err) => {
+                    // wx.showToast({title:'err'});
                 }
             })
         }

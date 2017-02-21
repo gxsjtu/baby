@@ -1,14 +1,14 @@
 Page({
     data: {
         fromStr: "",
-        page: '',
+        pageName: '',
         pageId:''
     },
     onLoad: function (param) {
         this.data.pageId = param.pageId;
-        this.data.page = param.page;
+        this.data.pageName = param.pageName;
         let option = '';
-        if (param.page == 'birth') {
+        if (param.pageName == 'birth') {
             //生育保险
             option = 'birth';
             var dList = [];
@@ -26,7 +26,7 @@ Page({
             dList.push("申办表格本人需填写《生育保险待遇申领单》（申领6）");
             getApp().globalData.dataList = dList;
         }
-        else if (param.page == 'lessCard') {
+        else if (param.pageName == 'lessCard') {
             option = param.from;
         }
         if (param.from == 'native') {
@@ -129,10 +129,10 @@ Page({
         }
     },
     gotoOption: function (e) {
-        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr }); //上海
+        wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.option + '&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr + '&pageName=' + this.data.pageName }); //上海
     },
     gotoSummary: function (e) {
         getApp().globalData.resultStreets = [];//点击暂不需要 清空事务中心或者医院或者派出所列表 小结页不显示
-        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr }); //外省
+        wx.navigateTo({ url: '../lessCardSummary/lessCardSummary?type=' + this.data.option + '&delta=n&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr + '&pageName=' + this.data.pageName }); //外省
     }
 })

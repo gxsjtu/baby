@@ -14,13 +14,27 @@ Page({
         showDesc: false,
         noData: false,
         pageName: '',
-        hospitalId:'',
+        hospitalId: '',
+        showMask: false,
         optIn: {
             num: 0,
-            enable: [true, true, true]
-        }
+            enable: [true, true, true],
+            showError: false
+        },
+        isXZHid: true,
+
+        animationData: {},
+        modalBottom: ""
     },
     onLoad: function (param) {
+        wx.getSystemInfo({
+            success: (res) => {
+                var h = (res.windowHeight / 2 - 150) + "px";
+                this.setData({
+                    modalBottom: h
+                })
+            }
+        })
         this.getPageData(param.do);
         optIn.setOptInData(this);
 
@@ -195,7 +209,8 @@ Page({
     },
     showTitle: function (e) {
         this.setData({
-            showDesc: true
+            showDesc: true,
+            showMask: true
         });
     },
     clickDesc: function (e) {
@@ -203,7 +218,10 @@ Page({
     },
     hideMask: function (e) {
         this.setData({
-            showDesc: false
+            showDesc: false,
+            showMask: false,
+            isXZHid: true,
+            'optIn.showError': false
         });
     },
     usefulClick: function (e) {
@@ -215,5 +233,15 @@ Page({
     },
     errorClick: function (e) {
         optIn.errorClick(this);
+    },
+    hidAnimat: function () {
+        this.setData({
+            isXZHid: true,
+            showMask: false
+        })
+    },
+    confirmInfo:function(e){
+        let inputValue = e.detail.value;
+        optIn.confirmInfo(this,inputValue);
     }
 })
