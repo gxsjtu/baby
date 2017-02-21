@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "我的成就",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#fff",
+    "enablePullDownRefresh": false
+}

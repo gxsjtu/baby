@@ -41,6 +41,30 @@ ActionSvc.prototype.getModal = function (pageId) {
 ActionSvc.prototype.getModalByPageName = function (pageName) {
     return new Promise((resolve, reject) => {
         switch (pageName) {
+            case "hospitalCard-downs":
+                var xzName = "DHA代表";
+                resolve(xzName);
+                break;
+            case "hospitalCard-inspections":
+                var xzName = "十项全能";
+                resolve(xzName);
+                break;
+            case "hospitalCard-ogtts":
+                var xzName = "三管标兵";
+                resolve(xzName);
+                break;
+            case "hospitalCard-fhrms":
+                var xzName = "一帮一标兵";
+                resolve(xzName);
+                break;
+            case "hospitalCard-day42s":
+                var xzName = "劳动模范";
+                resolve(xzName);
+                break;
+            case "hospitalCard-bornCerts":
+                var xzName = "积极分子";
+                resolve(xzName);
+                break;
             case "hospitalReady":
                 var xzName = "三八红旗手";
                 resolve(xzName);
@@ -57,7 +81,7 @@ ActionSvc.prototype.getModalByPageName = function (pageName) {
                 var xzName = "小卡好战士";
                 resolve(xzName);
                 break;
-            case "hospitalCard":
+            case "hospitalCard-cards":
                 var xzName = "大卡小英雄";
                 resolve(xzName);
                 break;

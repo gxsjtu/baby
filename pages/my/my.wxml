@@ -24,7 +24,7 @@
       <view class="icon">
         <image src="../../assets/images/achievement.png"></image>
       </view>
-      <view class="menu-item">
+      <view class="menu-item" bindtap="gotoAchievement">
         <view class="menu-name">我的成就</view>
         <view class="menu-desc">查看自己所获得的所有成就</view>
       </view>

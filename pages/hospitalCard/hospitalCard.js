@@ -27,7 +27,7 @@ Page({
         animationData: {},
         modalBottom: "",
         xzType: "",
-        scrollHeight:""
+        scrollHeight: ""
     },
     onLoad: function (param) {
         wx.getSystemInfo({
@@ -41,13 +41,6 @@ Page({
             }
         })
         this.getPageData(param.do);
-        optIn.setOptInData(this);
-        //this.data.pageName = param.pageName;
-        var actionSvc = new ActionSvc();
-        actionSvc.getModalByPageName(this.data.pageName).then(data => {
-            this.setData({ xzType: data });
-        })
-
     },
     getPageData: function (option) {
         let hospital = getApp().globalData.hospital;
@@ -150,6 +143,12 @@ Page({
             }
         }
 
+        optIn.setOptInData(this);
+        var actionSvc = new ActionSvc();
+        actionSvc.getModalByPageName(this.data.pageName).then(data => {
+            this.setData({ xzType: data });
+        })
+
         wx.setNavigationBarTitle({
             title: userOption
         });
@@ -250,7 +249,7 @@ Page({
             showMask: false
         })
     },
-    confirmInfo:function(e){
+    confirmInfo: function (e) {
         let inputValue = e.detail.value;
         optIn.confirmInfo(this, inputValue);
     }

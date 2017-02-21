@@ -19,7 +19,8 @@
         "pages/my/my",
         "pages/userInfo/userInfo",
         "pages/laborPrepare/laborPrepare",
-        "pages/wait/wait"
+        "pages/wait/wait",
+        "pages/myAchievement/myAchievement"
     ],
     "window": {
         "backgroundTextStyle": "light",

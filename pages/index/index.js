@@ -123,7 +123,7 @@ Page({
 
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards&pageName=hospitalCard' });
+                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards' });
                 }
                 else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
@@ -132,7 +132,7 @@ Page({
             case 5:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=downs'});
+                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=downs?'});
                 } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
