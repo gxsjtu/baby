@@ -1,4 +1,3 @@
-<import src="../optInTemplate/optInTemplate.wxml" />
 <view class="container">
   <view class="header">
     <image src="../../assets/images/lessCard.jpg"></image>
@@ -27,8 +26,6 @@
       </view>
     </view>
   </view>
-
-<!--<template is="optInTemplate" data="{{...optIn}}"></template>-->
 
   <view class="question">是否需要为你推荐具体办事地点及攻略？</view>
   <view class="footer">

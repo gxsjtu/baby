@@ -99,12 +99,7 @@ Page({
 
     usefulClick: function (e) {
         //点赞
-        var actionSvc = new ActionSvc();
-        var app = getApp();
-        console.log(app);
-        // actionSvc.clickGood().then(()=>{
-
-        // });
+       optInSvc.usefulClick(this);
     },
     medalClick: function (e) {
         optInSvc.medalClick(this);

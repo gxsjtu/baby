@@ -23,7 +23,6 @@ Page({
             showError: false
         },
         isXZHid: true,
-        pageName: "",
         animationData: {},
         modalBottom: "",
         xzType: "",

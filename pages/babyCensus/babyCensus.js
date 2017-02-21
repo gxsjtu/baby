@@ -8,11 +8,7 @@ Page({
         typeStr: "1",
         pageId: "",
         pageName: '',
-        hospitalId: '',
-        optIn: {
-            num: 0,
-            enable: [true, true, true]
-        }
+        hospitalId: ''
     },
     onLoad: function (param) {
         this.getPageData(param.do);
@@ -20,7 +16,6 @@ Page({
         this.data.typeStr = param.type;//区别本市还是外省
         this.data.pageId = param.pageId;//区别title
         this.data.pageName = param.pageName;
-        optIn.setOptInData(this);
     },
     needClick: function () {
         wx.navigateTo({ url: '../lessCardOptions/lessCardOptions?type=' + this.data.typeStr + '&fromStr=' + this.data.fromStr + '&pageId=' + this.data.pageId + '&pageName=' + this.data.pageName }); //上海
@@ -150,15 +145,5 @@ Page({
                 }]
             });
         }
-    },
-    usefulClick: function (e) {
-        //点赞
-        optIn.usefulClick(this);
-    },
-    medalClick: function (e) {
-        optIn.medalClick(this);
-    },
-    errorClick: function (e) {
-        optIn.errorClick(this);
     }
 })
