@@ -83,47 +83,65 @@ Page({
         })
 
         var address = getApp().globalData.user.address;
-        if (e.type == "1" && address.huJi) {
-            locationSvc.getStreetsByDistrict(districtStr).then(data => {
-                var strs = [];
-                if (streetStr != "" && streetStr != "街道" && streetStr != "区域") {
-                    strs = _.filter(data.streets, (street) => {
-                        return street.name == streetStr;
-                    })
-                } else {
-                    strs = data.streets;
-                    streetStr = "街道";
-                }
+        if (address != null && address != undefined) {
+            if (e.type == "1" && address.huJi) {
+                locationSvc.getStreetsByDistrict(districtStr).then(data => {
+                    var strs = [];
+                    if (streetStr != "" && streetStr != "街道" && streetStr != "区域") {
+                        strs = _.filter(data.streets, (street) => {
+                            return street.name == streetStr;
+                        })
+                    } else {
+                        strs = data.streets;
+                        streetStr = "街道";
+                    }
 
-                this.setData({ streets: data.streets, resultStreets: strs, selectArea: districtStr, selectStreet: streetStr, addrDetail: detailStr })
-                if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
-                    this.setData({ ishid: false });
-                }
-                else {
-                    this.setData({ ishid: true });
-                }
-            })
+                    this.setData({ streets: data.streets, resultStreets: strs, selectArea: districtStr, selectStreet: streetStr, addrDetail: detailStr })
+                    if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                        this.setData({ ishid: false });
+                    }
+                    else {
+                        this.setData({ ishid: true });
+                    }
+                })
 
-        } else if (e.type == "2" && address.juZhu) {
-            locationSvc.getStreetsByDistrict(districtStr).then(data => {
-                var strs = [];
-                if (streetStr != "" && streetStr != "街道" && streetStr != "区域") {
-                    strs = _.filter(data.streets, (street) => {
-                        return street.name == streetStr;
-                    })
-                } else {
-                    strs = data.streets;
-                    streetStr = "街道";
-                }
+            } else if (e.type == "2" && address.juZhu) {
+                locationSvc.getStreetsByDistrict(districtStr).then(data => {
+                    var strs = [];
+                    if (streetStr != "" && streetStr != "街道" && streetStr != "区域") {
+                        strs = _.filter(data.streets, (street) => {
+                            return street.name == streetStr;
+                        })
+                    } else {
+                        strs = data.streets;
+                        streetStr = "街道";
+                    }
 
-                this.setData({ streets: data.streets, resultStreets: strs, selectArea: districtStr, selectStreet: streetStr, addrDetail: detailStr })
-                if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
-                    this.setData({ ishid: false });
-                }
-                else {
-                    this.setData({ ishid: true });
-                }
-            })
+                    this.setData({ streets: data.streets, resultStreets: strs, selectArea: districtStr, selectStreet: streetStr, addrDetail: detailStr })
+                    if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                        this.setData({ ishid: false });
+                    }
+                    else {
+                        this.setData({ ishid: true });
+                    }
+                })
+            }
+            else {
+                locationSvc.getCurrentLocation().then(data => {
+                    if (data.data.message == "OK") {
+                        this.setData({ selectArea: data.data.data })
+                        locationSvc.getStreetsByDistrict(data.data.data).then(data => {
+                            this.setData({ streets: data.streets, resultStreets: data.streets })
+                            if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0)                            {
+                                this.setData({ ishid: false });
+                            }
+                            else {
+                                this.setData({ ishid: true });
+                            }
+                        })
+                    }
+                })
+            }
         } else {
             locationSvc.getCurrentLocation().then(data => {
                 if (data.data.message == "OK") {
