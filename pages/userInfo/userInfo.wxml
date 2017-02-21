@@ -6,6 +6,7 @@
     <view class="nickName">
       {{userInfo.nickName}}
     </view>
+    <image src="../../assets/images/path.png" style="width:750rpx;height:200rpx;margin-top:94rpx;"></image>
   </view>
   <view class="info-container">
     <view class="header-container">
@@ -14,33 +15,40 @@
     </view>
     <view class="item-container">
       <view class="item-name">预产期</view>
-      <view class="item-value"><input type="text" bindinput="setConfinementDate" value="{{confinementDate}}" /></view>
+      <view class="item-value">
+        <input type="text" bindinput="setConfinementDate" value="{{confinementDate}}" />
+      </view>
     </view>
     <view class="item-container">
       <view class="item-name">手机号码</view>
-      <view class="item-value"><input type="text" bindinput="setPhone" value="{{phone}}" /></view>
+      <view class="item-value">
+        <input type="text" bindinput="setPhone" value="{{phone}}" />
+      </view>
     </view>
     <view class="item-container">
       <view class="item-name">户籍地址</view>
-      <view class="item-value"><input type="text" bindinput="setCensus" value="{{census}}" /></view>
+      <view class="item-value">
+        <input type="text" bindinput="setCensus" value="{{census}}" />
+      </view>
     </view>
     <view class="item-container">
       <view class="item-name">居住地址</view>
-      <view class="item-value"><input type="text" bindinput="setCurrentAddress" value="{{currentAddress}}" /></view>
+      <view class="item-value">
+        <input type="text" bindinput="setCurrentAddress" value="{{currentAddress}}" />
+      </view>
     </view>
     <view class="item-container">
       <view class="item-name">生产医院</view>
       <view class="item-value">{{hospitalName}}</view>
     </view>
+
     <!--<view class="item-container">
       <view class="item-name">主治医生</view>
       <view class="item-value">{{doctor}}</view>
     </view>-->
 
-<!--<view style="padding:40rpx;">
+    <!--<view style="padding:40rpx;">
     <button bindtap="saveInfo" disabled="{{btnDisabled}}" class="{{btnDisabled ? 'btn-f' : 'btn-style'}}">保存</button>
 </view>-->
-    
-
   </view>
 </view>

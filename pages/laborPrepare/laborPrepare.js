@@ -1,18 +1,32 @@
 const GLOBAL = require('../../global.js');
 // var clone = require('../../utils/lodash.clone');
 var _ = require('../../utils/lodash.min.js');
+var optIn = require('../../utils/optIn.js');
 Page({
     data: {
         warning: [],
         cards: [],
         documents: [],
-        firstItemSelected: true
+        firstItemSelected: true,
+        pageName: 'laborPrepare',
+        hospitalId: '',
+        showMask: false,
+        optIn: {
+            num: 0,
+            enable: [true, true, true],
+            showError: false
+        },
+        isXZHid: true,
+
+        animationData: {},
+        modalBottom: ""
     },
     naturalLabour: function (e) {
         this.setData({
             firstItemSelected: true
         });
         this.getPageData();
+        optIn.setOptInData(this);
     },
     cesarean: function (e) {
         this.setData({
@@ -54,5 +68,36 @@ Page({
         }
 
         this.setData({ warning: arrWarning, cards: arrCard });
+    },
+    clickDesc: function (e) {
+        //勿删
+    },
+    hideMask: function (e) {
+        this.setData({
+            showDesc: false,
+            showMask: false,
+            isXZHid: true,
+            'optIn.showError': false
+        });
+    },
+    usefulClick: function (e) {
+        //点赞
+        optIn.usefulClick(this);
+    },
+    medalClick: function (e) {
+        optIn.medalClick(this);
+    },
+    errorClick: function (e) {
+        optIn.errorClick(this);
+    },
+    hidAnimat: function () {
+        this.setData({
+            isXZHid: true,
+            showMask: false
+        })
+    },
+    confirmInfo: function (e) {
+        let inputValue = e.detail.value;
+        optIn.confirmInfo(this, inputValue);
     }
 })

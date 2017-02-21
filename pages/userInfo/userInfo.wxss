@@ -1,14 +1,15 @@
 .header {
   width: 750rpx;
   height: 294rpx;
-  background: white url(../../assets/images/path.png) no-repeat bottom;
+  /*background: white url(../../assets/images/path.png) no-repeat bottom;*/
+  position: relative;
 }
 
 .avatar {
   width: 120rpx;
   height: 120rpx;
-  margin: 60rpx auto 0;
-  z-index: 11;
+  margin: 60rpx 0 0 315rpx;
+  position: absolute;
 }
 
 .avatar image {
@@ -24,7 +25,8 @@
   letter-spacing: -0.39px;
   width: 750rpx;
   text-align: center;
-  margin-top: 30rpx;
+  margin-top: 210rpx;
+  position: absolute;
 }
 
 .info-container {
@@ -69,9 +71,9 @@ page {
 .item-container {
   display: flex;
   width: 680rpx;
-  margin:0 auto;
+  margin: 0 auto;
   align-items: center;
-  height:100rpx;
+  height: 100rpx;
   border-bottom: 2rpx solid #f2f2f2;
 }
 
@@ -94,14 +96,14 @@ page {
 }
 
 .btn-style {
-  background: #FF4949;
+  background: #ff4949;
   font-family: PingFangSC-Regular;
   font-size: 15px;
   color: #fff;
   letter-spacing: -0.37px;
   border-radius: 100px;
-  width:195px;
-  height:35px;
+  width: 195px;
+  height: 35px;
   line-height: 35px;
 }
 
@@ -110,7 +112,7 @@ page {
   font-family: PingFangSC-Regular;
   font-size: 15px;
   letter-spacing: -0.37px;
-  width:195px;
-  height:35px;
+  width: 195px;
+  height: 35px;
   line-height: 35px;
 }
