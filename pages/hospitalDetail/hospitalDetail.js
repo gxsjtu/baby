@@ -1,5 +1,7 @@
 const HospitalSvc = require('../../services/hospitalSvc.js')
 const GLOBAL = require('../../global.js');
+const ActionSvc = require("../../services/actionSvc.js");
+var optInSvc = require('../../utils/optIn.js');
 
 Page({
     data: {
@@ -8,10 +10,24 @@ Page({
         imgAddress: GLOBAL.SERVER + "/images/",
         imgSrc: "#",
         btnDefaultDisabled: false,
-        ishid: true
+        ishid: true,
+        optIn: {
+            num: 0,
+            enable: [true, true, true],
+            showError: false
+        },
+        isXZHid: true,
+        pageName: '',
+        animationData: {},
+        xzType: "",
+        showMask: false,
+        modalBottom: "",
+        scrollHeight: "",
+        pageName: ""
     },
-    setDefault: function () {
+    setDefault: function (e) {
         //show loading
+        this.data.pageName = e.pageName;
         var hospitalSvc = new HospitalSvc();
         this.setData({ btnDefaultDisabled: true });
         console.log(this.data.hospital);
@@ -75,24 +91,31 @@ Page({
     },
     showM: function () {
         this.setData({
-            ishid:false
+            ishid: false
         })
     },
-    hidModal: function(){
+    hidModal: function () {
         this.setData({
-            ishid:true
+            ishid: true
         })
     },
     onLoad: function (e) {
-        //获取窗口高度
         wx.getSystemInfo({
             success: (res) => {
-                // success
-                var h = (res.windowHeight - 55 - 1 - 2 - 2);
+                var h = (res.windowHeight / 2 - 150) + "px";
+                var s = (res.windowHeight - 50 - 55 - 1 - 2 - 2) + "px";
                 this.setData({
-                    scrollHeight: (h) + "px"
+                    modalBottom: h,
+                    scrollHeight: s
                 })
             }
+        })
+
+        this.data.pageName = e.pageName;
+        optInSvc.setOptInData(this);
+        var actionSvc = new ActionSvc()
+        actionSvc.getModalByPageName(this.data.pageName).then(data => {
+            this.setData({ xzType: data });
         })
 
         var id = e.id;
@@ -110,5 +133,29 @@ Page({
         }).catch(() => {
             wx.hideToast();
         })
-    }
+    },
+    usefulClick: function (e) {
+        //点赞
+        var actionSvc = new ActionSvc();
+        var app = getApp();
+    },
+    medalClick: function (e) {
+        optInSvc.medalClick(this);
+    },
+    errorClick: function (e) {
+        optInSvc.errorClick(this);
+    },
+    hidAnimat: function () {
+        this.setData({
+            isXZHid: true,
+            showMask: false
+        })
+    },
+    hideMask: function (e) {
+        this.setData({
+            showMask: false,
+            isXZHid: true,
+            'optIn.showError': false
+        });
+    },
 })

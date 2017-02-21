@@ -79,7 +79,7 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
   background: #d7d7d7;
 }
 
-.result {
+/*.result {
     position: absolute;
     top: 0;
     left: 0;
@@ -91,7 +91,7 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
     flex-direction: row;
     padding-top: 50%;
     justify-content: center;
-}
+}*/
 
 .result-container {
     z-index: 1000;
@@ -99,4 +99,25 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
     height: 540rpx;
     background: #fff;
     border-radius: 8rpx;
+}
+
+.result {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    padding-top: 50%;
+    justify-content: center;
+}
+
+.desc {
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

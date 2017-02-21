@@ -22,18 +22,19 @@ Page({
         selectOrder: '排序',
         filterOpen: false,
         selectFilter: '筛选',
-        searchKey: ""
+        searchKey: "",
+        pageName: ""
     },
     bindp: function (e) {
         this.setData({ index: e.detail.value })
     },
     gotoHosDetail: function (e) {
         wx.navigateTo({
-            url: '../hospitalDetail/hospitalDetail?id=' + e.currentTarget.dataset.itemId
+            url: '../hospitalDetail/hospitalDetail?id=' + e.currentTarget.dataset.itemId + '&pageName=' + this.data.pageName
         });
     },
-    onLoad: function () {
-
+    onLoad: function (e) {
+        this.data.pageName = e.pageName;
         var hospitalSvc = new HospitalSvc();
         hospitalSvc.getLocation().then(data => {
             wx.showToast({ title: '加载中', icon: 'loading', duration: 10000, mask: true });

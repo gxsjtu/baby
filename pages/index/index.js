@@ -113,7 +113,7 @@ Page({
                 wx.navigateTo({url: '../confinementDate/confinementDate?pageName=confinementDate'});
                 break;
             case 2:
-                wx.navigateTo({url: '../hospitalList/hospitalList'});
+                wx.navigateTo({url: '../hospitalList/hospitalList?pageName=hospitalList'});
                 break;
             case 3:
                 wx.navigateTo({url: '../lessCard/lessCard?pageId=3&fromStr=1&pageName=lessCard'}); //1代表社区医院

@@ -81,15 +81,15 @@ function medalClick(_this) {
             })
         }, 300)
 
-        // var actionSvc = new ActionSvc();
-        // actionSvc.getModal(_this.data.pageName).then(data => {
-        //     if (data.data.message == 'OK') {
-        //         getApp().globalData.user.modals.push(_this.data.pageName);
-        //         _this.setData({
-        //             'optIn.enable[1]': false
-        //         });
-        //     }
-        // })
+        var actionSvc = new ActionSvc();
+        actionSvc.getModal(_this.data.pageName).then(data => {
+            if (data.data.message == 'OK') {
+                getApp().globalData.user.modals.push(_this.data.pageName);
+                _this.setData({
+                    'optIn.enable[1]': false
+                });
+            }
+        })
     }
 }
 

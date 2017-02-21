@@ -40,72 +40,62 @@ ActionSvc.prototype.getModal = function (pageId) {
 
 ActionSvc.prototype.getModalByPageName = function (pageName) {
     return new Promise((resolve, reject) => {
+        var xzName = "";
         switch (pageName) {
+            case "hospitalList":
+                xzName = "优秀侦察兵";
+                break;
             case "hospitalCard-downs":
-                var xzName = "DHA代表";
-                resolve(xzName);
+                xzName = "DHA代表";
                 break;
             case "hospitalCard-inspections":
-                var xzName = "十项全能";
-                resolve(xzName);
+                xzName = "十项全能";
                 break;
             case "hospitalCard-ogtts":
-                var xzName = "三管标兵";
-                resolve(xzName);
+                xzName = "三管标兵";
                 break;
             case "hospitalCard-fhrms":
-                var xzName = "一帮一标兵";
-                resolve(xzName);
+                xzName = "一帮一标兵";
                 break;
             case "hospitalCard-day42s":
-                var xzName = "劳动模范";
-                resolve(xzName);
+                xzName = "劳动模范";
                 break;
             case "hospitalCard-bornCerts":
-                var xzName = "积极分子";
-                resolve(xzName);
+                xzName = "积极分子";
                 break;
             case "hospitalReady":
-                var xzName = "三八红旗手";
-                resolve(xzName);
+                xzName = "三八红旗手";
                 break;
             case "hospitalPackage":
-                var xzName = "待产劳模";
-                resolve(xzName);
+                xzName = "待产劳模";
                 break;
             case "confinementDate":
-                var xzName = "荣誉二道杠";
-                resolve(xzName);
+                xzName = "荣誉二道杠";
                 break;
             case "lessCard":
-                var xzName = "小卡好战士";
-                resolve(xzName);
+                xzName = "小卡好战士";
                 break;
             case "hospitalCard-cards":
-                var xzName = "大卡小英雄";
-                resolve(xzName);
+                xzName = "大卡小英雄";
                 break;
             case "census":
-                var xzName = "五好家庭";
-                resolve(xzName);
+                xzName = "五好家庭";
                 break;
             case "medical":
-                var xzName = "无忧青年";
-                resolve(xzName);
+                xzName = "无忧青年";
                 break;
             case "fund":
                 var xzName = "互助榜样";
                 resolve(xzName);
                 break;
             case "birth":
-                var xzName = "致富达人";
-                resolve(xzName);
+                xzName = "致富达人";
                 break;
             default:
-                var xzName = "";
-                resolve(xzName);
+                xzName = "";
                 break;
         }
+        resolve(xzName);
     })
 }
 
