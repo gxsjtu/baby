@@ -29,13 +29,10 @@ Page({
     onLoad: function (param) {
         wx.getSystemInfo({
             success: (res) => {
-                // console.log()
                 var h = (res.windowHeight / 2 - 150) + "px";
-
                 this.setData({
                     modalBottom: h
                 })
-                console.log(this.data.modalBottom);
             }
         })
         this.getPageData(param.do);

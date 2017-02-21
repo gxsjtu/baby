@@ -32,15 +32,15 @@ Page({
         })
         this.data.pageName = e.pageName;
         let globalData = getApp().globalData;
-        let modals = getApp().globalData.user.modals;
-        var modal = _.filter(modals, (m) => {
-            return m == this.data.pageName;
-        })
-        if (modal != null && modal != undefined && modal.length > 0) {
-            this.setData({
-                "optIn.enable[1]": false
-            })
-        }
+        // let modals = getApp().globalData.user.modals;
+        // var modal = _.filter(modals, (m) => {
+        //     return m == this.data.pageName;
+        // })
+        // if (modal != null && modal != undefined && modal.length > 0) {
+        //     this.setData({
+        //         "optIn.enable[1]": false
+        //     })
+        // }
 
         this.data.delta = e.delta;
         var pId = e.pageId;

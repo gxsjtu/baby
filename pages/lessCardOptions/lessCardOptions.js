@@ -21,9 +21,11 @@ Page({
         jcHidden: true,
         yyHidden: true,
         ishid: true,
-        pageName: ''
+        pageName: '',
+        isLoading: false
     },
     onLoad: function (e) {
+
         var pId = e.pageId;
         this.data.pageId = pId;
         var fromStr = e.fromStr;
@@ -42,11 +44,6 @@ Page({
             wx.setNavigationBarTitle({ title: '办理小卡攻略' });
         }
 
-        // if (pId != "23" && pId != "24" && pId != "25" && pId != "26") {
-        //     wx.setNavigationBarTitle({ title: '办理小卡攻略' });
-        // }
-
-
         if (fromStr == "1") {
             this.setData({ typeName: "社区医院", jcHidden: true, bsHidden: true, yyHidden: false })
         } else if (fromStr == "2") {
@@ -55,19 +52,25 @@ Page({
             this.setData({ typeName: "事务受理中心", jcHidden: true, bsHidden: false, yyHidden: true })
         }
         var address = getApp().globalData.user.address;
+        // if(getApp().globalData.user){
+        //     wx.showToast({title:'yes'});
+        // }
+        // else{
+        //     wx.showToast({title:'no'});
+        // }
         var districtStr = "";
         var streetStr = "";
         var detailStr = "";
         if (e.type == "1") {
             this.setData({ addr: "户籍地址", typeStr: 1 })
-            if (address != null && address != undefined) {
+            if (address.huJi) {
                 districtStr = address.huJi.district;
                 streetStr = address.huJi.street;
                 detailStr = address.huJi.detail;
             }
         } else {
             this.setData({ addr: "居住地址", typeStr: 2 })
-            if (address != null && address != undefined) {
+            if (address.juZhu) {
                 districtStr = address.juZhu.district;
                 streetStr = address.juZhu.street;
                 detailStr = address.juZhu.detail;
@@ -80,9 +83,29 @@ Page({
         })
 
         var address = getApp().globalData.user.address;
-        if (address != null && address != undefined) {
+        if (e.type == "1" && address.huJi) {
             locationSvc.getStreetsByDistrict(districtStr).then(data => {
+                var strs = [];
+                if (streetStr != "" && streetStr != "街道" && streetStr != "区域") {
+                    strs = _.filter(data.streets, (street) => {
+                        return street.name == streetStr;
+                    })
+                } else {
+                    strs = data.streets;
+                    streetStr = "街道";
+                }
 
+                this.setData({ streets: data.streets, resultStreets: strs, selectArea: districtStr, selectStreet: streetStr, addrDetail: detailStr })
+                if (this.data.resultStreets != null && this.data.resultStreets != undefined && this.data.resultStreets.length > 0) {
+                    this.setData({ ishid: false });
+                }
+                else {
+                    this.setData({ ishid: true });
+                }
+            })
+
+        } else if (e.type == "2" && address.juZhu) {
+            locationSvc.getStreetsByDistrict(districtStr).then(data => {
                 var strs = [];
                 if (streetStr != "" && streetStr != "街道" && streetStr != "区域") {
                     strs = _.filter(data.streets, (street) => {
@@ -207,10 +230,12 @@ Page({
         })
     },
     allComplete: function (e) {
+        this.setData({ isLoading: true });
         var street = "";
         if (this.data.selectStreet != "街道" && this.data.selectStreet != "" && this.data.selectStreet != undefined && this.data.selectStreet != null) {
             street = this.data.selectStreet;
         }
+
         var locationSvc = new LocationSvc();
         locationSvc.completeAll(this.data.typeStr, this.data.selectArea, street, this.data.addrDetail).then(data => {
             if (data.data.message == "OK") {
@@ -225,9 +250,12 @@ Page({
                     getApp().globalData.user.address.juZhu.district = this.data.selectArea;
                     getApp().globalData.user.address.juZhu.street = street;
                 }
+                this.setData({ isLoading: false });
                 wx.navigateTo({
                     url: '../lessCardSummary/lessCardSummary?type=' + this.data.typeStr + '&delta=y' + '&pageId=' + this.data.pageId + '&fromStr=' + this.data.fromStr + '&pageName=' + this.data.pageName
                 });
+            } else {
+                this.setData({ isLoading: false });
             }
         })
     }

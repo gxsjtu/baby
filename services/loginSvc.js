@@ -20,6 +20,7 @@ LoginSvc.prototype.login = function (code, res) {
         },
         fail: function(err) {
           // fail
+          // wx.showToast({title:err.errMsg, duration:10000});
         },
         complete: function() {
           // complete

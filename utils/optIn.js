@@ -20,6 +20,16 @@ function setOptInData(_this) {
                 'optIn.enable[0]': true
             });
         }
+
+        let modals = getApp().globalData.user.modals;
+        var modal = _.filter(modals, (m) => {
+            return m == this.data.pageName;
+        })
+        if (modal != null && modal != undefined && modal.length > 0) {
+            this.setData({
+                "optIn.enable[1]": false
+            })
+        }
     });
 }
 
