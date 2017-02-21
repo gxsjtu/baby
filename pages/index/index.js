@@ -87,34 +87,36 @@ Page({
         hideMask: true,
         alertText: ''
     },
-    onLoad: function () {
+    onShareAppMessage: function() {
+        return {title: '事妈驾到', path: '/page/index'}
+    },
+    onLoad: function() {
         this.beforeChildbirth();
 
     },
     //点击产前阶段
-    beforeChildbirth: function () {
-        this.setData({ firstItemSelected: true })
+    beforeChildbirth: function() {
+        this.setData({firstItemSelected: true})
     },
     //点击产后阶段
-    afterChildbirth: function () {
-        this.setData({ firstItemSelected: false })
+    afterChildbirth: function() {
+        this.setData({firstItemSelected: false})
     },
-    goto: function (event) {
+    goto: function(event) {
         let app = getApp().globalData;
         let nickName = encodeURI(app.userInfo.nickName);
         let title = encodeURI(event.currentTarget.dataset.item.title);
         var loggerSvc = new LoggerSvc();
-        loggerSvc.write(nickName,title).then();
-
+        loggerSvc.write(nickName, title);
         switch (event.target.dataset.item.id) {
             case 1:
-                wx.navigateTo({ url: '../confinementDate/confinementDate' });
+                wx.navigateTo({url: '../confinementDate/confinementDate'});
                 break;
             case 2:
-                wx.navigateTo({ url: '../hospitalList/hospitalList' });
+                wx.navigateTo({url: '../hospitalList/hospitalList'});
                 break;
             case 3:
-                wx.navigateTo({ url: '../lessCard/lessCard?pageId=3&fromStr=1&pageName=lessCard' });//1代表社区医院
+                wx.navigateTo({url: '../lessCard/lessCard?pageId=3&fromStr=1&pageName=lessCard'}); //1代表社区医院
                 break;
             case 4:
                 //医院建大卡产检,需要判断是否选择了默认医院。
@@ -130,39 +132,35 @@ Page({
             case 5:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=downs' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=downs'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
             case 6:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=inspections' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=inspections'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
             case 7:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=ogtts' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=ogtts'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
             case 8:
-                wx.navigateTo({ url: '../matronCenter/matron' });
+                wx.navigateTo({url: '../matronCenter/matron'});
                 break;
             case 9:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=fhrms' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=fhrms'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
@@ -170,9 +168,8 @@ Page({
                 //待产包
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=package' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalPackages/hospitalPackages?from=package'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
@@ -180,37 +177,34 @@ Page({
                 //入院前准备
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalPackages/hospitalPackages?from=ready' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalPackages/hospitalPackages?from=ready'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
             case 12:
                 //生产攻略
-                wx.navigateTo({ url: '../laborPrepare/laborPrepare' });
+                wx.navigateTo({url: '../laborPrepare/laborPrepare'});
                 break;
             case 21:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=bornCerts' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=bornCerts'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
             case 22:
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=day42s' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=day42s'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;
             case 23:
                 getApp().globalData.dataList = [];
-                wx.navigateTo({ url: '../babyCensus/babyCensus?do=census&fromStr=2&type=1&pageId=23&pageName=census' });//pageID用来区分页面名字的绑定
+                wx.navigateTo({url: '../babyCensus/babyCensus?do=census&fromStr=2&type=1&pageId=23&pageName=census'}); //pageID用来区分页面名字的绑定
                 var dList = [];
                 dList.push("《出生医学证明》");
                 dList.push("父亲《结婚证》");
@@ -221,45 +215,37 @@ Page({
                 break;
             case 24:
                 getApp().globalData.dataList = [];
-                wx.navigateTo({ url: '../babyCensus/babyCensus?do=medical&fromStr=3&type=1&pageId=24&pageName=medical' });
+                wx.navigateTo({url: '../babyCensus/babyCensus?do=medical&fromStr=3&type=1&pageId=24&pageName=medical'});
                 var dList = [];
                 dList.push("户口簿或居住证");
                 getApp().globalData.dataList = dList;
                 break;
             case 25:
                 getApp().globalData.dataList = [];
-                wx.navigateTo({ url: '../babyCensus/babyCensus?do=fund&fromStr=1&type=1&pageId=25&pageName=fund' });
+                wx.navigateTo({url: '../babyCensus/babyCensus?do=fund&fromStr=1&type=1&pageId=25&pageName=fund'});
                 var dList = [];
                 dList.push("户口簿或居住证");
                 getApp().globalData.dataList = dList;
                 break;
             case 26:
                 getApp().globalData.dataList = [];
-                wx.navigateTo({ url: '../lessCard/lessCard?page=birth&fromStr=3&pageId=26&pageName=birth' });
+                wx.navigateTo({url: '../lessCard/lessCard?page=birth&fromStr=3&pageId=26&pageName=birth'});
                 break;
             default:
                 break;
         }
     },
-    hide: function (event) {
-        this.setData({
-            hideMask: true
-        })
+    hide: function(event) {
+        this.setData({hideMask: true})
     },
-    fullClick: function (event) {
+    fullClick: function(event) {
         //勿删
     },
-    showAlert: function (msg) {
-        this.setData({
-            hideMask: false,
-            alertText: msg
-        })
+    showAlert: function(msg) {
+        this.setData({hideMask: false, alertText: msg})
     },
-    gotoSelect: function (event) {
-        this.setData({
-            hideMask: true,
-            alertText: ''
-        })
-        wx.navigateTo({ url: '../hospitalList/hospitalList' });
+    gotoSelect: function(event) {
+        this.setData({hideMask: true, alertText: ''})
+        wx.navigateTo({url: '../hospitalList/hospitalList'});
     }
 })

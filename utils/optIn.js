@@ -98,17 +98,24 @@ function medalClick(_this) {
 function errorClick(_this) {
     if (_this.data.optIn.enable[2]) {
         _this.setData({
-            showMask:true,
-            'optIn.showError':true
+            showMask: true,
+            'optIn.showError': true
         });
     }
 }
 
-function confirmInfo(_this,inputValue){
+function confirmInfo(_this, inputValue) {
     _this.setData({
-        showMask:false,
-        'optIn.showError':false
+        showMask: false,
+        'optIn.showError': false
     });
+    if (inputValue) {
+        console.log('beigin');
+        var actionSvc = new ActionSvc();
+        actionSvc.giveCorrection(_this.data.hospitalId, _this.data.pageName, inputValue).then(data=>{
+            console.log(data);
+        })
+    }
 }
 
 module.exports = {
@@ -116,5 +123,5 @@ module.exports = {
     usefulClick: usefulClick,
     medalClick: medalClick,
     errorClick: errorClick,
-    confirmInfo:confirmInfo
+    confirmInfo: confirmInfo
 }

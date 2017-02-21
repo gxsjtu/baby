@@ -247,7 +247,7 @@ Page({
             showMask: false
         })
     },
-    confirmInfo: function (e) {
+    confirmInfo:function(e){
         let inputValue = e.detail.value;
         optIn.confirmInfo(this, inputValue);
     }
