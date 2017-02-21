@@ -49,6 +49,8 @@ page {
   color: #6d6d6d;
   letter-spacing: -0.31px;
   margin-left: 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
 }
 
 .optInTemplate-error-container {
