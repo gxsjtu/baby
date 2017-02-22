@@ -17,6 +17,7 @@
     <image src="../../assets/images/hospitaldetail/rightPic.png" style="height:14px;width:14px;"></image>
   </view>
 </view>
+<view class="hospital-title">{{hospitalTitle}}</view>
 <view class="step-container">
   <view class="v-line"></view>
   <view class="card-item" wx:if="{{documents && documents.length > 0}}">

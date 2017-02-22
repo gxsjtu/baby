@@ -26,7 +26,8 @@ Page({
         animationData: {},
         modalBottom: "",
         xzType: "",
-        scrollHeight: ""
+        scrollHeight: "",
+        hospitalTitle:''
     },
     onLoad: function (param) {
         wx.getSystemInfo({
@@ -46,7 +47,6 @@ Page({
         let hospitalName = hospital.name;
         this.data.hospitalId = hospital._id;
         let imgAddress = GLOBAL.SERVER + "/images/" + hospitalName;
-
         let pageData = {};
         let userOption = '';
         if (option == 'cards') {
@@ -141,6 +141,11 @@ Page({
                 });
             }
         }
+
+        let hospitalTitle = hospital.alias+userOption;
+        this.setData({
+            hospitalTitle:hospitalTitle
+        });
 
         optIn.setOptInData(this);
         var actionSvc = new ActionSvc();
