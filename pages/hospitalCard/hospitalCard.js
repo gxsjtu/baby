@@ -52,7 +52,7 @@ Page({
         if (option == 'cards') {
             //建大卡
             this.data.pageName = 'hospitalCard-cards';
-            userOption = '建卡';
+            userOption = '建大卡';
             if (hospital.setCard) {
                 pageData = hospital.setCard;
             }
@@ -65,7 +65,7 @@ Page({
         }
         else if (option == 'downs') {
             this.data.pageName = 'hospitalCard-downs';
-            userOption = '唐筛';
+            userOption = '唐氏筛查';
             if (hospital.down) {
                 pageData = hospital.down;
             }
@@ -148,9 +148,6 @@ Page({
             this.setData({ xzType: data });
         })
 
-        wx.setNavigationBarTitle({
-            title: userOption
-        });
         let arrWarning = pageData.warnings;
         let documents = pageData.documents;
         let title = pageData.titles;
