@@ -4,6 +4,7 @@ const ActionSvc = require("../../services/actionSvc.js");
 
 Page({
     data: {
+        scrollHeight: "",
         isXZHid: true,
         pageName: '',
         animationData: {},
@@ -60,8 +61,10 @@ Page({
         wx.getSystemInfo({
             success: (res) => {
                 var h = (res.windowHeight / 2 - 150) + "px";
+                var s = (res.windowHeight  - 95) + "px";
                 this.setData({
-                    modalBottom: h
+                    modalBottom: h,
+                    scrollHeight: s
                 })
             }
         })
@@ -125,8 +128,6 @@ Page({
         this.setData({ year: arr[0], month: arr[1], date: arr[2], selectDate: select });
     },
     changeAverage: function (e) {
-        console.log(e.detail.value);
-        console.log(this.data.averageArr[e.detail.value]);
         let index = e.detail.value;
         this.setData({ averageIndex: index, average: this.data.averageArr[index] });
     },

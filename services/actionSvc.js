@@ -42,6 +42,9 @@ ActionSvc.prototype.getModalByPageName = function (pageName) {
     return new Promise((resolve, reject) => {
         var xzName = "";
         switch (pageName) {
+            case "laborPrepare":
+                xzName = "生产能手";
+                break;
             case "hospitalList":
                 xzName = "优秀侦察兵";
                 break;

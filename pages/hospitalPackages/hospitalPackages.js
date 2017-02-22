@@ -6,6 +6,7 @@ const ActionSvc = require("../../services/actionSvc.js");
 
 Page({
     data: {
+        scrollHeight:"",
         isXZHid: true,
         pageName: '',
         animationData: {},
@@ -87,8 +88,10 @@ Page({
         wx.getSystemInfo({
             success: (res) => {
                 var h = (res.windowHeight / 2 - 150) + "px";
+                var s = (res.windowHeight - 196) + "px";
                 this.setData({
-                    modalBottom: h
+                    modalBottom: h,
+                    scrollHeight: s
                 })
             }
         })

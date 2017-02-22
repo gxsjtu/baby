@@ -7,16 +7,6 @@
   height: 100%;
 }
 
-.desc {
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
 .desc-container {
   z-index: 1000;
   width: 670rpx;
@@ -251,4 +241,25 @@ page {
 .menu-active{
     color:#fff;
     background: #ff4949;
+}
+
+.result {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    padding-top: 50%;
+    justify-content: center;
+}
+
+.desc {
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

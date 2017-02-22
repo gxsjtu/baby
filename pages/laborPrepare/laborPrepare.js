@@ -1,14 +1,16 @@
 const GLOBAL = require('../../global.js');
 // var clone = require('../../utils/lodash.clone');
 var _ = require('../../utils/lodash.min.js');
+const ActionSvc = require("../../services/actionSvc.js");
 var optIn = require('../../utils/optIn.js');
+
 Page({
     data: {
         warning: [],
         cards: [],
         documents: [],
         firstItemSelected: true,
-        pageName: 'laborPrepare',
+        pageName: '',
         hospitalId: '',
         showMask: false,
         optIn: {
@@ -17,7 +19,7 @@ Page({
             showError: false
         },
         isXZHid: true,
-
+        scrollHeight:"",
         animationData: {},
         modalBottom: ""
     },
@@ -34,7 +36,23 @@ Page({
         });
         this.getPageData();
     },
-    onLoad: function () {
+    onLoad: function (e) {
+         wx.getSystemInfo({
+            success: (res) => {
+                var h = (res.windowHeight / 2 - 150) + "px";
+                var s = (res.windowHeight - 269) + "px";
+                this.setData({
+                    modalBottom: h,
+                    scrollHeight: s
+                })
+            }
+        })
+        this.data.pageName = e.pageName;
+        optIn.setOptInData(this);
+        var actionSvc = new ActionSvc()
+        actionSvc.getModalByPageName(this.data.pageName).then(data => {
+            this.setData({ xzType: data });
+        })
         this.getPageData();
         optIn.setOptInData(this);
     },

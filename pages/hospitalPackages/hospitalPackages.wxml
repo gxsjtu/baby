@@ -2,8 +2,9 @@
 <view class="container">
   <view class="desc" bindtap="hideMask" hidden="{{!showMask}}">
   </view>
-  <image style="width: 750rpx; height: 272rpx;" src="../../assets/images/dcb.jpg" />
+  <image style="width: 750rpx; height: 136px;" src="../../assets/images/dcb.jpg" />
   <view class="view-container">
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}">
     <view wx:for="{{list}}" wx:for-item="item" wx:key="{{item.name}}" class="outer-s">
       <view style="display:flex;flex-direction:row;align-items:center;">
         <view style="background: #FF4949;border-radius: 1px;height:10px;width:1px;margin-left:-1px"></view>
@@ -21,6 +22,7 @@
         </view>
       </view>
     </view>
+    </scroll-view>
   </view>
   <template is="optInTemplate" data="{{...optIn}}"></template>
   <view animation="{{animationData}}" class="result" hidden="{{isXZHid}}" bindtap="hidAnimat" style="bottom:{{modalBottom}}">

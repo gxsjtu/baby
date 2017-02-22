@@ -184,7 +184,7 @@ Page({
                 break;
             case 12:
                 //生产攻略
-                wx.navigateTo({url: '../laborPrepare/laborPrepare'});
+                wx.navigateTo({url: '../laborPrepare/laborPrepare?pageName=laborPrepare'});
                 break;
             case 21:
                 if (app.defaultHos) {
