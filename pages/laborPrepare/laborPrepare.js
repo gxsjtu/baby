@@ -40,7 +40,7 @@ Page({
          wx.getSystemInfo({
             success: (res) => {
                 var h = (res.windowHeight / 2 - 150) + "px";
-                var s = (res.windowHeight - 269) + "px";
+                var s = (res.windowHeight - 264) + "px";
                 this.setData({
                     modalBottom: h,
                     scrollHeight: s

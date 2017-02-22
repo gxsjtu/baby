@@ -55,7 +55,7 @@
 .step-container {
   position: relative;
   border-radius: 4rpx;
-  padding-top: 10rpx;
+  padding-top: 5px;
   background: #fdfdfd;
   width: 730rpx;
   margin: 0 auto;

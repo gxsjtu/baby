@@ -1,3 +1,3 @@
-<view style="height:100%;">
-<image src="../../assets/images/mj.png" style="width:750rpx;height:{{imgHeight}}"></image>
+<view>
+<image src="../../assets/images/mj.jpg" style="width:375px;height:{{imgHeight}}" bindload="getHeight"></image>
 </view>

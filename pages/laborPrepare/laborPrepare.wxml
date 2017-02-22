@@ -1,10 +1,10 @@
 <import src="../optInTemplate/optInTemplate.wxml" />
 <view class="view-container {{(showMask) ? '' : 'mask'}}">
 <view class="desc" bindtap="hideMask" hidden="{{!showMask}}"></view>
-  <view style="width:730rpx;height:322rpx;margin:0 auto;">
-    <image src="../../assets/images/labor.jpg" style="width:730rpx;height:322rpx;"></image>
+  <view style="width:730rpx;height:161px;margin:0 auto;">
+    <image src="../../assets/images/labor.jpg" style="width:730rpx;height:161px;"></image>
   </view>
-  <view style="background:white;width:730rpx;margin:0 auto;padding-top:30rpx;">
+  <view style="background:white;width:730rpx;margin:0 auto;padding-top:15px;">
     <view class="menu-container">
       <view class="menu-item {{firstItemSelected ? 'menu-active' : ''}}" catchtap="naturalLabour">顺产</view>
       <view class="menu-item {{firstItemSelected ? '' : 'menu-active'}}" catchtap="cesarean">剖腹产</view>
