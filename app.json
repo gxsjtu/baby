@@ -21,7 +21,7 @@
         "pages/laborPrepare/laborPrepare",
         "pages/wait/wait",
         "pages/myAchievement/myAchievement",
-        "pages/gift/gift"        
+        "pages/gift/gift"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -34,7 +34,7 @@
         "list": [
             {
                 "pagePath": "pages/index/index",
-                "text": "孕事任务",
+                "text": "办事任务",
                 "iconPath": "assets/images/tabs/do_selected.png",
                 "selectedIconPath": "assets/images/tabs/do_unselected.png"
             },
