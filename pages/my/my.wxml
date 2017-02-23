@@ -20,18 +20,18 @@
       <view class="arrow">
       </view>
     </view>
-    <view class="menu" data-menuname="我的成就" bindtap="gotoWait">
+    <view class="menu" data-menuname="我的成就" bindtap="gotoAchievement">
       <view class="icon">
         <image src="../../assets/images/achievement.png"></image>
       </view>
-      <view class="menu-item" bindtap="gotoAchievement">
+      <view class="menu-item">
         <view class="menu-name">我的成就</view>
         <view class="menu-desc">查看自己所获得的所有成就</view>
       </view>
       <view class="arrow">
       </view>
     </view>
-    <view class="menu" bindtap="gotoWait" data-menuname="我的订单">
+    <view class="menu" bindtap="gotoMyOrders" data-menuname="我的订单">
       <view class="icon">
         <image src="../../assets/images/order.png"></image>
       </view>

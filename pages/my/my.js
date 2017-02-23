@@ -17,5 +17,8 @@ Page({
         wx.navigateTo({
             url: '../myAchievement/myAchievement'
         });
+    },
+    gotoMyOrders: function(e){
+        
     }
 })
