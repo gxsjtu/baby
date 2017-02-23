@@ -18,7 +18,9 @@ Page({
             url: '../myAchievement/myAchievement'
         });
     },
-    gotoMyOrders: function(e){
-        
+    gotoMyOrders: function (e) {
+        wx.navigateTo({
+            url: '../myOrders/myOrders'
+        });
     }
 })
