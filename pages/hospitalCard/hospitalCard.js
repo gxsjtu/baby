@@ -26,7 +26,8 @@ Page({
         animationData: {},
         modalBottom: "",
         xzType: "",
-        scrollHeight: ""
+        scrollHeight: "",
+        hospitalTitle:''
     },
     onLoad: function (param) {
         wx.getSystemInfo({
@@ -46,13 +47,12 @@ Page({
         let hospitalName = hospital.name;
         this.data.hospitalId = hospital._id;
         let imgAddress = GLOBAL.SERVER + "/images/" + hospitalName;
-
         let pageData = {};
         let userOption = '';
         if (option == 'cards') {
             //建大卡
             this.data.pageName = 'hospitalCard-cards';
-            userOption = '建卡';
+            userOption = '建大卡';
             if (hospital.setCard) {
                 pageData = hospital.setCard;
             }
@@ -65,7 +65,7 @@ Page({
         }
         else if (option == 'downs') {
             this.data.pageName = 'hospitalCard-downs';
-            userOption = '唐筛';
+            userOption = '唐氏筛查';
             if (hospital.down) {
                 pageData = hospital.down;
             }
@@ -142,15 +142,17 @@ Page({
             }
         }
 
+        let hospitalTitle = hospital.alias+userOption;
+        this.setData({
+            hospitalTitle:hospitalTitle
+        });
+
         optIn.setOptInData(this);
         var actionSvc = new ActionSvc();
         actionSvc.getModalByPageName(this.data.pageName).then(data => {
             this.setData({ xzType: data });
         })
 
-        wx.setNavigationBarTitle({
-            title: userOption
-        });
         let arrWarning = pageData.warnings;
         let documents = pageData.documents;
         let title = pageData.titles;

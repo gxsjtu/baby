@@ -1,0 +1,61 @@
+<view class="container">
+  <view class="logo">
+    <image src="../../assets/images/gift.png"></image>
+  </view>
+  <view class="menu">
+    <view class="menu-item" catchtap="selectFirst">
+      <view class="dot {{selectedMenuIndex==0?'active':''}}"></view>
+      <view style="width:16rpx;"></view>
+      <view class="{{selectedMenuIndex==0?'active':''}}">活动介绍</view>
+    </view>
+    <view class="menu-split"></view>
+    <view class="menu-item" catchtap="selectSecond">
+      <view class="dot {{selectedMenuIndex==1?'active':''}}"></view>
+      <view style="width:16rpx;"></view>
+      <view class="{{selectedMenuIndex==1?'active':''}}">活动详情</view>
+    </view>
+  </view>
+  <view class="split"></view>
+  <view class="gift-container" hidden="{{selectedMenuIndex!=0}}">
+    <view class="gift" wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item">
+      <view class="flag">
+        <view style="height:22px;line-height:22px;">礼物{{words[index]}}</view>
+      </view>
+      <view class="item">
+        <view class="left">
+          <view class="name"><span style="color:#df3030">{{item.name}}</span>  ，{{item.description}}</view>
+          <view style="height:10rpx"></view>
+          <view class="list" wx:for="{{item.details}}" wx:key="{{index}}" wx:for-item="detail">{{index + 1}}.{{detail}}</view>
+        </view>
+        <view class="avatar">
+          <image src="{{imgAddress}}{{item.name}}/{{item.images[0]}}" mode="aspectFit"></image>
+        </view>
+      </view>
+      <view class="split" wx:if="{{items.length != (index+1)}}"></view>
+    </view>
+    <view style="display:flex;flex-direction:row;align-items:center;height:110rpx;width:750rpx;background:#fff;margin-top:-20rpx;position:relative;">
+      <button bindtap="setDefault" disabled="{{!btnDefaultDisabled}}" class="{{!btnDefaultDisabled ? 'btn-f' : 'btn-style'}}">点击领取大礼包</button>
+
+      <!--<view style="width:600rpx;height:400rpx;position:absolute;bottom:60rpx;background:white;">
+        弹出框
+      </view>-->
+
+    </view>
+    <view class="split"></view>
+    <view style="padding:40rpx;">
+      <view class="title">
+        事妈福利
+      </view>
+      <view class="desc">
+        试用好的产品,是不是迫不及待的想要知道在哪里买得到呀？事妈告诉您可以买到正品的地方的同时，还为您争取到最实惠的好处。关注事妈驾到公众号进行购买，享受特别优惠，也可以点击进去每一个产品页面，查看每个产品的购买的方式。
+      </view>
+    </view>
+  </view>
+  <view class="gift-info" hidden="{{selectedMenuIndex!=1}}">
+    <view class="gift-info-container">
+      <view>1、每个申请资格每周仅可申请一次试用产品或礼包，其余试用资格下周可继续申请。同一试用品或试用礼包，没人只可申领一次。</view>
+      <view>2、试用品数量有限，先到先得。</view>
+      <view>3、试用品每周六统一发货，请事妈们耐心等待。</view>
+    </view>
+  </view>
+</view>

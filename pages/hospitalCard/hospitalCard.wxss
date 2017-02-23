@@ -239,6 +239,18 @@ page {
   justify-content: center;
 }
 
-scroll-view{
-  height:400rpx;
+scroll-view {
+  height: 400rpx;
+}
+
+.hospital-title {
+  background: #fdfdfd;
+  width: 730rpx;
+  margin: 0 auto;
+  color: #ff4949;
+  text-align: center;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+  font-family: PingFangSC-Medium;
+  letter-spacing: 3px;
 }
