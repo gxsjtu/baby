@@ -6,7 +6,7 @@ const ActionSvc = require("../../services/actionSvc.js");
 
 Page({
     data: {
-        scrollHeight:"",
+        scrollHeight: "",
         isXZHid: true,
         pageName: '',
         animationData: {},
@@ -19,7 +19,8 @@ Page({
             showError: false
         },
         fromStr: "",
-        list: []
+        list: [],
+        isPackage: true //标识用来显示哪张title图片
     },
     goReady: function (e) {
         var hospital = getApp().globalData.hospital;
@@ -106,6 +107,9 @@ Page({
             this.setData({ xzType: data });
         })
         if (fromStr == "package") {
+            wx.setNavigationBarTitle({
+                title: '购买待产准备包'
+            });
             var userPackages = getApp().globalData.user.packages;
             // console.log(userPackages);
             if (userPackages != null && userPackages != undefined && userPackages.length > 0) {
@@ -125,11 +129,14 @@ Page({
                     }
                     pList.push({ name: hospital.packages[i].name, items: pItemList });
                 }
-                this.setData({ list: pList })
+                this.setData({ list: pList, isPackage:true })
             } else {
-                this.setData({ list: hospital.packages })
+                this.setData({ list: hospital.packages, isPackage:true })
             }
         } else {
+            wx.setNavigationBarTitle({
+                title: '入院前准备'
+            });
             // let userPackages = getApp().globalData.user;
             var userPrepares = getApp().globalData.user.prepares;
             if (userPrepares != null && userPrepares != undefined && userPrepares.length > 0) {
@@ -149,10 +156,10 @@ Page({
                     }
                     pList.push({ name: hospital.prepares[i].name, items: pItemList });
                 }
-                this.setData({ list: pList });
+                this.setData({ list: pList, isPackage:false });
             }
             else {
-                this.setData({ list: hospital.prepares });
+                this.setData({ list: hospital.prepares, isPackage:false });
             }
             // console.log(hospital);
         }

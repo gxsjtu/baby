@@ -1,3 +1,6 @@
-page{
-    height:100%;
+.font-s {
+  font-family: PingFangSC-Regular;
+  font-size: 14px;
+  letter-spacing: -0.36px;
+  height:20px;
 }

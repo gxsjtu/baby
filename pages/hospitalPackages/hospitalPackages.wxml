@@ -2,28 +2,33 @@
 <view class="container">
   <view class="desc" bindtap="hideMask" hidden="{{!showMask}}">
   </view>
-  <image style="width: 750rpx; height: 136px;" src="../../assets/images/dcb.jpg" />
-  <view class="view-container">
+  <view wx:if="{{isPackage}}">
+    <image style="width: 750rpx; height: 136px;" src="../../assets/images/dcb.jpg" />
+  </view>
+  <view wx:if="{{!isPackage}}">
+    <image style="width: 750rpx; height: 136px;" src="../../assets/images/ry.jpg" />
+  </view>
   <scroll-view scroll-y="true" style="height:{{scrollHeight}}">
-    <view wx:for="{{list}}" wx:for-item="item" wx:key="{{item.name}}" class="outer-s">
-      <view style="display:flex;flex-direction:row;align-items:center;">
-        <view style="background: #FF4949;border-radius: 1px;height:10px;width:1px;margin-left:-1px"></view>
-        <view class="name-s">{{item.name}}</view>
-      </view>
-      <view>
-        <view wx:for="{{item.items}}" wx:for-item="doc" wx:key="{{doc.id}}" class="list-item" bindtap="goReady" data-package-id="{{doc.id}}">
-          <view class="{{doc.isReady ? 'name-linef' : 'name-line'}}">
-            <view class="list-name">{{doc.name}}</view>
-          </view>
-          <view class="list-qty {{doc.isReady ? 'list-qty-linef' : 'list-qty-line'}}">{{doc.quantity}}</view>
-          <view style="padding-left:5px;">
-            <image src="{{doc.isReady ? '../../assets/images/gx.png' : '../../assets/images/wg.png'}}" style="height:15px;width:15px;"></image>
+    <view class="view-container">
+      <view wx:for="{{list}}" wx:for-item="item" wx:key="{{item.name}}" class="outer-s">
+        <view style="display:flex;flex-direction:row;align-items:center;">
+          <view style="background: #FF4949;border-radius: 1px;height:10px;width:1px;margin-left:-1px"></view>
+          <view class="name-s">{{item.name}}</view>
+        </view>
+        <view>
+          <view wx:for="{{item.items}}" wx:for-item="doc" wx:key="{{doc.id}}" class="list-item" bindtap="goReady" data-package-id="{{doc.id}}">
+            <view class="{{doc.isReady ? 'name-linef' : 'name-line'}}">
+              <view class="list-name">{{doc.name}}</view>
+            </view>
+            <view class="list-qty {{doc.isReady ? 'list-qty-linef' : 'list-qty-line'}}">{{doc.quantity}}</view>
+            <view style="padding-left:5px;">
+              <image src="{{doc.isReady ? '../../assets/images/gx.png' : '../../assets/images/wg.png'}}" style="height:15px;width:15px;"></image>
+            </view>
           </view>
         </view>
       </view>
     </view>
-    </scroll-view>
-  </view>
+  </scroll-view>
   <template is="optInTemplate" data="{{...optIn}}"></template>
   <view animation="{{animationData}}" class="result" hidden="{{isXZHid}}" bindtap="hidAnimat" style="bottom:{{modalBottom}}">
     <view style="position:relative;height:600rpx;">
