@@ -22,7 +22,8 @@
         "pages/wait/wait",
         "pages/myAchievement/myAchievement",
         "pages/gift/gift",
-        "pages/myOrders/myOrders"
+        "pages/myOrders/myOrders",
+        "pages/giftDetail/giftDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",

@@ -1,3 +1,17 @@
+.container {
+  position: relative;
+}
+
+.mask {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
 .logo {
   width: 750rpx;
   height: 236rpx;
@@ -25,7 +39,7 @@
   /*line-height: 40rpx;*/
   display: flex;
   color: white;
-  width:3em;
+  width: 3em;
   padding-right: 18px;
   padding-left: 5px;
   margin-top: 10px;
@@ -58,18 +72,19 @@
   display: flex;
   flex-direction: column;
   border-right: 2rpx solid #ebebeb;
-  padding-top: 30rpx;
+  padding-top: 40rpx;
   margin-bottom: 30rpx;
 }
 
 .name {
   border-bottom: 2rpx solid #ebebeb;
-  font-size: 26rpx;
+  font-size: 30rpx;
   font-family: PingFangSC-Regular;
   padding-left: 20rpx;
   padding-right: 20rpx;
   padding-bottom: 10rpx;
   line-height: 36rpx;
+  color:#b8b8b8;
 }
 
 .menu {
@@ -117,18 +132,20 @@
 }
 
 .avatar image {
-  width: 80%;
-  height: 100%;
+  /*width: 80%;
+  height: 100%;*/
+  width: 200rpx;
+  height: 200rpx;
 }
 
 .list {
-  font-size: 24rpx;
-  color: #b8b8b8;
+  font-size: 32rpx;
+  color: #df3030;
   font-family: PingFangSC-Regular;
-  letter-spacing: -0.37px;
+  /*letter-spacing: -0.37px;*/
   padding-left: 20rpx;
   padding-right: 20rpx;
-  line-height: 30rpx;
+  line-height: 40rpx;
 }
 
 .gift-info {
@@ -144,7 +161,6 @@
   padding: 30rpx 40rpx;
 }
 
-
 .title {
   color: #ff4848;
   font-size: 26rpx;
@@ -155,19 +171,18 @@
   font-size: 24rpx;
   font-family: PingFangSC-Regular;
   margin-top: 10rpx;
-  line-height:30rpx;
+  line-height: 30rpx;
 }
 
-
 .btn-style {
-  background: #FF4949;
+  background: #ff4949;
   font-family: PingFangSC-Regular;
   font-size: 15px;
   color: #fff;
   letter-spacing: -0.37px;
   border-radius: 100px;
-  width:195px;
-  height:35px;
+  width: 195px;
+  height: 35px;
   line-height: 35px;
 }
 
@@ -176,8 +191,8 @@
   font-family: PingFangSC-Regular;
   font-size: 15px;
   letter-spacing: -0.37px;
-  width:195px;
-  height:35px;
+  width: 195px;
+  height: 35px;
   line-height: 35px;
 }
 
@@ -188,4 +203,57 @@ button::after {
 button[disabled][type="default"], wx-button[disabled]:not([type]) {
   color: #fff;
   background: #d7d7d7;
+}
+
+.alert {
+  width: 660rpx;
+  height: 600rpx;
+  position: absolute;
+  bottom: 150rpx;
+  left: 45rpx;
+  background: white;
+  z-index: 1000;
+  border-radius: 10rpx;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.input-container {
+  display: flex;
+  margin-top: 20rpx;
+  align-items: center;
+}
+
+.alert-title {
+  background-image: linear-gradient(-95deg, #ff6f6f 0%, #ff4949 54%, #ff6868 100%);
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -0.43px;
+  line-height: 96rpx;
+  height: 96rpx;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.alert-container{
+  padding: 20rpx;
+}
+
+.input-container>view:first-child{
+  width: 180rpx;
+  text-align: right;
+}
+
+.picker{
+  border: 1px solid black;
+  text-align: center;
+  padding: 4rpx 30rpx;
+  width: 150rpx;
+  border-radius: 2rpx;
+}
+
+input{
+  width: 400rpx;
 }

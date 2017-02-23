@@ -1,0 +1,7 @@
+<view class="container">
+  <view>
+    <view class="flag">
+      <view style="height:22px;line-height:22px;">礼物{{words[index]}}</view>
+    </view>
+  </view>
+</view>

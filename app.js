@@ -48,6 +48,7 @@ App({
         hospital: null,
         user: null,
         resultStreets: null,
-        dataList: null //小卡材料列表
+        dataList: null, //小卡材料列表
+        currentGift:null,//选中的当前礼包
     }
 })
