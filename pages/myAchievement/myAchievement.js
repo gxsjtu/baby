@@ -18,7 +18,6 @@ Page({
         var actionSvc = new ActionSvc();
 
         let modals = getApp().globalData.user.modals;
-        console.log(modals);
         var topArray = [];
         var otherArray = [];
         var avgH = (parseInt(e.detail.height / 7) - 10) + "px";
@@ -33,13 +32,11 @@ Page({
         })
         for (var i = 0; i < modals.length; i++) {
             if (i < 3) {
-                console.log(modals[i]);
                 actionSvc.getModalByPageName(modals[i]).then(data => {
                     topArray.push(data);
                     this.setData({
                         topList: topArray
                     })
-                    console.log(this.data.topList);
                 });
             }
             else {
