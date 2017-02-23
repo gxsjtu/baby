@@ -1,0 +1,18 @@
+.font-s {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #6d6d6d;
+  letter-spacing: -0.31px;
+  width: 150rpx;
+  text-align: right;
+}
+
+.container {
+  width: 750rpx;
+  height: 100%;
+  background: #ebebeb;
+}
+
+page {
+  height: 100%;
+}

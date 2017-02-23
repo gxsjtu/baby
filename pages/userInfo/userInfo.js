@@ -1,60 +1,59 @@
 Page({
     data: {
-        btnDisabled:false,
-        confinementDate:'',
-        phone:'',
-        census:'',
-        currentAddress:'',
-        hospitalName:'',
-        doctor:''
+        btnDisabled: false,
+        confinementDate: '',
+        phone: '',
+        census: '',
+        currentAddress: '',
+        hospitalName: '',
+        doctor: ''
     },
     onLoad: function (e) {
         let globalData = getApp().globalData;
         console.log(globalData);
-        if(!globalData.hospital)
-        {
+        if (!globalData.hospital) {
             globalData.hospital = globalData.defaultHos;
         }
         this.setData({ userInfo: globalData.userInfo });
-        if(globalData.hospital)
-        {
+        if (globalData.hospital) {
             this.setData({
-                hospitalName:globalData.hospital.name
+                hospitalName: globalData.hospital.name
             });
         }
-        if(globalData.user.preBorn){
+        if (globalData.user.preBorn) {
             this.setData({
-                confinementDate:globalData.user.preBorn
+                confinementDate: globalData.user.preBorn
             });
         }
-        if(globalData.user.address && globalData.user.address.juZhu)
-        {   
+        if (globalData.user.address && globalData.user.address.juZhu) {
             let juzhu = globalData.user.address.juZhu;
             this.setData({
-                currentAddress:juzhu.detail
+                currentAddress: juzhu.detail
             });
         }
-        if(globalData.user.address && globalData.user.address.huJi)
-        {   
+        if (globalData.user.address && globalData.user.address.huJi) {
             let huJi = globalData.user.address.huJi;
             this.setData({
-                census:huJi.detail
+                census: huJi.detail
             });
         }
+        if (globalData.user.deliveryAddress) {
+            this.setData({ phone: globalData.user.deliveryAddress.tel });
+        }
     },
-    saveInfo:function(e){
+    saveInfo: function (e) {
 
     },
-    setConfinementDate:function(e){
+    setConfinementDate: function (e) {
 
     },
-    setPhone:function(e){
+    setPhone: function (e) {
 
     },
-    setCensus:function(e){
-        
+    setCensus: function (e) {
+
     },
-    setCurrentAddress:function(e){
-        
+    setCurrentAddress: function (e) {
+
     }
 })
