@@ -1,7 +1,41 @@
 <view class="container">
-  <view>
-    <view class="flag">
-      <view style="height:22px;line-height:22px;">礼物{{words[index]}}</view>
+  <view class="logo">
+    <image src="{{logo}}"></image>
+  </view>
+  <view class="split"></view>
+  <view class="description">
+    <view class="description-name">{{description}}</view>
+    <view class="detail" wx:for="{{details}}" wx:key="{{index}}" wx:for-item="detail">{{detail}}</view>
+  </view>
+  <view class="split"></view>
+  <view class="recommends">
+    <view class="flag">事妈推荐</view>
+    <view class="recommends-container">
+      <view class="recommend" wx:for="{{recommends}}" wx:key="{{index}}" wx:for-item="recommend">
+        {{recommend}}
+      </view>
     </view>
   </view>
+  <view class="split"></view>
+  <view class="discounts">
+    <view class="flag">事妈福利</view>
+    <view class="discounts-container">
+      <view class="discount" wx:for="{{discounts}}" wx:key="{{index}}" wx:for-item="discount">
+        <view>
+          <image src="../../assets/images/{{discount.image}}"></image>
+        </view>
+        <view>{{discount.content}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="split"></view>
+  <view class="experiences">
+    <view class="flag">事妈体验</view>
+    <view class="recommends-container">
+      <view class="recommend" wx:for="{{experiences}}" wx:key="{{index}}" wx:for-item="experience">
+        <view>{{experience}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="split"></view>
 </view>

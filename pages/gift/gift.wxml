@@ -18,7 +18,7 @@
   </view>
   <view class="split"></view>
   <view class="gift-container" hidden="{{selectedMenuIndex!=0}}">
-    <view class="gift" wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item">
+    <view class="gift" wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item" bindtap="gotoDetail" data-item="{{item}}">
       <view class="flag">
         <view style="height:22px;line-height:22px;">礼物{{words[index]}}</view>
       </view>

@@ -57,7 +57,6 @@ Page({
                     item.imageUrl = encodeURI(imgAddress + item.name+'/'+item.name);
                     items.push(item);
                 }
-                console.log(items);
                 this.setData({
                     // items: data.data.data.items,
                     items: items,
@@ -112,7 +111,7 @@ Page({
     },
     gotoDetail: function (e) {
         getApp().globalData.currentGift = e.currentTarget.dataset.item;
-        wx.navigateTo({ url: '../giftDetail/giftDetail' });
+        wx.navigateTo({ url: '../giftDetail/giftDetail?bundleId='+this.data.bundleId });
     },
     hideMask: function (e) {
         this.setData({
