@@ -9,12 +9,9 @@ HospitalSvc.prototype.getLocation = function() {
         wx.getLocation({
             type: 'wgs84',
             success: function(res) {
-                console.log('dingwei');
-                console.log(res);
                 var latitude = res.latitude //纬度
                 var longitude = res.longitude //经度
                 request(GLOBAL.SERVER + "/hospital/getAll/" + longitude + "/" + latitude, null, "GET").then(data => {
-                    console.log(data);
                     resolve(data);
                 })
             },
@@ -42,16 +39,18 @@ HospitalSvc.prototype.setDefaultHospital = function(hosId) {
             resolve(data);
         }).catch(err => {
             console.log(err);
+            reject(err);
         });
     })
 }
 
-HospitalSvc.prototype.updatePackages = function(pId){
+HospitalSvc.prototype.updatePackages = function(pId) {
     return new Promise((resolve, reject) => {
         request(GLOBAL.SERVER + "/user/updatePackages/" + pId).then(data => {
             resolve(data);
-        }).catch(ertr => {
+        }).catch(err => {
             console.log(err);
+            reject(err);
         })
     })
 }
