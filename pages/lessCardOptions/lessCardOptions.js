@@ -271,5 +271,15 @@ Page({
                 this.setData({ isLoading: false });
             }
         })
+    },
+    callTel: function(e) {
+        console.log(e);
+        var tel = e.currentTarget.dataset.tel;
+        wx.makePhoneCall({
+          phoneNumber: tel,
+          success: function(res) {
+            // success
+          }
+        })
     }
 })
