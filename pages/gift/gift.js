@@ -90,6 +90,8 @@ Page({
         let detail = this.data.addressDetail;
         giftSvc.getBundle(this.data.bundleId, province, city, name, tel, detail).then((data) => {
             if (data.data.message == 'OK') {
+                var deliveryAddress = {city: city, detail: detail, name: name, province: province, tel: tel};
+                getApp().globalData.user.deliveryAddress = deliveryAddress;
                 this.setData({
                     btnDefaultDisabled: false,
                     btnAddressDisabled: false,
