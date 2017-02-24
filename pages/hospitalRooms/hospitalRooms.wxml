@@ -12,8 +12,8 @@
         <image src="../../assets/images/zw.png" mode="aspectFit" style="display:inline;"></image>
       </view>
       <view class="item-s" style="position:relative; height:52px;">
-        <view style="font-family: PingFangSC-Regular;font-size: 16px;color: #3D3D3D;letter-spacing: -0.39px;width:310px;">{{item.name}}</view>
-        <view style="font-family: PingFangSC-Regular;font-size: 18px;color: #FF4949;letter-spacing: -0.44px;position:absolute;right:5px;">{{item.price}}</view>
+        <view style="display:flex;flex-direction:row;align-items:center;height:52px;font-family: PingFangSC-Regular;font-size: 16px;color: #3D3D3D;letter-spacing: -0.39px;width:310px;">{{item.name}}</view>
+        <view style="height:52px;display:flex;flex-direction:row;align-items:center;font-family: PingFangSC-Regular;font-size: 18px;color: #FF4949;letter-spacing: -0.44px;position:absolute;right:5px;">{{item.price}}</view>
       </view>
       <view class="item-s" style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;">预定电话：{{item.tel}}</view>
       <view class="item-s" style="font-family: PingFangSC-Regular;font-size: 15px;color: #3D3D3D;letter-spacing: -0.37px;">
