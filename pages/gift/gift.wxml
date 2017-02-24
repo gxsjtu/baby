@@ -1,7 +1,7 @@
 <view class="container">
   <view class="mask" hidden="{{!showAlert}}" catchtap="hideMask"></view>
   <view class="logo">
-    <image src="../../assets/images/gift.png"></image>
+    <image src="../../assets/images/gift.jpg"></image>
   </view>
   <view class="menu">
     <view class="menu-item" catchtap="selectFirst">

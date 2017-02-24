@@ -52,9 +52,9 @@ Page({
             if (obj) {
                 let imgAddress = GLOBAL.SERVER + "/images/bundles/" + obj._id + "/";
                 let items = [];
-                for(let i = 0; i<data.data.data.items.length; i++){
+                for (let i = 0; i < data.data.data.items.length; i++) {
                     let item = data.data.data.items[i];
-                    item.imageUrl = encodeURI(imgAddress + item.name+'/'+item.name);
+                    item.imageUrl = encodeURI(imgAddress + item.name + '/' + item.name);
                     items.push(item);
                 }
                 this.setData({
@@ -93,8 +93,10 @@ Page({
                 this.setData({
                     btnDefaultDisabled: false,
                     btnAddressDisabled: false,
-                    btnSubmit: false
+                    btnSubmit: false,
+                    showAlert: false
                 });
+                wx.navigateTo({ url: '../myOrders/myOrders' });
             }
             else {
                 this.setData({
@@ -111,7 +113,7 @@ Page({
     },
     gotoDetail: function (e) {
         getApp().globalData.currentGift = e.currentTarget.dataset.item;
-        wx.navigateTo({ url: '../giftDetail/giftDetail?bundleId='+this.data.bundleId });
+        wx.navigateTo({ url: '../giftDetail/giftDetail?bundleId=' + this.data.bundleId });
     },
     hideMask: function (e) {
         this.setData({

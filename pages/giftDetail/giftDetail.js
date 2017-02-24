@@ -12,8 +12,6 @@ Page({
         imgWidth: 0
     },
     onLoad: function (e) {
-        console.log(getApp().globalData.currentGift);
-
         let gift = getApp().globalData.currentGift;
         let baseImgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + "/" + gift.name + "/";
         let imgAddress = baseImgAddress + "logo";
@@ -51,21 +49,11 @@ Page({
             let str = gift.discounts[i].split('@');
             if (str[0] == '惠') {
                 //优惠
-                discount.image = 'hui.png';
+                discount.image = 'hui.jpg';
                 discount.content = str[1];
                 discounts.push(discount);
             }
         }
-
-        // let images = [];
-        // let baseId = "img-" + (+ new Date());
-        // for (let i = 0; i < gift.images.length; i++) {
-        //     let imageObj = { height: 0 };
-
-        //     imageObj.imageUrl = gift.images[i];
-        //     imageObj.id = baseId + "-" + i;
-        //     images.push(imageObj);
-        // }
 
         this.setData({
             description: description,
@@ -73,10 +61,8 @@ Page({
             logo: imgAddress,
             recommends: recommends,
             discounts: discounts,
-            experiences: experiences,
-            // images: images
+            experiences: experiences
         })
-
     },
     onImageLoad: function (e) {
 
