@@ -23,7 +23,8 @@ Page({
         showMask: false,
         modalBottom: "",
         scrollHeight: "",
-        pageName: ""
+        pageName: "",
+        hospitalId:""
     },
     setDefault: function (e) {
         //show loading
@@ -100,6 +101,7 @@ Page({
         })
     },
     onLoad: function (e) {
+        this.data.hospitalId = e.id;
         wx.getSystemInfo({
             success: (res) => {
                 var h = (res.windowHeight / 2 - 150) + "px";
