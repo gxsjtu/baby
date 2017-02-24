@@ -273,7 +273,6 @@ Page({
         })
     },
     callTel: function(e) {
-        console.log(e);
         var tel = e.currentTarget.dataset.tel;
         wx.makePhoneCall({
           phoneNumber: tel,

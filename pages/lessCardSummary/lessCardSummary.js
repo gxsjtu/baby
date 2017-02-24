@@ -137,5 +137,14 @@ Page({
     },
     textInput: function (e) {
         optIn.textInput(this, e.detail.value);
+    },
+     callTel: function(e) {
+        var tel = e.currentTarget.dataset.tel;
+        wx.makePhoneCall({
+          phoneNumber: tel,
+          success: function(res) {
+            // success
+          }
+        })
     }
 })

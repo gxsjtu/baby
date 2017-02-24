@@ -35,7 +35,7 @@
             {{street.service.address}}
           </view>
         </view>
-        <view style="display:flex;flex-direction:row;margin-top:10px;">
+        <view style="display:flex;flex-direction:row;margin-top:10px;" bindtap="callTel" data-tel="{{street.service.tel}}">
           <view style="width:150rpx;text-align:right;">
             电话：
           </view>
@@ -69,7 +69,7 @@
             {{street.police.address}}
           </view>
         </view>
-        <view style="display:flex;flex-direction:row;margin-top:10px;">
+        <view style="display:flex;flex-direction:row;margin-top:10px;" bindtap="callTel" data-tel="{{street.police.tel}}">
           <view style="width:150rpx;text-align:right;">
             电话：
           </view>
@@ -103,7 +103,7 @@
             {{street.hospital.address}}
           </view>
         </view>
-        <view style="display:flex;flex-direction:row;margin-top:10px;">
+        <view style="display:flex;flex-direction:row;margin-top:10px;" bindtap="callTel" data-tel="{{street.hospital.tel}}">
           <view style="width:150rpx;text-align:right;">
             电话：
           </view>
