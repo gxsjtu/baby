@@ -9,7 +9,6 @@ Page({
     onLoad: function () {
         var orderSvc = new OrderSvc();
         orderSvc.getOrders().then(data => {
-            console.log(data);
             var dataList = data.data.data;
             var newOrderList = [];
             for (var i = 0; i < dataList.length; i++) {
@@ -23,8 +22,9 @@ Page({
                         itemsName += "、" + dataList[i].items[j].name;
                     }
 
-                    var url = this.data.imgAddress + "Bundles/" + order.id + "/" + dataList[i].items[j].name + "/" + dataList[i].items[j].name;
+                    var url = this.data.imgAddress + "bundles/" + order.id + "/" + dataList[i].items[j].name + "/" + dataList[i].items[j].name;
                     imgUrlList.push(encodeURI(url));
+                    // imgUrlList.push(url);
                 }
                 order.itemsName = itemsName;
                 order.imgUrlList = imgUrlList;
