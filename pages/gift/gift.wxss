@@ -240,7 +240,7 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
 }
 
 .input-container>view:first-child{
-  width: 180rpx;
+  width: 240rpx;
   text-align: right;
 }
 
