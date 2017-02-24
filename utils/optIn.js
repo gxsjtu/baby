@@ -102,18 +102,62 @@ function errorClick(_this) {
     }
 }
 
-function confirmInfo(_this, inputValue) {
+// function confirmInfo(_this, inputValue) {
+
+// _this.setData({
+//     'optIn.inputValue': inputValue
+// });
+// }
+
+function textFocus(_this) {
+    //获得焦点
+    if (_this.data.optIn.platform == 'ios') {
+        _this.setData({
+            'optIn.bottom': 300
+        });
+    }
+    else if (_this.data.optIn.platform == 'android') {
+        _this.setData({
+            'optIn.bottom': 0
+        });
+    }
+}
+
+
+function textBlur(_this) {
+    //失去焦点
     _this.setData({
-        showMask: false,
-        'optIn.showError': false
+        'optIn.bottom': 0
     });
-    if (inputValue) {
-        console.log('beigin');
+}
+
+function submitErrorInfo(_this) {
+    if (_this.data.optIn.inputValue) {
+        _this.setData({
+            showMask: false,
+            'optIn.showError': false
+        });
         var actionSvc = new ActionSvc();
-        actionSvc.giveCorrection(_this.data.hospitalId, _this.data.pageName, inputValue).then(data => {
-            console.log(data);
+        actionSvc.giveCorrection(_this.data.hospitalId, _this.data.pageName, _this.data.optIn.inputValue).then(data => {
+            _this.setData({
+                'optIn.inputValue': '',
+                'optIn.bottom': 0
+            });
         })
     }
+}
+
+function textInput(_this, inputValue) {
+    _this.setData({
+        'optIn.inputValue': inputValue
+    });
+}
+
+function getPlatform(_this) {
+    var res = wx.getSystemInfoSync();
+    this.setData({
+        'optIn.platform': res.platform
+    });
 }
 
 module.exports = {
@@ -121,5 +165,9 @@ module.exports = {
     usefulClick: usefulClick,
     medalClick: medalClick,
     errorClick: errorClick,
-    confirmInfo: confirmInfo
+    getPlatform: getPlatform,
+    textFocus: textFocus,
+    textBlur: textBlur,
+    submitErrorInfo: submitErrorInfo,
+    textInput: textInput
 }

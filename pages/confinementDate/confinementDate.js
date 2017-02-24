@@ -14,7 +14,10 @@ Page({
         optIn: {
             num: 0,
             enable: [true, true, false],
-            showError: false
+            showError: false,
+            bottom: 0,
+            platform: '',
+            inputValue: ''
         },
         showResult: false,
         averageIndex: 8,
@@ -61,10 +64,11 @@ Page({
         wx.getSystemInfo({
             success: (res) => {
                 var h = (res.windowHeight / 2 - 150) + "px";
-                var s = (res.windowHeight  - 95) + "px";
+                var s = (res.windowHeight - 95) + "px";
                 this.setData({
                     modalBottom: h,
-                    scrollHeight: s
+                    scrollHeight: s,
+                    'optIn.platform': res.platform
                 })
             }
         })
@@ -154,5 +158,19 @@ Page({
             isXZHid: true,
             showMask: false
         })
+    },
+    textFocus: function (e) {
+        //获得焦点
+        optIn.textFocus(this);
+    },
+    textBlur: function (e) {
+        //失去焦点
+        optIn.textBlur(this);
+    },
+    submitErrorInfo: function (e) {
+        optIn.submitErrorInfo(this);
+    },
+    textInput: function (e) {
+        optIn.textInput(this, e.detail.value);
     }
 })

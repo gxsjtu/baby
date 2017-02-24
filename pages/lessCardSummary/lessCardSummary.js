@@ -15,7 +15,10 @@ Page({
         optIn: {
             num: 0,
             enable: [true, true, true],
-            showError: false
+            showError: false,
+            bottom: 0,
+            platform: '',
+            inputValue: ''
         },
         isXZHid: true,
         pageName: '',
@@ -32,7 +35,8 @@ Page({
                 var s = (res.windowHeight - 246) + "px";
                 this.setData({
                     modalBottom: h,
-                    scrollHeight: s
+                    scrollHeight: s,
+                    'optIn.platform': res.platform
                 })
             }
         })
@@ -99,7 +103,7 @@ Page({
 
     usefulClick: function (e) {
         //点赞
-       optInSvc.usefulClick(this);
+        optInSvc.usefulClick(this);
     },
     medalClick: function (e) {
         optInSvc.medalClick(this);
@@ -120,8 +124,18 @@ Page({
             'optIn.showError': false
         });
     },
-    confirmInfo:function(e){
-        let inputValue = e.detail.value;
-        optIn.confirmInfo(this, inputValue);
+    textFocus: function (e) {
+        //获得焦点
+        optIn.textFocus(this);
+    },
+    textBlur: function (e) {
+        //失去焦点
+        optIn.textBlur(this);
+    },
+    submitErrorInfo: function (e) {
+        optIn.submitErrorInfo(this);
+    },
+    textInput: function (e) {
+        optIn.textInput(this, e.detail.value);
     }
 })

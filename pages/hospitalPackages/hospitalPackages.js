@@ -16,7 +16,10 @@ Page({
         optIn: {
             num: 0,
             enable: [true, true, true],
-            showError: false
+            showError: false,
+            bottom: 0,
+            platform: '',
+            inputValue: ''
         },
         fromStr: "",
         list: [],
@@ -92,7 +95,8 @@ Page({
                 var s = (res.windowHeight - 196) + "px";
                 this.setData({
                     modalBottom: h,
-                    scrollHeight: s
+                    scrollHeight: s,
+                    'optIn.platform': res.platform
                 })
             }
         })
@@ -129,9 +133,9 @@ Page({
                     }
                     pList.push({ name: hospital.packages[i].name, items: pItemList });
                 }
-                this.setData({ list: pList, isPackage:true })
+                this.setData({ list: pList, isPackage: true })
             } else {
-                this.setData({ list: hospital.packages, isPackage:true })
+                this.setData({ list: hospital.packages, isPackage: true })
             }
         } else {
             wx.setNavigationBarTitle({
@@ -156,10 +160,10 @@ Page({
                     }
                     pList.push({ name: hospital.prepares[i].name, items: pItemList });
                 }
-                this.setData({ list: pList, isPackage:false });
+                this.setData({ list: pList, isPackage: false });
             }
             else {
-                this.setData({ list: hospital.prepares, isPackage:false });
+                this.setData({ list: hospital.prepares, isPackage: false });
             }
             // console.log(hospital);
         }
@@ -187,5 +191,19 @@ Page({
             isXZHid: true,
             showMask: false
         })
+    },
+    textFocus: function (e) {
+        //获得焦点
+        optIn.textFocus(this);
+    },
+    textBlur: function (e) {
+        //失去焦点
+        optIn.textBlur(this);
+    },
+    submitErrorInfo: function (e) {
+        optIn.submitErrorInfo(this);
+    },
+    textInput: function (e) {
+        optIn.textInput(this, e.detail.value);
     }
 })

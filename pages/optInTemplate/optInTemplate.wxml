@@ -14,8 +14,9 @@
       <image src="{{enable[2]?'../../assets/images/error.jpg':'../../assets/images/errordisable.jpg'}}" />
       <view class="optInTemplate-title">纠错</view>
     </view>
-    <view class="optInTemplate-error-container" wx:if="{{showError}}">
-      <textarea placeholder="撰写纠错信息" bindconfirm="confirmInfo" placeholder-class="optInTemplate-placeholder" />
+    <view class="optInTemplate-error-container" wx:if="{{showError}}" style="bottom:{{bottom}}px">
+    <view class="alert-title">撰写纠错信息<view class="submit {{inputValue?'':'disable'}}" bindtap="submitErrorInfo">提交</view></view>
+      <textarea placeholder="撰写纠错信息" bindconfirm="confirmInfo" placeholder-class="optInTemplate-placeholder" bindfocus="textFocus" bindblur="textBlur" bindinput="textInput"/>
     </view>
   </view>
 </template>

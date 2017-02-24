@@ -56,8 +56,8 @@ page {
 .optInTemplate-error-container {
   position: absolute;
   width: 750rpx;
-  height: 800rpx;
-  bottom: 0rpx;
+  height: 500rpx;
+  /*bottom: 0rpx;*/
   left: 0;
   z-index: 1000;
   background: white;
@@ -69,7 +69,7 @@ page {
   letter-spacing: -0.31px;
   background: #f9f9f9;
   width: 650rpx;
-  height: 700rpx;
+  height: 400rpx;
   padding: 50rpx;
 }
 
@@ -78,4 +78,30 @@ page {
   font-size: 16px;
   color: #9d9d9d;
   letter-spacing: -0.31px;
+}
+
+.alert-title {
+  background-image: linear-gradient(-95deg, #ff6f6f 0%, #ff4949 54%, #ff6868 100%);
+  font-family: PingFangSC-Medium;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: -0.43px;
+  line-height: 96rpx;
+  height: 96rpx;
+  text-align: center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  position: relative;
+}
+
+.submit{
+  position: absolute;
+  right: 10rpx;
+  font-size: 16px;
+  top: 0;
+  padding: 0 20rpx;
+}
+
+.disable{
+  color: #d3d3d3;
 }

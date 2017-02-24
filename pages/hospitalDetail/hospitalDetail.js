@@ -14,7 +14,10 @@ Page({
         optIn: {
             num: 0,
             enable: [true, true, true],
-            showError: false
+            showError: false,
+            bottom: 0,
+            platform: '',
+            inputValue: ''
         },
         isXZHid: true,
         pageName: '',
@@ -24,7 +27,7 @@ Page({
         modalBottom: "",
         scrollHeight: "",
         pageName: "",
-        hospitalId:""
+        hospitalId: ""
     },
     setDefault: function (e) {
         //show loading
@@ -108,7 +111,8 @@ Page({
                 var s = (res.windowHeight - 50 - 55 - 1 - 2 - 2) + "px";
                 this.setData({
                     modalBottom: h,
-                    scrollHeight: s
+                    scrollHeight: s,
+                    'optIn.platform': res.platform
                 })
             }
         })
@@ -161,4 +165,18 @@ Page({
             'optIn.showError': false
         });
     },
+    textFocus: function (e) {
+        //获得焦点
+        optIn.textFocus(this);
+    },
+    textBlur: function (e) {
+        //失去焦点
+        optIn.textBlur(this);
+    },
+    submitErrorInfo: function (e) {
+        optIn.submitErrorInfo(this);
+    },
+    textInput: function (e) {
+        optIn.textInput(this, e.detail.value);
+    }
 })

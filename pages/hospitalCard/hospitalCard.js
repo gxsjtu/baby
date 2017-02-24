@@ -20,26 +20,27 @@ Page({
         optIn: {
             num: 0,
             enable: [true, true, true],
-            showError: false
+            showError: false,
+            bottom: 0,
+            platform: '',
+            inputValue:''
         },
         isXZHid: true,
         animationData: {},
         modalBottom: "",
         xzType: "",
         scrollHeight: "",
-        hospitalTitle:''
+        hospitalTitle: ''
     },
     onLoad: function (param) {
-        wx.getSystemInfo({
-            success: (res) => {
-                var h = (res.windowHeight / 2 - 150) + "px";
-                var s = (res.windowHeight - 50) + "px";
-                this.setData({
-                    modalBottom: h,
-                    scrollHeight: s
-                })
-            }
-        })
+        var res = wx.getSystemInfoSync();
+        var h = (res.windowHeight / 2 - 150) + "px";
+        var s = (res.windowHeight - 50) + "px";
+        this.setData({
+            modalBottom: h,
+            scrollHeight: s,
+            'optIn.platform': res.platform
+        });
         this.getPageData(param.do);
     },
     getPageData: function (option) {
@@ -142,9 +143,9 @@ Page({
             }
         }
 
-        let hospitalTitle = hospital.alias+userOption;
+        let hospitalTitle = hospital.alias + userOption;
         this.setData({
-            hospitalTitle:hospitalTitle
+            hospitalTitle: hospitalTitle
         });
 
         optIn.setOptInData(this);
@@ -250,8 +251,18 @@ Page({
             showMask: false
         })
     },
-    confirmInfo: function (e) {
-        let inputValue = e.detail.value;
-        optIn.confirmInfo(this, inputValue);
+    textFocus: function (e) {
+        //获得焦点
+        optIn.textFocus(this);
+    },
+    textBlur: function (e) {
+        //失去焦点
+        optIn.textBlur(this);
+    },
+    submitErrorInfo: function (e) {
+        optIn.submitErrorInfo(this);
+    },
+    textInput: function(e){
+        optIn.textInput(this,e.detail.value);
     }
 })
