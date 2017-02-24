@@ -1,4 +1,9 @@
+const GLOBAL = require('../../global.js');
+
 Page({
+    data:{
+        imgAddress: GLOBAL.SERVER + "/images/"
+    },
     call: function (e) {
         let phone = e.target.dataset.phone;
         if (phone) {

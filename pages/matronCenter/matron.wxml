@@ -3,7 +3,7 @@
   <!--5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/1.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/1" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -33,7 +33,7 @@
   <!--5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/2.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/2" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -63,7 +63,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/3.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/3" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -93,7 +93,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/4.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/4" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -123,7 +123,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/5.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/5" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -153,7 +153,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/6.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/6" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -183,7 +183,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/7.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/7" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -213,7 +213,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/8.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/8" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -243,7 +243,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/9.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/9" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -273,7 +273,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/10.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/10" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -303,7 +303,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/11.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/11" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -333,7 +333,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/12.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/12" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -363,7 +363,7 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/13.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/13" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -393,7 +393,7 @@
   <!--4-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/14.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/14" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">
@@ -423,7 +423,7 @@
   <!--4-->
   <view class="item">
     <view class="image-container">
-      <image src="../../assets/images/matron/15.jpg" style="width:160rpx;height:160rpx;"></image>
+      <image src="{{imgAddress}}matron/15" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
       <view class="title">

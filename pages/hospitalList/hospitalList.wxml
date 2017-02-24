@@ -6,11 +6,11 @@
             <image src="../../assets/images/location.png" />
             <view class="location-text">上海</view>
             <view class="search-container">
-                <image src="../../assets/images/hospitalList/Shape.png" />
+                <image src="../../assets/images/Shape.png" />
                 <input type="text" placeholder="搜索医院名称" bindinput="searchFunc" />
             </view>
         </view>
-        <image style="width: 750rpx; height: 240rpx;" src="../../assets/images/hospitalList/header.jpg" />
+        <image style="width: 750rpx; height: 240rpx;" src="../../assets/images/header.jpg" />
         <view class="filter-container">
 
             <view catchtap="starFilter">
