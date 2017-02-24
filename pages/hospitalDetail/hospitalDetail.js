@@ -136,8 +136,9 @@ Page({
     },
     usefulClick: function (e) {
         //点赞
-        var actionSvc = new ActionSvc();
-        var app = getApp();
+        // var actionSvc = new ActionSvc();
+        // var app = getApp();
+        optInSvc.usefulClick(this);
     },
     medalClick: function (e) {
         optInSvc.medalClick(this);

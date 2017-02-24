@@ -57,11 +57,6 @@
         </view>
       </view>
       <view style="background-color:#ebebeb;height:"></view>
-
-      <!--<template is="plTemp"/>
-            <view hidden="{{ishid}}" class="result">
-            <template is="pingTemp"/>
-            </view>-->
     </scroll-view>
     <template is="optInTemplate" data="{{...optIn}}"></template>
     <view animation="{{animationData}}" class="result" hidden="{{isXZHid}}" bindtap="hidAnimat" style="bottom:{{modalBottom}}">
