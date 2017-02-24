@@ -205,7 +205,7 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
 
 .alert {
   width: 660rpx;
-  height: 600rpx;
+  height: 630rpx;
   position: absolute;
   bottom: 0rpx;
   left: 45rpx;
@@ -253,5 +253,5 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
 }
 
 input{
-  width: 400rpx;
+  width: 360rpx;
 }
