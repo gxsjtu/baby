@@ -7,8 +7,8 @@
     <view class="description-name">{{description}}</view>
     <view class="detail" wx:for="{{details}}" wx:key="{{index}}" wx:for-item="detail">{{detail}}</view>
   </view>
-  <view class="split"></view>
-  <view class="recommends">
+  <view class="split" hidden="{{recommends.length == 0}}"></view>
+  <view class="recommends" hidden="{{recommends.length == 0}}">
     <view class="flag">事妈推荐</view>
     <view class="recommends-container">
       <view class="recommend" wx:for="{{recommends}}" wx:key="{{index}}" wx:for-item="recommend">
@@ -16,8 +16,8 @@
       </view>
     </view>
   </view>
-  <view class="split"></view>
-  <view class="discounts">
+  <view class="split" hidden="{{discounts.length == 0}}"></view>
+  <view class="discounts" hidden="{{discounts.length == 0}}">
     <view class="flag">事妈福利</view>
     <view class="discounts-container">
       <view class="discount" wx:for="{{discounts}}" wx:key="{{index}}" wx:for-item="discount">
@@ -28,8 +28,8 @@
       </view>
     </view>
   </view>
-  <view class="split"></view>
-  <view class="experiences">
+  <view class="split" hidden="{{experiences.length == 0}}"></view>
+  <view class="experiences" hidden="{{experiences.length == 0}}">
     <view class="flag">事妈体验</view>
     <view class="recommends-container">
       <view class="recommend" wx:for="{{experiences}}" wx:key="{{index}}" wx:for-item="experience">
@@ -38,4 +38,12 @@
     </view>
   </view>
   <view class="split"></view>
+  <view style="display:none">
+    <image wx:for="{{images}}" wx:key="id" id="{{item.id}}" src="{{item.imageUrl}}" bindload="onImageLoad"></image>
+  </view>
+  <view>
+    <view wx:for="{{images}}" wx:key="id" id="{{item.id}}" style="width:750rpx;height:{{item.height}}px;">
+      <image  src="{{item.imageUrl}}" style="width:750rpx;height:{{item.height}}px"></image>
+    </view>
+  </view>
 </view>
