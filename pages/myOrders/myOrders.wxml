@@ -1,12 +1,12 @@
-<view class="container">
-  <view wx:for="{{orderList}}" wx:for-item="order" wx:key="{{order.id}}" style="width:730rpx;background:#fff;margin-top:5px;margin-left:5px;">
+<view class="{{isNoRecord ? 'noRecord' : 'container'}}">
+  <view hidden="{{isNoRecord}}" wx:for="{{orderList}}" wx:for-item="order" wx:key="{{order.id}}" style="width:730rpx;background:#fff;margin-top:5px;margin-left:5px;">
     <view style="display:flex;flex-direction:row;padding-top:10px;">
-      <view class="font-s" >礼包名称：</view>
+      <view class="font-s">礼包名称：</view>
       <view style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #3D3D3D;letter-spacing: -0.36px;">{{order.name}}</view>
     </view>
     <view style="display:flex;flex-direction:row;padding-top:10px;">
-      <view class="font-s" >申领日期：</view>
-      <view  style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #3D3D3D;letter-spacing: -0.36px;">{{order.date}}</view>
+      <view class="font-s">申领日期：</view>
+      <view style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #3D3D3D;letter-spacing: -0.36px;">{{order.date}}</view>
     </view>
     <view style="display:flex;flex-direction:row;padding-top:10px;">
       <view class="font-s">礼包内容：</view>
@@ -17,5 +17,10 @@
         <image src="{{imgUrl}}" style="height:48px;width:48px;"></image>
       </view>
     </view>
+  </view>
+  <view hidden="{{!isNoRecord}}">
+    <image src="../../assets/images/noRecord.jpg" style="width: 438rpx;height: 207rpx;"></image>
+  </view>
+  <view>
   </view>
 </view>

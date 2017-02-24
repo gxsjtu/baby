@@ -13,6 +13,15 @@
   background: #ebebeb;
 }
 
+.noRecord {
+  width: 750rpx;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 page {
   height: 100%;
 }
