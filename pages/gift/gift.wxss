@@ -132,8 +132,6 @@
 }
 
 .avatar image {
-  /*width: 80%;
-  height: 100%;*/
   width: 200rpx;
   height: 200rpx;
 }
@@ -149,12 +147,12 @@
 }
 
 .gift-info {
-  font-size: 24rpx;
+  font-size: 30rpx;
   font-family: PingFangSC-Regular;
   padding-left: 20rpx;
   padding-right: 20rpx;
   padding-bottom: 10rpx;
-  line-height: 36rpx;
+  line-height: 46rpx;
 }
 
 .gift-info-container {
@@ -209,7 +207,7 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
   width: 660rpx;
   height: 600rpx;
   position: absolute;
-  bottom: 150rpx;
+  bottom: 0rpx;
   left: 45rpx;
   background: white;
   z-index: 1000;
