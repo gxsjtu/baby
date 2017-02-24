@@ -67,8 +67,7 @@ Page({
                     dataList[i].p = 99999;
                 }
             }
-
-            dataList = _.sortBy(dataList, ['d', 's', 'e', 'p']);
+            dataList = _.orderBy(dataList, ['score','d', 's', 'e', 'p'], ['desc','asc','asc','asc','asc']);
 
             this.setData({
                 searchArray: dataList, //查询结果
@@ -109,7 +108,7 @@ Page({
             if (this.data.selectOrder == "距离") {
                 list = _.sortBy(list, ['d', 's', 'e', 'p']);
             } else if (this.data.selectOrder == "口碑") {
-                list = _.sortBy(list, ['score', 's', 'e', 'p', 'd']);
+                list = _.orderBy(list,  ['score','d', 's', 'e', 'p'], ['desc','asc','asc','asc','asc']);
             } else if (this.data.selectOrder == "生产费用") {
                 list = _.sortBy(list, ['p', 's', 'e', 'd']);
             } else if (this.data.selectOrder == "建卡时间") {

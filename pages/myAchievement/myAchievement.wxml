@@ -1,6 +1,6 @@
 <view>
   <view style="display:flex;flex-direction:row;flex-wrap:wrap;position:relative;">
-    <image src="../../assets/images/mj.jpg" style="width:375px;height:{{imgHeight}};z-index:-99999;position:absolute;" bindload="getHeight"></image>
+    <image src="../../assets/images/mj.jpg" style="width:{{imgWidth}};height:{{imgHeight}};z-index:-99999;position:absolute;" bindload="getHeight"></image>
     <view wx:for="{{topList}}" wx:for-item="top" wx:key="{{top}}" style="height:{{avgHeight}};width:{{viewWidth}};z-index:9999;position:relative;">
       <image src="../../assets/images/xzyy.png" style="width:{{viewWidth}};height:{{viewWidth}};position:absolute;bottom:0"></image>
       <view class="font-s" style="position:absolute;bottom:{{xzBottom}};width:{{viewWidth}};text-align:center;">{{top}}</view>
