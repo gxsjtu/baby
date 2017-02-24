@@ -69,8 +69,8 @@ page {
   letter-spacing: -0.31px;
   background: #f9f9f9;
   width: 650rpx;
-  height: 400rpx;
-  padding: 50rpx;
+  height: 450rpx;
+  padding: 50rpx 50rpx 0rpx;
 }
 
 .optInTemplate-placeholder {
