@@ -11,7 +11,6 @@
       <view class="credentials">
         <view class="credential-container">
           <image src="{{image.src}}" style="width:{{image.width}}rpx;height:{{image.height}}rpx;"/>
-          <!--<view class="credential-name" wx:if="{{image.name!=''}}">{{image.name}}</view>-->
         </view>
       </view>
     </view>

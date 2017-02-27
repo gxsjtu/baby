@@ -24,7 +24,7 @@
       </view>
       <view class="item">
         <view class="left">
-          <view class="name">{{item.description}}</view>
+          <view class="name"><view>{{item.description}}</view><view>{{item.unit}}</view></view>
           <view style="height:10rpx"></view>
           <view class="list" wx:for="{{item.details}}" wx:key="{{index}}" wx:for-item="detail">{{detail}}</view>
         </view>

@@ -84,7 +84,9 @@
   padding-right: 20rpx;
   padding-bottom: 10rpx;
   line-height: 36rpx;
-  color:#b8b8b8;
+  color: #b8b8b8;
+  display: flex;
+  justify-content: space-between;
 }
 
 .menu {
@@ -235,16 +237,16 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
   border-top-right-radius: 2px;
 }
 
-.alert-container{
+.alert-container {
   padding: 20rpx;
 }
 
-.input-container>view:first-child{
+.input-container>view:first-child {
   width: 240rpx;
   text-align: right;
 }
 
-.picker{
+.picker {
   border: 1px solid black;
   text-align: center;
   padding: 4rpx 30rpx;
@@ -252,6 +254,6 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
   border-radius: 2rpx;
 }
 
-input{
+input {
   width: 360rpx;
 }
