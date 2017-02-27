@@ -49,6 +49,7 @@ Page({
         var giftSvc = new GiftSvc();
         giftSvc.displayBundle().then((data) => {
             let obj = data.data.data;
+            console.log(obj);
             if (obj) {
                 let imgAddress = GLOBAL.SERVER + "/images/bundles/" + obj._id + "/";
                 let items = [];

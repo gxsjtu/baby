@@ -217,7 +217,7 @@ page {
 .menu-container{
     height: 66rpx;
     line-height: 66rpx;
-    border: 1rpx solid #FF4949;
+    border: 1px solid #FF4949;
     border-radius: 100rpx;
     margin: 0rpx 90rpx 0;
     display: flex;
