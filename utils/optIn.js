@@ -44,6 +44,10 @@ function usefulClick(_this) {
                     'optIn.num': _this.data.optIn.num + 1
                 });
                 //更新globalData
+                var user = getApp().globalData.user;
+                if(user.goods == null || user.goods == undefined || user.goods.length <= 0){
+                    getApp().globalData.user.goods = []; 
+                }
                 let goods = getApp().globalData.user.goods;
                 let good = { hospitalId: _this.data.hospitalId, pageId: _this.data.pageName };
                 goods.push(good);
@@ -84,6 +88,10 @@ function medalClick(_this) {
         var actionSvc = new ActionSvc();
         actionSvc.getModal(_this.data.pageName).then(data => {
             if (data.data.message == 'OK') {
+                var user = getApp().globalData.user;
+                if(user.modals == null || user.modals == undefined || user.modals.length <= 0){
+                    getApp().globalData.user.modals = []; 
+                }
                 getApp().globalData.user.modals.push(_this.data.pageName);
                 _this.setData({
                     'optIn.enable[1]': false
