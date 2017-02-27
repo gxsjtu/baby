@@ -15,7 +15,7 @@
       </view>
       <view class="menu-item">
         <view class="menu-name">个人信息</view>
-        <view class="menu-desc">编辑修改个人资料</view>
+        <view class="menu-desc">查看个人资料</view>
       </view>
       <view class="arrow">
       </view>

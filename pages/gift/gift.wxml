@@ -89,8 +89,8 @@
   </view>
   <view class="gift-info" hidden="{{selectedMenuIndex!=1}}">
     <view class="gift-info-container">
-      <view>1、每个申请资格每周仅可申请一次试用产品或礼包，其余试用资格下周可继续申请。同一试用品或试用礼包，没人只可申领一次。</view>
-      <view>2、试用品数量有限，先到先得。</view>
+      <view>1、每个申请资格每周仅可申请一次试用产品或礼包，其余试用资格下周可继续申请。同一试用品或试用礼包，每人只可申领一次。</view>
+      <view>2、试用品数量有限，每人只可申领一次，先到先得。</view>
       <view>3、试用品每周六统一发货，请事妈们耐心等待。</view>
     </view>
   </view>
