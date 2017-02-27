@@ -112,6 +112,7 @@ Page({
                 let fromNow = data.data.data.fromNow;
                 let week = data.data.data.week;
                 this.setData({ preBorn: preBorn, fromNow: fromNow, week: week, showResult: true, btnChecking: false });
+                getApp().globalData.user.preBorn = preBorn;
             } else {
                 this.setData({ showResult: false, btnChecking: false });
                 wx.showToast({ title: data.data.message, duration: 3000 })

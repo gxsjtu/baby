@@ -10,7 +10,6 @@ Page({
     },
     onLoad: function (e) {
         let globalData = getApp().globalData;
-        console.log(globalData);
         if (!globalData.hospital) {
             globalData.hospital = globalData.defaultHos;
         }
