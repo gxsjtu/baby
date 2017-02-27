@@ -16,25 +16,25 @@
     <view class="item-container">
       <view class="item-name">预产期</view>
       <view class="item-value">
-        <input type="text" bindinput="setConfinementDate" value="{{confinementDate}}" />
+        <input type="text" bindinput="setConfinementDate" value="{{confinementDate}}" disabled="true"/>
       </view>
     </view>
     <view class="item-container">
       <view class="item-name">手机号码</view>
       <view class="item-value">
-        <input type="text" bindinput="setPhone" value="{{phone}}" />
+        <input type="text" bindinput="setPhone" value="{{phone}}" disabled="true"/>
       </view>
     </view>
     <view class="item-container">
       <view class="item-name">户籍地址</view>
       <view class="item-value">
-        <input type="text" bindinput="setCensus" value="{{census}}" />
+        <input type="text" bindinput="setCensus" value="{{census}}" disabled="true"/>
       </view>
     </view>
     <view class="item-container">
       <view class="item-name">居住地址</view>
       <view class="item-value">
-        <input type="text" bindinput="setCurrentAddress" value="{{currentAddress}}" />
+        <input type="text" bindinput="setCurrentAddress" value="{{currentAddress}}" disabled="true"/>
       </view>
     </view>
     <view class="item-container">
