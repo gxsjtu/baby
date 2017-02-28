@@ -59,10 +59,11 @@
 
 .menu-item {
   flex-direction: column;
-  width: 560rpx;
+  width: 500rpx;
+  margin-left:60rpx;
 }
 
-.icon {
+/*.icon {
   width: 50rpx;
   height: 50rpx;
   margin-right: 60rpx;
@@ -72,6 +73,21 @@
 .icon image {
   height: 100%;
   width: 100%;
+}*/
+
+.icon {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #F26A77;
+}
+
+.icon image {
+  height: 70%;
+  width: 70%;
 }
 
 .arrow {
@@ -80,6 +96,17 @@
   border-bottom: 2rpx solid #dcdcdc;
   border-right: 2rpx solid #dcdcdc;
   transform: rotate(-45deg);
+}
+
+.contact{
+  /*display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+  width:100%;*/
+  border: 1px solid red;
+  font-size: 16px;
+  color:red;
 }
 
 /*.container{

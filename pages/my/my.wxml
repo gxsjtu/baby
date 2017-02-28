@@ -9,39 +9,58 @@
     <image src="../../assets/images/path.png" style="width:750rpx;height:200rpx;margin-top:94rpx;"></image>
   </view>
   <view class="menu-container">
-    <view class="menu" bindtap="gotoInfo">
-      <view class="icon">
-        <image src="../../assets/images/info.png"></image>
-      </view>
+    <view class="menu" data-menuname="个人信息">
       <view class="menu-item">
         <view class="menu-name">个人信息</view>
         <view class="menu-desc">查看个人资料</view>
       </view>
-      <view class="arrow">
+      <view class="icon" bindtap="gotoInfo">
+        <image src="../../assets/images/grxx.png"></image>
       </view>
+
+      <!--<view class="arrow">
+      </view>-->
     </view>
-    <view class="menu" data-menuname="我的成就" bindtap="gotoAchievement">
-      <view class="icon">
-        <image src="../../assets/images/achievement.png"></image>
-      </view>
+    <view class="menu" data-menuname="我的成就">
       <view class="menu-item">
         <view class="menu-name">我的成就</view>
         <view class="menu-desc">查看自己所获得的所有成就</view>
       </view>
-      <view class="arrow">
+      <view class="icon" bindtap="gotoAchievement">
+        <image src="../../assets/images/wdcj.png"></image>
       </view>
+
+      <!--<view class="arrow">
+      </view>-->
     </view>
-    <view class="menu" bindtap="gotoMyOrders" data-menuname="我的订单">
-      <view class="icon">
-        <image src="../../assets/images/order.png"></image>
-      </view>
+    <view class="menu" data-menuname="我的订单">
       <view class="menu-item">
         <view class="menu-name">我的申领</view>
         <view class="menu-desc">查看所有申领内容</view>
       </view>
-      <view class="arrow">
+      <view class="icon" bindtap="gotoMyOrders">
+        <image src="../../assets/images/wdsl.png"></image>
       </view>
+
+      <!--<view class="arrow">
+      </view>-->
     </view>
+
+    <view class="menu" data-menuname="联系客服">
+      <view class="menu-item">
+        <view class="menu-name">联系客服</view>
+        <view class="menu-desc">联系客服</view>
+      </view>
+      <view class="icon">
+       <contact-button type="default-light" session-session-from="weapp" size="27"></contact-button>
+      </view>
+
+      <!--<view class="arrow">
+      </view>-->
+    </view>
+    <!--<view class="menu">
+      <contact-button class="contact" type="default-dark" session-session-from="weapp" size="27px"></contact-button>
+    </view>-->
     <view class="menu" bindtap="gotoWait" data-menuname="我的收藏" wx:if="{{false}}">
       <view class="icon">
         <image src="../../assets/images/favorite.png"></image>
