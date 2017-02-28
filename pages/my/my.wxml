@@ -48,7 +48,7 @@
 
     <view class="menu" data-menuname="联系客服">
       <view class="menu-item">
-        <view class="menu-name">联系客服</view>
+        <view class="menu-name">在线客服</view>
         <view class="menu-desc">联系事妈，获取帮助</view>
       </view>
       <view class="icon">
