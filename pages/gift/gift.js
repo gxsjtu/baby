@@ -34,7 +34,7 @@ Page({
             cities: locationSvc.provinces[0].cities
         });
 
-        if (getApp().globalData.user.deliveryAddress) {
+        if (getApp().globalData.user.deliveryAddress!=undefined) {
             let address = getApp().globalData.user.deliveryAddress;
             let selectProvince = _.findIndex(this.data.province, function (p) { return p == address.province; });
             let selectCity = _.findIndex(this.data.cities, function (c) { return c == address.city; });

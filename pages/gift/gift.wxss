@@ -158,7 +158,7 @@
 }
 
 .gift-info-container {
-  padding: 30rpx 40rpx;
+  padding: 30rpx 10rpx;
 }
 
 .title {
@@ -256,4 +256,42 @@ button[disabled][type="default"], wx-button[disabled]:not([type]) {
 
 input {
   width: 360rpx;
+}
+
+.box {
+  border: 1px solid #e5e5e5;
+}
+
+.box-header {
+  margin: 4rpx;
+  background: #e5e5e5;
+  border-bottom: 4rpx solid rgba(0, 0, 0, 0.1);
+  padding-left: 10rpx;
+}
+
+.box-container {
+  padding: 10rpx 16rpx 40rpx;
+}
+
+.item-list {
+  margin-top: 10rpx;
+}
+
+.list-header {
+  color: white;
+  display: inline-block;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+.list-content{
+  margin-left:20rpx;
+}
+
+.role{
+  margin-top: 40rpx;
+}
+
+.role:first-child{
+  margin-top: 20rpx;
 }
