@@ -81,7 +81,7 @@ Page({
                     item.imageUrl = encodeURI(imgAddress + item.name + '/' + item.name);
                     items.push(item);
                 }
-                inventory = obj.inventory - obj.applies;
+
                 if (!obj.canGetBundle) {
                     this.setData({
                         btnText: '您已领取过该礼包'
@@ -89,17 +89,16 @@ Page({
                 }
                 else {
                     //判断库存
-                    if (inventory <= 0) {
+                    if (obj.inventory - obj.applies <= 0) {
                         //库存不足
                         obj.canGetBundle = false;
-                        inventory = 0;
                         this.setData({
                             btnText: '礼包已被领完'
                         });
                     }
                 }
                 this.setData({
-                    inventory: inventory,
+                    inventory: obj.inventory,
                     applies: obj.applies,
                     items: items,
                     imgAddress: imgAddress,
