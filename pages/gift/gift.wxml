@@ -37,7 +37,7 @@
       </view>
       <view class="split"></view>
     </view>
-    <view style="display:flex;flex-direction:column;align-items:center;height:300rpx;width:750rpx;background:#fff;position:relative;">
+    <view style="display:flex;flex-direction:column;align-items:center;height:190rpx;width:750rpx;background:#fff;position:relative;">
       <view style="display:flex;color:#b8b8b8;font-size:16px;margin-top:20rpx;">
         <view>礼包库存：
           <text style="color:#df3030;">{{(inventory - applies)
@@ -50,14 +50,6 @@
       </view>
       <view style="height:20rpx;"></view>
       <button disabled="{{!btnDefaultDisabled}}" class="{{!btnDefaultDisabled ? 'btn-f' : 'btn-style'}}" bindtap="showAlert" loading="{{btnSubmit}}">{{btnText}}</button>
-      <view style="display:flex;color:#df3030;font-size:15px;margin-top:40rpx;">
-        <view>分享方式：</view>
-        <view style="display:flex;flex-direction:column;">
-          <view>点击本页面右上角...</view>
-          <view>选择
-            <text style="color:black;margin-left:10rpx;margin-right:10rpx;">分享</text>即可</view>
-        </view>
-      </view>
       <view class="alert" hidden="{{!showAlert}}" style="bottom:100rpx;">
         <view class="alert-title">请输入收货人地址</view>
         <view class="alert-container">
