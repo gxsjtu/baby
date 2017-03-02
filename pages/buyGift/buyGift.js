@@ -9,6 +9,7 @@ Page({
     onLoad: function(e) {
         var bId = e.id;
         let gift = getApp().globalData.currentGift;
+        wx.setNavigationBarTitle({ title: gift.name });
         this.setData({
             imgAddress:GLOBAL.SERVER + "/images/bundles/" + bId + "/" + gift.name + "/purchase"
         })
