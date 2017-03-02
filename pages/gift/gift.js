@@ -43,7 +43,7 @@ Page({
         applies: 0,
         inventory: 0
     },
-    onLoad: function (e) {
+    initData: function (callback) {
         var locationSvc = new LocationSvc();
         let provinces = [];
         let inventory = 0;
@@ -105,9 +105,18 @@ Page({
                     bundleId: obj._id,
                     btnDefaultDisabled: obj.canGetBundle
                 })
-                console.log(items);
+            }
+            if (callback) {
+                callback();
+            }
+        }).catch(() => {
+            if (callback) {
+                callback();
             }
         });
+    },
+    onLoad: function (e) {
+        this.initData();
     },
     selectFirst: function () {
         this.setData({ selectedMenuIndex: 0 });
@@ -155,7 +164,7 @@ Page({
         });
     },
     hideMask: function (e) {
-        this.setData({ showAlert: false, showError: false, showMask: false });
+        this.setData({ showAlert: false, showError: false, showMask: false, btnSubmit: false });
     },
     provinceChange: function (e) {
         this.setData({ selectProvince: e.detail.value })
@@ -198,5 +207,12 @@ Page({
     },
     showError: function (err) {
         this.setData({ showError: true, showMask: true, err: err });
+    },
+    onPullDownRefresh: function () {
+        this.initData(() => {
+            wx.stopPullDownRefresh();
+            console.log('pull');
+        });
+        // wx.stopPullDownRefresh();
     }
 })
