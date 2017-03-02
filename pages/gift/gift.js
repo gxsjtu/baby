@@ -123,6 +123,7 @@ Page({
         let tel = this.data.addressTel;
         let detail = this.data.addressDetail;
         giftSvc.getBundle(this.data.bundleId, province, city, name, tel, detail).then((data) => {
+            console.log(data);
             if (data.data.message == 'OK') {
                 var deliveryAddress = {
                     city: city,
@@ -132,7 +133,7 @@ Page({
                     tel: tel
                 };
                 getApp().globalData.user.deliveryAddress = deliveryAddress;
-                this.setData({ btnDefaultDisabled: false, btnAddressDisabled: false, btnSubmit: false, showAlert: false, showMask: false });
+                this.setData({ btnDefaultDisabled: false, btnAddressDisabled: false, btnSubmit: false, showAlert: false, showMask: false, applies: data.data.data });
                 wx.navigateTo({ url: '../myOrders/myOrders' });
             } else {
                 this.setData({ btnAddressDisabled: true, btnSubmit: false });
