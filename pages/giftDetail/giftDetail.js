@@ -9,9 +9,26 @@ Page({
         discounts: [],
         experiences: [],
         images: [],
-        imgWidth: 0
+        imgWidth: 0,
+        scrollHeight: "",
+        bottomWidth:"",
+        buyWidth:""
     },
     onLoad: function (e) {
+
+        wx.getSystemInfo({
+            success: (res) => {
+                // success
+                var w = parseInt(res.windowWidth / 4) - 5;
+                var h = res.windowHeight - 51;
+                this.setData({
+                    scrollHeight: h + "px",
+                    bottomWidth:w + "px",
+                    buyWidth: (w + 15) + "px"
+                })
+            }
+        })
+
         let gift = getApp().globalData.currentGift;
         let baseImgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + "/" + gift.name + "/";
         let imgAddress = baseImgAddress + "logo";
