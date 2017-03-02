@@ -105,6 +105,7 @@ Page({
                     bundleId: obj._id,
                     btnDefaultDisabled: obj.canGetBundle
                 })
+                console.log(items);
             }
         });
     },

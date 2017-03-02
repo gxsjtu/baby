@@ -23,7 +23,8 @@
         "pages/myAchievement/myAchievement",
         "pages/gift/gift",
         "pages/myOrders/myOrders",
-        "pages/giftDetail/giftDetail"
+        "pages/giftDetail/giftDetail",
+        "pages/buyGift/buyGift"
     ],
     "window": {
         "backgroundTextStyle": "light",

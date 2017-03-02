@@ -12,19 +12,21 @@ Page({
         imgWidth: 0,
         scrollHeight: "",
         bottomWidth:"",
-        buyWidth:""
+        buyWidth:"",
+        bundleId:""
     },
     onLoad: function (e) {
-
+        this.data.bundleId = e.bundleId;
         wx.getSystemInfo({
             success: (res) => {
                 // success
-                var w = parseInt(res.windowWidth / 4) - 5;
+                var w = parseInt(res.windowWidth / 4) - 10;
                 var h = res.windowHeight - 51;
+                var buyW = res.windowWidth - (w * 3);
                 this.setData({
                     scrollHeight: h + "px",
                     bottomWidth:w + "px",
-                    buyWidth: (w + 15) + "px"
+                    buyWidth: buyW + "px"
                 })
             }
         })
@@ -111,5 +113,10 @@ Page({
         this.setData({
             images: images
         });
+    },
+    buyGift: function () {
+        wx.navigateTo({
+          url: '../buyGift/buyGift?id=' + this.data.bundleId
+        })
     }
 })

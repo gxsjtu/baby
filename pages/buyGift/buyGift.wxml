@@ -1,0 +1,3 @@
+<view>
+    <image src="{{imgAddress}}" style="width:{{imgWidth}};height:{{imgHeight}};" bindload="getSize"></image>
+</view>

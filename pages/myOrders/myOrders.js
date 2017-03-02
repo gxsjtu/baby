@@ -5,7 +5,7 @@ Page({
     data: {
         orderList: [],
         imgAddress: GLOBAL.SERVER + "/images/",
-        isNoRecord: true
+        isNoRecord: false
     },
     onLoad: function () {
         var orderSvc = new OrderSvc();
