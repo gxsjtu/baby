@@ -1,5 +1,6 @@
 const GiftSvc = require('../../services/giftSvc.js');
 const LocationSvc = require('../../services/locationSvc.js');
+const ShareSvc = require('../../services/shareSvc.js');
 const GLOBAL = require('../../global.js');
 var _ = require('../../utils/lodash.min.js');
 
@@ -14,6 +15,10 @@ Page({
         btnDefaultDisabled: false,
         btnAddressDisabled: false,
         showAlert: false,
+        showMask: false,
+        showError: false,
+        err: '',
+        btnText: '点击领取大礼包',
         words: [
             '一',
             '二',
@@ -34,20 +39,23 @@ Page({
         addressContact: '',
         addressTel: '',
         btnSubmit: false,
-        scrollHeight: ''
+        scrollHeight: '',
+        applies: 0,
+        inventory: 0
     },
-    onLoad: function(e) {
+    onLoad: function (e) {
         var locationSvc = new LocationSvc();
         let provinces = [];
+        let inventory = 0;
         provinces.push(locationSvc.provinces[0].province);
-        this.setData({province: provinces, cities: locationSvc.provinces[0].cities});
+        this.setData({ province: provinces, cities: locationSvc.provinces[0].cities });
 
         if (getApp().globalData.user.deliveryAddress != undefined) {
             let address = getApp().globalData.user.deliveryAddress;
-            let selectProvince = _.findIndex(this.data.province, function(p) {
+            let selectProvince = _.findIndex(this.data.province, function (p) {
                 return p == address.province;
             });
-            let selectCity = _.findIndex(this.data.cities, function(c) {
+            let selectCity = _.findIndex(this.data.cities, function (c) {
                 return c == address.city;
             });
             this.setData({
@@ -68,13 +76,31 @@ Page({
             if (obj) {
                 let imgAddress = GLOBAL.SERVER + "/images/bundles/" + obj._id + "/";
                 let items = [];
-                for (let i = 0; i < data.data.data.items.length; i++) {
-                    let item = data.data.data.items[i];
+                for (let i = 0; i < obj.items.length; i++) {
+                    let item = obj.items[i];
                     item.imageUrl = encodeURI(imgAddress + item.name + '/' + item.name);
                     items.push(item);
                 }
+                inventory = obj.inventory - obj.applies;
+                if (!obj.canGetBundle) {
+                    this.setData({
+                        btnText: '您已领取过该礼包'
+                    });
+                }
+                else {
+                    //判断库存
+                    if (inventory <= 0) {
+                        //库存不足
+                        obj.canGetBundle = false;
+                        inventory = 0;
+                        this.setData({
+                            btnText: '礼包已被领完'
+                        });
+                    }
+                }
                 this.setData({
-                    // items: data.data.data.items,
+                    inventory: inventory,
+                    applies: obj.applies,
                     items: items,
                     imgAddress: imgAddress,
                     bundleId: obj._id,
@@ -83,14 +109,14 @@ Page({
             }
         });
     },
-    selectFirst: function() {
-        this.setData({selectedMenuIndex: 0});
+    selectFirst: function () {
+        this.setData({ selectedMenuIndex: 0 });
     },
-    selectSecond: function() {
-        this.setData({selectedMenuIndex: 1});
+    selectSecond: function () {
+        this.setData({ selectedMenuIndex: 1 });
     },
-    getGift: function(e) {
-        this.setData({btnAddressDisabled: false, btnSubmit: true});
+    getGift: function (e) {
+        this.setData({ btnAddressDisabled: false, btnSubmit: true });
         var giftSvc = new GiftSvc();
         let province = this.data.province[this.data.selectProvince];
         let city = this.data.cities[this.data.selectCity];
@@ -107,31 +133,36 @@ Page({
                     tel: tel
                 };
                 getApp().globalData.user.deliveryAddress = deliveryAddress;
-                this.setData({btnDefaultDisabled: false, btnAddressDisabled: false, btnSubmit: false, showAlert: false});
-                wx.navigateTo({url: '../myOrders/myOrders'});
+                this.setData({ btnDefaultDisabled: false, btnAddressDisabled: false, btnSubmit: false, showAlert: false, showMask: false });
+                wx.navigateTo({ url: '../myOrders/myOrders' });
             } else {
-                this.setData({btnAddressDisabled: true, btnSubmit: false});
+                this.setData({ btnAddressDisabled: true, btnSubmit: false });
             }
         }).catch((err) => {
-            this.setData({btnAddressDisabled: true, btnSubmit: false});
+            this.setData({ btnAddressDisabled: true, btnSubmit: false });
         });
     },
-    gotoDetail: function(e) {
+    onShareAppMessage: function () {
+        var shareSvc = new ShareSvc();
+        shareSvc.giveShare();
+        return { title: '事妈驾到', path: '/pages/index/index' }
+    },
+    gotoDetail: function (e) {
         getApp().globalData.currentGift = e.currentTarget.dataset.item;
         wx.navigateTo({
             url: '../giftDetail/giftDetail?bundleId=' + this.data.bundleId
         });
     },
-    hideMask: function(e) {
-        this.setData({showAlert: false});
+    hideMask: function (e) {
+        this.setData({ showAlert: false, showError: false, showMask: false });
     },
-    provinceChange: function(e) {
-        this.setData({selectProvince: e.detail.value})
+    provinceChange: function (e) {
+        this.setData({ selectProvince: e.detail.value })
     },
-    cityChange: function(e) {
-        this.setData({selectCity: e.detail.value})
+    cityChange: function (e) {
+        this.setData({ selectCity: e.detail.value })
     },
-    bindKeyInput: function(e) {
+    bindKeyInput: function (e) {
         let inputType = e.currentTarget.dataset.type;
         let value = e.detail.value;
         if (inputType == 'detail') {
@@ -143,15 +174,26 @@ Page({
         }
         this.checkAddress();
     },
-    checkAddress: function() {
+    checkAddress: function () {
         if (this.data.addressDetail && this.data.addressContact && this.data.addressTel) {
-            this.setData({btnAddressDisabled: true});
+            this.setData({ btnAddressDisabled: true });
         } else {
-            this.setData({btnAddressDisabled: false});
+            this.setData({ btnAddressDisabled: false });
         }
     },
-    showAlert: function(e) {
-        this.checkAddress();
-        this.setData({showAlert: true});
+    showAlert: function (e) {
+        var giftSvc = new GiftSvc();
+        giftSvc.canGetBundle(this.data.bundleId).then((data) => {
+            if (data.data.data.res == 'no') {
+                this.showError(data.data.data.message);
+            }
+            else {
+                this.checkAddress();
+                this.setData({ showAlert: true, showMask: true });
+            }
+        });
+    },
+    showError: function (err) {
+        this.setData({ showError: true, showMask: true, err: err });
     }
 })

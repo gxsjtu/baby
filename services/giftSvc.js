@@ -14,6 +14,16 @@ GiftSvc.prototype.displayBundle = function () {
     })
 };
 
+GiftSvc.prototype.canGetBundle = function (id) {
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/user/canGetBundle/"+id).then(data => {
+            resolve(data);
+        }).catch(err => {
+            console.log(err);
+        });
+    })
+};
+
 GiftSvc.prototype.getBundle = function (id,province,city,name,tel,detail) {
     return new Promise((resolve, reject) => {
         request(GLOBAL.SERVER + "/user/getBundle",{ bundleId:id, province: province, city: city, name: name, tel:tel, detail:detail }, "POST").then(data => {
