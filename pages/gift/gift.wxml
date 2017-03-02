@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="mask" hidden="{{!showAlert}}" catchtap="hideMask"></view>
+  <view class="mask" hidden="{{!showMask}}" catchtap="hideMask"></view>
   <view class="logo">
     <image src="../../assets/images/gift.jpg"></image>
   </view>
@@ -37,8 +37,18 @@
       </view>
       <view class="split"></view>
     </view>
-    <view style="display:flex;flex-direction:row;align-items:center;height:110rpx;width:750rpx;background:#fff;position:relative;">
-      <button bindtap="setDefault" disabled="{{!btnDefaultDisabled}}" class="{{!btnDefaultDisabled ? 'btn-f' : 'btn-style'}}" bindtap="showAlert" loading="{{btnSubmit}}">点击领取大礼包</button>
+    <view style="display:flex;flex-direction:column;align-items:center;height:300rpx;width:750rpx;background:#fff;position:relative;">
+    <view style="display:flex;color:#b8b8b8;font-size:13px;margin-top:20rpx;">
+        <view>礼包库存：<text style="color:#df3030;">{{inventory}}</text></view>
+        <view style="width:50rpx;"></view>
+        <view>申领人数：<text style="color:#df3030;">{{applies}}</text></view>
+    </view>
+    <view style="height:20rpx;"></view>
+      <button disabled="{{!btnDefaultDisabled}}" class="{{!btnDefaultDisabled ? 'btn-f' : 'btn-style'}}" bindtap="showAlert" loading="{{btnSubmit}}">{{btnText}}</button>
+      <view style="display:flex;color:#df3030;font-size:15px;margin-top:40rpx;">
+        <view>分享方式：</view>
+        <view style="display:flex;flex-direction:column;"><view>点击本页面右上角...</view><view>选择<text style="color:black;margin-left:10rpx;margin-right:10rpx;">分享</text>即可</view></view>
+      </view>
       <view class="alert" hidden="{{!showAlert}}">
         <view class="alert-title">请输入收货人地址</view>
         <view class="alert-container">
@@ -85,6 +95,12 @@
           </view>
         </view>
       </view>
+      <view class="alert" hidden="{{!showError}}" style="height:auto;bottom:300px;">
+        <view class="alert-title">您不能领取该礼包</view>
+        <view class="alert-container">
+          {{err}}
+        </view>
+      </view>
     </view>
     <!--<view style="width:750rpx;height:504rpx;">
       <image src="../../assets/images/giftBottom.jpg" style="width:100%;height:100%;"></image>
@@ -92,9 +108,35 @@
   </view>
   <view class="gift-info" hidden="{{selectedMenuIndex!=1}}">
     <view class="gift-info-container">
+      <view style="display:flex;">
+        <view style="width:250rpx;text-align:right;">申领条件:</view>
+        <view style="margin-left:20rpx;margin-right:30rpx;">分享一次事妈驾到小程序,就可以免费领取该礼包。</view>
+      </view>
       <view class="box">
         <view class="box-header">申领流程</view>
         <view class="box-container">
+          <view class="item-list">
+            <text class="list-header" style="background:#f19149;">分享小程序 </text>
+            <text class="list-content">分享方法：点击右上角→点击“分享”→分享到相关群。</text>
+          </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <view class="item-list">
             <text class="list-header" style="background:#ffa9ba;">点击申领礼包按钮 </text>
             <text class="list-content">每个注册用户可以领到多个免费试用礼包。 请提交您本人和宝宝的真实信息，以免遗漏获得适合的礼包机会。</text>
@@ -107,14 +149,15 @@
             <text class="list-header" style="background:#55b0cf;">发货配送</text>
             <text class="list-content">我们后台收到您的申领信息后，每天17：30前统一发货。</text>
           </view>
-          <view class="item-list">
-            <text class="list-header" style="background:#fec41a;">发布试用评价</text>
-            <text class="list-content">收到礼包后，请认真使用商品并分享评价，以便其他用户借鉴参考，同时还可以享受到该试用商品的优惠。</text>
-          </view>
-          <view class="item-list">
-            <text class="list-header" style="background:#8957a1;">享受商品优惠</text>
-            <text class="list-content">提交评价后，即获得购买该商品得到专属优惠的方法。 </text>
-          </view>
+
+          <!--<view class="item-list">
+                        <text class="list-header" style="background:#fec41a;">发布试用评价</text>
+                        <text class="list-content">收到礼包后，请认真使用商品并分享评价，以便其他用户借鉴参考，同时还可以享受到该试用商品的优惠。</text>
+                    </view>
+                    <view class="item-list">
+                        <text class="list-header" style="background:#8957a1;">享受商品优惠</text>
+                        <text class="list-content">提交评价后，即获得购买该商品得到专属优惠的方法。 </text>
+                    </view>-->
         </view>
       </view>
       <view class="box" style="margin-top:20rpx;">
@@ -136,16 +179,5 @@
         </view>
       </view>
     </view>
-  </view>
-</view>
-
-<!--<view style="width:750rpx;height:504rpx;">
-      <image src="../../assets/images/giftBottom.jpg" style="width:100%;height:100%;"></image>
-    </view>-->
-<view class="gift-info" hidden="{{selectedMenuIndex!=1}}">
-  <view class="gift-info-container">
-    <view>1、每个账户每周仅可申领一次使用产品或礼包；同一试用品或礼包每人仅限一次。</view>
-    <view>2、试用品数量有限，每人只可申领一次，先到先得。</view>
-    <view>3、试用品每周六统一发货，请耐心等待。</view>
   </view>
 </view>
