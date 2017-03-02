@@ -134,7 +134,7 @@ Page({
                     tel: tel
                 };
                 getApp().globalData.user.deliveryAddress = deliveryAddress;
-                this.setData({ btnDefaultDisabled: false, btnAddressDisabled: false, btnSubmit: false, showAlert: false, showMask: false, applies: data.data.data });
+                this.setData({ btnDefaultDisabled: false, btnAddressDisabled: false, btnSubmit: false, showAlert: false, showMask: false, applies: data.data.data, btnText: '您已领取过该礼包' });
                 wx.navigateTo({ url: '../myOrders/myOrders' });
             } else {
                 this.setData({ btnAddressDisabled: true, btnSubmit: false });
@@ -192,7 +192,7 @@ Page({
             }
             else {
                 this.checkAddress();
-                this.setData({ showAlert: true });
+                this.setData({ showAlert: true, showMask: true });
             }
         });
     },

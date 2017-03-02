@@ -58,7 +58,7 @@
             <text style="color:black;margin-left:10rpx;margin-right:10rpx;">分享</text>即可</view>
         </view>
       </view>
-      <view class="alert" hidden="{{!showAlert}}">
+      <view class="alert" hidden="{{!showAlert}}" style="bottom:100rpx;">
         <view class="alert-title">请输入收货人地址</view>
         <view class="alert-container">
           <view class="input-container">
