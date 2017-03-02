@@ -88,7 +88,7 @@ Page({
         alertText: ''
     },
     onShareAppMessage: function() {
-        return {title: '事妈驾到', path: '/page/index'}
+        return {title: '事妈驾到', path: '/pages/index/index'}
     },
     onLoad: function() {
         this.beforeChildbirth();
@@ -123,9 +123,8 @@ Page({
 
                 if (app.defaultHos) {
                     getApp().globalData.hospital = app.defaultHos;
-                    wx.navigateTo({ url: '../hospitalCard/hospitalCard?do=cards' });
-                }
-                else {
+                    wx.navigateTo({url: '../hospitalCard/hospitalCard?do=cards'});
+                } else {
                     this.showAlert('您没有选择生产医院，请先选择一个生产医院');
                 }
                 break;

@@ -14,7 +14,18 @@ Page({
         btnDefaultDisabled: false,
         btnAddressDisabled: false,
         showAlert: false,
-        words: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'],
+        words: [
+            '一',
+            '二',
+            '三',
+            '四',
+            '五',
+            '六',
+            '七',
+            '八',
+            '九',
+            '十'
+        ],
         province: [],
         cities: [],
         selectProvince: 0,
@@ -25,22 +36,27 @@ Page({
         btnSubmit: false,
         scrollHeight: ''
     },
-    onLoad: function (e) {
+    onLoad: function(e) {
         var locationSvc = new LocationSvc();
         let provinces = [];
         provinces.push(locationSvc.provinces[0].province);
-        this.setData({
-            province: provinces,
-            cities: locationSvc.provinces[0].cities
-        });
+        this.setData({province: provinces, cities: locationSvc.provinces[0].cities});
 
-        if (getApp().globalData.user.deliveryAddress) {
+        if (getApp().globalData.user.deliveryAddress != undefined) {
             let address = getApp().globalData.user.deliveryAddress;
-            let selectProvince = _.findIndex(this.data.province, function (p) { return p == address.province; });
-            let selectCity = _.findIndex(this.data.cities, function (c) { return c == address.city; });
+            let selectProvince = _.findIndex(this.data.province, function(p) {
+                return p == address.province;
+            });
+            let selectCity = _.findIndex(this.data.cities, function(c) {
+                return c == address.city;
+            });
             this.setData({
-                selectProvince: (selectProvince == -1 ? 0 : selectProvince),
-                selectCity: (selectCity == -1 ? 0 : selectCity),
+                selectProvince: (selectProvince == -1
+                    ? 0
+                    : selectProvince),
+                selectCity: (selectCity == -1
+                    ? 0
+                    : selectCity),
                 addressDetail: address.detail,
                 addressContact: address.name,
                 addressTel: address.tel
@@ -67,21 +83,14 @@ Page({
             }
         });
     },
-    selectFirst: function () {
-        this.setData({
-            selectedMenuIndex: 0
-        });
+    selectFirst: function() {
+        this.setData({selectedMenuIndex: 0});
     },
-    selectSecond: function () {
-        this.setData({
-            selectedMenuIndex: 1
-        });
+    selectSecond: function() {
+        this.setData({selectedMenuIndex: 1});
     },
-    getGift: function (e) {
-        this.setData({
-            btnAddressDisabled: false,
-            btnSubmit: true
-        });
+    getGift: function(e) {
+        this.setData({btnAddressDisabled: false, btnSubmit: true});
         var giftSvc = new GiftSvc();
         let province = this.data.province[this.data.selectProvince];
         let city = this.data.cities[this.data.selectCity];
@@ -90,81 +99,59 @@ Page({
         let detail = this.data.addressDetail;
         giftSvc.getBundle(this.data.bundleId, province, city, name, tel, detail).then((data) => {
             if (data.data.message == 'OK') {
-                var deliveryAddress = {city: city, detail: detail, name: name, province: province, tel: tel};
+                var deliveryAddress = {
+                    city: city,
+                    detail: detail,
+                    name: name,
+                    province: province,
+                    tel: tel
+                };
                 getApp().globalData.user.deliveryAddress = deliveryAddress;
-                this.setData({
-                    btnDefaultDisabled: false,
-                    btnAddressDisabled: false,
-                    btnSubmit: false,
-                    showAlert: false
-                });
-                wx.navigateTo({ url: '../myOrders/myOrders' });
-            }
-            else {
-                this.setData({
-                    btnAddressDisabled: true,
-                    btnSubmit: false
-                });
+                this.setData({btnDefaultDisabled: false, btnAddressDisabled: false, btnSubmit: false, showAlert: false});
+                wx.navigateTo({url: '../myOrders/myOrders'});
+            } else {
+                this.setData({btnAddressDisabled: true, btnSubmit: false});
             }
         }).catch((err) => {
-            this.setData({
-                btnAddressDisabled: true,
-                btnSubmit: false
-            });
+            this.setData({btnAddressDisabled: true, btnSubmit: false});
         });
     },
-    gotoDetail: function (e) {
+    gotoDetail: function(e) {
         getApp().globalData.currentGift = e.currentTarget.dataset.item;
-        wx.navigateTo({ url: '../giftDetail/giftDetail?bundleId=' + this.data.bundleId });
-    },
-    hideMask: function (e) {
-        this.setData({
-            showAlert: false
+        wx.navigateTo({
+            url: '../giftDetail/giftDetail?bundleId=' + this.data.bundleId
         });
     },
-    provinceChange: function (e) {
-        this.setData(
-            {
-                selectProvince: e.detail.value
-            }
-        )
+    hideMask: function(e) {
+        this.setData({showAlert: false});
     },
-    cityChange: function (e) {
-        this.setData(
-            {
-                selectCity: e.detail.value
-            }
-        )
+    provinceChange: function(e) {
+        this.setData({selectProvince: e.detail.value})
     },
-    bindKeyInput: function (e) {
+    cityChange: function(e) {
+        this.setData({selectCity: e.detail.value})
+    },
+    bindKeyInput: function(e) {
         let inputType = e.currentTarget.dataset.type;
         let value = e.detail.value;
         if (inputType == 'detail') {
             this.data.addressDetail = value;
-        }
-        else if (inputType == 'contact') {
+        } else if (inputType == 'contact') {
             this.data.addressContact = value;
         } else if (inputType == 'tel') {
             this.data.addressTel = value;
         }
         this.checkAddress();
     },
-    checkAddress: function () {
+    checkAddress: function() {
         if (this.data.addressDetail && this.data.addressContact && this.data.addressTel) {
-            this.setData({
-                btnAddressDisabled: true
-            });
-        }
-        else {
-            this.setData({
-                btnAddressDisabled: false
-            });
+            this.setData({btnAddressDisabled: true});
+        } else {
+            this.setData({btnAddressDisabled: false});
         }
     },
-    showAlert: function (e) {
+    showAlert: function(e) {
         this.checkAddress();
-        this.setData({
-            showAlert: true
-        });
+        this.setData({showAlert: true});
     }
 })

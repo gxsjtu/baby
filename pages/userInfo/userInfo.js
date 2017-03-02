@@ -19,24 +19,24 @@ Page({
                 hospitalName: globalData.hospital.name
             });
         }
-        if (globalData.user.preBorn) {
+        if (globalData.user.preBorn!=undefined) {
             this.setData({
                 confinementDate: globalData.user.preBorn
             });
         }
-        if (globalData.user.address && globalData.user.address.juZhu) {
+        if (globalData.user.address!=undefined && globalData.user.address.juZhu!=undefined) {
             let juzhu = globalData.user.address.juZhu;
             this.setData({
                 currentAddress: juzhu.detail
             });
         }
-        if (globalData.user.address && globalData.user.address.huJi) {
+        if (globalData.user.address!=undefined && globalData.user.address.huJi!=undefined) {
             let huJi = globalData.user.address.huJi;
             this.setData({
                 census: huJi.detail
             });
         }
-        if (globalData.user.deliveryAddress) {
+        if (globalData.user.deliveryAddress!=undefined) {
             this.setData({ phone: globalData.user.deliveryAddress.tel });
         }
     },
