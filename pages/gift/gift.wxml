@@ -124,7 +124,7 @@
         <view class="box-container">
           <view class="item-list">
             <text class="list-header" style="background:#ffa9ba;">点击申领礼包按钮 </text>
-            <text class="list-content">每个注册用户可以领到多个免费试用礼包。 请提交您本人和宝宝的真实信息，以免遗漏获得适合的礼包机会。</text>
+            <text class="list-content">每个注册用户可以领到多个免费试用礼包，每个礼包只可以申领一次。请提交您本人和宝宝的真实信息，以免遗漏获得适合的礼包机会。</text>
           </view>
           <view class="item-list">
             <text class="list-header" style="background:#9ecc40;">填写收货信息</text>
@@ -132,7 +132,7 @@
           </view>
           <view class="item-list">
             <text class="list-header" style="background:#55b0cf;">发货配送</text>
-            <text class="list-content">我们后台收到您的申领信息后，每天17：30前统一发货。</text>
+            <text class="list-content">我们后台收到您的申领信息后，工作日的每天17：30前统一发货。</text>
           </view>
 
           <!-- <view class="item-list">
