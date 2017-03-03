@@ -67,7 +67,7 @@ Page({
                     dataList[i].p = 99999;
                 }
             }
-            dataList = _.orderBy(dataList, ['score','d', 's', 'e', 'p'], ['desc','asc','asc','asc','asc']);
+            dataList = _.orderBy(dataList, ['d', 's', 'e', 'p'], ['asc','asc','asc','asc']);
 
             this.setData({
                 searchArray: dataList, //查询结果
