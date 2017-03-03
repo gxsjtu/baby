@@ -23,7 +23,8 @@ Page({
         },
         fromStr: "",
         list: [],
-        isPackage: true //标识用来显示哪张title图片
+        isPackage: true, //标识用来显示哪张title图片,
+        hospitalId: ""
     },
     goReady: function (e) {
         var hospital = getApp().globalData.hospital;
@@ -65,16 +66,16 @@ Page({
                         for (var i = 0; i < hospital.prepares.length; i++) {
                             var pItemList = [];
                             var pItems = hospital.prepares[i].items;
-                                for (var j = 0; j < pItems.length; j++) {
-                                    let item = _.filter(prepares, (p) => {
-                                        return p == pItems[j].id;
-                                    })
-                                    if (item != null && item != undefined && item.length > 0) {
-                                        pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true });
-                                    } else {
-                                        pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
-                                    }
+                            for (var j = 0; j < pItems.length; j++) {
+                                let item = _.filter(prepares, (p) => {
+                                    return p == pItems[j].id;
+                                })
+                                if (item != null && item != undefined && item.length > 0) {
+                                    pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true });
+                                } else {
+                                    pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
                                 }
+                            }
                             pList.push({ name: hospital.prepares[i].name, items: pItemList });
                         }
                         this.setData({ list: pList });
@@ -101,7 +102,7 @@ Page({
         var fromStr = param.from;
         this.data.fromStr = fromStr;
         var hospital = getApp().globalData.hospital;
-
+        this.data.hospitalId = hospital._id;
         this.data.pageName = param.pageName;
         optIn.setOptInData(this);
         var actionSvc = new ActionSvc()
@@ -119,16 +120,16 @@ Page({
                 for (var i = 0; i < hospital.packages.length; i++) {
                     var pItems = hospital.packages[i].items;
                     var pItemList = [];
-                        for (var j = 0; j < pItems.length; j++) {
-                            var item = _.filter(userPackages, (p) => {
-                                return p == pItems[j].id;
-                            })
-                            if (item != null && item != undefined && item.length > 0) {
-                                pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true });
-                            } else {
-                                pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
-                            }
+                    for (var j = 0; j < pItems.length; j++) {
+                        var item = _.filter(userPackages, (p) => {
+                            return p == pItems[j].id;
+                        })
+                        if (item != null && item != undefined && item.length > 0) {
+                            pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true });
+                        } else {
+                            pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
                         }
+                    }
                     pList.push({ name: hospital.packages[i].name, items: pItemList });
                 }
                 this.setData({ list: pList, isPackage: true })
@@ -146,16 +147,16 @@ Page({
                 for (var i = 0; i < hospital.prepares.length; i++) {
                     var pItemList = [];
                     var pItems = hospital.prepares[i].items;
-                        for (var j = 0; j < pItems.length; j++) {
-                            var item = _.filter(userPrepares, (p) => {
-                                return p == pItems[j].id;
-                            })
-                            if (item != null && item != undefined && item.length > 0) {
-                                pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true });
-                            } else {
-                                pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
-                            }
+                    for (var j = 0; j < pItems.length; j++) {
+                        var item = _.filter(userPrepares, (p) => {
+                            return p == pItems[j].id;
+                        })
+                        if (item != null && item != undefined && item.length > 0) {
+                            pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: true });
+                        } else {
+                            pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
                         }
+                    }
                     pList.push({ name: hospital.prepares[i].name, items: pItemList });
                 }
                 this.setData({ list: pList, isPackage: false });
