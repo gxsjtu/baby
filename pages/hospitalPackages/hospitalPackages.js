@@ -36,7 +36,6 @@ Page({
                     var packages = data.data.data;
                     if (packages != null && packages != undefined && packages.length > 0) {
                         var pList = [];
-
                         for (var i = 0; i < hospital.packages.length; i++) {
                             var pItemList = [];
                             var pItems = hospital.packages[i].items;
@@ -63,12 +62,9 @@ Page({
                     var prepares = data.data.data;
                     if (prepares != null && prepares != undefined && prepares.length > 0) {
                         var pList = [];
-                        console.log(hospital.prepares);
                         for (var i = 0; i < hospital.prepares.length; i++) {
                             var pItemList = [];
                             var pItems = hospital.prepares[i].items;
-                            // console.log(pItems);
-                            if (pItems) {
                                 for (var j = 0; j < pItems.length; j++) {
                                     let item = _.filter(prepares, (p) => {
                                         return p == pItems[j].id;
@@ -79,7 +75,6 @@ Page({
                                         pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
                                     }
                                 }
-                            }
                             pList.push({ name: hospital.prepares[i].name, items: pItemList });
                         }
                         this.setData({ list: pList });
@@ -118,17 +113,12 @@ Page({
                 title: '购买待产准备包'
             });
 
-            // var user = getApp().globalData.user;
-            // if (user.packages == null || user.packages == undefined) {
-            //     getApp().globalData.user.packages = [];
-            // }
             var userPackages = getApp().globalData.user.packages;
             if (userPackages != null && userPackages != undefined && userPackages.length > 0) {
                 var pList = [];
                 for (var i = 0; i < hospital.packages.length; i++) {
                     var pItems = hospital.packages[i].items;
                     var pItemList = [];
-                    if (pItems) {
                         for (var j = 0; j < pItems.length; j++) {
                             var item = _.filter(userPackages, (p) => {
                                 return p == pItems[j].id;
@@ -139,7 +129,6 @@ Page({
                                 pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
                             }
                         }
-                    }
                     pList.push({ name: hospital.packages[i].name, items: pItemList });
                 }
                 this.setData({ list: pList, isPackage: true })
@@ -150,17 +139,13 @@ Page({
             wx.setNavigationBarTitle({
                 title: '入院前准备'
             });
-            // var user = getApp().globalData.user;
-            // if (user.prepares == null || user.prepares == undefined) {
-            //     getApp().globalData.user.prepares = [];
-            // }
+
             var userPrepares = getApp().globalData.user.prepares;
             if (userPrepares != null && userPrepares != undefined && userPrepares.length > 0) {
                 var pList = [];
                 for (var i = 0; i < hospital.prepares.length; i++) {
                     var pItemList = [];
                     var pItems = hospital.prepares[i].items;
-                    if (pItems) {
                         for (var j = 0; j < pItems.length; j++) {
                             var item = _.filter(userPrepares, (p) => {
                                 return p == pItems[j].id;
@@ -171,7 +156,6 @@ Page({
                                 pItemList.push({ id: pItems[j].id, name: pItems[j].name, quantity: pItems[j].quantity, isReady: false });
                             }
                         }
-                    }
                     pList.push({ name: hospital.prepares[i].name, items: pItemList });
                 }
                 this.setData({ list: pList, isPackage: false });
