@@ -1790,7 +1790,7 @@ var LocationSvc = function() {
                     hospital: {
                         name: '长寿路街道社区卫生服务中心',
                         tel: '021-62993717',
-                        address: '长寿路505号',
+                        address: '常德路1239号5楼',
                         time: '上午8:00-11:30 下午13:30-17:00(16：00停止挂号)'
                     }
                 }, {
