@@ -1,141 +1,141 @@
 <view class="container">
-  <view class="mask" hidden="{{!showMask}}" catchtap="hideMask"></view>
-  <view class="logo">
-    <image src="../../assets/images/gift.jpg"></image>
-  </view>
-  <view class="menu">
-    <view class="menu-item" catchtap="selectFirst">
-      <view class="dot {{selectedMenuIndex==0?'active':''}}"></view>
-      <view style="width:16rpx;"></view>
-      <view class="{{selectedMenuIndex==0?'active':''}}">活动介绍</view>
+    <view class="mask" hidden="{{!showMask}}" catchtap="hideMask"></view>
+    <view class="logo">
+        <image src="../../assets/images/gift.jpg"></image>
     </view>
-    <view class="menu-split"></view>
-    <view class="menu-item" catchtap="selectSecond">
-      <view class="dot {{selectedMenuIndex==1?'active':''}}"></view>
-      <view style="width:16rpx;"></view>
-      <view class="{{selectedMenuIndex==1?'active':''}}">活动详情</view>
-    </view>
-  </view>
-  <view class="split"></view>
-  <view class="gift-container" hidden="{{selectedMenuIndex!=0}}">
-    <view class="gift" wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item" bindtap="gotoDetail" data-item="{{item}}">
-      <view class="flag">
-        <view style="height:22px;line-height:22px;">礼物{{words[index]}}</view>
-      </view>
-      <view class="item">
-        <view class="left">
-          <view class="name">
-            <view>{{item.description}}</view>
-            <view>{{item.unit}}</view>
-          </view>
-          <view style="height:10rpx"></view>
-          <view class="list" wx:for="{{item.details}}" wx:key="{{index}}" wx:for-item="detail">{{detail}}</view>
+    <view class="menu">
+        <view class="menu-item" catchtap="selectFirst">
+            <view class="dot {{selectedMenuIndex==0?'active':''}}"></view>
+            <view style="width:16rpx;"></view>
+            <view class="{{selectedMenuIndex==0?'active':''}}">活动介绍</view>
         </view>
-        <view class="avatar">
-          <image src="{{item.imageUrl}}"></image>
+        <view class="menu-split"></view>
+        <view class="menu-item" catchtap="selectSecond">
+            <view class="dot {{selectedMenuIndex==1?'active':''}}"></view>
+            <view style="width:16rpx;"></view>
+            <view class="{{selectedMenuIndex==1?'active':''}}">活动详情</view>
         </view>
-      </view>
-      <view class="split"></view>
     </view>
-    <view style="display:flex;flex-direction:column;align-items:center;height:190rpx;width:750rpx;background:#fff;position:relative;">
-      <view style="display:flex;color:#b8b8b8;font-size:16px;margin-top:20rpx;">
-        <view>礼包库存：
-          <text style="color:#df3030;">{{(inventory - applies)
+    <view class="split"></view>
+    <view class="gift-container" hidden="{{selectedMenuIndex!=0}}">
+        <view class="gift" wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item" bindtap="gotoDetail" data-item="{{item}}">
+            <view class="flag">
+                <view style="height:22px;line-height:22px;">礼物{{words[index]}}</view>
+            </view>
+            <view class="item">
+                <view class="left">
+                    <view class="name">
+                        <view>{{item.description}}</view>
+                        <view>{{item.unit}}</view>
+                    </view>
+                    <view style="height:10rpx"></view>
+                    <view class="list" wx:for="{{item.details}}" wx:key="{{index}}" wx:for-item="detail">{{detail}}</view>
+                </view>
+                <view class="avatar">
+                    <image src="{{item.imageUrl}}"></image>
+                </view>
+            </view>
+            <view class="split"></view>
+        </view>
+        <view style="display:flex;flex-direction:column;align-items:center;height:190rpx;width:750rpx;background:#fff;position:relative;">
+            <view style="display:flex;color:#b8b8b8;font-size:16px;margin-top:20rpx;">
+                <view>礼包库存：
+                    <text style="color:#df3030;">{{(inventory - applies)
             <=0?0:(inventory - applies)}}</text>
-        </view>
-        <view style="width:50rpx;"></view>
-        <view>申领人数：
-          <text style="color:#df3030;">{{applies}}</text>
-        </view>
-      </view>
-      <view style="height:20rpx;"></view>
-      <button disabled="{{!btnDefaultDisabled}}" class="{{!btnDefaultDisabled ? 'btn-f' : 'btn-style'}}" bindtap="showAlert" loading="{{btnSubmit}}">{{btnText}}</button>
-      <view class="alert" hidden="{{!showAlert}}" style="bottom:100rpx;">
-        <view class="alert-title">请输入收货人地址</view>
-        <view class="alert-container">
-          <view class="input-container">
-            <view>省：</view>
-            <view>
-              <picker bindchange="provinceChange" value="{{selectProvince}}" range="{{province}}">
-                <view class="picker">
-                  {{province[selectProvince]}}
                 </view>
-              </picker>
-            </view>
-          </view>
-          <view class="input-container">
-            <view>市/区/县：</view>
-            <view>
-              <picker bindchange="cityChange" value="{{selectCity}}" range="{{cities}}">
-                <view class="picker">
-                  {{cities[selectCity]}}
+                <view style="width:50rpx;"></view>
+                <view>申领人数：
+                    <text style="color:#df3030;">{{applies}}</text>
                 </view>
-              </picker>
             </view>
-          </view>
-          <view class="input-container">
-            <view>详细地址：</view>
-            <view>
-              <input placeholder="请输入详细地址" value="{{addressDetail}}" bindinput="bindKeyInput" data-type="detail" />
+            <view style="height:20rpx;"></view>
+            <button disabled="{{!btnDefaultDisabled}}" class="{{!btnDefaultDisabled ? 'btn-f' : 'btn-style'}}" bindtap="showAlert" loading="{{btnSubmit}}">{{btnText}}</button>
+            <view class="alert" hidden="{{!showAlert}}" style="bottom:100rpx;">
+                <view class="alert-title">请输入收货人地址</view>
+                <view class="alert-container">
+                    <view class="input-container">
+                        <view>省：</view>
+                        <view>
+                            <picker bindchange="provinceChange" value="{{selectProvince}}" range="{{province}}">
+                                <view class="picker">
+                                    {{province[selectProvince]}}
+                                </view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="input-container">
+                        <view>市/区/县：</view>
+                        <view>
+                            <picker bindchange="cityChange" value="{{selectCity}}" range="{{cities}}">
+                                <view class="picker">
+                                    {{cities[selectCity]}}
+                                </view>
+                            </picker>
+                        </view>
+                    </view>
+                    <view class="input-container">
+                        <view>详细地址：</view>
+                        <view>
+                            <input placeholder="请输入详细地址" value="{{addressDetail}}" bindinput="bindKeyInput" data-type="detail" />
+                        </view>
+                    </view>
+                    <view class="input-container">
+                        <view>联系人：</view>
+                        <view>
+                            <input placeholder="请输入联系人" value="{{addressContact}}" bindinput="bindKeyInput" data-type="contact" />
+                        </view>
+                    </view>
+                    <view class="input-container">
+                        <view>电话：</view>
+                        <view>
+                            <input placeholder="请输入电话" value="{{addressTel}}" bindinput="bindKeyInput" data-type="tel" />
+                        </view>
+                    </view>
+                    <view class="input-container">
+                        <button bindtap="setAddress" disabled="{{!btnAddressDisabled}}" class="{{!btnAddressDisabled ? 'btn-f' : 'btn-style'}}" bindtap="getGift">确定</button>
+                    </view>
+                </view>
             </view>
-          </view>
-          <view class="input-container">
-            <view>联系人：</view>
-            <view>
-              <input placeholder="请输入联系人" value="{{addressContact}}" bindinput="bindKeyInput" data-type="contact" />
+            <view class="alert" hidden="{{!showError}}" style="height:auto;bottom:450rpx;">
+                <view class="alert-title">分享后即可领取该礼包</view>
+                <view class="alert-container" style="text-align:center; color:rgba(0,0,0,0.6) ">
+                    {{err}}
+                </view>
             </view>
-          </view>
-          <view class="input-container">
-            <view>电话：</view>
-            <view>
-              <input placeholder="请输入电话" value="{{addressTel}}" bindinput="bindKeyInput" data-type="tel" />
-            </view>
-          </view>
-          <view class="input-container">
-            <button bindtap="setAddress" disabled="{{!btnAddressDisabled}}" class="{{!btnAddressDisabled ? 'btn-f' : 'btn-style'}}" bindtap="getGift">确定</button>
-          </view>
         </view>
-      </view>
-      <view class="alert" hidden="{{!showError}}" style="height:auto;bottom:450rpx;">
-        <view class="alert-title">您不能领取该礼包</view>
-        <view class="alert-container" style="text-align:center;">
-            {{err}}
-        </view>
-      </view>
-    </view>
 
-    <!--<view style="width:750rpx;height:504rpx;">
+        <!--<view style="width:750rpx;height:504rpx;">
       <image src="../../assets/images/giftBottom.jpg" style="width:100%;height:100%;"></image>
     </view>-->
-  </view>
-  <view class="gift-info" hidden="{{selectedMenuIndex!=1}}">
-    <view class="gift-info-container">
-      <view class="box">
-        <view class="box-header">申领条件</view>
-        <view class="box-container">
-          <view class="item-list">
-            <text class="list-header" style="background:#8957a1;">申领条件</text>
-            <text class="list-content">分享一次事妈驾到小程序，就可以免费申领该礼包。</text>
-          </view>
-        </view>
-      </view>
-      <view class="box" style="margin-top:20rpx;">
-        <view class="box-header">申领流程</view>
-        <view class="box-container">
-          <view class="item-list">
-            <text class="list-header" style="background:#ffa9ba;">点击申领礼包按钮 </text>
-            <text class="list-content">每个注册用户可以领到多个免费试用礼包，每个礼包只可以申领一次。请提交您本人和宝宝的真实信息，以免遗漏获得适合的礼包机会。</text>
-          </view>
-          <view class="item-list">
-            <text class="list-header" style="background:#9ecc40;">填写收货信息</text>
-            <text class="list-content">请提交真实、详细的收货地址，以保证您能及时收到礼包。</text>
-          </view>
-          <view class="item-list">
-            <text class="list-header" style="background:#55b0cf;">发货配送</text>
-            <text class="list-content">我们后台收到您的申领信息后，工作日的每天17：30前统一发货。</text>
-          </view>
+    </view>
+    <view class="gift-info" hidden="{{selectedMenuIndex!=1}}">
+        <view class="gift-info-container">
+            <view class="box">
+                <view class="box-header">申领条件</view>
+                <view class="box-container">
+                    <view class="item-list">
+                        <text class="list-header" style="background:#8957a1;">申领条件</text>
+                        <text class="list-content">分享一次事妈驾到小程序，就可以免费申领该礼包。</text>
+                    </view>
+                </view>
+            </view>
+            <view class="box" style="margin-top:20rpx;">
+                <view class="box-header">申领流程</view>
+                <view class="box-container">
+                    <view class="item-list">
+                        <text class="list-header" style="background:#ffa9ba;">点击申领礼包按钮 </text>
+                        <text class="list-content">每个注册用户可以领到多个免费试用礼包，每个礼包只可以申领一次。请提交您本人和宝宝的真实信息，以免遗漏获得适合的礼包机会。</text>
+                    </view>
+                    <view class="item-list">
+                        <text class="list-header" style="background:#9ecc40;">填写收货信息</text>
+                        <text class="list-content">请提交真实、详细的收货地址，以保证您能及时收到礼包。</text>
+                    </view>
+                    <view class="item-list">
+                        <text class="list-header" style="background:#55b0cf;">发货配送</text>
+                        <text class="list-content">我们后台收到您的申领信息后，工作日的每天17：30前统一发货。</text>
+                    </view>
 
-          <!-- <view class="item-list">
+                    <!-- <view class="item-list">
             <text class="list-header" style="background:#fec41a;">发布试用评价</text>
             <text class="list-content">收到礼包后，请认真使用商品并分享评价，以便其他用户借鉴参考，同时还可以享受到该试用商品的优惠。</text>
           </view>
@@ -143,26 +143,26 @@
             <text class="list-header" style="background:#8957a1;">享受商品优惠</text>
             <text class="list-content">提交评价后，即获得购买该商品得到专属优惠的方法。 </text>
           </view> -->
+                </view>
+            </view>
+            <view class="box" style="margin-top:20rpx;">
+                <view class="box-header">必读规则</view>
+                <view class="box-container" style="padding-bottom:20rpx;">
+                    <view class="role">1. 事妈驾到礼包属于免费申领，申领过程中不收取任何费用。若由于个人原因（地址不详、手机无法联络等）首次无法配送，用户可自付邮费进行二次配送，二次配送的礼包为当月礼包，如过期或无货则不再配送；二次快递费为到付形式。</view>
+                    <view class="role">
+                        2. 事妈驾到的礼包在打包、寄送过程中会因产品挤压、碰撞等造成瑕疵，此为正常现象，请您正常签收。如果您收到的礼包外包装严重损坏，请勿签收，并将物品退回，及时与客服联系。
+                    </view>
+                    <view class="role">
+                        3. 请严格遵守活动规则，严禁为了多获取礼品注册马甲帐号申领，一经发现，取消活动参与资格,终身不得获得礼包。
+                    </view>
+                    <view class="role">
+                        4. 禁止倒买倒卖事妈驾到礼包，一旦发现有倒买倒卖的恶劣行径，立即加入用户黑名单，永不得参加事妈驾到的任何活动。
+                    </view>
+                    <view class="role">
+                        5. 事妈驾到所有试用商品均通过国家质检相关规定。
+                    </view>
+                </view>
+            </view>
         </view>
-      </view>
-      <view class="box" style="margin-top:20rpx;">
-        <view class="box-header">必读规则</view>
-        <view class="box-container" style="padding-bottom:20rpx;">
-          <view class="role">1. 事妈驾到礼包属于免费申领，申领过程中不收取任何费用。若由于个人原因（地址不详、手机无法联络等）首次无法配送，用户可自付邮费进行二次配送，二次配送的礼包为当月礼包，如过期或无货则不再配送；二次快递费为到付形式。</view>
-          <view class="role">
-            2. 事妈驾到的礼包在打包、寄送过程中会因产品挤压、碰撞等造成瑕疵，此为正常现象，请您正常签收。如果您收到的礼包外包装严重损坏，请勿签收，并将物品退回，及时与客服联系。
-          </view>
-          <view class="role">
-            3. 请严格遵守活动规则，严禁为了多获取礼品注册马甲帐号申领，一经发现，取消活动参与资格,终身不得获得礼包。
-          </view>
-          <view class="role">
-            4. 禁止倒买倒卖事妈驾到礼包，一旦发现有倒买倒卖的恶劣行径，立即加入用户黑名单，永不得参加事妈驾到的任何活动。
-          </view>
-          <view class="role">
-            5. 事妈驾到所有试用商品均通过国家质检相关规定。
-          </view>
-        </view>
-      </view>
     </view>
-  </view>
 </view>
