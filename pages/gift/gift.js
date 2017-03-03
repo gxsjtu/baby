@@ -192,7 +192,7 @@ Page({
         }
     },
     showAlert: function (e) {
-        this.setData({ btnDefaultDisabled: false, btnSubmit: true });
+        this.setData({ btnSubmit: true });
         var giftSvc = new GiftSvc();
         giftSvc.canGetBundle(this.data.bundleId).then((data) => {
             if (data.data.data.res == 'no') {
@@ -211,8 +211,6 @@ Page({
     onPullDownRefresh: function () {
         this.initData(() => {
             wx.stopPullDownRefresh();
-            console.log('pull');
         });
-        // wx.stopPullDownRefresh();
     }
 })
