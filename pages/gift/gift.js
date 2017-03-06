@@ -160,7 +160,7 @@ Page({
     gotoDetail: function (e) {
         getApp().globalData.currentGift = e.currentTarget.dataset.item;
         wx.navigateTo({
-            url: '../giftDetail/giftDetail?bundleId=' + this.data.bundleId
+            url: '../giftDetail/giftDetail?bundleId=' + this.data.bundleId + "&canGetBundle=" + this.data.canGetBundle
         });
     },
     hideMask: function (e) {

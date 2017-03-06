@@ -13,17 +13,29 @@ Page({
         scrollHeight: "",
         bottomWidth: "",
         buyWidth: "",
-        bundleId: ""
+        bundleId: "",
+        outWidth: "",
+        canGetBundle: false
     },
     onLoad: function (e) {
         this.data.bundleId = e.bundleId;
+        if (e.canGetBundle == "true") {
+            this.setData({
+                canGetBundle: true
+            })
+        } else {
+            this.setData({
+                canGetBundle: false
+            })
+        }
         wx.getSystemInfo({
             success: (res) => {
                 // success
                 var w = parseInt(res.windowWidth / 4) - 10;
                 var h = res.windowHeight - 51;
-                var buyW = res.windowWidth - (w * 3);
+                var buyW = parseInt(res.windowWidth - (w * 3));
                 this.setData({
+                    outWidth: res.windowWidth + "px",
                     scrollHeight: h + "px",
                     bottomWidth: w + "px",
                     buyWidth: buyW + "px"
@@ -119,9 +131,11 @@ Page({
             url: '../buyGift/buyGift?id=' + this.data.bundleId
         })
     },
-    goEvaluate: function (){
-        wx.navigateTo({
-            url: '../itemEvaluate/itemEvaluate'
-        })
+    goEvaluate: function () {
+        if (canGetBundle) {
+            wx.navigateTo({
+                url: '../itemEvaluate/itemEvaluate'
+            })
+        }
     }
 })
