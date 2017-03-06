@@ -1,0 +1,6 @@
+<view style="height:100%;display:flex;align-items:center;justify-content:center;">
+    <!--<button bindtap="buyClick">购买</button>-->
+    <view>
+    <image src="../../assets/images/jqqd.jpg" style="width: 438rpx;height: 207rpx;"></image>
+  </view>
+</view>

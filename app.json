@@ -25,7 +25,8 @@
         "pages/myOrders/myOrders",
         "pages/giftDetail/giftDetail",
         "pages/buyGift/buyGift",
-        "pages/itemEvaluate/itemEvaluate"
+        "pages/itemEvaluate/itemEvaluate",
+        "pages/buy/buy"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -47,6 +48,12 @@
                 "text": "申领礼包",
                 "iconPath": "assets/images/tabs/boxgrey.png",
                 "selectedIconPath": "assets/images/tabs/boxred.png"
+            },
+            {
+                "pagePath": "pages/buy/buy",
+                "text": "一键购",
+                "iconPath": "assets/images/tabs/no_selectedBuy.png",
+                "selectedIconPath": "assets/images/tabs/selectedBuy.png"
             },
             {
                 "pagePath": "pages/my/my",
