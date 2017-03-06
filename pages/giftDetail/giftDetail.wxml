@@ -49,7 +49,7 @@
     </view>
   </scroll-view>
   <view style="display:flex;flex-direction:row;">
-    <view class="bottom-s" style="width:{{bottomWidth}}">
+    <view class="bottom-s" style="width:{{bottomWidth}}" bindtap="goEvaluate">
       <image src="../../assets/images/giftPL.png" style="width:50rpx;height:50rpx;"></image>
       <view>评论 55</view>
     </view>

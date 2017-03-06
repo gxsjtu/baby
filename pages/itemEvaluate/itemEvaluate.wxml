@@ -1,0 +1,29 @@
+<view class="container">
+  <view class="header">
+    <view class="evaluate-title active">
+      <view class="evaluate-header">全部评价</view>
+      <view class="evaluate-count">6311</view>
+    </view>
+    <view class="evaluate-title">
+      <view class="evaluate-header">好评</view>
+      <view class="evaluate-count">6311</view>
+    </view>
+    <view class="evaluate-title">
+      <view class="evaluate-header">中评</view>
+      <view class="evaluate-count">6311</view>
+    </view>
+    <view class="evaluate-title">   
+      <view class="evaluate-header">差评</view>
+      <view class="evaluate-count">6311</view>
+    </view>
+    <view class="evaluate-add">
+      <view class="evaluate-header">新增评价</view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}">
+    
+  </scroll-view>
+  <view class="mask" hidden="{{!showMask}}">
+    
+  </view>
+</view>

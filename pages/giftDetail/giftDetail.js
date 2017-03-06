@@ -11,9 +11,9 @@ Page({
         images: [],
         imgWidth: 0,
         scrollHeight: "",
-        bottomWidth:"",
-        buyWidth:"",
-        bundleId:""
+        bottomWidth: "",
+        buyWidth: "",
+        bundleId: ""
     },
     onLoad: function (e) {
         this.data.bundleId = e.bundleId;
@@ -25,7 +25,7 @@ Page({
                 var buyW = res.windowWidth - (w * 3);
                 this.setData({
                     scrollHeight: h + "px",
-                    bottomWidth:w + "px",
+                    bottomWidth: w + "px",
                     buyWidth: buyW + "px"
                 })
             }
@@ -116,7 +116,12 @@ Page({
     },
     buyGift: function () {
         wx.navigateTo({
-          url: '../buyGift/buyGift?id=' + this.data.bundleId
+            url: '../buyGift/buyGift?id=' + this.data.bundleId
+        })
+    },
+    goEvaluate: function (){
+        wx.navigateTo({
+            url: '../itemEvaluate/itemEvaluate'
         })
     }
 })
