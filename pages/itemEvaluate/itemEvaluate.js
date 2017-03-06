@@ -1,9 +1,9 @@
 Page({
-    data:{
-        scrollHeight:'',
-        showMask:false
+    data: {
+        scrollHeight: '',
+        showMask: false
     },
-    onLoad:function(e){
+    onLoad: function (e) {
         wx.getSystemInfo({
             success: (res) => {
                 var h = res.windowHeight - 52;
@@ -11,6 +11,16 @@ Page({
                     scrollHeight: h + "px",
                 })
             }
+        })
+    },
+    add: function () {
+        this.setData({
+            showMask: true
+        })
+    },
+    hideMask: function () {
+        this.setData({
+            showMask: false
         })
     }
 })
