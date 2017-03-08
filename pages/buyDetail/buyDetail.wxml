@@ -1,0 +1,19 @@
+<view>
+
+    <view style="display:flex;flex-direction:row;width:{{outWidth}}">
+    <view class="bottom-s" style="width:{{bottomWidth}};" bindtap="goEvaluate">
+      <image src="../../assets/images/giftCanPL.png" style="width:50rpx;height:50rpx;"></image>
+      <view>评论</view>
+    </view>
+    <view style="width:{{bottomWidth}};height:51px;background: #ebebeb;">
+     
+    </view>
+    <view style="width:{{bottomWidth}};height:51px;background: #ebebeb;">
+     
+    </view>
+    <view style="font-size:14px;width:{{buyWidth}};display:flex;justify-content:center;align-items:center;background:#ff4949;color:#fff" bindtap="buyGift">
+      <view>立刻购买</view>
+      <view style="margin-left:2px;width:10px;height:10px;border-top:2px solid #fff;border-right:2px solid #fff;transform:rotate(45deg);background:#ff4949;"></view>
+    </view>
+  </view>
+</view>

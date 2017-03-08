@@ -26,7 +26,8 @@
         "pages/giftDetail/giftDetail",
         "pages/buyGift/buyGift",
         "pages/itemEvaluate/itemEvaluate",
-        "pages/buy/buy"
+        "pages/buy/buy",
+        "pages/buyDetail/buyDetail"
     ],
     "window": {
         "backgroundTextStyle": "light",

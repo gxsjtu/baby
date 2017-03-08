@@ -14,5 +14,10 @@ Page({
         list: data.data.data
       })
     })
+  },
+  gotoBuyDetail: function(){
+    wx.navigateTo({
+      url: '../buyDetail/buyDetail'
+    })
   }
 })
