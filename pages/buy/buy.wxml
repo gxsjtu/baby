@@ -13,7 +13,7 @@
           <view style="color:#b93636;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;align-items:flex-end;line-height:1em;">
             <view style="font-size:28rpx;">事妈价</view>
             <view style="font-size:40rpx;font-family:PingFang-SC-Regular;line-height:1em;">￥{{item.price}}</view>
-            <view style="line-height:1em;padding-left:30rpx;text-decoration:line-through;font-size:28rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
+            <view style="line-height:1em;padding-left:22rpx;text-decoration:line-through;font-size:28rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
           </view>
         </view>
       </view>
