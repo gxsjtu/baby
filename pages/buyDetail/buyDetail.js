@@ -20,7 +20,7 @@ Page({
     },
     goEvaluate: function (e) {
         wx.navigateTo({
-            url: '../itemEvaluate/itemEvaluate?pageName=buy'
+            url: '../itemEvaluate/itemEvaluate?pageName=buy&canGetBundle=false'
         })
     }
 })

@@ -136,8 +136,8 @@ Page({
         })
     },
     goEvaluate: function () {
-            wx.navigateTo({
-                url: '../itemEvaluate/itemEvaluate?pageName=gift&bundleId=' + this.data.bundleId + "&canGetBundle=" + this.data.canGetBundle
-            })
+        wx.navigateTo({
+            url: '../itemEvaluate/itemEvaluate?pageName=gift&bundleId=' + this.data.bundleId + "&canGetBundle=" + this.data.canGetBundle
+        })
     }
 })
