@@ -21,6 +21,7 @@ Page({
         evaluates: []
     },
     onLoad: function (e) {
+        console.log(e.canGetBundle);
         wx.getSystemInfo({
             success: (res) => {
                 var h = res.windowHeight - 52;
@@ -44,6 +45,7 @@ Page({
         this.setData({
             avatar: avatar,
             gift: item,
+            canAdd: e.canGetBundle == 'false' ? true : false
         });
         var itemEvaluateSvc = new ItemEvaluateSvc();
         itemEvaluateSvc.getJudgesByItemId(itemId).then((data) => {
