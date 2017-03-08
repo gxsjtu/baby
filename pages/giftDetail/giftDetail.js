@@ -15,17 +15,18 @@ Page({
         buyWidth: "",
         bundleId: "",
         outWidth: "",
-        canGetBundle: false
+        canGetBundle: false,
+        descriptImage: ''
     },
     onLoad: function (e) {
         this.data.bundleId = e.bundleId;
         if (e.canGetBundle == "true") {
             this.setData({
-                canGetBundle: true
+                canGetBundle: false
             })
         } else {
             this.setData({
-                canGetBundle: false
+                canGetBundle: true
             })
         }
         wx.getSystemInfo({
@@ -46,6 +47,7 @@ Page({
         let gift = getApp().globalData.currentGift;
         let baseImgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + "/" + gift.name + "/";
         let imgAddress = baseImgAddress + "logo";
+        let descriptImage = baseImgAddress + "discount";
         let description = gift.description;
         let details = [];
         if (gift.details)
@@ -92,7 +94,8 @@ Page({
             logo: imgAddress,
             recommends: recommends,
             discounts: discounts,
-            experiences: experiences
+            experiences: experiences,
+            descriptImage: descriptImage
         })
     },
     onImageLoad: function (e) {
@@ -132,9 +135,9 @@ Page({
         })
     },
     goEvaluate: function () {
-        if (canGetBundle) {
+        if (this.data.canGetBundle) {
             wx.navigateTo({
-                url: '../itemEvaluate/itemEvaluate'
+                url: '../itemEvaluate/itemEvaluate?bundleId=' + this.data.bundleId
             })
         }
     }

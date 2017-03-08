@@ -24,7 +24,7 @@
 .description {
   letter-spacing: -0.2rpx;
   line-height: 48rpx;
-  padding: 40rpx 60rpx;
+  padding: 40rpx 60rpx 0;
 }
 
 .description-name {

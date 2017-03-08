@@ -16,6 +16,12 @@
             <view class="{{selectedMenuIndex==1?'active':''}}">活动详情</view>
         </view>
     </view>
+    <view style="height:2px;background:#d3d3d3;width:750rpx;"></view>
+
+    <view style="font-size:26rpx;font-family:PingFangSC-Regular;padding:20rpx 50rpx;color:rgba(0,0,0,0.6)">
+        用过了才知道是否真的适合！事妈为您甄选安全优质，适龄的母婴产品,免费试用。同时从厂家那里争取全网最强优惠。保证正品，不容错过！
+    </view>
+
     <view class="split"></view>
     <view class="gift-container" hidden="{{selectedMenuIndex!=0}}">
         <view class="gift" wx:for="{{items}}" wx:key="{{index}}" wx:for-item="item" bindtap="gotoDetail" data-item="{{item}}">

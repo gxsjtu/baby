@@ -110,13 +110,6 @@ function errorClick(_this) {
     }
 }
 
-// function confirmInfo(_this, inputValue) {
-
-// _this.setData({
-//     'optIn.inputValue': inputValue
-// });
-// }
-
 function textFocus(_this) {
     //获得焦点
     if (_this.data.optIn.platform == 'ios') {

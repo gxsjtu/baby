@@ -16,7 +16,7 @@
     </view>
     <view class="optInTemplate-error-container" wx:if="{{showError}}" style="bottom:{{bottom}}px">
     <view class="alert-title">撰写纠错信息<view class="submit {{inputValue?'':'disable'}}" bindtap="submitErrorInfo">提交</view></view>
-      <textarea placeholder="撰写纠错信息" bindconfirm="confirmInfo" placeholder-class="optInTemplate-placeholder" bindfocus="textFocus" bindblur="textBlur" bindinput="textInput"/>
+      <textarea  maxlength="-1" placeholder="撰写纠错信息" placeholder-class="optInTemplate-placeholder" bindfocus="textFocus" bindblur="textBlur" bindinput="textInput"/>
     </view>
   </view>
 </template>

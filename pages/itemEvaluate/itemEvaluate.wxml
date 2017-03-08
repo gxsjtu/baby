@@ -1,29 +1,71 @@
 <view class="container">
   <view class="header">
-    <view class="evaluate-title active">
+    <view class="evaluate-title {{selectIndex == 0 ? 'active' : '' }}" data-index='0' bindtap="selectTab">
       <view class="evaluate-header">全部评价</view>
-      <view class="evaluate-count">6311</view>
+      <view class="evaluate-count">{{allCount}}</view>
     </view>
-    <view class="evaluate-title">
+    <view class="evaluate-title {{selectIndex == 1 ? 'active' : '' }}" data-index='1' bindtap="selectTab">
       <view class="evaluate-header">好评</view>
-      <view class="evaluate-count">6311</view>
+      <view class="evaluate-count">{{goodCount}}</view>
     </view>
-    <view class="evaluate-title">
+    <view class="evaluate-title {{selectIndex == 2 ? 'active' : '' }}" data-index='2' bindtap="selectTab">
       <view class="evaluate-header">中评</view>
-      <view class="evaluate-count">6311</view>
+      <view class="evaluate-count">{{middleCount}}</view>
     </view>
-    <view class="evaluate-title">   
+    <view class="evaluate-title {{selectIndex == 3 ? 'active' : '' }}" data-index='3' bindtap="selectTab">
       <view class="evaluate-header">差评</view>
-      <view class="evaluate-count">6311</view>
+      <view class="evaluate-count">{{badCount}}</view>
     </view>
     <view class="evaluate-add" bindtap="add">
       <view class="evaluate-header">新增评价</view>
     </view>
   </view>
   <scroll-view scroll-y="true" style="height:{{scrollHeight}}">
-    
+    <view class="evaluate-item" wx:for="{{evaluates}}" wx:for-item="evaluate" wx:key="index">
+      <view class="item-header" style="margin-bottom:0;">
+        <view class="user-container">
+          <view class="avatar-container">
+            <image src="{{evaluate.avatarUrl}}"></image>
+          </view>
+          <view class="user">{{evaluate.alias}}</view>
+        </view>
+        <view style="display:flex;flex-direction:column;justify-content:center;">
+          <view class="score">
+            <view wx:for="{{evaluate.score}}" wx:for-item="score" wx:key="index" class="evaluate-rate">
+              <image src="../../assets/images/{{score}}.png"></image>
+            </view>
+          </view>
+          <view class="date">{{evaluate.created}}</view>
+        </view>
+      </view>
+      <view class="message">{{evaluate.message}}</view>
+      <view class="split" style="margin-left:0;margin-bottom:0;"></view>
+    </view>
   </scroll-view>
-  <view class="mask" hidden="{{!showMask}}" bindtap="hideMask">
-
+  <view class="mask" wx:if="{{showMask}}" bindtap="hideMask">
+    <view class="evaluate-container" catchtap="containerClick" style="bottom:{{bottom}}px">
+      <view class="container-title">
+        撰写评价
+        <view class="submit {{message ? '' : 'disable'}}" bindtap="submitEvaluate">提交</view>
+      </view>
+      <view>
+        <view class="info">
+          <view class="avatar">
+            <image src="{{avatar}}"></image>
+          </view>
+          <view style="display:flex;flex-direction: column;margin-left:30rpx;justify-content:space-between;">
+            <view>评分</view>
+            <view class="rate-container">
+              <image class="rate" src="../../assets/images/{{rates[0]}}.png" bindtap="rate" data-rate="1"></image>
+              <image class="rate" src="../../assets/images/{{rates[1]}}.png" bindtap="rate" data-rate="2"></image>
+              <image class="rate" src="../../assets/images/{{rates[2]}}.png" bindtap="rate" data-rate="3"></image>
+              <image class="rate" src="../../assets/images/{{rates[3]}}.png" bindtap="rate" data-rate="4"></image>
+              <image class="rate" src="../../assets/images/{{rates[4]}}.png" bindtap="rate" data-rate="5"></image>
+            </view>
+          </view>
+        </view>
+        <textarea placeholder="撰写评价信息" maxlength="-1" bindconfirm="confirmInfo" placeholder-class="evaluate-placeholder" bindfocus="textFocus" bindblur="textBlur" bindinput="textInput" />
+      </view>
+    </view>
   </view>
 </view>
