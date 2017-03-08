@@ -1,18 +1,20 @@
 <view class="container">
   <view wx:for="{{list}}" wx:key="{{item._id}}" wx:for-item="item" class="dataView">
-    <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:400rpx;">
-      <image src="{{imgAddress}}{{item._id}}/logo" style="height:260rpx;width:260rpx;"></image>
+    <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:370rpx;">
+      <image src="{{imgAddress}}{{item._id}}/logo" style="height:200rpx;width:200rpx;"></image>
     </view>
-    <view>
-      <view style="font-size:30rpx;color:#4d4d4d;margin-top:72rpx;font-family:PingFang-SC-Regular;line-height:1em;">{{item.title}}</view>
-      <view style="color:#4d4d4d;font-size:25rpx;font-family:PingFang-SC-Regular;line-height:1em;margin-top:6rpx;">{{item.subtitle}}</view>
-      <view style="font-family:PingFang-SC-Regular;font-size:20rpx;color:#747474;margin-top:10rpx;line-height:1em;">{{item.brand}}</view>
-      <view style="font-family:PingFang-SC-Regular;font-size:20rpx;color:#747474;line-height:1em;margin-top:5rpx;">{{item.name}}</view>
-      <view style="display:flex;flex-direction:row;margin-top:15rpx;align-items:flex-end;">
-        <view style="color:#b93636;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;align-items:flex-end;line-height:1em;">
-          <view style="font-size:20rpx;">事妈价</view>
-          <view style="font-size:36rpx;font-family:PingFang-SC-Regular;line-height:1em;">￥{{item.price}}</view>
-          <view style="padding-left:30rpx;text-decoration:line-through;font-size:20rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
+    <view style="display:flex;flex-direction:row;align-items:center;height:290rpx;">
+      <view>
+        <view style="font-size:36rpx;color:#4d4d4d;font-family:PingFang-SC-Regular;line-height:1em;">{{item.title}}</view>
+        <view style="color:#4d4d4d;font-size:32rpx;font-family:PingFang-SC-Regular;line-height:1em;margin-top:6rpx;">{{item.subtitle}}</view>
+        <view style="font-family:PingFang-SC-Regular;font-size:28rpx;color:#747474;margin-top:12rpx;line-height:1em;">{{item.brand}}</view>
+        <view style="font-family:PingFang-SC-Regular;font-size:28rpx;color:#747474;line-height:1em;margin-top:5rpx;">{{item.name}}</view>
+        <view style="display:flex;flex-direction:row;margin-top:15rpx;align-items:flex-end;">
+          <view style="color:#b93636;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;align-items:flex-end;line-height:1em;">
+            <view style="font-size:28rpx;">事妈价</view>
+            <view style="font-size:40rpx;font-family:PingFang-SC-Regular;line-height:1em;">￥{{item.price}}</view>
+            <view style="line-height:1em;padding-left:30rpx;text-decoration:line-through;font-size:28rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
+          </view>
         </view>
       </view>
     </view>
