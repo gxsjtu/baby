@@ -1,6 +1,6 @@
 <view class="container">
   <view wx:for="{{list}}" wx:key="{{item._id}}" wx:for-item="item" class="dataView">
-    <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:372rpx;">
+    <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:400rpx;">
       <image src="{{imgAddress}}{{item._id}}/logo" style="height:260rpx;width:260rpx;"></image>
     </view>
     <view>
@@ -11,7 +11,7 @@
       <view style="display:flex;flex-direction:row;margin-top:15rpx;align-items:flex-end;">
         <view style="color:#b93636;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;align-items:flex-end;line-height:1em;">
           <view style="font-size:20rpx;">事妈价</view>
-          <view style="font-size:36rpx;font-family:PingFang-SC-Regular;">￥{{item.price}}</view>
+          <view style="font-size:36rpx;font-family:PingFang-SC-Regular;line-height:1em;">￥{{item.price}}</view>
           <view style="padding-left:30rpx;text-decoration:line-through;font-size:20rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
         </view>
       </view>
