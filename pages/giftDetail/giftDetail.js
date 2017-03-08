@@ -20,15 +20,16 @@ Page({
     },
     onLoad: function (e) {
         this.data.bundleId = e.bundleId;
-        if (e.canGetBundle == "true") {
-            this.setData({
-                canGetBundle: false
-            })
-        } else {
-            this.setData({
-                canGetBundle: true
-            })
-        }
+        this.data.canGetBundle = e.canGetBundle;
+        // if (e.canGetBundle == "true") {
+        //     this.setData({
+        //         canGetBundle: false
+        //     })
+        // } else {
+        //     this.setData({
+        //         canGetBundle: true
+        //     })
+        // }
         wx.getSystemInfo({
             success: (res) => {
                 // success
@@ -135,10 +136,8 @@ Page({
         })
     },
     goEvaluate: function () {
-        if (this.data.canGetBundle) {
             wx.navigateTo({
-                url: '../itemEvaluate/itemEvaluate?bundleId=' + this.data.bundleId
+                url: '../itemEvaluate/itemEvaluate?bundleId=' + this.data.bundleId + "&canGetBundle=" + this.data.canGetBundle
             })
-        }
     }
 })

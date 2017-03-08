@@ -52,7 +52,7 @@
   <view style="display:flex;flex-direction:row;width:{{outWidth}}">
     <view class="bottom-s" style="width:{{bottomWidth}};" bindtap="goEvaluate">
       <!--<image src="../../assets/images/giftPL.png" style="width:50rpx;height:50rpx;"></image>-->
-      <image src="{{canGetBundle ? '../../assets/images/giftCanPL.png' : '../../assets/images/giftPL.png'}}" style="width:50rpx;height:50rpx;"></image>
+      <image src="../../assets/images/giftCanPL.png" style="width:50rpx;height:50rpx;"></image>
       <view>评论</view>
     </view>
     <!--<view class="bottom-s" style="width:{{bottomWidth}};">

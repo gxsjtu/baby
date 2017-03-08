@@ -12,4 +12,5 @@ page {
   flex-direction: row;
   background: #f0f4f4;
   width: 730rpx;
+  height:290rpx;
 }
