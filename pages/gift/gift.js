@@ -74,6 +74,7 @@ Page({
         giftSvc.displayBundle().then((data) => {
             let obj = data.data.data;
             if (obj) {
+                this.data.canGetBundle = obj.canGetBundle;
                 let imgAddress = GLOBAL.SERVER + "/images/bundles/" + obj._id + "/";
                 let items = [];
                 for (let i = 0; i < obj.items.length; i++) {
@@ -133,8 +134,8 @@ Page({
         let tel = this.data.addressTel;
         let detail = this.data.addressDetail;
         giftSvc.getBundle(this.data.bundleId, province, city, name, tel, detail).then((data) => {
-            console.log(data);
             if (data.data.message == 'OK') {
+                this.data.canGetBundle = false;
                 var deliveryAddress = {
                     city: city,
                     detail: detail,
