@@ -137,7 +137,7 @@ Page({
     },
     goEvaluate: function () {
             wx.navigateTo({
-                url: '../itemEvaluate/itemEvaluate?bundleId=' + this.data.bundleId + "&canGetBundle=" + this.data.canGetBundle
+                url: '../itemEvaluate/itemEvaluate?pageName=gift&bundleId=' + this.data.bundleId + "&canGetBundle=" + this.data.canGetBundle
             })
     }
 })
