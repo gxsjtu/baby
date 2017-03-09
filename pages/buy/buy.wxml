@@ -3,7 +3,7 @@
     <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:370rpx;">
       <image src="{{imgAddress}}{{item._id}}/logo" style="height:200rpx;width:200rpx;"></image>
     </view>
-    <view style="display:flex;flex-direction:row;align-items:center;height:290rpx;">
+    <view style="display:flex;flex-direction:row;align-items:center;height:290rpx;width:380rpx;">
       <view>
         <view style="font-size:34rpx;color:#4d4d4d;font-family:PingFang-SC-Regular;line-height:1em;">{{item.title}}</view>
         <view style="color:#4d4d4d;font-size:30rpx;font-family:PingFang-SC-Regular;line-height:1em;margin-top:6rpx;">{{item.subtitle}}</view>

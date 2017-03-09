@@ -1,7 +1,13 @@
+const GLOBAL = require('../../global.js');
+
 Page({
     data: {
+        imgAddress: GLOBAL.SERVER + "/images/items/",
         outWidth: "",
-        buyItem: {}
+        buyItem: {},
+        slides: [],
+        imgHeight:"",
+        scrollHeight:""
     },
     onLoad: function (e) {
         if (getApp().globalData.selectedBuy) {
@@ -27,6 +33,11 @@ Page({
     goEvaluate: function (e) {
         wx.navigateTo({
             url: '../itemEvaluate/itemEvaluate?pageName=buy&canGetBundle=false'
+        })
+    },
+    imgLoaded:function(e){
+        this.setData({
+            imgHeight:e.detail.height + "px"
         })
     }
 })

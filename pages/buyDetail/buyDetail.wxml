@@ -1,9 +1,9 @@
 <view class="container">
   <scroll-view scroll-y="true" style="height:{{scrollHeight}}">
     <swiper indicator-dots="true" autoplay="false">
-      <block wx:for="{{slideImgs}}" wx:for-item="item">
+      <block wx:for="{{buyItem.slides}}" wx:for-item="item">
         <swiper-item>
-          <image src="{{item}}"></image>
+          <image src="{{imgAddress}}{{buyItem._id}}/slides/{{item}}"></image>
         </swiper-item>
       </block>
     </swiper>
@@ -13,14 +13,21 @@
       <view style="margin-top:40rpx;display:flex;flex-direction:row;align-items:center;position:relative;">
           <view style="font-size:30rpx;color:#ff3131;font-family:PingFang-SC-Regular;">事妈价</view>
           <view style="font-size:40rpx;color:#ff3131;">￥{{buyItem.price}}</view>
-          <view style="position:absolute;font-size:30rpx;color:#929292;margin-left:314rpx;display:flex;flex-direction:row;font-family:PingFang-SC-Regular;">市场价<view style="font-size:30rpx;color:#929292;text-decoration:line-through;margin-left:10rpx;">￥{{buyItem.mPrice}}</view></view>
+          <view style="position:absolute;font-size:30rpx;color:#929292;margin-left:314rpx;display:flex;flex-direction:row;font-family:PingFang-SC-Regular;text-decoration:line-through;">市场价<view style="font-size:30rpx;color:#929292;margin-left:10rpx;">￥{{buyItem.mPrice}}</view></view>
       </view>
       <view style="position:relative;margin-top:42rpx;border-top:1px solid #f0f0f0;height:74rpx;display:flex;flex-direction:row;align-items:center;">
-        <view style="font-size:28rpx;color:#929292">运费：免运费</view>
-        <view style="position:absolute;font-size:28rpx;color:#929292;padding-left:314rpx;;">销量：998</view>
+        <view style="font-size:28rpx;color:#929292;font-family:PingFang-SC-Regular;">运费：免运费</view>
+        <view style="position:absolute;font-size:28rpx;color:#929292;padding-left:314rpx;font-family:PingFang-SC-Regular;top:0;bottom:0;">销量：998</view>
       </view>
     </view>
-    <view style="height:28rpx;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;"></view>
+    <view style="height:28rpx;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;background:#f9f9f9"></view>
+    <view style="margin-left:30rpx;height:96rpx;display:flex;align-items:center;font-size:30rpx;font-family:PingFang-SC-Regular;">规格：{{buyItem.spec}}</view>
+    <view style="height:28rpx;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;background:#f9f9f9"></view>
+    <view style="margin-top:28rpx;">
+      <view wx:for="{{buyItem.images}}" wx:for-item="imgItem">
+        <image src="{{imgAddress}}{{buyItem._id}}/images/{{imgItem}}" style="width:750rpx;" mode="widthFix"></image>
+      </view>
+    </view>
   </scroll-view>
   <view style="display:flex;flex-direction:row;width:{{outWidth}}">
     <view class="bottom-s" style="width:{{bottomWidth}};" bindtap="goEvaluate">
