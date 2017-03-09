@@ -1,8 +1,14 @@
 Page({
     data: {
-        outWidth: ""
+        outWidth: "",
+        buyItem: {}
     },
     onLoad: function (e) {
+        if (getApp().globalData.selectedBuy) {
+            this.setData({
+                buyItem: getApp().globalData.selectedBuy
+            })
+        }
         wx.getSystemInfo({
             success: (res) => {
                 // success

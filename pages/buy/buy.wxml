@@ -1,5 +1,5 @@
 <view class="container">
-  <view wx:for="{{list}}" wx:key="{{item._id}}" wx:for-item="item" class="dataView" bindtap="gotoBuyDetail">
+  <view wx:for="{{list}}" wx:key="{{item._id}}" wx:for-item="item" data-buy-id="{{item._id}}" class="dataView" bindtap="gotoBuyDetail">
     <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:370rpx;">
       <image src="{{imgAddress}}{{item._id}}/logo" style="height:200rpx;width:200rpx;"></image>
     </view>

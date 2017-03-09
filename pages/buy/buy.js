@@ -1,5 +1,6 @@
 const BuySvc = require('../../services/buySvc.js');
 const GLOBAL = require('../../global.js');
+var _ = require('../../utils/lodash.min.js');
 
 Page({
   data: {
@@ -15,9 +16,18 @@ Page({
       })
     })
   },
-  gotoBuyDetail: function(){
-    wx.navigateTo({
-      url: '../buyDetail/buyDetail'
+  gotoBuyDetail: function (e) {
+    var buyId = e.currentTarget.dataset.buyId;
+    var buyItem = _.filter(this.data.list, (item) => {
+      return item._id == buyId;
     })
+
+    if (buyItem != null && buyItem != undefined && buyItem.length > 0) {
+      getApp().globalData.selectedBuy = buyItem[0];
+      console.log(getApp().globalData.selectedBuy);
+      wx.navigateTo({
+        url: '../buyDetail/buyDetail'
+      })
+    }
   }
 })
