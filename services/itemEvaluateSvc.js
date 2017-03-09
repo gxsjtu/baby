@@ -24,4 +24,24 @@ ItemEvaluateSvc.prototype.getJudgesByItemId = function (itemId) {
     })
 };
 
+ItemEvaluateSvc.prototype.canGiveComment2Bundle = function (itemId) {
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/user/canGiveComment2Bundle/" + itemId).then(data => {
+            resolve(data);
+        }).catch(err => {
+            console.log(err);
+        });
+    })
+};
+
+ItemEvaluateSvc.prototype.canGiveComment2Item = function (itemId) {
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/user/canGiveComment2Item/" + itemId).then(data => {
+            resolve(data);
+        }).catch(err => {
+            console.log(err);
+        });
+    })
+};
+
 module.exports = ItemEvaluateSvc;

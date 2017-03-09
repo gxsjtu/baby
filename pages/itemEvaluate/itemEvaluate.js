@@ -18,10 +18,10 @@ Page({
         badCount: 0,
         allCount: 0,
         platform: 'ios',
-        evaluates: []
+        evaluates: [],
+        canAdd: false
     },
     onLoad: function (e) {
-        console.log(e.canGetBundle);
         wx.getSystemInfo({
             success: (res) => {
                 var h = res.windowHeight - 52;
@@ -31,25 +31,46 @@ Page({
                 })
             }
         });
-
+        var itemEvaluateSvc = new ItemEvaluateSvc();
         let globalData = getApp().globalData;
-        let itemId = globalData.currentGift._id;
+        let itemId = '';
+        let imgAddress = ''
+        if (e.pageName == 'buy') {
+            //一键购
+            itemId = globalData.selectedBuy._id;
+            let imgAddress = GLOBAL.SERVER + "/images/items/" + itemID + '/logo';
+            itemEvaluateSvc.canGiveComment2Item(itemId).then((data)=>{
+                console.log(data);
+                this.setData({
+                    canAdd: true
+                });
+            });
+        }
+        else if (e.pageName == 'gift') {
+            //礼包
+            let item = globalData.currentGift;
+            itemId = item._id;
+            let imgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + '/' + item.name + '/' + item.name;
+            itemEvaluateSvc.canGiveComment2Bundle(e.bundleId).then((data)=>{
+                console.log(data);
+                this.setData({
+                    canAdd: data.data
+                });
+            });
+        }
+        let avatar = encodeURI(imgAddress);
         let nickName = globalData.userInfo.nickName;
         let avatarUrl = globalData.userInfo.avatarUrl;
-        let imgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId;
-        let item = globalData.currentGift;
-        let avatar = encodeURI(imgAddress + '/' + item.name + '/' + item.name);
+
         this.data.itemId = itemId;
         this.data.nickName = nickName;
         this.data.avatarUrl = avatarUrl;
         this.setData({
-            avatar: avatar,
-            gift: item,
-            canAdd: e.canGetBundle == 'false' ? true : false
+            avatar: avatar
         });
-        var itemEvaluateSvc = new ItemEvaluateSvc();
+        
+
         itemEvaluateSvc.getJudgesByItemId(itemId).then((data) => {
-            console.log(data);
             let evaluates = [];
             let allEvaluates = [];
             let goodEvaluates = [];
