@@ -49,27 +49,6 @@ Page({
         let inventory = 0;
         provinces.push(locationSvc.provinces[0].province);
         this.setData({ province: provinces, cities: locationSvc.provinces[0].cities });
-
-        if (getApp().globalData.user.deliveryAddress != undefined) {
-            let address = getApp().globalData.user.deliveryAddress;
-            let selectProvince = _.findIndex(this.data.province, function (p) {
-                return p == address.province;
-            });
-            let selectCity = _.findIndex(this.data.cities, function (c) {
-                return c == address.city;
-            });
-            this.setData({
-                selectProvince: (selectProvince == -1
-                    ? 0
-                    : selectProvince),
-                selectCity: (selectCity == -1
-                    ? 0
-                    : selectCity),
-                addressDetail: address.detail,
-                addressContact: address.name,
-                addressTel: address.tel
-            });
-        }
         var giftSvc = new GiftSvc();
         giftSvc.displayBundle().then((data) => {
             let obj = data.data.data;
@@ -196,11 +175,39 @@ Page({
         this.setData({ btnSubmit: true });
         var giftSvc = new GiftSvc();
         giftSvc.canGetBundle(this.data.bundleId).then((data) => {
+            console.log(data.data.data);
             if (data.data.data.res == 'no') {
                 this.showError(data.data.data.message);
                 this.setData({ btnDefaultDisabled: true, btnSubmit: false });
             }
             else {
+
+                if (data.data.data.address) {
+                    let address = data.data.data.address;
+                    let selectProvince = _.findIndex(this.data.province, function (p) {
+                        return p == address.province;
+                    });
+                    let selectCity = _.findIndex(this.data.cities, function (c) {
+                        return c == address.city;
+                    });
+                    this.setData({
+                        selectProvince: (selectProvince == -1 ? 0 : selectProvince),
+                        selectCity: (selectCity == -1 ? 0 : selectCity),
+                        addressDetail: address.detail,
+                        addressContact: address.name,
+                        addressTel: address.tel
+                    });
+                }
+                else {
+                    this.setData({
+                        selectProvince: 0,
+                        selectCity: 0,
+                        addressDetail: '',
+                        addressContact: '',
+                        addressTel: ''
+                    });
+                }
+
                 this.checkAddress();
                 this.setData({ showAlert: true, showMask: true });
             }
