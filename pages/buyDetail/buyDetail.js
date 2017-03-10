@@ -15,8 +15,8 @@ Page({
         if (getApp().globalData.selectedBuy) {
             var item = getApp().globalData.selectedBuy;
             this.setData({
-                    buyItem: item
-                })
+                buyItem: item
+            })
             var buySvc = new BuySvc();
             buySvc.getSaleQtyById(item._id).then(data => {
                 console.log(data.data.data);
@@ -48,6 +48,11 @@ Page({
     imgLoaded: function (e) {
         this.setData({
             imgHeight: e.detail.height + "px"
+        })
+    },
+    buyGift: function (e) {
+        wx.navigateTo({
+            url: '../buyGift/buyGift?pageName=buy'
         })
     }
 })

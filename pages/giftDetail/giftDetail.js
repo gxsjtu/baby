@@ -132,7 +132,7 @@ Page({
     },
     buyGift: function () {
         wx.navigateTo({
-            url: '../buyGift/buyGift?id=' + this.data.bundleId
+            url: '../buyGift/buyGift?pageName=gift&id=' + this.data.bundleId
         })
     },
     goEvaluate: function () {

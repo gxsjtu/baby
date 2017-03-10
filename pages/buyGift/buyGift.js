@@ -1,30 +1,35 @@
 const GLOBAL = require('../../global.js');
 
 Page({
-    data:{
-        imgAddress:"",
-        imgWidth:"",
-        imgHeight:""
+    data: {
+        count: 1,
+        hasAddress: false
     },
-    onLoad: function(e) {
-        var bId = e.id;
-        let gift = getApp().globalData.currentGift;
-        wx.setNavigationBarTitle({ title: gift.name });
-        this.setData({
-            imgAddress:GLOBAL.SERVER + "/images/bundles/" + bId + "/" + gift.name + "/purchase"
-        })
-    },
-    getSize: function(e){
-        wx.getSystemInfo({
-          success: (res) => {
-            // success
-            var w = res.windowWidth + "px";
-            var h = e.detail.height + "px";
+    onLoad: function (e) {
+        var pageName = e.pageName;
+        let item = {};
+        if (pageName == 'gift') {
+            var bId = e.id;
+            let gift = getApp().globalData.currentGift;
+            item.desc = gift.description;
+            item.detail = gift.details && gift.details.length > 0 ? gift.details[0] : '';
+            console.log(gift);
             this.setData({
-                imgWidth: w,
-                imgHeight: h
+                item: item,
+                imgAddress: GLOBAL.SERVER + "/images/bundles/" + bId + "/" + gift.name + "/" + gift.name
             })
-          }
-        })
+        }
+    },
+    reduce: function () {
+        if (this.data.count > 1) {
+            this.setData({
+                count: this.data.count - 1
+            });
+        }
+    },
+    add: function () {
+        this.setData({
+            count: this.data.count + 1
+        });
     }
 })

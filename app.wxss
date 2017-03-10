@@ -2,6 +2,7 @@
 
 page {
   font-family: PingFangSC-Regular;
+  letter-spacing: -0.2rpx;
 }
 
 .container {

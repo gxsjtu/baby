@@ -1,3 +1,51 @@
-<view>
+
+<!--<view>
     <image src="{{imgAddress}}" style="width:{{imgWidth}};height:{{imgHeight}};" bindload="getSize"></image>
+</view>-->
+<view class="container">
+  <view class="address-container">
+    <view class="placeholder" hidden="{{hasAddress}}">请填写收货地址</view>
+    <view class="address-info" hidden="{{!hasAddress}}">
+        <view class="user"></view>
+        <view class="address"></view>
+    </view>
+    <view class="arrow"></view>
+  </view>
+  <image src="../../assets/images/buyAddressBorder.png" style="width:750rpx;height:8rpx;"></image>
+  <view class="split"></view>
+  <view class="item-container">
+    <view class="title">
+      <view>事妈驾到</view>
+    </view>
+    <view class="desc">
+      <view style="width:160rpx;height:160rpx;">
+        <image src="{{imgAddress}}" style="width:160rpx;height:160rpx;" />
+      </view>
+      <view style="width:30rpx;"></view>
+      <view class="item">
+        <view class="item-name">天然粮食萃取成分 水嫩肌肤看得见 五谷粮膜五谷胚芽舒缓面膜</view>
+        <view class="item-gg">规格：125mlx5片</view>
+        <view class="price-container">
+          <view class="item-price">￥128.00</view>
+          <view class="slider-container">
+            <view class="reduce {{count <= 1 ? 'disable' : ''}}" bindtap="reduce">
+              <view>-</view>
+            </view>
+            <view class="number">
+              <view>{{count}}</view>
+            </view>
+            <view class="add" bindtap="add">
+              <view>+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view>配送方式</view>
+    <view class="split"></view>
+    <view class="info">
+      <view>商品金额</view>
+      <view>运费</view>
+    </view>
+  </view>
 </view>
