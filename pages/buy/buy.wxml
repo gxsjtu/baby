@@ -7,7 +7,7 @@
     </block>
   </swiper>
   <view wx:for="{{list}}" wx:key="{{obj.typeStr}}" wx:for-item="obj">
-    <view style="background: #eaeaea;margin-bottom:4rpx;width: 750rpx;height:74rpx;justify-content:center;font-size:30rpx;color:#747474;font-family:PingFang-SC-Regular;display:flex;align-items:center;">{{obj.typeStr}}</view>
+    <view style="background: #ff606f;margin-bottom:4rpx;width: 750rpx;height:74rpx;justify-content:center;font-size:30rpx;color:#fff;font-family:PingFang-SC-Regular;display:flex;align-items:center;">{{obj.typeStr}}</view>
     <view wx:for="{{obj.items}}" wx:key="{{item._id}}" wx:for-item="item" data-buy-id="{{item._id}}" class="dataView" bindtap="gotoBuyDetail">
       <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:370rpx;">
         <image src="{{imgAddress}}{{item._id}}/logo" style="height:200rpx;width:200rpx;"></image>
