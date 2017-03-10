@@ -7,7 +7,7 @@ page {
 }
 
 .dataView {
-  margin-top: 10rpx;
+  margin-bottom: 10rpx;
   display: flex;
   flex-direction: row;
   background: #f0f4f4;

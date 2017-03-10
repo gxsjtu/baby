@@ -5,14 +5,30 @@ var _ = require('../../utils/lodash.min.js');
 Page({
   data: {
     list: [],
-    imgAddress: GLOBAL.SERVER + "/images/items/"
+    imgAddress: GLOBAL.SERVER + "/images/items/",
+    slidesImgAddress: GLOBAL.SERVER+"/images/items/slides/",
+    slideImgs:[]
   },
   onLoad: function (e) {
     var buySvc = new BuySvc();
+
+    buySvc.getSlides().then(data => {
+     this.setData({
+       slideImgs:data.data.data
+     })
+    })
+
     buySvc.getList().then(data => {
-      // console.log(data.data.data);
+      var dataList = data.data.data;
+      var groupList = _.groupBy(dataList, (d) => {
+          return d.type;
+      });
+      var resultList = _.reduce(groupList,(result, items, typeStr) => {
+        result.push({items, typeStr});
+        return result;
+      },[]);
       this.setData({
-        list: data.data.data
+        list: resultList
       })
     })
   },

@@ -44,4 +44,12 @@ BuySvc.prototype.getSaleQtyById = function(id){
     })
 }
 
+BuySvc.prototype.getSlides = function(){
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/item/getSlides", null, "GET").then(data => {
+            resolve(data);
+        })
+    })
+}
+
 module.exports = BuySvc;
