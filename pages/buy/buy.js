@@ -7,7 +7,8 @@ Page({
     list: [],
     imgAddress: GLOBAL.SERVER + "/images/items/",
     slidesImgAddress: GLOBAL.SERVER+"/images/items/slides/",
-    slideImgs:[]
+    slideImgs:[],
+    allList:[]
   },
   onLoad: function (e) {
     var buySvc = new BuySvc();
@@ -28,13 +29,15 @@ Page({
         return result;
       },[]);
       this.setData({
-        list: resultList
+        list: resultList,
+        allList: dataList
       })
     })
   },
   gotoBuyDetail: function (e) {
     var buyId = e.currentTarget.dataset.buyId;
-    var buyItem = _.filter(this.data.list, (item) => {
+    console.log(this.data.list);
+    var buyItem = _.filter(this.data.allList, (item) => {
       return item._id == buyId;
     })
 
