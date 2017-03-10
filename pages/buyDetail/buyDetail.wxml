@@ -2,22 +2,30 @@
   <scroll-view scroll-y="true" style="height:{{scrollHeight}}">
     <swiper indicator-dots="true" autoplay="false">
       <block wx:for="{{buyItem.slides}}" wx:for-item="item">
-        <swiper-item>
-          <image src="{{imgAddress}}{{buyItem._id}}/slides/{{item}}"></image>
+        <swiper-item style="text-align:center;">
+          <image src="{{imgAddress}}{{buyItem._id}}/slides/{{item}}" mode="aspectFit" style="display:inline;"></image>
         </swiper-item>
       </block>
     </swiper>
     <view style="margin-left:30rpx;">
       <view style="margin-top:36rpx;font-size:36rpx;color:#000;font-family:PingFang-SC-Regular;">{{buyItem.title}} {{buyItem.subtitle}}</view>
       <view style="margin-top:16rpx;font-size:36rpx;color:#000;font-family:PingFang-SC-Regular;">{{buyItem.brand}} {{buyItem.name}}</view>
-      <view style="margin-top:40rpx;display:flex;flex-direction:row;align-items:center;position:relative;">
-          <view style="font-size:30rpx;color:#ff3131;font-family:PingFang-SC-Regular;">事妈价</view>
-          <view style="font-size:40rpx;color:#ff3131;">￥{{buyItem.price}}</view>
-          <view style="position:absolute;font-size:30rpx;color:#929292;margin-left:314rpx;display:flex;flex-direction:row;font-family:PingFang-SC-Regular;text-decoration:line-through;">市场价<view style="font-size:30rpx;color:#929292;margin-left:10rpx;">￥{{buyItem.mPrice}}</view></view>
-      </view>
-      <view style="position:relative;margin-top:42rpx;border-top:1px solid #f0f0f0;height:74rpx;display:flex;flex-direction:row;align-items:center;">
-        <view style="font-size:28rpx;color:#929292;font-family:PingFang-SC-Regular;">运费：免运费</view>
-        <view style="position:absolute;font-size:28rpx;color:#929292;padding-left:314rpx;font-family:PingFang-SC-Regular;top:0;bottom:0;">销量：998</view>
+      <!--<view style="margin-top:40rpx;display:flex;flex-direction:row;align-items:flex-end;position:relative;">
+        <view style="font-size:30rpx;color:#ff3131;font-family:PingFang-SC-Regular;">事妈价</view>
+        <view style="font-size:40rpx;color:#ff3131;font-family:PingFang-SC-Regular;">￥{{buyItem.price}}</view>
+        <view style="position:absolute;font-size:30rpx;color:#929292;padding-left:314rpx;display:flex;flex-direction:row;font-family:PingFang-SC-Regular;text-decoration:line-through;">市场价 ￥{{buyItem.mPrice}}
+        </view>
+      </view>-->
+      <view style="display:flex;flex-direction:row;margin-top:40rpx;align-items:flex-end;width:100%;">
+          <view style="width:400rpx;color:#ff3131;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;align-items:flex-end;line-height:1em;">
+            <view style="font-size:30rpx;">事妈价</view>
+            <view style="font-size:40rpx;font-family:line-height:1em;">￥{{buyItem.price}}</view>
+            </view>
+            <view style="font-size:30rpx;color:#929292;display:flex;flex-direction:row;font-family:PingFang-SC-Regular;text-decoration:line-through;">市场价 ￥{{buyItem.mPrice}}</view>
+        </view>
+      <view style="margin-top:42rpx;border-top:1px solid #f0f0f0;height:74rpx;display:flex;flex-direction:row;width:100%;">
+        <view style="font-size:28rpx;color:#929292;font-family:PingFang-SC-Regular;height:74rpx;display:flex;align-items:center;width:400rpx;">运费：免运费</view>
+        <view style="font-size:28rpx;color:#929292;font-family:PingFang-SC-Regular;height:74rpx;display:flex;align-items:center;">销量：{{saleQty}}</view>
       </view>
     </view>
     <view style="height:28rpx;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;background:#f9f9f9"></view>

@@ -36,4 +36,12 @@ BuySvc.prototype.getList = function () {
     })
 }
 
+BuySvc.prototype.getSaleQtyById = function(id){
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/order/getSalesByItemId/" + id, null, "GET").then(data => {
+            resolve(data);
+        })
+    })
+}
+
 module.exports = BuySvc;

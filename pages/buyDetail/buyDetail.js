@@ -1,4 +1,5 @@
 const GLOBAL = require('../../global.js');
+const BuySvc = require('../../services/buySvc.js');
 
 Page({
     data: {
@@ -6,13 +7,22 @@ Page({
         outWidth: "",
         buyItem: {},
         slides: [],
-        imgHeight:"",
-        scrollHeight:""
+        imgHeight: "",
+        scrollHeight: "",
+        saleQty: 0
     },
     onLoad: function (e) {
         if (getApp().globalData.selectedBuy) {
+            var item = getApp().globalData.selectedBuy;
             this.setData({
-                buyItem: getApp().globalData.selectedBuy
+                    buyItem: item
+                })
+            var buySvc = new BuySvc();
+            buySvc.getSaleQtyById(item._id).then(data => {
+                console.log(data.data.data);
+                this.setData({
+                    saleQty: data.data.data
+                })
             })
         }
         wx.getSystemInfo({
@@ -35,9 +45,9 @@ Page({
             url: '../itemEvaluate/itemEvaluate?pageName=buy&canGetBundle=false'
         })
     },
-    imgLoaded:function(e){
+    imgLoaded: function (e) {
         this.setData({
-            imgHeight:e.detail.height + "px"
+            imgHeight: e.detail.height + "px"
         })
     }
 })
