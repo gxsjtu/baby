@@ -52,4 +52,12 @@ BuySvc.prototype.getSlides = function(){
     })
 }
 
+BuySvc.prototype.getDeliveryAddress = function(){
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/user/getDeliveryAddress", null, "GET").then(data => {
+            resolve(data);
+        })
+    })
+}
+
 module.exports = BuySvc;

@@ -98,7 +98,7 @@
                         </view>
                     </view>
                     <view class="input-container">
-                        <button bindtap="setAddress" disabled="{{!btnAddressDisabled}}" class="{{!btnAddressDisabled ? 'btn-f' : 'btn-style'}}" bindtap="getGift">确定</button>
+                        <button disabled="{{!btnAddressDisabled}}" class="{{!btnAddressDisabled ? 'btn-f' : 'btn-style'}}" bindtap="getGift">确定</button>
                     </view>
                 </view>
             </view>

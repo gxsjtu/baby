@@ -1,51 +1,121 @@
-
-<!--<view>
-    <image src="{{imgAddress}}" style="width:{{imgWidth}};height:{{imgHeight}};" bindload="getSize"></image>
-</view>-->
 <view class="container">
-  <view class="address-container">
+  <view class="address-container" bindtap="showAddressPage">
     <view class="placeholder" hidden="{{hasAddress}}">请填写收货地址</view>
     <view class="address-info" hidden="{{!hasAddress}}">
-        <view class="user"></view>
-        <view class="address"></view>
+      <view class="user">
+        <view class="user-name">{{addressContact}}</view>
+        <view class="user-tel">{{addressTel}}</view>
+      </view>
+      <view style="height:10rpx;"></view>
+      <view class="address">{{address}}</view>
     </view>
     <view class="arrow"></view>
   </view>
   <image src="../../assets/images/buyAddressBorder.png" style="width:750rpx;height:8rpx;"></image>
   <view class="split"></view>
   <view class="item-container">
-    <view class="title">
-      <view>事妈驾到</view>
-    </view>
-    <view class="desc">
-      <view style="width:160rpx;height:160rpx;">
-        <image src="{{imgAddress}}" style="width:160rpx;height:160rpx;" />
-      </view>
-      <view style="width:30rpx;"></view>
-      <view class="item">
-        <view class="item-name">天然粮食萃取成分 水嫩肌肤看得见 五谷粮膜五谷胚芽舒缓面膜</view>
-        <view class="item-gg">规格：125mlx5片</view>
-        <view class="price-container">
-          <view class="item-price">￥128.00</view>
-          <view class="slider-container">
-            <view class="reduce {{count <= 1 ? 'disable' : ''}}" bindtap="reduce">
-              <view>-</view>
+    <scroll-view scroll-y="true" style="border-top: 1px solid #e9e9ed;border-bottom: 1px solid #e9e9ed;height:{{scrollHeight}}">
+      <view style="height:100%;display:flex;align-items: center;justify-content:center;">
+        <view class="desc">
+          <view style="width:160rpx;height:160rpx;">
+            <image src="{{imgAddress}}" style="width:160rpx;height:160rpx;" />
+          </view>
+          <view style="width:30rpx;"></view>
+          <view class="item">
+            <view class="item-name">
+              <view>{{item.title}}</view>
+              <view>{{item.name}}</view>
             </view>
-            <view class="number">
-              <view>{{count}}</view>
-            </view>
-            <view class="add" bindtap="add">
-              <view>+</view>
+            <view class="item-gg">规格：{{item.spec}}</view>
+            <view class="price-container">
+              <view class="item-price">￥{{item.price}}</view>
+              <view class="slider-container">
+                <view class="reduce {{count <= 1 ? 'disable' : ''}}" bindtap="reduce">
+                  <view>-</view>
+                </view>
+                <view class="number">
+                  <view>
+                    <input type="number" value="{{count}}" bindinput="inputNumber" style="width:100%;"/>
+                  </view>
+                </view>
+                <view class="add" bindtap="add">
+                  <view>+</view>
+                </view>
+              </view>
             </view>
           </view>
         </view>
       </view>
+    </scroll-view>
+    <view style="display:flex;justify-content: space-between;margin:10px auto;font-size:16px;height:22px;">
+      <view>配送方式</view>
+      <view style="margin-right:30rpx;color:#aeaeae;font-size:14px;">第三方快递</view>
     </view>
-    <view>配送方式</view>
-    <view class="split"></view>
+    <view class="split" style="margin-left:-30rpx;"></view>
     <view class="info">
-      <view>商品金额</view>
-      <view>运费</view>
+      <view style="display:flex;justify-content: space-between;">
+        <view>商品金额</view>
+        <view style="color:red;">￥{{count * item.price}}</view>
+      </view>
+      <view style="display:flex;justify-content: space-between;">
+        <view>运费</view>
+        <view style="color:red;">￥0.00</view>
+      </view>
+    </view>
+    <view style="margin:10px 30rpx 10px 0;text-align:right;height:22px;">
+      实付金额：
+      <text style="color:red;">￥{{count*item.price}}</text>
+    </view>
+    <view style="margin-right:30rpx;">
+      <button type="primary">微信支付</button>
+    </view>
+  </view>
+  <view class="mask" bindtap="hideMask" hidden="{{!showAddress}}">
+    <view class="alert" style="top:50%;margin-top:-315rpx;" catchtap="clickAlert">
+      <view class="alert-title">请填写收货地址</view>
+      <view class="alert-container">
+        <view class="input-container">
+          <view>省：</view>
+          <view>
+            <picker bindchange="provinceChange" value="{{selectProvince}}" range="{{province}}">
+              <view class="picker">
+                {{province[selectProvince]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class="input-container">
+          <view>市/区/县：</view>
+          <view>
+            <picker bindchange="cityChange" value="{{selectCity}}" range="{{cities}}">
+              <view class="picker">
+                {{cities[selectCity]}}
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class="input-container">
+          <view>详细地址：</view>
+          <view>
+            <input placeholder="请输入详细地址" value="{{addressDetail}}" bindinput="bindKeyInput" data-type="detail" />
+          </view>
+        </view>
+        <view class="input-container">
+          <view>联系人：</view>
+          <view>
+            <input placeholder="请输入联系人" value="{{addressContact}}" bindinput="bindKeyInput" data-type="contact" />
+          </view>
+        </view>
+        <view class="input-container">
+          <view>电话：</view>
+          <view>
+            <input placeholder="请输入电话" value="{{addressTel}}" bindinput="bindKeyInput" data-type="tel" />
+          </view>
+        </view>
+        <view class="input-container">
+          <button bindtap="setAddress" disabled="{{!btnAddressDisabled}}" class="{{!btnAddressDisabled ? 'btn-f' : 'btn-style'}}">确定</button>
+        </view>
+      </view>
     </view>
   </view>
 </view>
