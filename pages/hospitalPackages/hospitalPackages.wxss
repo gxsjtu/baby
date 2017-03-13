@@ -7,6 +7,7 @@
   padding: 0 20rpx;
   align-items: center;
   height: 84rpx;
+  position:relative;
 }
 
 .list-name {
@@ -20,10 +21,10 @@
 .list-qty {
   font-family: PingFangSC-Regular;
   font-size: 13px;
-  /*color: #9d9d9d;*/
   letter-spacing: -0.31px;
-  width: 80rpx;
   text-align: right;
+  position:absolute;
+  right:40rpx;
 }
 
 /*.list-namef {
@@ -36,13 +37,11 @@
 
 .name-line {
   text-decoration: none;
-  width: 550rpx;
 }
 
 .name-linef {
   text-decoration: line-through;
   color: #FF4949;
-  width: 550rpx;
 }
 
 .name-line .list-name,.list-qty-line{
