@@ -19,7 +19,6 @@ Page({
             })
             var buySvc = new BuySvc();
             buySvc.getSaleQtyById(item._id).then(data => {
-                console.log(data.data.data);
                 this.setData({
                     saleQty: data.data.data
                 })
