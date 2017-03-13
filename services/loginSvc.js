@@ -17,8 +17,6 @@ LoginSvc.prototype.login = function (code, res) {
         success: function(data){
           // success
           resolve(data.data);
-          console.log('login success');
-          console.log(data.data);
         },
         fail: function(err) {
           // fail
