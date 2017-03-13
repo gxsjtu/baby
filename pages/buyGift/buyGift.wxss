@@ -21,9 +21,6 @@ page {
   width: 650rpx;
 }
 
-/*.address{
-    
-}*/
 
 .arrow {
   width: 14rpx;
