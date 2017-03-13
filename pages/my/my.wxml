@@ -33,31 +33,43 @@
       <!--<view class="arrow">
       </view>-->
     </view>
-    <view class="menu" data-menuname="我的订单">
+    <view class="menu" data-menuname="我的申领">
       <view class="menu-item">
         <view class="menu-name">我的申领</view>
         <view class="menu-desc">查看所有申领内容</view>
       </view>
       <view class="icon" bindtap="gotoMyOrders">
+        <image src="../../assets/images/myGift.png"></image>
+      </view>
+
+      <!--<view class="arrow">
+      </view>-->
+    </view>
+    <view class="menu" data-menuname="我的订单">
+      <view class="menu-item">
+        <view class="menu-name">我的订单</view>
+        <view class="menu-desc">查看所有订单</view>
+      </view>
+      <view class="icon" bindtap="gotoMyBuyOrders">
         <image src="../../assets/images/wdsl.png"></image>
       </view>
 
       <!--<view class="arrow">
       </view>-->
     </view>
-
     <view class="menu" data-menuname="联系客服">
       <view class="menu-item">
         <view class="menu-name">在线客服</view>
         <view class="menu-desc">联系事妈，获取帮助</view>
       </view>
       <view class="icon">
-       <contact-button type="default-light" session-session-from="weapp" size="27"></contact-button>
+        <contact-button type="default-light" session-session-from="weapp" size="27"></contact-button>
       </view>
 
       <!--<view class="arrow">
       </view>-->
     </view>
+
     <!--<view class="menu">
       <contact-button class="contact" type="default-dark" session-session-from="weapp" size="27px"></contact-button>
     </view>-->

@@ -1,0 +1,20 @@
+<view class="container">
+  <view wx:for="{{orderList}}" wx:for-item="order" wx:key="{{order._id}}" class="dataView">
+    <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:240rpx;">
+      <image src="{{imgAddress}}{{order.itemId}}/logo" style="height:200rpx;width:200rpx;"></image>
+    </view>
+    <view style="padding-left:50rpx;margin-top:60rpx;margin-bottom:40rpx;border-left:2rpx solid #ebebeb;">
+      <view style="display:flex;align-items:center;">
+        <view class="font-name">{{order.name}}</view>
+      </view>
+      <view style="display:flex;align-items:center;margin-top:20rpx;">
+        <view class="font-v">日期：</view>
+        <view class="font-v">{{order.created}}</view>
+      </view>
+      <view style="display:flex;align-items:center;margin-top:20rpx;">
+        <view class="font-v">状态：</view>
+        <view class="font-v">{{order.status}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,43 @@
+.font-s {
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #6d6d6d;
+  letter-spacing: -0.31px;
+  width: 150rpx;
+  text-align: right;
+}
+
+.font-v {
+  font-family: PingFangSC-Medium;
+  font-size: 13px;
+  color: #747474;
+  letter-spacing: -0.36px;
+}
+
+.font-name {
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  letter-spacing: -0.36px;
+}
+
+page {
+  height: 100%;
+}
+
+.container {
+  background: #fff;
+}
+
+.dataView {
+  display: flex;
+  flex-direction: row;
+  border-bottom:5px solid #ebebeb;
+  width: 750rpx;
+  height:290rpx;
+}
+
+.split {
+    width: 750rpx;
+    height: 5px;
+    background: #ebebeb;
+}

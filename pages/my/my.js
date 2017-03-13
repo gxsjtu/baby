@@ -24,5 +24,10 @@ Page({
     },
     gotoMyOrders: function (e) {
         wx.navigateTo({ url: '../myOrders/myOrders' });
+    },
+    gotoMyBuyOrders: function(){
+        wx.navigateTo({
+          url: '../myBuyOrders/myBuyOrders'
+        })
     }
 })
