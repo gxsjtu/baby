@@ -20,9 +20,9 @@
                     <view style="font-family:PingFang-SC-Regular;font-size:20rpx;color:#747474;line-height:1em;margin-top:6rpx;">{{item.name}}</view>
                     <view style="display:flex;flex-direction:row;margin-top:15rpx;align-items:flex-end;">
                         <view style="color:#b93636;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;align-items:flex-end;line-height:1em;">
-                            <view style="font-size:20rpx;line-height:1em;">事妈价</view>
+                            <view style="font-size:20rpx;">事妈价</view>
                             <view style="font-size:36rpx;font-family:PingFang-SC-Regular;line-height:1em;">￥{{item.price}}</view>
-                            <view style="line-height:1em;padding-left:20rpx;text-decoration:line-through;font-size:20rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
+                            <view style="padding-left:20rpx;text-decoration:line-through;font-size:20rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
                         </view>
                     </view>
                 </view>
