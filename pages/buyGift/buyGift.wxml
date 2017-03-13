@@ -14,7 +14,7 @@
   <image src="../../assets/images/buyAddressBorder.png" style="width:750rpx;height:8rpx;"></image>
   <view class="split"></view>
   <view class="item-container">
-    <scroll-view scroll-y="true" style="border-top: 1px solid #e9e9ed;border-bottom: 1px solid #e9e9ed;height:{{scrollHeight}}">
+    <view scroll-y="true" style="border-top: 1px solid #e9e9ed;border-bottom: 1px solid #e9e9ed;">
       <view style="height:100%;display:flex;align-items: center;justify-content:center;">
         <view class="desc">
           <view style="width:160rpx;height:160rpx;">
@@ -24,9 +24,12 @@
           <view class="item">
             <view class="item-name">
               <view>{{item.title}}</view>
+              <view style="height:4rpx;"></view>
               <view>{{item.name}}</view>
             </view>
+            <view style="height:10rpx;"></view>
             <view class="item-gg">规格：{{item.spec}}</view>
+            <view style="height:10rpx;"></view>
             <view class="price-container">
               <view class="item-price">￥{{item.price}}</view>
               <view class="slider-container">
@@ -46,7 +49,7 @@
           </view>
         </view>
       </view>
-    </scroll-view>
+    </view>
     <view style="display:flex;justify-content: space-between;margin:10px auto;font-size:16px;height:22px;">
       <view>配送方式</view>
       <view style="margin-right:30rpx;color:#aeaeae;font-size:14px;">第三方快递</view>
@@ -66,7 +69,7 @@
       实付金额：
       <text style="color:red;">￥{{count*item.price}}</text>
     </view>
-    <view style="margin-right:30rpx;">
+    <view style="margin-right:30rpx;margin-top:10rpx;">
       <button type="primary">微信支付</button>
     </view>
   </view>

@@ -20,14 +20,14 @@ Page({
     },
     onLoad: function (e) {
 
-        wx.getSystemInfo({
-            success: (res) => {
-                var h = res.windowHeight - 100 - 3 - 10 - (22 + 10 + 10) - 10 - (22 + 22 + 12 + 12 + 1) - (22 + 10 + 10) - 60;
-                this.setData({
-                    scrollHeight: h + "px"
-                })
-            }
-        })
+        // wx.getSystemInfo({
+        //     success: (res) => {
+        //         var h = res.windowHeight - 80 - 3 - 10 - (22 + 10 + 10) - 10 - (22 + 22 + 12 + 12 + 1) - (22 + 10 + 10) - 60;
+        //         this.setData({
+        //             scrollHeight: h + "px"
+        //         })
+        //     }
+        // })
 
         var buySvc = new BuySvc();
         buySvc.getDeliveryAddress().then((data) => {
