@@ -1,7 +1,7 @@
 <view class="container">
   <scroll-view scroll-y="true" style="height:{{scrollHeight}}">
     <swiper indicator-dots="true" autoplay="false" style="width:750rpx;height:406rpx;">
-      <block wx:for="{{buyItem.slides}}" wx:for-item="item">
+      <block wx:for="{{buyItem.slides}}" wx:for-item="item" wx:key="{{index}}">
         <swiper-item style="text-align:center;">
           <image src="{{imgAddress}}{{buyItem._id}}/slides/{{item}}" style="width:750rpx;height:406rpx;"></image>
         </swiper-item>
@@ -32,7 +32,7 @@
     <view style="margin-left:30rpx;height:96rpx;display:flex;align-items:center;font-size:30rpx;font-family:PingFang-SC-Regular;">规格：{{buyItem.spec}}</view>
     <view style="height:28rpx;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;background:#f9f9f9"></view>
     <view style="margin-top:28rpx;">
-      <view wx:for="{{buyItem.images}}" wx:for-item="imgItem">
+      <view wx:for="{{buyItem.images}}" wx:for-item="imgItem" wx:key="{{index}}">
         <image src="{{imgAddress}}{{buyItem._id}}/images/{{imgItem}}" style="width:750rpx;" mode="widthFix"></image>
       </view>
     </view>
