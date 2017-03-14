@@ -76,14 +76,14 @@ Page({
                             btnText: '礼包已被领完'
                         });
                     }
-                }
+                } 
                 this.setData({
                     inventory: obj.inventory,
                     applies: obj.applies,
                     items: items,
                     imgAddress: imgAddress,
                     bundleId: obj._id,
-                    btnDefaultDisabled: obj.canGetBundle
+                    btnDefaultDisabled: true
                 })
             }
             if (callback) {
@@ -175,13 +175,11 @@ Page({
         this.setData({ btnSubmit: true });
         var giftSvc = new GiftSvc();
         giftSvc.canGetBundle(this.data.bundleId).then((data) => {
-            console.log(data.data.data);
             if (data.data.data.res == 'no') {
                 this.showError(data.data.data.message);
                 this.setData({ btnDefaultDisabled: true, btnSubmit: false });
             }
             else {
-
                 if (data.data.data.address) {
                     let address = data.data.data.address;
                     let selectProvince = _.findIndex(this.data.province, function (p) {

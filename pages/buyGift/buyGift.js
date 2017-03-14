@@ -1,6 +1,7 @@
 const GLOBAL = require('../../global.js');
 const BuySvc = require('../../services/buySvc.js');
 const LocationSvc = require('../../services/locationSvc.js');
+const PaymentSvc = require('../../services/paymentSvc.js');
 
 Page({
     data: {
@@ -16,7 +17,8 @@ Page({
         addressTel: '',
         showAddress: false,
         btnAddressDisabled: false,
-        address: ''
+        address: '',
+        itemId:''
     },
     onLoad: function(e) {
 
@@ -59,6 +61,7 @@ Page({
             })
         } else if (pageName == 'buy') {
             let buy = getApp().globalData.selectedBuy;
+            this.data.itemId = buy._id;
             item.title = buy.title + ' ' + buy.subtitle;
             item.name = buy.brand + buy.name;
             item.spec = buy.spec;
@@ -131,5 +134,11 @@ Page({
             }
         }
         this.setData({count: count})
+    },
+    buy:function(e){
+        var paymentSvc = new PaymentSvc();
+        paymentSvc.makePayment(this.data.itemId,this.data.count).then((data)=>{
+            console.log(data);
+        });
     }
 })
