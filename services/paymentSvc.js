@@ -4,9 +4,9 @@ const Promise = require('../utils/promise.min.js');
 
 var PaymentSvc = function () { };
 
-PaymentSvc.prototype.makePayment = function (itemId, count) {
+PaymentSvc.prototype.makePayment = function (obj) {
     return new Promise((resolve, reject) => {
-        request(GLOBAL.SERVER + "/payment/makePayment/" + itemId + "/" + count).then(data => {
+        request(GLOBAL.SERVER + "/payment/makePayment/",obj,"POST").then(data => {
             resolve(data);
         }).catch(err => {
             console.log(err);

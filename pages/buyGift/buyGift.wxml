@@ -38,7 +38,7 @@
                 </view>
                 <view class="number">
                   <view>
-                    <input type="number" value="{{count}}" bindinput="inputNumber" style="width:100%;"/>
+                    <input type="number" value="{{count}}" bindinput="inputNumber" style="width:100%;" />
                   </view>
                 </view>
                 <view class="add" bindtap="add">
@@ -70,7 +70,7 @@
       <text style="color:red;">￥{{count*item.price}}</text>
     </view>
     <view style="margin-right:30rpx;margin-top:40rpx;">
-      <button type="primary" bindtap="buy">微信支付</button>
+      <button type="primary" bindtap="buy" disabled="{{!hasAddress}}">微信支付</button>
     </view>
   </view>
   <view class="mask" bindtap="hideMask" hidden="{{!showAddress}}">
@@ -80,9 +80,9 @@
         <view class="input-container">
           <view>省：</view>
           <view>
-            <picker bindchange="provinceChange" value="{{selectProvince}}" range="{{province}}">
+            <picker bindchange="provinceChange" value="{{selectInputProvince}}" range="{{provinces}}">
               <view class="picker">
-                {{province[selectProvince]}}
+                {{provinces[selectInputProvince]}}
               </view>
             </picker>
           </view>
@@ -90,9 +90,9 @@
         <view class="input-container">
           <view>市/区/县：</view>
           <view>
-            <picker bindchange="cityChange" value="{{selectCity}}" range="{{cities}}">
+            <picker bindchange="cityChange" value="{{selectInputCity}}" range="{{cities}}">
               <view class="picker">
-                {{cities[selectCity]}}
+                {{cities[selectInputCity]}}
               </view>
             </picker>
           </view>
@@ -100,19 +100,19 @@
         <view class="input-container">
           <view>详细地址：</view>
           <view>
-            <input placeholder="请输入详细地址" value="{{addressDetail}}" bindinput="bindKeyInput" data-type="detail" />
+            <input placeholder="请输入详细地址" value="{{inputDetail}}" bindinput="bindKeyInput" data-type="detail" />
           </view>
         </view>
         <view class="input-container">
           <view>联系人：</view>
           <view>
-            <input placeholder="请输入联系人" value="{{addressContact}}" bindinput="bindKeyInput" data-type="contact" />
+            <input placeholder="请输入联系人" value="{{inputName}}" bindinput="bindKeyInput" data-type="contact" />
           </view>
         </view>
         <view class="input-container">
           <view>电话：</view>
           <view>
-            <input placeholder="请输入电话" value="{{addressTel}}" bindinput="bindKeyInput" data-type="tel" />
+            <input placeholder="请输入电话" value="{{inputTel}}" bindinput="bindKeyInput" data-type="tel" />
           </view>
         </view>
         <view class="input-container">
