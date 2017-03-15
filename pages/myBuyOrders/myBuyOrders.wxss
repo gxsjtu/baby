@@ -1,3 +1,9 @@
+.container {
+  width: 750rpx;
+  height: 100%;
+  background: #ebebeb;
+}
+
 .font-s {
   font-family: PingFangSC-Regular;
   font-size: 13px;
@@ -14,15 +20,18 @@
   letter-spacing: -0.36px;
 }
 
+.font-l {
+  font-family: PingFangSC-Medium;
+  font-size: 12px;
+  color: #747474;
+  letter-spacing: -0.36px;
+}
+
 .font-name {
   font-family: PingFangSC-Medium;
   font-size: 30rpx;
   letter-spacing: -0.36px;
 }
-
-/*page {
-  height: 100%;
-}*/
 
 /*.container {
   background: #fff;
@@ -31,13 +40,15 @@
 .dataView {
   display: flex;
   flex-direction: row;
-  border-bottom:5px solid #ebebeb;
-  width: 750rpx;
-  height:290rpx;
+  height: 290rpx;
+  background: #fff;
+  margin-top:10rpx;
+  margin-left:10rpx;
+  width:730rpx;
 }
 
 .split {
-    width: 750rpx;
-    height: 5px;
-    background: #ebebeb;
+  width: 750rpx;
+  height: 5px;
+  background: #ebebeb;
 }

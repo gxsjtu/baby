@@ -1,21 +1,31 @@
-<view>
+<view class="container">
   <view wx:for="{{orderList}}" wx:for-item="order" wx:key="{{order._id}}" class="dataView">
-    <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:300rpx;">
-      <image src="{{imgAddress}}{{order.itemId}}/logo" style="height:150rpx;width:300rpx;"></image>
+    <view style="display:flex;flex-direction:column;align-item:center;justify-content:center;height:290rpx;width:300rpx;">
+      <view style="display:flex;justify-content:center;align-items:center;">
+        <image src="{{imgAddress}}{{order.itemId}}/logo" style="height:150rpx;width:300rpx;"></image>
+      </view>
+      <view style="display:flex;align-items:center;justify-content:center;font-size:26rpx;margin-top:10rpx;">
+        × {{order.quantity}}
+      </view>
     </view>
-    <view style="padding-left:50rpx;margin-top:60rpx;margin-bottom:40rpx;border-left:2rpx solid #ebebeb;">
+    <view style="margin-top:40rpx;">
       <view style="display:flex;align-items:center;">
         <view class="font-name">{{order.name}}</view>
       </view>
       <view style="display:flex;align-items:center;margin-top:20rpx;">
-        <view class="font-v">日期：</view>
-        <view class="font-v">{{order.created}}</view>
-      </view>
-      <view style="display:flex;align-items:center;margin-top:20rpx;">
         <view class="font-v">状态：</view>
         <view class="font-v">{{order.status}}</view>
+        <view wx:if="{{order.status == '未付款'}}" style="background:#ff4949;color:#fff;font-size:26rpx;margin-left:40rpx;border-radius:20rpx;display:flex;align-items:center;justify-content:center;width:100rpx;" bindtap="gotoPay" data-item-id="{{order._id}}">去付款</view>
       </view>
-      <view wx:if="{{order.status == '未付款'}}" style="background:#ff4949;color:#fff;font-size:26rpx;margin-top:20rpx;border-radius:20rpx;display:flex;align-items:center;justify-content:center;" bindtap="gotoPay" data-item-id="{{order._id}}">去付款</view>
+      <view style="margin-top:20rpx;display:flex;">
+        <view class="font-l">快递：</view>
+        <view class="font-l">{{order.express.name}}</view>
+        <view class="font-l" style="padding-left:20rpx;">{{order.express.no}}</view>
+      </view>
+      <view style="display:flex;align-items:center;margin-top:20rpx;">
+        <view class="font-l">日期：</view>
+        <view class="font-l">{{order.created}}</view>
+      </view>
     </view>
   </view>
 </view>
