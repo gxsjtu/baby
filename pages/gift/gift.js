@@ -83,7 +83,7 @@ Page({
                     items: items,
                     imgAddress: imgAddress,
                     bundleId: obj._id,
-                    btnDefaultDisabled: true
+                    btnDefaultDisabled: obj.canGetBundle
                 })
             }
             if (callback) {
@@ -175,6 +175,7 @@ Page({
         this.setData({ btnSubmit: true });
         var giftSvc = new GiftSvc();
         giftSvc.canGetBundle(this.data.bundleId).then((data) => {
+            console.log(data);
             if (data.data.data.res == 'no') {
                 this.showError(data.data.data.message);
                 this.setData({ btnDefaultDisabled: true, btnSubmit: false });

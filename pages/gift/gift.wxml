@@ -103,7 +103,7 @@
                 </view>
             </view>
             <view class="alert" hidden="{{!showError}}" style="height:auto;bottom:450rpx;">
-                <view class="alert-title">分享后即可领取该礼包</view>
+                <view class="alert-title">事妈驾到</view>
                 <view class="alert-container" style="text-align:center; color:rgba(0,0,0,0.6) ">
                     {{err}}
                 </view>
@@ -116,15 +116,6 @@
     </view>
     <view class="gift-info" hidden="{{selectedMenuIndex!=1}}">
         <view class="gift-info-container">
-            <view class="box">
-                <view class="box-header">申领条件</view>
-                <view class="box-container">
-                    <view class="item-list">
-                        <text class="list-header" style="background:#8957a1;">申领条件</text>
-                        <text class="list-content">分享一次事妈驾到小程序，就可以免费申领该礼包。</text>
-                    </view>
-                </view>
-            </view>
             <view class="box" style="margin-top:20rpx;">
                 <view class="box-header">申领流程</view>
                 <view class="box-container">
