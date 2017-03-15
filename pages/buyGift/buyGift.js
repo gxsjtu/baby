@@ -179,7 +179,7 @@ Page({
                     buySvc.payment(data.data.data).then(data => {
                         this.data.clicked = true;
                         this.setData({ isLoading: false, isDisable: false });
-                        wx.navigateTo({ url: '../myBuyOrders/myBuyOrders' });
+                        wx.redirectTo({ url: '../myBuyOrders/myBuyOrders' });
                     }).catch(err => {
                         this.data.clicked = true;
                     });
