@@ -14,4 +14,12 @@ PaymentSvc.prototype.makePayment = function (obj) {
     })
 };
 
+PaymentSvc.prototype.paymentByOrderId = function(orderId){
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/payment/resumePayment/" + orderId, "", "GET").then(data => {
+            resolve(data);
+        })
+    })
+}
+
 module.exports = PaymentSvc;

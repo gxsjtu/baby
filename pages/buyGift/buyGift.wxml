@@ -70,7 +70,7 @@
       <text style="color:red;">￥{{count*item.price}}</text>
     </view>
     <view style="margin-right:30rpx;margin-top:40rpx;">
-      <button type="primary" bindtap="buy" disabled="{{!hasAddress}}">微信支付</button>
+      <button type="primary" catchtap="buy" disabled="{{isDisable}}" loading="{{isLoading}}">微信支付</button>
     </view>
   </view>
   <view class="mask" bindtap="hideMask" hidden="{{!showAddress}}">

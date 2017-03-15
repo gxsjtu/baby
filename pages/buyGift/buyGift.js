@@ -26,7 +26,10 @@ Page({
         inputTel: '',
         inputProvince: '',
         inputCity: '',
-        inputDetail: ''
+        inputDetail: '',
+        isLoading: false,
+        isDisable: true,
+        clicked: true
     },
     onLoad: function (e) {
         var locationSvc = new LocationSvc();
@@ -37,7 +40,7 @@ Page({
         var buySvc = new BuySvc();
         buySvc.getDeliveryAddress().then((data) => {
             if (data.data.message == 'OK') {
-                this.setData({ hasAddress: true });
+                this.setData({ hasAddress: true, isDisable: false });
 
                 let province = data.data.data.province;
                 let city = data.data.data.city;
@@ -55,10 +58,10 @@ Page({
                 this.data.province = province;
                 this.data.city = city;
                 this.data.detail = detail;
-                this.setData({ showAddress: false, hasAddress: true, address: address, addressContact: name, addressTel: tel, selectProvince: selectProvince, selectCity: selectCity,selectInputProvince: selectProvince, selectInputCity: selectCity, addressDetail: detail });
+                this.setData({ showAddress: false, address: address, addressContact: name, addressTel: tel, selectProvince: selectProvince, selectCity: selectCity, selectInputProvince: selectProvince, selectInputCity: selectCity, addressDetail: detail });
             }
             else {
-                this.setData({ hasAddress: false });
+                this.setData({ hasAddress: false, isDisable: true });
             }
         });
 
@@ -145,7 +148,7 @@ Page({
         this.data.province = province;
         this.data.city = city;
         this.data.detail = detail;
-        this.setData({ showAddress: false, hasAddress: true, address: address, addressContact: name, addressTel: tel, selectProvince: this.data.selectInputProvince, selectCity: this.data.selectInputCity, addressDetail: detail });
+        this.setData({ showAddress: false, hasAddress: true, isDisable: false, address: address, addressContact: name, addressTel: tel, selectProvince: this.data.selectInputProvince, selectCity: this.data.selectInputCity, addressDetail: detail });
     },
     inputNumber: function (e) {
         let count = 1;
@@ -158,17 +161,32 @@ Page({
         this.setData({ count: count })
     },
     buy: function (e) {
-        var paymentSvc = new PaymentSvc();
-        let obj = {};
-        obj.itemId = this.data.itemId;
-        obj.quantity = this.data.count;
-        obj.province = this.data.province;
-        obj.city = this.data.city;
-        obj.detail = this.data.detail;
-        obj.tel = this.data.addressTel;
-        obj.name = this.data.addressContact;
-        paymentSvc.makePayment(obj).then((data) => {
-            console.log(data);
-        });
+        if (this.data.clicked) {
+            this.data.clicked = false;
+            this.setData({ isLoading: true, isDisable: true });
+            var paymentSvc = new PaymentSvc();
+            let obj = {};
+            obj.itemId = this.data.itemId;
+            obj.quantity = this.data.count;
+            obj.province = this.data.province;
+            obj.city = this.data.city;
+            obj.detail = this.data.detail;
+            obj.tel = this.data.addressTel;
+            obj.name = this.data.addressContact;
+            paymentSvc.makePayment(obj).then((data) => {
+                if (data.data.message == "OK") {
+                    var buySvc = new BuySvc();
+                    buySvc.payment(data.data.data).then(data => {
+                        this.data.clicked = true;
+                        this.setData({ isLoading: false, isDisable: false });
+                        wx.navigateTo({ url: '../myBuyOrders/myBuyOrders' });
+                    }).catch(err => {
+                        this.data.clicked = true;
+                    });
+                }
+            }).catch(err => {
+                this.data.clicked = true;
+            })
+        }
     }
 })

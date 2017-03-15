@@ -20,13 +20,13 @@
   letter-spacing: -0.36px;
 }
 
-page {
+/*page {
   height: 100%;
-}
+}*/
 
-.container {
+/*.container {
   background: #fff;
-}
+}*/
 
 .dataView {
   display: flex;
