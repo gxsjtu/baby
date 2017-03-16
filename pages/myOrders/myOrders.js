@@ -5,9 +5,18 @@ Page({
     data: {
         orderList: [],
         imgAddress: GLOBAL.SERVER + "/images/",
-        isNoRecord: false
+        isNoRecord: false,
+        scrollHeight:""
     },
     onLoad: function () {
+        wx.getSystemInfo({
+          success: (res) => {
+            // success
+            this.setData({
+                scrollHeight:res.windowHeight + "px"
+            })
+          }
+        })
         var orderSvc = new OrderSvc();
         orderSvc.getOrders().then(data => {
             var dataList = data.data.data;

@@ -7,11 +7,14 @@
   text-align: right;
 }
 
-.container {
+.outView{
+    width: 750rpx;
+}
+/*.container {
   width: 750rpx;
   height: 100%;
   background: #ebebeb;
-}
+}*/
 
 .noRecord {
   width: 750rpx;

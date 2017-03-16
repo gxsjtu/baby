@@ -8,9 +8,18 @@ var _ = require('../../utils/lodash.min.js');
 Page({
     data: {
         orderList: [],
-        imgAddress: GLOBAL.SERVER + "/images/items/"
+        imgAddress: GLOBAL.SERVER + "/images/items/",
+        scrollHeight: ""
     },
     onLoad: function (e) {
+        wx.getSystemInfo({
+            success: (res) => {
+                // success
+                this.setData({
+                    scrollHeight: res.windowHeight + "px"
+                })
+            }
+        })
         var orderSvc = new OrderSvc();
         orderSvc.getMyOrders().then(data => {
             this.setData({

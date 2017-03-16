@@ -1,26 +1,28 @@
-<view class="{{isNoRecord ? 'noRecord' : 'container'}}">
-  <view hidden="{{isNoRecord}}" wx:for="{{orderList}}" wx:for-item="order" wx:key="{{order.id}}" style="width:730rpx;background:#fff;margin-top:5px;margin-left:5px;">
-    <view style="display:flex;flex-direction:row;padding-top:10px;">
-      <view class="font-s">礼包名称：</view>
-      <view style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #3D3D3D;letter-spacing: -0.36px;">{{order.name}}</view>
-    </view>
-    <view style="display:flex;flex-direction:row;padding-top:10px;">
-      <view class="font-s">申领日期：</view>
-      <view style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #3D3D3D;letter-spacing: -0.36px;">{{order.date}}</view>
-    </view>
-    <view style="display:flex;flex-direction:row;padding-top:10px;">
-      <view class="font-s">礼包内容：</view>
-      <view style="width:500rpx;font-family: PingFangSC-Regular;font-size: 13px;color: #6D6D6D;letter-spacing: -0.31px;">{{order.itemsName}}</view>
-    </view>
-    <view style="display:flex;flex-direction:row;padding-bottom:10px;padding-top:10px;">
-      <view wx:for="{{order.imgUrlList}}" wx:for-item="imgUrl" wx:key="{{imgUrl}}" style="height:56px;width:56px;display:flex;flex-direction:row;align-items:center;justify-content:center; border: 1px solid rgba(0,0,0,0.10);margin-left:10px;">
-        <image src="{{imgUrl}}" style="height:48px;width:48px;"></image>
+<scroll-view scroll-y="true" style="height:{{scrollHeight}};width:750rpx;background:#ebebeb;">
+  <view class="{{isNoRecord ? 'noRecord' : 'outView'}}">
+    <view hidden="{{isNoRecord}}" wx:for="{{orderList}}" wx:for-item="order" wx:key="{{order.id}}" style="width:730rpx;background:#fff;margin-top:5px;margin-left:5px;">
+      <view style="display:flex;flex-direction:row;padding-top:10px;">
+        <view class="font-s">礼包名称：</view>
+        <view style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #3D3D3D;letter-spacing: -0.36px;">{{order.name}}</view>
+      </view>
+      <view style="display:flex;flex-direction:row;padding-top:10px;">
+        <view class="font-s">申领日期：</view>
+        <view style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #3D3D3D;letter-spacing: -0.36px;">{{order.date}}</view>
+      </view>
+      <view style="display:flex;flex-direction:row;padding-top:10px;">
+        <view class="font-s">礼包内容：</view>
+        <view style="width:500rpx;font-family: PingFangSC-Regular;font-size: 13px;color: #6D6D6D;letter-spacing: -0.31px;">{{order.itemsName}}</view>
+      </view>
+      <view style="display:flex;flex-direction:row;padding-bottom:10px;padding-top:10px;">
+        <view wx:for="{{order.imgUrlList}}" wx:for-item="imgUrl" wx:key="{{imgUrl}}" style="height:56px;width:56px;display:flex;flex-direction:row;align-items:center;justify-content:center; border: 1px solid rgba(0,0,0,0.10);margin-left:10px;">
+          <image src="{{imgUrl}}" style="height:48px;width:48px;"></image>
+        </view>
       </view>
     </view>
+    <view hidden="{{!isNoRecord}}">
+      <image src="../../assets/images/noRecord.jpg" style="width: 438rpx;height: 207rpx;"></image>
+    </view>
+    <view>
+    </view>
   </view>
-  <view hidden="{{!isNoRecord}}">
-    <image src="../../assets/images/noRecord.jpg" style="width: 438rpx;height: 207rpx;"></image>
-  </view>
-  <view>
-  </view>
-</view>
+</scroll-view>
