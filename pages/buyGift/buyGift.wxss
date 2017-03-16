@@ -38,7 +38,8 @@ page {
 }
 
 .item-container {
-  margin-left: 30rpx;
+  /*margin-left: 30rpx;*/
+  width: 750rpx;
 }
 
 .desc {
@@ -76,6 +77,7 @@ page {
   display: flex;
   height: 56rpx;
   line-height: 56rpx;
+  margin-right:30rpx;
 }
 
 .reduce {
