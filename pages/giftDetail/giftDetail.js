@@ -21,15 +21,6 @@ Page({
     onLoad: function (e) {
         this.data.bundleId = e.bundleId;
         this.data.canGetBundle = e.canGetBundle;
-        // if (e.canGetBundle == "true") {
-        //     this.setData({
-        //         canGetBundle: false
-        //     })
-        // } else {
-        //     this.setData({
-        //         canGetBundle: true
-        //     })
-        // }
         wx.getSystemInfo({
             success: (res) => {
                 // success
