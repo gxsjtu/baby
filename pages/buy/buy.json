@@ -1,7 +1,4 @@
 {
-    "navigationBarTitleText": "事妈一键购",
-    "navigationBarBackgroundColor": "#000",
-    "navigationBarTextStyle": "white",
-    "backgroundColor": "#ebebeb",
-    "enablePullDownRefresh": true
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }
