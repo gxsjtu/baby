@@ -131,9 +131,9 @@ Page({
         });
     },
     buyGift: function () {
-        // wx.navigateTo({
-        //     url: '../buyGift/buyGift?pageName=gift&id=' + this.data.bundleId
-        // })
+        wx.switchTab({
+          url: '../buy/buy',
+        })
     },
     goEvaluate: function () {
         wx.navigateTo({
