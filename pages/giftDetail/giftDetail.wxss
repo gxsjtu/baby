@@ -109,4 +109,6 @@
 .price-container{
   display: flex;
   font-weight: lighter;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
 }
