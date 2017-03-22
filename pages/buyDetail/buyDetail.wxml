@@ -16,7 +16,7 @@
         <view style="position:absolute;font-size:30rpx;color:#929292;padding-left:314rpx;display:flex;flex-direction:row;font-family:PingFang-SC-Regular;text-decoration:line-through;">市场价 ￥{{buyItem.mPrice}}
         </view>
       </view>-->
-      <view style="display:flex;flex-direction:row;margin-top:40rpx;width:100%;align-items:flex-end;line-height:1em;">
+      <view style="display:flex;flex-direction:row;margin-top:40rpx;width:100%;line-height:44rpx;">
           <view style="width:400rpx;color:#ff3131;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;">
             <view style="font-size:30rpx;">事妈价</view>
             <view style="font-size:40rpx;">￥{{buyItem.price}}</view>
