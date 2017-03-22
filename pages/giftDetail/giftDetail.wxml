@@ -7,7 +7,12 @@
     <view class="description">
       <view class="description-name">{{description}}</view>
       <view class="detail" wx:for="{{details}}" wx:key="{{index}}" wx:for-item="detail">{{detail}}</view>
-      <image src="{{descriptImage}}" id="detail" mode="widthFix"></image>
+      <!--<image src="{{descriptImage}}" id="detail" mode="widthFix"></image>-->
+      <view class="price-container">
+        <view style="font-size:44rpx;width:200rpx;">￥<text style="color:#ff6e01;letter-spacing: 0.7rpx;">{{price}}</text></view>
+        <view style="font-size:38rpx;width:190rpx;text-decoration: line-through;letter-spacing: 0.5rpx;">￥{{mPrice}} </view>
+        <view style="font-size:34rpx;letter-spacing: 0.7rpx;color:#484848;">{{spec}}</view>
+      </view>
     </view>
     <view class="split" hidden="{{recommends.length == 0}}"></view>
     <view class="recommends" hidden="{{recommends.length == 0}}">

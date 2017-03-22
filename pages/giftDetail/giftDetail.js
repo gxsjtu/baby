@@ -16,7 +16,10 @@ Page({
         bundleId: "",
         outWidth: "",
         canGetBundle: false,
-        descriptImage: ''
+        // descriptImage: '',
+        price:'',
+        mPrice:'',
+        spec:''
     },
     onLoad: function (e) {
         this.data.bundleId = e.bundleId;
@@ -37,9 +40,10 @@ Page({
         })
 
         let gift = getApp().globalData.currentGift;
+        console.log(gift);
         let baseImgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + "/" + gift.name + "/";
         let imgAddress = baseImgAddress + "logo";
-        let descriptImage = baseImgAddress + "discount";
+        // let descriptImage = baseImgAddress + "discount";
         let description = gift.description;
         let details = [];
         if (gift.details)
@@ -87,7 +91,10 @@ Page({
             recommends: recommends,
             discounts: discounts,
             experiences: experiences,
-            descriptImage: descriptImage
+            // descriptImage: descriptImage,
+            price:gift.price,
+            mPrice:gift.mPrice,
+            spec:gift.spec
         })
     },
     onImageLoad: function (e) {
