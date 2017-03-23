@@ -78,7 +78,7 @@
 
 .name {
     border-bottom: 2rpx solid #ebebeb;
-    font-size: 30rpx;
+    font-size: 28rpx;
     font-family: PingFangSC-Regular;
     padding-left: 20rpx;
     padding-right: 20rpx;
@@ -86,6 +86,7 @@
     line-height: 36rpx;
     color: #b8b8b8;
     display: flex;
+    letter-spacing: -0.64px;
     justify-content: space-between;
 }
 
@@ -139,10 +140,10 @@
 }
 
 .list {
-    font-size: 32rpx;
+    font-size: 30rpx;
     color: #df3030;
     font-family: PingFangSC-Regular;
-    /*letter-spacing: -0.37px;*/
+    letter-spacing: -0.64px;
     padding-left: 20rpx;
     padding-right: 20rpx;
     line-height: 40rpx;

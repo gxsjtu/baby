@@ -19,6 +19,7 @@ Page({
 
         buySvc.getList().then(data => {
             var dataList = data.data.data;
+            console.log(dataList);
             var groupList = _.groupBy(dataList, (d) => {
                 return d.type;
             });
