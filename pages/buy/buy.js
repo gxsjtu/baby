@@ -23,7 +23,8 @@ Page({
                 return d.type;
             });
             var resultList = _.reduce(groupList, (result, items, typeStr) => {
-                result.push({items, typeStr});
+              var sortedList = _.orderBy(items, ["index"],["asc"]);
+                result.push({sortedList, typeStr});
                 return result;
             }, []);
             this.setData({list: resultList, allList: dataList})
