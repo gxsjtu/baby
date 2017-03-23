@@ -10,11 +10,11 @@ Page({
         slideImgs: [],
         allList: []
     },
-    onLoad: function(e) {
+    onLoad: function (e) {
         var buySvc = new BuySvc();
 
         buySvc.getSlides().then(data => {
-            this.setData({slideImgs: data.data.data})
+            this.setData({ slideImgs: data.data.data })
         })
 
         buySvc.getList().then(data => {
@@ -23,14 +23,14 @@ Page({
                 return d.type;
             });
             var resultList = _.reduce(groupList, (result, items, typeStr) => {
-              var sortedList = _.orderBy(items, ["index"],["asc"]);
-                result.push({sortedList, typeStr});
+                var sortedList = _.orderBy(items, ["index"], ["asc"]);
+                result.push({ sortedList, typeStr });
                 return result;
             }, []);
-            this.setData({list: resultList, allList: dataList})
+            this.setData({ list: resultList, allList: dataList })
         })
     },
-    gotoBuyDetail: function(e) {
+    gotoBuyDetail: function (e) {
         var buyId = e.currentTarget.dataset.buyId;
         var buyItem = _.filter(this.data.allList, (item) => {
             return item._id == buyId;
@@ -38,10 +38,10 @@ Page({
 
         if (buyItem != null && buyItem != undefined && buyItem.length > 0) {
             getApp().globalData.selectedBuy = buyItem[0];
-            wx.navigateTo({url: '../buyDetail/buyDetail'})
+            wx.navigateTo({ url: '../buyDetail/buyDetail' })
         }
     },
-    onPullDownRefresh: function() {
+    onPullDownRefresh: function () {
         var buySvc = new BuySvc();
         buySvc.getList().then(data => {
             var dataList = data.data.data;
@@ -49,10 +49,11 @@ Page({
                 return d.type;
             });
             var resultList = _.reduce(groupList, (result, items, typeStr) => {
-                result.push({items, typeStr});
+                var sortedList = _.orderBy(items, ["index"], ["asc"]);
+                result.push({ sortedList, typeStr });
                 return result;
             }, []);
-            this.setData({list: resultList, allList: dataList});
+            this.setData({ list: resultList, allList: dataList });
             wx.stopPullDownRefresh();
         })
     }
