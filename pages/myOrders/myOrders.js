@@ -20,6 +20,7 @@ Page({
         var orderSvc = new OrderSvc();
         orderSvc.getOrders().then(data => {
             var dataList = data.data.data;
+            console.log(dataList);
             if (dataList == null || dataList == undefined || dataList.length <= 0) {
                 this.setData({ isNoRecord: true});
             }
@@ -27,7 +28,7 @@ Page({
                 var newOrderList = [];
                 for (var i = 0; i < dataList.length; i++) {
                     var imgUrlList = [];
-                    var order = { id: dataList[i]._id, date: dataList[i].date, name: dataList[i].name, items: dataList[i].items };
+                    var order = { id: dataList[i]._id, date: dataList[i].date, name: dataList[i].name, items: dataList[i].items, result: dataList[i].result };
                     var itemsName = "";
                     for (var j = 0; j < dataList[i].items.length; j++) {
                         if (j == 0) {

@@ -9,6 +9,10 @@
         <view class="font-s">申领日期：</view>
         <view style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #3D3D3D;letter-spacing: -0.36px;">{{order.date}}</view>
       </view>
+       <view style="display:flex;flex-direction:row;padding-top:10px;">
+        <view class="font-s">申领结果：</view>
+        <view style="width:500rpx;font-family: PingFangSC-Medium;font-size: 13px;color: #FF4949;letter-spacing: -0.36px;">{{order.result}}</view>
+      </view>
       <view style="display:flex;flex-direction:row;padding-top:10px;">
         <view class="font-s">礼包内容：</view>
         <view style="width:500rpx;font-family: PingFangSC-Regular;font-size: 13px;color: #6D6D6D;letter-spacing: -0.31px;">{{order.itemsName}}</view>
