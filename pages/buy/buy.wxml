@@ -2,7 +2,7 @@
   <swiper indicator-dots="true" autoplay="false" style="width:750rpx;height:406rpx;">
     <block wx:for="{{slideImgs}}" wx:for-item="item" wx:key="{{index}}">
       <swiper-item style="text-align:center;">
-        <image src="{{slidesImgAddress}}{{item}}" style="width:750rpx;height:406rpx;"></image>
+        <image src="{{slidesImgAddress}}{{item}}" style="width:750rpx;height:406rpx;" bindtap="gotoBuyDetail" data-buy-id="{{item}}"></image>
       </swiper-item>
     </block>
   </swiper>
