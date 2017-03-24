@@ -18,8 +18,11 @@
     </view>
     <view style="height:2px;background:#d3d3d3;width:750rpx;"></view>
 
-    <view style="font-size:26rpx;font-family:PingFangSC-Regular;padding:20rpx 50rpx;color:rgba(0,0,0,0.6)">
-        用过了才知道是否真的适合！事妈为您甄选安全优质，适龄的母婴产品,免费试用。同时从厂家那里争取全网最强优惠。保证正品，不容错过！
+    <view style="font-size:26rpx;font-family:PingFangSC-Regular;padding:20rpx 50rpx 0;color:rgba(0,0,0,0.6)">
+        免费大礼送不停！
+    </view>
+    <view style="font-size:26rpx;font-family:PingFangSC-Regular;padding:0rpx 50rpx 20rpx;color:rgba(0,0,0,0.6)">
+        事妈为您甄选安全优质母婴产品，每周一个免费大礼包或礼物，数量有限，抽奖获得，免费试用。如果没有申领到礼包，也可获得10元一键购商城券。每周五在“我的申领”公布结果。参与流程：1）试用申领；2）系统审核；3）快递邮寄；4）提交评价
     </view>
 
     <view class="split"></view>
@@ -46,8 +49,7 @@
         <view style="display:flex;flex-direction:column;align-items:center;height:190rpx;width:750rpx;background:#fff;position:relative;">
             <view style="display:flex;color:#b8b8b8;font-size:16px;margin-top:20rpx;">
                 <view>礼包库存：
-                    <text style="color:#df3030;">{{(inventory - applies)
-            <=0?0:(inventory - applies)}}</text>
+                    <text style="color:#df3030;">50</text>
                 </view>
                 <view style="width:50rpx;"></view>
                 <view>申领人数：
@@ -120,26 +122,25 @@
                 <view class="box-header">申领流程</view>
                 <view class="box-container">
                     <view class="item-list">
-                        <text class="list-header" style="background:#ffa9ba;">点击申领礼包按钮 </text>
-                        <text class="list-content">每个注册用户可以领到多个免费试用礼包，每个礼包只可以申领一次。请提交您本人和宝宝的真实信息，以免遗漏获得适合的礼包机会。</text>
+                        <text class="list-header" style="background:#ffa9ba;">试用申请</text>
+                        <text class="list-content">点击申领礼包按钮，完整填写收货信息和联系方式，完成申请。</text>
                     </view>
                     <view class="item-list">
-                        <text class="list-header" style="background:#9ecc40;">填写收货信息</text>
-                        <text class="list-content">请提交真实、详细的收货地址，以保证您能及时收到礼包。</text>
+                        <text class="list-header" style="background:#9ecc40;">系统审核</text>
+                        <text class="list-content">系统随机审核、抽取符合条件用户获得礼包或礼物机会，每周五在我的申领里通知申领结果。</text>
                     </view>
                     <view class="item-list">
-                        <text class="list-header" style="background:#55b0cf;">发货配送</text>
-                        <text class="list-content">我们后台收到您的申领信息后，工作日的每天17：30前统一发货。</text>
+                        <text class="list-header" style="background:#55b0cf;">快递邮寄</text>
+                        <text class="list-content">礼包或礼物会在周五寄出，请及时收货。</text>
                     </view>
-
-                    <!-- <view class="item-list">
-            <text class="list-header" style="background:#fec41a;">发布试用评价</text>
-            <text class="list-content">收到礼包后，请认真使用商品并分享评价，以便其他用户借鉴参考，同时还可以享受到该试用商品的优惠。</text>
-          </view>
-          <view class="item-list">
-            <text class="list-header" style="background:#8957a1;">享受商品优惠</text>
-            <text class="list-content">提交评价后，即获得购买该商品得到专属优惠的方法。 </text>
-          </view> -->
+                    <view class="item-list">
+                        <text class="list-header" style="background:#fec41a;">提交评价</text>
+                        <text class="list-content">收货后请在一周内提交不少于100字的评价，评价审核通过后，此次试用完成。逾期未提交评价者，需在补交评价之后才可申请其他试用品。提示：每人只有3次补交机会，使用完之后将无法再申请任何试用。</text>
+                    </view>
+                    <view class="item-list">
+                        <text class="list-header" style="background:#8957a1;">优惠券兑换</text>
+                        <text class="list-content">一键购商城优惠券兑换方法。下单后，联系在线客服。客服确认后返现。</text>
+                    </view>
                 </view>
             </view>
             <view class="box" style="margin-top:20rpx;">
@@ -162,10 +163,7 @@
                         6. 本次活动仅限上海地区用户参加。
                     </view>
                     <view class="role">
-                        7. 为了让更多的妈妈能够试用，每个新手妈妈限领一份。同一手机，同一收件地址视为同一人，只发一份礼包。
-                    </view>
-                    <view class="role">
-                        8. 最终解释权，归上海苗准营销有限公司所属。
+                        7. 最终解释权，归上海苗准营销有限公司所属。
                     </view>
                 </view>
             </view>

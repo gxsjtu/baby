@@ -64,19 +64,19 @@ Page({
 
                 if (!obj.canGetBundle) {
                     this.setData({
-                        btnText: '您已领取过该礼包'
+                        btnText: '您已申领过该礼包'
                     });
                 }
-                else {
-                    //判断库存
-                    if (obj.inventory - obj.applies <= 0) {
-                        //库存不足
-                        obj.canGetBundle = false;
-                        this.setData({
-                            btnText: '礼包已被领完'
-                        });
-                    }
-                } 
+                // else {
+                //     // //判断库存
+                //     // if (obj.inventory - obj.applies <= 0) {
+                //     //     //库存不足
+                //     //     obj.canGetBundle = false;
+                //     //     this.setData({
+                //     //         btnText: '礼包已被领完'
+                //     //     });
+                //     // }
+                // }
                 this.setData({
                     inventory: obj.inventory,
                     applies: obj.applies,
