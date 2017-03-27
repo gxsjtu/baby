@@ -16,7 +16,7 @@
 
 .icon {
   position: fixed;
-  bottom: 100px;
+  bottom: 30px;
   right: 8px;
   width: 90rpx;
   height: 90rpx;
@@ -24,8 +24,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F26A77;
+  background: #000;
   z-index: 99999999;
+  opacity: 0.5;
 }
 
 .icon image {
