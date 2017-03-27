@@ -16,11 +16,11 @@
 
 .icon {
   position: fixed;
-  bottom: 5px;
+  bottom: 100px;
   right: 8px;
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 40rpx;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
   display: flex;
   justify-content: center;
   align-items: center;
