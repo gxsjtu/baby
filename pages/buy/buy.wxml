@@ -1,35 +1,40 @@
 <view class="container">
-  <swiper indicator-dots="true" autoplay="false" style="width:750rpx;height:406rpx;">
-    <block wx:for="{{slideImgs}}" wx:for-item="item" wx:key="{{index}}">
-      <swiper-item style="text-align:center;">
-        <image src="{{slidesImgAddress}}{{item}}" style="width:750rpx;height:406rpx;" bindtap="gotoBuyDetail" data-buy-id="{{item}}"></image>
-      </swiper-item>
-    </block>
-  </swiper>
-  <view wx:for="{{list}}" wx:key="{{obj.typeStr}}" wx:for-item="obj">
-    <view style="background: #ff606f;margin-bottom:4rpx;width: 750rpx;height:74rpx;justify-content:center;font-size:30rpx;color:#fff;font-family:PingFang-SC-Regular;display:flex;align-items:center;">{{obj.typeStr}}</view>
-    <view wx:for="{{obj.sortedList}}" wx:key="{{item._id}}" wx:for-item="item" data-buy-id="{{item._id}}" class="dataView" bindtap="gotoBuyDetail">
-      <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:472rpx;">
-        <image src="{{imgAddress}}{{item._id}}/logo" style="height:200rpx;width:400rpx;"></image>
-      </view>
-      <view style="display:flex;flex-direction:row;align-items:center;height:290rpx;width:380rpx;">
-        <view>
-          <view style="font-size:30rpx;color:#4d4d4d;font-family:PingFang-SC-Regular;line-height:1em;">{{item.title}}</view>
-          <view style="color:#4d4d4d;font-size:25rpx;font-family:PingFang-SC-Regular;line-height:1em;margin-top:7rpx;">{{item.subtitle}}</view>
-          <view style="font-family:PingFang-SC-Regular;font-size:20rpx;color:#747474;margin-top:10rpx;line-height:1em;">{{item.brand}}</view>
-          <view style="display:flex;flex-direction:row;align-items:flex-end;">
-            <view style="font-family:PingFang-SC-Regular;font-size:20rpx;color:#747474;line-height:1em;margin-top:6rpx;">{{item.name}}</view>
-            <view style="font-family:PingFang-SC-Regular;margin-left:20rpx;font-size:20rpx;color:#747474;line-height:1em;margin-top:6rpx;">{{item.spec}}</view>
-          </view>
-          <view style="display:flex;flex-direction:row;margin-top:15rpx;align-items:flex-end;">
-            <view style="color:#b93636;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;align-items:flex-end;line-height:1em;">
-              <view style="font-size:20rpx;">事妈价</view>
-              <view style="font-size:36rpx;font-family:PingFang-SC-Regular;line-height:1em;">￥{{item.price}}</view>
-              <view style="padding-left:20rpx;text-decoration:line-through;font-size:20rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
+  <!--<scroll-view scroll-y="true" style="height:{{scrollHeight}};">-->
+    <swiper indicator-dots="true" autoplay="false" style="width:750rpx;height:406rpx;">
+      <block wx:for="{{slideImgs}}" wx:for-item="item" wx:key="{{index}}">
+        <swiper-item style="text-align:center;">
+          <image src="{{slidesImgAddress}}{{item}}" style="width:750rpx;height:406rpx;" bindtap="gotoBuyDetail" data-buy-id="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view wx:for="{{list}}" wx:key="{{obj.typeStr}}" wx:for-item="obj">
+      <view style="background: #ff606f;margin-bottom:4rpx;width: 750rpx;height:74rpx;justify-content:center;font-size:30rpx;color:#fff;font-family:PingFang-SC-Regular;display:flex;align-items:center;">{{obj.typeStr}}</view>
+      <view wx:for="{{obj.sortedList}}" wx:key="{{item._id}}" wx:for-item="item" data-buy-id="{{item._id}}" class="dataView" bindtap="gotoBuyDetail">
+        <view style="display:flex;justify-content:center;align-items:center;height:290rpx;width:472rpx;">
+          <image src="{{imgAddress}}{{item._id}}/logo" style="height:200rpx;width:400rpx;"></image>
+        </view>
+        <view style="display:flex;flex-direction:row;align-items:center;height:290rpx;width:380rpx;">
+          <view>
+            <view style="font-size:30rpx;color:#4d4d4d;font-family:PingFang-SC-Regular;line-height:1em;">{{item.title}}</view>
+            <view style="color:#4d4d4d;font-size:25rpx;font-family:PingFang-SC-Regular;line-height:1em;margin-top:7rpx;">{{item.subtitle}}</view>
+            <view style="font-family:PingFang-SC-Regular;font-size:20rpx;color:#747474;margin-top:10rpx;line-height:1em;">{{item.brand}}</view>
+            <view style="display:flex;flex-direction:row;align-items:flex-end;">
+              <view style="font-family:PingFang-SC-Regular;font-size:20rpx;color:#747474;line-height:1em;margin-top:6rpx;">{{item.name}}</view>
+              <view style="font-family:PingFang-SC-Regular;margin-left:20rpx;font-size:20rpx;color:#747474;line-height:1em;margin-top:6rpx;">{{item.spec}}</view>
+            </view>
+            <view style="display:flex;flex-direction:row;margin-top:15rpx;align-items:flex-end;">
+              <view style="color:#b93636;font-family:PingFang-SC-Regular;display:flex;flex-direction:row;align-items:flex-end;line-height:1em;">
+                <view style="font-size:20rpx;">事妈价</view>
+                <view style="font-size:36rpx;font-family:PingFang-SC-Regular;line-height:1em;">￥{{item.price}}</view>
+                <view style="padding-left:20rpx;text-decoration:line-through;font-size:20rpx;color:#747474;font-family:PingFang-SC-Regular;">市场价￥{{item.mPrice}}</view>
+              </view>
             </view>
           </view>
         </view>
       </view>
     </view>
+  <!--</scroll-view>-->
+  <view class="icon">
+    <contact-button type="default-light" session-session-from="weapp" size="27"></contact-button>
   </view>
 </view>

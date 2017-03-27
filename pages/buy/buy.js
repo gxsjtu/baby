@@ -8,7 +8,8 @@ Page({
         imgAddress: GLOBAL.SERVER + "/images/items/",
         slidesImgAddress: GLOBAL.SERVER + "/images/items/slides/",
         slideImgs: [],
-        allList: []
+        allList: [],
+        scrollHeight: ""
     },
     onLoad: function (e) {
         var buySvc = new BuySvc();
@@ -29,6 +30,17 @@ Page({
             }, []);
             this.setData({ list: resultList, allList: dataList })
         })
+        // wx.getSystemInfo({
+        //     success: (res) => {
+        //         // success
+        //         // var w = parseInt(res.windowWidth / 4) - 10;
+        //         // var h = res.windowHeight - 50;
+        //         // var buyW = parseInt(res.windowWidth - (w * 3));
+        //         this.setData({
+        //             scrollHeight: res.windowHeight + "px"
+        //         })
+        //     }
+        // })
     },
     gotoBuyDetail: function (e) {
         var buyId = e.currentTarget.dataset.buyId;
