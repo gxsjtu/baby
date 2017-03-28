@@ -1,6 +1,7 @@
 //index.js
 const LoggerSvc = require('../../services/logger.js');
 const ShareSvc = require('../../services/shareSvc.js');
+const UserSvc = require('../../services/userSvc.js');
 
 Page({
     data: {
@@ -93,7 +94,12 @@ Page({
         shareSvc.giveShare();
         return { title: '事妈驾到', path: '/pages/index/index' }
     },
-    onLoad: function () {
+    onLoad: function (e) {
+        if(e.from){
+            getApp().globalData.fromHos = e.from;
+            var userSvc = new UserSvc();
+            userSvc.saveFrom(e.from);
+        }
         this.beforeChildbirth();
     },
     //点击产前阶段
