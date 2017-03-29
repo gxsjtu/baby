@@ -34,15 +34,15 @@ Page({
         var itemEvaluateSvc = new ItemEvaluateSvc();
         let globalData = getApp().globalData;
         let itemId = '';
-        let imgAddress = ''
+        let imgAddress = '';
         if (e.pageName == 'buy') {
             //一键购
             itemId = globalData.selectedBuy._id;
-            let imgAddress = GLOBAL.SERVER + "/images/items/" + itemId + '/logo';
+            imgAddress = GLOBAL.SERVER + "/images/items/" + itemId + '/logo';
             itemEvaluateSvc.canGiveComment2Item(itemId).then((data)=>{
                 console.log(data);
                 this.setData({
-                    canAdd: true
+                    canAdd: data.data
                 });
             });
         }
@@ -50,7 +50,7 @@ Page({
             //礼包
             let item = globalData.currentGift;
             itemId = item._id;
-            let imgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + '/' + item.name + '/' + item.name;
+            imgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + '/' + item.name + '/' + item.name;
             itemEvaluateSvc.canGiveComment2Bundle(e.bundleId).then((data)=>{
                 console.log(data);
                 this.setData({
