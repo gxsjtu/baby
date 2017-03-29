@@ -20,7 +20,7 @@
 
 .icon {
   position: fixed;
-  bottom: 60px;
+  bottom: 80px;
   right: 8px;
   width: 90rpx;
   height: 90rpx;
