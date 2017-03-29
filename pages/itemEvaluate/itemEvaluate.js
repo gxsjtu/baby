@@ -38,7 +38,7 @@ Page({
         if (e.pageName == 'buy') {
             //一键购
             itemId = globalData.selectedBuy._id;
-            let imgAddress = GLOBAL.SERVER + "/images/items/" + itemID + '/logo';
+            let imgAddress = GLOBAL.SERVER + "/images/items/" + itemId + '/logo';
             itemEvaluateSvc.canGiveComment2Item(itemId).then((data)=>{
                 console.log(data);
                 this.setData({
