@@ -42,7 +42,7 @@ Page({
             itemEvaluateSvc.canGiveComment2Item(itemId).then((data)=>{
                 console.log(data);
                 this.setData({
-                    canAdd: data.data
+                    canAdd: data.data.data
                 });
             });
         }
@@ -54,7 +54,7 @@ Page({
             itemEvaluateSvc.canGiveComment2Bundle(e.bundleId).then((data)=>{
                 console.log(data);
                 this.setData({
-                    canAdd: data.data
+                    canAdd: data.data.data
                 });
             });
         }
@@ -68,7 +68,7 @@ Page({
         this.setData({
             avatar: avatar
         });
-        
+
 
         itemEvaluateSvc.getJudgesByItemId(itemId).then((data) => {
             let evaluates = [];
