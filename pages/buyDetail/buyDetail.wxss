@@ -13,6 +13,27 @@
 }
 
 .container {
+  position:relative;
   letter-spacing: -0.2rpx;
   line-height: 40rpx;
+}
+
+.icon {
+  position: fixed;
+  bottom: 60px;
+  right: 8px;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  z-index: 99999999;
+  opacity: 0.5;
+}
+
+.icon image {
+  height: 70%;
+  width: 70%;
 }

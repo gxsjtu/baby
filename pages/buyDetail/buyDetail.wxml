@@ -51,4 +51,7 @@
       <view style="margin-left:2px;width:10px;height:10px;border-top:2px solid #fff;border-right:2px solid #fff;transform:rotate(45deg);background:#ff4949;"></view>
     </view>
   </view>
+    <view class="icon">
+    <contact-button type="default-light" session-session-from="weapp" size="27"></contact-button>
+  </view>
 </view>
