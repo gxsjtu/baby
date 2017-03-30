@@ -40,7 +40,6 @@ Page({
         })
 
         let gift = getApp().globalData.currentGift;
-        console.log(gift);
         let baseImgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + "/" + gift.name + "/";
         let imgAddress = baseImgAddress + "logo";
         // let descriptImage = baseImgAddress + "discount";

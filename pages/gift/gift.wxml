@@ -22,7 +22,7 @@
         免费大礼送不停！
     </view>
     <view style="font-size:26rpx;font-family:PingFangSC-Regular;padding:0rpx 50rpx 20rpx;color:rgba(0,0,0,0.6)">
-        事妈为您甄选安全优质母婴产品，每周一个免费大礼包或礼物，数量有限，抽奖获得，免费试用。如果没有申领到礼包，也可获得10元一键购商城券。每周五在“我的申领”公布结果。参与流程：1）试用申领；2）系统审核；3）快递邮寄；4）提交评价
+        事妈为您甄选安全优质母婴产品，每周一个免费大礼包或礼物，数量有限，抽奖获得，免费试用。如果没有申领到礼包，也可获得10元一键购商城券。<text style="color:#df3030;">每周五在“我的申领”公布结果。</text>参与流程：1）试用申领；2）系统审核；3）快递邮寄；4）提交评价
     </view>
 
     <view class="split"></view>
@@ -49,7 +49,7 @@
         <view style="display:flex;flex-direction:column;align-items:center;height:190rpx;width:750rpx;background:#fff;position:relative;">
             <view style="display:flex;color:#b8b8b8;font-size:16px;margin-top:20rpx;">
                 <view>礼包库存：
-                    <text style="color:#df3030;">50</text>
+                    <text style="color:#df3030;">{{inventory}}</text>
                 </view>
                 <view style="width:50rpx;"></view>
                 <view>申领人数：
