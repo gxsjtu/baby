@@ -40,7 +40,6 @@ Page({
             itemId = globalData.selectedBuy._id;
             imgAddress = GLOBAL.SERVER + "/images/items/" + itemId + '/logo';
             itemEvaluateSvc.canGiveComment2Item(itemId).then((data)=>{
-                console.log(data);
                 this.setData({
                     canAdd: data.data.data
                 });
@@ -52,7 +51,6 @@ Page({
             itemId = item._id;
             imgAddress = GLOBAL.SERVER + "/images/bundles/" + e.bundleId + '/' + item.name + '/' + item.name;
             itemEvaluateSvc.canGiveComment2Bundle(e.bundleId).then((data)=>{
-                console.log(data);
                 this.setData({
                     canAdd: data.data.data
                 });
@@ -217,7 +215,6 @@ Page({
         if (this.data.message) {
             var itemEvaluateSvc = new ItemEvaluateSvc();
             itemEvaluateSvc.addJudge(this.data.itemId, this.data.nickName, this.data.message, this.data.currentRates, this.data.avatarUrl).then((data) => {
-                console.log(data);
                 this.hideMask();
             });
         }
