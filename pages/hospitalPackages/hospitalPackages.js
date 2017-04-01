@@ -209,8 +209,5 @@ Page({
         wx.switchTab({
             url: '../buy/buy'
         })
-        wx.navigateBack({
-            delta: 1
-        })
     }
 })
