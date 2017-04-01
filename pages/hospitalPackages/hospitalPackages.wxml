@@ -3,7 +3,7 @@
   <view class="desc" bindtap="hideMask" hidden="{{!showMask}}">
   </view>
   <view wx:if="{{isPackage}}">
-    <image style="width: 750rpx; height: 136px;" src="../../assets/images/dcb.jpg" />
+    <image style="width: 750rpx; height: 136px;" src="../../assets/images/dcb.jpg" bindtap="gotoBuy"/>
   </view>
   <view wx:if="{{!isPackage}}">
     <image style="width: 750rpx; height: 136px;" src="../../assets/images/ry.jpg" />

@@ -204,5 +204,13 @@ Page({
     },
     textInput: function (e) {
         optIn.textInput(this, e.detail.value);
+    },
+    gotoBuy: function (e) {
+        wx.switchTab({
+            url: '../buy/buy'
+        })
+        wx.navigateBack({
+            delta: 1
+        })
     }
 })
