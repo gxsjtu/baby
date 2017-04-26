@@ -16,13 +16,20 @@
     <view class="item-container">
       <view class="item-name">预产期</view>
       <view class="item-value">
-        <input type="text" bindinput="setConfinementDate" value="{{confinementDate}}" disabled="true"/>
+
+      <picker mode="date" value="{{confinementDate}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{confinementDate}}
+        </view>
+      </picker>
+
+        <!--<input type="text" bindinput="setConfinementDate" value="{{confinementDate}}" disabled="true"/>-->
       </view>
     </view>
     <view class="item-container">
       <view class="item-name">手机号码</view>
       <view class="item-value">
-        <input type="text" bindinput="setPhone" value="{{phone}}" disabled="true"/>
+        <input type="number" bindinput="setPhone" value="{{phone}}" maxlength="11" disabled="true"/>
       </view>
     </view>
     <view class="item-container">
@@ -51,4 +58,8 @@
     <button bindtap="saveInfo" disabled="{{btnDisabled}}" class="{{btnDisabled ? 'btn-f' : 'btn-style'}}">保存</button>
 </view>-->
   </view>
+  <view style="width:700rpx;margin:30rpx auto 0;">
+    <button type="warn" loading="{{loading}}" disabled="{{disabled}}" bindtap="save">保存</button>
+  </view>
+  
 </view>
