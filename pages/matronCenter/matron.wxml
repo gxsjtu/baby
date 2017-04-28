@@ -153,36 +153,6 @@
   <!--4.5-->
   <view class="item">
     <view class="image-container">
-      <image src="{{imgAddress}}matron/6" style="width:160rpx;height:160rpx;"></image>
-    </view>
-    <view class="item-container">
-      <view class="title">
-        <view class="name">馨緹月子会所(愚园路馆)</view>
-        <view class="price-label">人均</view>
-        <view class="price">￥77656</view>
-      </view>
-      <view class="item-split"></view>
-      <view class="score">
-        <view class="rate-container">
-          <image class="rate" src="../../assets/images/red.png"></image>
-          <image class="rate" src="../../assets/images/red.png"></image>
-          <image class="rate" src="../../assets/images/red.png"></image>
-          <image class="rate" src="../../assets/images/red.png"></image>
-          <image class="rate" src="../../assets/images/redgrey.png"></image>
-        </view>
-        <view class="tel" bindtap="call" data-phone="021-62718655">021-62718655</view>
-      </view>
-      <view class="item-split"></view>
-      <view class="remark">
-        <view class="address">愚园路753号D栋7楼(江苏路)</view>
-      </view>
-    </view>
-  </view>
-  <view class="split"></view>
-
-  <!--4.5-->
-  <view class="item">
-    <view class="image-container">
       <image src="{{imgAddress}}matron/7" style="width:160rpx;height:160rpx;"></image>
     </view>
     <view class="item-container">
