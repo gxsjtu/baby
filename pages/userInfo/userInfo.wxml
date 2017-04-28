@@ -18,7 +18,7 @@
       <view class="item-value">
 
       <picker mode="date" value="{{confinementDate}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
-        <view class="picker">
+        <view class="picker" style="color:black">
           {{confinementDate}}
         </view>
       </picker>
