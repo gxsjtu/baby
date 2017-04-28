@@ -15,4 +15,14 @@ UserSvc.prototype.saveFrom = function (hos) {
     })
 };
 
+UserSvc.prototype.saveUserInfo = function (info) {
+    return new Promise((resolve, reject) => {
+        request(GLOBAL.SERVER + "/user/savePreborn/",info,"POST").then(data => {
+            resolve(data);
+        }).catch(err => {
+            console.log(err);
+        });
+    })
+};
+
 module.exports = UserSvc;
