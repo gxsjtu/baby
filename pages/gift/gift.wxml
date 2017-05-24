@@ -137,9 +137,25 @@
                         <text class="list-header" style="background:#fec41a;">提交评价</text>
                         <text class="list-content">收货后请在一周内提交不少于100字的评价，评价审核通过后，此次试用完成。逾期未提交评价者，需在补交评价之后才可申请其他试用品。提示：每人只有3次补交机会，使用完之后将无法再申请任何试用。</text>
                     </view>
-                    <view class="item-list">
-                        <text class="list-header" style="background:#8957a1;">优惠券兑换</text>
-                        <text class="list-content">一键购商城优惠券兑换方法。下单后，联系在线客服。客服确认后返现。</text>
+                </view>
+            </view>
+            <view class="box" style="margin-top:20rpx;">
+                <view class="box-header">礼品券使用说明</view>
+                <view class="box-container" style="padding-bottom:20rpx;">
+                    <view class="role">
+                    1. 用户在获得礼品券后，就可在事妈商城中购买商品时使用。
+                    </view>
+                    <view class="role">
+                        2. 在优惠中心或待产包区域购买不低于50元的产品，均可使用。一次购买只能使用一张券。
+                    </view>
+                    <view class="role">
+                        3. 成功购买后将获得礼品券截图发至客服。
+                    </view>
+                    <view class="role">
+                        4. 客服后台确认后进行返现相等金额的现金。
+                    </view>
+                    <view class="role">
+                        5. 使用说明最终属于上海苗准营销策划有限公司所有。
                     </view>
                 </view>
             </view>
