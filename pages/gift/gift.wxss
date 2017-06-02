@@ -296,3 +296,37 @@ input {
 .role:first-child {
     margin-top: 20rpx;
 }
+
+.note{
+  color: rgba(0, 0, 0, 0.6);
+  width: 700rpx;
+  margin: 0 25rpx;
+}
+
+.note-header{
+  text-align: center;
+  font-size: 36rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.note-title{
+    font-size: 30rpx;
+}
+
+.note-content{
+  margin-top: 10rpx;
+  text-indent: 2em;
+  font-size: 30rpx;
+}
+
+.note-footer{
+  text-align: right;
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.qrCode{
+  width:375rpx;
+  margin:0 auto;
+}

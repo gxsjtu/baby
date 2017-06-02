@@ -3,7 +3,7 @@
     <view class="logo">
         <image src="../../assets/images/gift.jpg"></image>
     </view>
-    <view class="menu">
+    <!--<view class="menu">
         <view class="menu-item" catchtap="selectFirst">
             <view class="dot {{selectedMenuIndex==0?'active':''}}"></view>
             <view style="width:16rpx;"></view>
@@ -111,10 +111,6 @@
                 </view>
             </view>
         </view>
-
-        <!--<view style="width:750rpx;height:504rpx;">
-      <image src="../../assets/images/giftBottom.jpg" style="width:100%;height:100%;"></image>
-    </view>-->
     </view>
     <view class="gift-info" hidden="{{selectedMenuIndex!=1}}">
         <view class="gift-info-container">
@@ -184,5 +180,23 @@
                 </view>
             </view>
         </view>
+    </view>-->
+    <view class="note">
+      <view class="note-header">
+        系统功能调整通知
+      </view>
+      <view class="note-title">
+        尊敬的用户：
+      </view>
+      <view class="note-content">
+      由于系统功能调整，原本每周限量申领礼包将改成邀友礼包，会在下周开始于我们的公众号事妈Welcome发布。 公众号还有0元购母婴大牌和育儿神器，以及超低价团购等多重福利等你！敬请关注我们事妈welcome公众号哦！（可以截图识别关注哦！） 我们为由于这个变动给您带来的不变表示歉意！
+      </view>
+      <view class="note-footer">
+      ——事妈驾到全体工作人员
+      </view>
+      <view class="qrCode">
+        <image src="../../assets/images/qrCode.jpg" style="width:375rpx;height:375rpx;"></image>
+      </view>
     </view>
+    
 </view>
