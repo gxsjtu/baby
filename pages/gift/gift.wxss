@@ -327,6 +327,7 @@ input {
 }
 
 .qrCode{
-  width:375rpx;
+  width:700rpx;
   margin:0 auto;
+  margin-top:20rpx;
 }

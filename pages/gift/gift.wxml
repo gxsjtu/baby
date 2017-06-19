@@ -189,13 +189,13 @@
         尊敬的用户：
       </view>
       <view class="note-content">
-      由于系统功能调整，原本每周限量申领礼包将改成邀友礼包，会在下周开始于我们的公众号事妈Welcome发布。 公众号还有0元购母婴大牌和育儿神器，以及超低价团购等多重福利等你！敬请关注我们事妈welcome公众号哦！（可以截图识别关注哦！） 我们为由于这个变动给您带来的不变表示歉意！
+      由于系统功能调整，原本每周限量申领礼包将改成邀友礼。本周邀友大礼为千元如宝童车，网络热销易简婴儿理发器，凉而不冰事妈甄选凉席。 详情请关注事妈Welcome公众号，烦请截图识别图中二维码！
       </view>
       <view class="note-footer">
       ——事妈驾到全体工作人员
       </view>
       <view class="qrCode">
-        <image src="../../assets/images/qrCode.jpg" style="width:375rpx;height:375rpx;"></image>
+        <image src="../../assets/images/vijan22.jpg" style="width:700rpx;height:1085rpx;"></image>
       </view>
     </view>
     
