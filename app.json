@@ -46,12 +46,6 @@
                 "selectedIconPath": "assets/images/tabs/do_unselected.png"
             },
             {
-                "pagePath": "pages/gift/gift",
-                "text": "申领礼包",
-                "iconPath": "assets/images/tabs/boxgrey.png",
-                "selectedIconPath": "assets/images/tabs/boxred.png"
-            },
-            {
                 "pagePath": "pages/buy/buy",
                 "text": "一键购",
                 "iconPath": "assets/images/tabs/no_selectedBuy.png",
