@@ -360,6 +360,36 @@
   </view>
   <view class="split"></view>
 
+  <!--4.5-->
+  <view class="item">
+    <view class="image-container">
+      <image src="{{imgAddress}}matron/16" style="width:160rpx;height:160rpx;"></image>
+    </view>
+    <view class="item-container">
+      <view class="title">
+        <view class="name">耐味林月子中心</view>
+        <view class="price-label">人均</view>
+        <view class="price">3-5万</view>
+      </view>
+      <view class="item-split"></view>
+      <view class="score">
+        <view class="rate-container">
+          <image class="rate" src="../../assets/images/red.png"></image>
+          <image class="rate" src="../../assets/images/red.png"></image>
+          <image class="rate" src="../../assets/images/red.png"></image>
+          <image class="rate" src="../../assets/images/red.png"></image>
+          <image class="rate" src="../../assets/images/redgrey.png"></image>
+        </view>
+        <view class="tel" bindtap="call" data-phone="021-60717511">55088351</view>
+      </view>
+      <view class="item-split"></view>
+      <view class="remark">
+        <view class="address">周家嘴路1301号</view>
+      </view>
+    </view>
+  </view>
+  <view class="split"></view>
+
   <!--4-->
   <view class="item">
     <view class="image-container">
